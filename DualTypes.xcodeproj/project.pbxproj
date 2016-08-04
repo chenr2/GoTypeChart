@@ -1,0 +1,552 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FCA7425F1D52E675003DAC35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA7425E1D52E675003DAC35 /* AppDelegate.swift */; };
+		FCA742611D52E675003DAC35 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA742601D52E675003DAC35 /* ViewController.swift */; };
+		FCA742641D52E675003DAC35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCA742621D52E675003DAC35 /* Main.storyboard */; };
+		FCA742661D52E675003DAC35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCA742651D52E675003DAC35 /* Assets.xcassets */; };
+		FCA742691D52E675003DAC35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCA742671D52E675003DAC35 /* LaunchScreen.storyboard */; };
+		FCA7426E1D52E675003DAC35 /* DualTypes WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = FCA7426D1D52E675003DAC35 /* DualTypes WatchKit App.app */; };
+		FCA742741D52E675003DAC35 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCA742721D52E675003DAC35 /* Interface.storyboard */; };
+		FCA742761D52E675003DAC35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCA742751D52E675003DAC35 /* Assets.xcassets */; };
+		FCA7427D1D52E675003DAC35 /* DualTypes WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FCA7427C1D52E675003DAC35 /* DualTypes WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FCA742821D52E675003DAC35 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA742811D52E675003DAC35 /* InterfaceController.swift */; };
+		FCA742841D52E675003DAC35 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA742831D52E675003DAC35 /* ExtensionDelegate.swift */; };
+		FCA742861D52E675003DAC35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCA742851D52E675003DAC35 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FCA7426F1D52E675003DAC35 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FCA742531D52E675003DAC35 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FCA7426C1D52E675003DAC35;
+			remoteInfo = "DualTypes WatchKit App";
+		};
+		FCA7427E1D52E675003DAC35 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FCA742531D52E675003DAC35 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FCA7427B1D52E675003DAC35;
+			remoteInfo = "DualTypes WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FCA7428D1D52E675003DAC35 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				FCA7427D1D52E675003DAC35 /* DualTypes WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCA742911D52E675003DAC35 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				FCA7426E1D52E675003DAC35 /* DualTypes WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		FCA7425B1D52E675003DAC35 /* DualTypes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DualTypes.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCA7425E1D52E675003DAC35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FCA742601D52E675003DAC35 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FCA742631D52E675003DAC35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FCA742651D52E675003DAC35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FCA742681D52E675003DAC35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FCA7426A1D52E675003DAC35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCA7426D1D52E675003DAC35 /* DualTypes WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DualTypes WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCA742731D52E675003DAC35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		FCA742751D52E675003DAC35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FCA742771D52E675003DAC35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCA7427C1D52E675003DAC35 /* DualTypes WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "DualTypes WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCA742811D52E675003DAC35 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		FCA742831D52E675003DAC35 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		FCA742851D52E675003DAC35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FCA742871D52E675003DAC35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FCA742581D52E675003DAC35 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCA742791D52E675003DAC35 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FCA742521D52E675003DAC35 = {
+			isa = PBXGroup;
+			children = (
+				FCA7425D1D52E675003DAC35 /* DualTypes */,
+				FCA742711D52E675003DAC35 /* DualTypes WatchKit App */,
+				FCA742801D52E675003DAC35 /* DualTypes WatchKit Extension */,
+				FCA7425C1D52E675003DAC35 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FCA7425C1D52E675003DAC35 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FCA7425B1D52E675003DAC35 /* DualTypes.app */,
+				FCA7426D1D52E675003DAC35 /* DualTypes WatchKit App.app */,
+				FCA7427C1D52E675003DAC35 /* DualTypes WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FCA7425D1D52E675003DAC35 /* DualTypes */ = {
+			isa = PBXGroup;
+			children = (
+				FCA7425E1D52E675003DAC35 /* AppDelegate.swift */,
+				FCA742601D52E675003DAC35 /* ViewController.swift */,
+				FCA742621D52E675003DAC35 /* Main.storyboard */,
+				FCA742651D52E675003DAC35 /* Assets.xcassets */,
+				FCA742671D52E675003DAC35 /* LaunchScreen.storyboard */,
+				FCA7426A1D52E675003DAC35 /* Info.plist */,
+			);
+			path = DualTypes;
+			sourceTree = "<group>";
+		};
+		FCA742711D52E675003DAC35 /* DualTypes WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				FCA742721D52E675003DAC35 /* Interface.storyboard */,
+				FCA742751D52E675003DAC35 /* Assets.xcassets */,
+				FCA742771D52E675003DAC35 /* Info.plist */,
+			);
+			path = "DualTypes WatchKit App";
+			sourceTree = "<group>";
+		};
+		FCA742801D52E675003DAC35 /* DualTypes WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FCA742811D52E675003DAC35 /* InterfaceController.swift */,
+				FCA742831D52E675003DAC35 /* ExtensionDelegate.swift */,
+				FCA742851D52E675003DAC35 /* Assets.xcassets */,
+				FCA742871D52E675003DAC35 /* Info.plist */,
+			);
+			path = "DualTypes WatchKit Extension";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FCA7425A1D52E675003DAC35 /* DualTypes */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FCA742921D52E675003DAC35 /* Build configuration list for PBXNativeTarget "DualTypes" */;
+			buildPhases = (
+				FCA742571D52E675003DAC35 /* Sources */,
+				FCA742581D52E675003DAC35 /* Frameworks */,
+				FCA742591D52E675003DAC35 /* Resources */,
+				FCA742911D52E675003DAC35 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FCA742701D52E675003DAC35 /* PBXTargetDependency */,
+			);
+			name = DualTypes;
+			productName = DualTypes;
+			productReference = FCA7425B1D52E675003DAC35 /* DualTypes.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FCA7426C1D52E675003DAC35 /* DualTypes WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FCA7428E1D52E675003DAC35 /* Build configuration list for PBXNativeTarget "DualTypes WatchKit App" */;
+			buildPhases = (
+				FCA7426B1D52E675003DAC35 /* Resources */,
+				FCA7428D1D52E675003DAC35 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FCA7427F1D52E675003DAC35 /* PBXTargetDependency */,
+			);
+			name = "DualTypes WatchKit App";
+			productName = "DualTypes WatchKit App";
+			productReference = FCA7426D1D52E675003DAC35 /* DualTypes WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		FCA7427B1D52E675003DAC35 /* DualTypes WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FCA7428A1D52E675003DAC35 /* Build configuration list for PBXNativeTarget "DualTypes WatchKit Extension" */;
+			buildPhases = (
+				FCA742781D52E675003DAC35 /* Sources */,
+				FCA742791D52E675003DAC35 /* Frameworks */,
+				FCA7427A1D52E675003DAC35 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "DualTypes WatchKit Extension";
+			productName = "DualTypes WatchKit Extension";
+			productReference = FCA7427C1D52E675003DAC35 /* DualTypes WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FCA742531D52E675003DAC35 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Robert Chen";
+				TargetAttributes = {
+					FCA7425A1D52E675003DAC35 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					FCA7426C1D52E675003DAC35 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					FCA7427B1D52E675003DAC35 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = FCA742561D52E675003DAC35 /* Build configuration list for PBXProject "DualTypes" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FCA742521D52E675003DAC35;
+			productRefGroup = FCA7425C1D52E675003DAC35 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FCA7425A1D52E675003DAC35 /* DualTypes */,
+				FCA7426C1D52E675003DAC35 /* DualTypes WatchKit App */,
+				FCA7427B1D52E675003DAC35 /* DualTypes WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FCA742591D52E675003DAC35 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCA742691D52E675003DAC35 /* LaunchScreen.storyboard in Resources */,
+				FCA742661D52E675003DAC35 /* Assets.xcassets in Resources */,
+				FCA742641D52E675003DAC35 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCA7426B1D52E675003DAC35 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCA742761D52E675003DAC35 /* Assets.xcassets in Resources */,
+				FCA742741D52E675003DAC35 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCA7427A1D52E675003DAC35 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCA742861D52E675003DAC35 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FCA742571D52E675003DAC35 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCA742611D52E675003DAC35 /* ViewController.swift in Sources */,
+				FCA7425F1D52E675003DAC35 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCA742781D52E675003DAC35 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCA742841D52E675003DAC35 /* ExtensionDelegate.swift in Sources */,
+				FCA742821D52E675003DAC35 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FCA742701D52E675003DAC35 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FCA7426C1D52E675003DAC35 /* DualTypes WatchKit App */;
+			targetProxy = FCA7426F1D52E675003DAC35 /* PBXContainerItemProxy */;
+		};
+		FCA7427F1D52E675003DAC35 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FCA7427B1D52E675003DAC35 /* DualTypes WatchKit Extension */;
+			targetProxy = FCA7427E1D52E675003DAC35 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FCA742621D52E675003DAC35 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FCA742631D52E675003DAC35 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FCA742671D52E675003DAC35 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FCA742681D52E675003DAC35 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		FCA742721D52E675003DAC35 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FCA742731D52E675003DAC35 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FCA742881D52E675003DAC35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FCA742891D52E675003DAC35 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FCA7428B1D52E675003DAC35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "DualTypes WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.thorntech.DualTypes.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		FCA7428C1D52E675003DAC35 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "DualTypes WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.thorntech.DualTypes.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
+		FCA7428F1D52E675003DAC35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = DualTypes_WatchKit_Extension;
+				INFOPLIST_FILE = "DualTypes WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.thorntech.DualTypes.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		FCA742901D52E675003DAC35 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = DualTypes_WatchKit_Extension;
+				INFOPLIST_FILE = "DualTypes WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.thorntech.DualTypes.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
+		FCA742931D52E675003DAC35 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = DualTypes/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.thorntech.DualTypes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FCA742941D52E675003DAC35 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = DualTypes/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.thorntech.DualTypes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FCA742561D52E675003DAC35 /* Build configuration list for PBXProject "DualTypes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCA742881D52E675003DAC35 /* Debug */,
+				FCA742891D52E675003DAC35 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FCA7428A1D52E675003DAC35 /* Build configuration list for PBXNativeTarget "DualTypes WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCA7428B1D52E675003DAC35 /* Debug */,
+				FCA7428C1D52E675003DAC35 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FCA7428E1D52E675003DAC35 /* Build configuration list for PBXNativeTarget "DualTypes WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCA7428F1D52E675003DAC35 /* Debug */,
+				FCA742901D52E675003DAC35 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FCA742921D52E675003DAC35 /* Build configuration list for PBXNativeTarget "DualTypes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCA742931D52E675003DAC35 /* Debug */,
+				FCA742941D52E675003DAC35 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FCA742531D52E675003DAC35 /* Project object */;
+}
