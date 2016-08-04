@@ -24,6 +24,9 @@
 		FCA7429D1D52E86D003DAC35 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA7429C1D52E86D003DAC35 /* Pokemon.swift */; };
 		FCA7429F1D52E951003DAC35 /* GymLeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA7429E1D52E951003DAC35 /* GymLeaderCell.swift */; };
 		FCA742A11D535EE0003DAC35 /* GymLeaderDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA742A01D535EE0003DAC35 /* GymLeaderDetail.swift */; };
+		FCA742A41D5360EF003DAC35 /* GymLeaderDetailHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA742A31D5360EF003DAC35 /* GymLeaderDetailHeader.swift */; };
+		FCA742A61D536115003DAC35 /* GymLeaderDetailTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA742A51D536115003DAC35 /* GymLeaderDetailTypeCell.swift */; };
+		FCA742A81D536192003DAC35 /* ElementType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA742A71D536192003DAC35 /* ElementType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +93,9 @@
 		FCA7429C1D52E86D003DAC35 /* Pokemon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 		FCA7429E1D52E951003DAC35 /* GymLeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GymLeaderCell.swift; sourceTree = "<group>"; };
 		FCA742A01D535EE0003DAC35 /* GymLeaderDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GymLeaderDetail.swift; sourceTree = "<group>"; };
+		FCA742A31D5360EF003DAC35 /* GymLeaderDetailHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GymLeaderDetailHeader.swift; sourceTree = "<group>"; };
+		FCA742A51D536115003DAC35 /* GymLeaderDetailTypeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GymLeaderDetailTypeCell.swift; sourceTree = "<group>"; };
+		FCA742A71D536192003DAC35 /* ElementType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElementType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,9 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				FCA7425E1D52E675003DAC35 /* AppDelegate.swift */,
-				FCA742951D52E732003DAC35 /* GymLeaders.swift */,
-				FCA7429E1D52E951003DAC35 /* GymLeaderCell.swift */,
-				FCA742A01D535EE0003DAC35 /* GymLeaderDetail.swift */,
+				FCA742A21D53607C003DAC35 /* GymLeaderTab */,
 				FCA742971D52E7D5003DAC35 /* TypeCalculator.swift */,
 				FCA742991D52E81D003DAC35 /* Hexagon.swift */,
 				FCA742621D52E675003DAC35 /* Main.storyboard */,
@@ -173,9 +177,22 @@
 			isa = PBXGroup;
 			children = (
 				FCA7429C1D52E86D003DAC35 /* Pokemon.swift */,
+				FCA742A71D536192003DAC35 /* ElementType.swift */,
 			);
 			name = Models;
 			path = DualTypes;
+			sourceTree = "<group>";
+		};
+		FCA742A21D53607C003DAC35 /* GymLeaderTab */ = {
+			isa = PBXGroup;
+			children = (
+				FCA742951D52E732003DAC35 /* GymLeaders.swift */,
+				FCA7429E1D52E951003DAC35 /* GymLeaderCell.swift */,
+				FCA742A01D535EE0003DAC35 /* GymLeaderDetail.swift */,
+				FCA742A31D5360EF003DAC35 /* GymLeaderDetailHeader.swift */,
+				FCA742A51D536115003DAC35 /* GymLeaderDetailTypeCell.swift */,
+			);
+			name = GymLeaderTab;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,8 +331,11 @@
 				FCA742981D52E7D5003DAC35 /* TypeCalculator.swift in Sources */,
 				FCA742961D52E732003DAC35 /* GymLeaders.swift in Sources */,
 				FCA7429A1D52E81D003DAC35 /* Hexagon.swift in Sources */,
+				FCA742A81D536192003DAC35 /* ElementType.swift in Sources */,
+				FCA742A41D5360EF003DAC35 /* GymLeaderDetailHeader.swift in Sources */,
 				FCA7429F1D52E951003DAC35 /* GymLeaderCell.swift in Sources */,
 				FCA7425F1D52E675003DAC35 /* AppDelegate.swift in Sources */,
+				FCA742A61D536115003DAC35 /* GymLeaderDetailTypeCell.swift in Sources */,
 				FCA742A11D535EE0003DAC35 /* GymLeaderDetail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -558,6 +578,7 @@
 				FCA7428C1D52E675003DAC35 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FCA7428E1D52E675003DAC35 /* Build configuration list for PBXNativeTarget "DualTypes WatchKit App" */ = {
 			isa = XCConfigurationList;
@@ -566,6 +587,7 @@
 				FCA742901D52E675003DAC35 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FCA742921D52E675003DAC35 /* Build configuration list for PBXNativeTarget "DualTypes" */ = {
 			isa = XCConfigurationList;
@@ -574,6 +596,7 @@
 				FCA742941D52E675003DAC35 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

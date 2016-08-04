@@ -10,14 +10,16 @@ import Foundation
 
 class Pokemon {
     var name: String
+    var defense: [ElementType]
     
     class func gymLeaders() -> [Pokemon] {
-        let lapras = Pokemon(name: "Lapras")
-        let dragonite = Pokemon(name: "Dragonite")
-        return [lapras, dragonite]
+        let lapras = Pokemon(name: "Lapras", defense: [.Ice, .Water])
+        let dragonite = Pokemon(name: "Dragonite", defense: [.Flying, .Dragon])
+        return [lapras, dragonite, lapras, dragonite]
     }
     
-    init(name: String){
+    init(name: String, defense: [ElementType]){
         self.name = name
+        self.defense = defense
     }
 }

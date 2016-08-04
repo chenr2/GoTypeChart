@@ -17,6 +17,14 @@ class GymLeaders: UICollectionViewController {
             destination.pokemon = cell.pokemon
         }
     }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        let cellPadding:CGFloat = 5
+        let cellsPerRow:CGFloat = 3
+        let widthMinusPadding = collectionView.bounds.width - (cellPadding + cellPadding * cellsPerRow)
+        let eachSide = widthMinusPadding / cellsPerRow
+        return CGSize(width: eachSide, height:eachSide)
+    }
 }
 
 extension GymLeaders {

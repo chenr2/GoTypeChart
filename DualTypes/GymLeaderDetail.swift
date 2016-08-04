@@ -8,16 +8,15 @@
 
 import UIKit
 
-class GymLeaderDetail: UIViewController {
-    
-    @IBOutlet weak var pokemonName: UILabel!
+class GymLeaderDetail: UITableViewController {
     
     var pokemon: Pokemon? = nil 
     
-    override func viewWillAppear(animated: Bool) {
-        if let pokemon = pokemon {
-            pokemonName?.text = pokemon.name
-        }
+    override func viewDidAppear(animated: Bool) {
+        print(pokemon?.name)
     }
+}
+
+extension GymLeaderDetail {
     
 }
