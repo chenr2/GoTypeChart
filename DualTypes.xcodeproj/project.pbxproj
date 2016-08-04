@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		FCA7425F1D52E675003DAC35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA7425E1D52E675003DAC35 /* AppDelegate.swift */; };
-		FCA742611D52E675003DAC35 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA742601D52E675003DAC35 /* ViewController.swift */; };
 		FCA742641D52E675003DAC35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCA742621D52E675003DAC35 /* Main.storyboard */; };
 		FCA742661D52E675003DAC35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCA742651D52E675003DAC35 /* Assets.xcassets */; };
 		FCA742691D52E675003DAC35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCA742671D52E675003DAC35 /* LaunchScreen.storyboard */; };
@@ -19,6 +18,9 @@
 		FCA742821D52E675003DAC35 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA742811D52E675003DAC35 /* InterfaceController.swift */; };
 		FCA742841D52E675003DAC35 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA742831D52E675003DAC35 /* ExtensionDelegate.swift */; };
 		FCA742861D52E675003DAC35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCA742851D52E675003DAC35 /* Assets.xcassets */; };
+		FCA742961D52E732003DAC35 /* GymLeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA742951D52E732003DAC35 /* GymLeaders.swift */; };
+		FCA742981D52E7D5003DAC35 /* TypeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA742971D52E7D5003DAC35 /* TypeCalculator.swift */; };
+		FCA7429A1D52E81D003DAC35 /* Hexagon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA742991D52E81D003DAC35 /* Hexagon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,7 +68,6 @@
 /* Begin PBXFileReference section */
 		FCA7425B1D52E675003DAC35 /* DualTypes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DualTypes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCA7425E1D52E675003DAC35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FCA742601D52E675003DAC35 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FCA742631D52E675003DAC35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FCA742651D52E675003DAC35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FCA742681D52E675003DAC35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -80,6 +81,9 @@
 		FCA742831D52E675003DAC35 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		FCA742851D52E675003DAC35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FCA742871D52E675003DAC35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCA742951D52E732003DAC35 /* GymLeaders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GymLeaders.swift; sourceTree = "<group>"; };
+		FCA742971D52E7D5003DAC35 /* TypeCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeCalculator.swift; sourceTree = "<group>"; };
+		FCA742991D52E81D003DAC35 /* Hexagon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hexagon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,7 +128,9 @@
 			isa = PBXGroup;
 			children = (
 				FCA7425E1D52E675003DAC35 /* AppDelegate.swift */,
-				FCA742601D52E675003DAC35 /* ViewController.swift */,
+				FCA742951D52E732003DAC35 /* GymLeaders.swift */,
+				FCA742971D52E7D5003DAC35 /* TypeCalculator.swift */,
+				FCA742991D52E81D003DAC35 /* Hexagon.swift */,
 				FCA742621D52E675003DAC35 /* Main.storyboard */,
 				FCA742651D52E675003DAC35 /* Assets.xcassets */,
 				FCA742671D52E675003DAC35 /* LaunchScreen.storyboard */,
@@ -286,7 +292,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FCA742611D52E675003DAC35 /* ViewController.swift in Sources */,
+				FCA742981D52E7D5003DAC35 /* TypeCalculator.swift in Sources */,
+				FCA742961D52E732003DAC35 /* GymLeaders.swift in Sources */,
+				FCA7429A1D52E81D003DAC35 /* Hexagon.swift in Sources */,
 				FCA7425F1D52E675003DAC35 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
