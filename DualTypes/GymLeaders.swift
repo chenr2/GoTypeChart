@@ -10,6 +10,13 @@ import UIKit
 
 class GymLeaders: UICollectionViewController {
     let gymLeadersArray = Pokemon.gymLeaders()
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let destination = segue.destinationViewController as? GymLeaderDetail,
+            let cell = sender as? GymLeaderCell {
+            destination.pokemon = cell.pokemon
+        }
+    }
 }
 
 extension GymLeaders {

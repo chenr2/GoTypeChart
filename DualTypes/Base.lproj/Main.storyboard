@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="uiT-vW-uNb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="uiT-vW-uNb">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Gym Leaders-->
         <scene sceneID="8bt-zf-Xvq">
             <objects>
                 <collectionViewController id="mp8-fV-bTH" customClass="GymLeaders" customModule="DualTypes" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="H3b-rr-yW6">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kNH-1d-X6T">
                             <size key="itemSize" width="107" height="101"/>
@@ -20,7 +20,7 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GymLeaderCell" id="BFd-Js-7u0" customClass="GymLeaderCell" customModule="DualTypes" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="107" height="101"/>
+                                <rect key="frame" x="0.0" y="64" width="107" height="101"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="107" height="101"/>
@@ -38,6 +38,7 @@
                                 <color key="backgroundColor" red="0.27058823529999998" green="0.76862745099999996" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="pokemonName" destination="eI8-Qe-zrT" id="ybf-GN-Dxn"/>
+                                    <segue destination="QkC-eq-eNR" kind="push" id="zhv-rE-WrW"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -46,18 +47,48 @@
                             <outlet property="delegate" destination="mp8-fV-bTH" id="4L8-cS-d1y"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="Item" id="vZx-sC-qq6"/>
+                    <navigationItem key="navigationItem" id="7Hv-AN-OeZ"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kuW-Oe-wCB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="735" y="-2401"/>
+            <point key="canvasLocation" x="801" y="-2273"/>
+        </scene>
+        <!--Gym Leader Detail-->
+        <scene sceneID="0NW-It-qpO">
+            <objects>
+                <viewController id="QkC-eq-eNR" customClass="GymLeaderDetail" customModule="DualTypes" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZdH-zt-uNA"/>
+                        <viewControllerLayoutGuide type="bottom" id="Oso-cO-Th1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6i3-Kj-WFi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J3M-ZD-SBY">
+                                <rect key="frame" x="25" y="100" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="H9t-GD-exo"/>
+                    <connections>
+                        <outlet property="pokemonName" destination="J3M-ZD-SBY" id="AYL-JD-n2r"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ga8-AX-7RE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1169" y="-2273"/>
         </scene>
         <!--Item-->
         <scene sceneID="S0q-nj-ebp">
             <objects>
                 <collectionViewController id="dNT-fJ-KdQ" customClass="TypeCalculator" customModule="DualTypes" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="VV5-0g-mxd">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Acy-2D-Kq2">
                             <size key="itemSize" width="50" height="50"/>
@@ -85,7 +116,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HQq-dK-zSy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="741" y="-1612"/>
+            <point key="canvasLocation" x="395.19999999999999" y="-1526.0266666666666"/>
         </scene>
         <!--Item-->
         <scene sceneID="sae-hb-Ksw">
@@ -96,7 +127,7 @@
                         <viewControllerLayoutGuide type="bottom" id="YXs-jh-Nbz"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="hdx-bG-JAw">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -104,7 +135,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RYB-It-7aK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="755" y="-888"/>
+            <point key="canvasLocation" x="402.66666666666669" y="-840.63999999999999"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="OyK-tP-zTI">
@@ -116,14 +147,33 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="mp8-fV-bTH" kind="relationship" relationship="viewControllers" id="81N-mo-4ZW"/>
+                        <segue destination="D5E-gq-8is" kind="relationship" relationship="viewControllers" id="81N-mo-4ZW"/>
                         <segue destination="dNT-fJ-KdQ" kind="relationship" relationship="viewControllers" id="OAK-Qy-tOb"/>
                         <segue destination="TIb-bB-TdY" kind="relationship" relationship="viewControllers" id="7BC-4g-tmn"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OSB-DQ-YYQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-55" y="-1908"/>
+            <point key="canvasLocation" x="-29.333333333333332" y="-1806.24"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="ner-h6-Ann">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="D5E-gq-8is" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="vZx-sC-qq6"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tNz-Ew-5TV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="mp8-fV-bTH" kind="relationship" relationship="rootViewController" id="5CB-U8-MbL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6hF-Gq-cp8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="392" y="-2273"/>
         </scene>
     </scenes>
 </document>

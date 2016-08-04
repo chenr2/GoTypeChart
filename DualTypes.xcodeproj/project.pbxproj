@@ -23,6 +23,7 @@
 		FCA7429A1D52E81D003DAC35 /* Hexagon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA742991D52E81D003DAC35 /* Hexagon.swift */; };
 		FCA7429D1D52E86D003DAC35 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA7429C1D52E86D003DAC35 /* Pokemon.swift */; };
 		FCA7429F1D52E951003DAC35 /* GymLeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA7429E1D52E951003DAC35 /* GymLeaderCell.swift */; };
+		FCA742A11D535EE0003DAC35 /* GymLeaderDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA742A01D535EE0003DAC35 /* GymLeaderDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		FCA742991D52E81D003DAC35 /* Hexagon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hexagon.swift; sourceTree = "<group>"; };
 		FCA7429C1D52E86D003DAC35 /* Pokemon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 		FCA7429E1D52E951003DAC35 /* GymLeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GymLeaderCell.swift; sourceTree = "<group>"; };
+		FCA742A01D535EE0003DAC35 /* GymLeaderDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GymLeaderDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 				FCA7425E1D52E675003DAC35 /* AppDelegate.swift */,
 				FCA742951D52E732003DAC35 /* GymLeaders.swift */,
 				FCA7429E1D52E951003DAC35 /* GymLeaderCell.swift */,
+				FCA742A01D535EE0003DAC35 /* GymLeaderDetail.swift */,
 				FCA742971D52E7D5003DAC35 /* TypeCalculator.swift */,
 				FCA742991D52E81D003DAC35 /* Hexagon.swift */,
 				FCA742621D52E675003DAC35 /* Main.storyboard */,
@@ -313,6 +316,7 @@
 				FCA7429A1D52E81D003DAC35 /* Hexagon.swift in Sources */,
 				FCA7429F1D52E951003DAC35 /* GymLeaderCell.swift in Sources */,
 				FCA7425F1D52E675003DAC35 /* AppDelegate.swift in Sources */,
+				FCA742A11D535EE0003DAC35 /* GymLeaderDetail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
