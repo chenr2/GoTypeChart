@@ -13,9 +13,10 @@ class Pokemon {
     var defense: [ElementType]
     
     class func gymLeaders() -> [Pokemon] {
+        let vaporeon = Pokemon(name: "Vaporeon", defense: [.Water])
         let lapras = Pokemon(name: "Lapras", defense: [.Ice, .Water])
         let dragonite = Pokemon(name: "Dragonite", defense: [.Flying, .Dragon])
-        return [lapras, dragonite, lapras, dragonite]
+        return [vaporeon, lapras, dragonite, lapras, dragonite]
     }
     
     init(name: String, defense: [ElementType]){
