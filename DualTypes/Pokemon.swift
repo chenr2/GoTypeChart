@@ -219,20 +219,28 @@ class Pokemon {
     }
     
     class func gymLeaders() -> [Pokemon] {
-        let vaporeon = Pokemon(pokedex: 134, name: "Vaporeon", defense: [.Water], tier: .S)
-        let flareon = Pokemon(pokedex: 136, name: "Flareon", defense: [.Fire], tier: .S)
-        let jolteon = Pokemon(pokedex: 135, name: "Jolteon", defense: [.Electric], tier: .A)
-        let lapras = Pokemon(pokedex: 131, name: "Lapras", defense: [.Ice, .Water], tier: .S)
+        let bulbasaur = Pokemon(pokedex: 1, name: "Bulbasaur", defense: [.Grass, .Poison], tier: .F)
+        let ivysaur = Pokemon(pokedex: 2, name: "Ivysaur", defense: [.Grass, .Poison], tier: .B)
+        let venasaur = Pokemon(pokedex: 3, name: "Venasaur", defense: [.Grass, .Poison], tier: .B)
+        let charmander = Pokemon(pokedex: 4, name: "Charmander", defense: [.Fire], tier: .F)
+        //        let foo = Pokemon(pokedex: 0, name: "", defense: [], tier: .F)
+        //        let foo = Pokemon(pokedex: 0, name: "", defense: [], tier: .F)
+        let golduck = Pokemon(pokedex: 55, name: "Golduck", defense: [.Water], tier: .A)
+        let arcanine = Pokemon(pokedex: 59, name: "Arcanine", defense: [.Fire], tier: .S)
+        let slowbro = Pokemon(pokedex: 80, name: "Slowbro", defense: [.Psychic, .Water], tier: .S)
+        let exeggutor = Pokemon(pokedex: 103, name: "Exeggutor", defense: [.Psychic, .Grass], tier: .S)
         let gyarados = Pokemon(pokedex: 130, name: "Gyarados", defense: [.Flying, .Water], tier: .A)
+        let lapras = Pokemon(pokedex: 131, name: "Lapras", defense: [.Ice, .Water], tier: .S)
+        let vaporeon = Pokemon(pokedex: 134, name: "Vaporeon", defense: [.Water], tier: .S)
+        let jolteon = Pokemon(pokedex: 135, name: "Jolteon", defense: [.Electric], tier: .A)
+        let flareon = Pokemon(pokedex: 136, name: "Flareon", defense: [.Fire], tier: .S)
+        let aerodactyl = Pokemon(pokedex: 142, name: "Aerodactyl", defense: [.Flying, .Rock], tier: .B)
         let snorlax = Pokemon(pokedex: 143, name: "Snorlax", defense: [.Normal], tier: .A)
         let dragonite = Pokemon(pokedex: 149, name: "Dragonite", defense: [.Flying, .Dragon], tier: .S)
-        let golduck = Pokemon(pokedex: 55, name: "Golduck", defense: [.Water], tier: .A)
-        let exeggutor = Pokemon(pokedex: 103, name: "Exeggutor", defense: [.Psychic, .Grass], tier: .S)
-        let slowbro = Pokemon(pokedex: 80, name: "Slowbro", defense: [.Psychic, .Water], tier: .S)
-        let aerodactyl = Pokemon(pokedex: 142, name: "Aerodactyl", defense: [.Flying, .Rock], tier: .B)
-        let arcanine = Pokemon(pokedex: 59, name: "Arcanine", defense: [.Fire], tier: .S)
         
         return [
+            bulbasaur, ivysaur, venasaur,
+            charmander,
             vaporeon, flareon, jolteon,
             lapras, dragonite, gyarados,
             snorlax, golduck, exeggutor,
