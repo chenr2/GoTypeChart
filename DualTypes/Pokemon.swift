@@ -220,9 +220,23 @@ class Pokemon {
     
     class func gymLeaders() -> [Pokemon] {
         let vaporeon = Pokemon(name: "Vaporeon", defense: [.Water])
+        let flareon = Pokemon(name: "Flareon", defense: [.Fire])
+        let jolteon = Pokemon(name: "Jolteon", defense: [.Electric])
         let lapras = Pokemon(name: "Lapras", defense: [.Ice, .Water])
+        let gyrados = Pokemon(name: "Gyrados", defense: [.Flying, .Water])
+        let snorlax = Pokemon(name: "Snorlax", defense: [.Normal])
         let dragonite = Pokemon(name: "Dragonite", defense: [.Flying, .Dragon])
-        return [vaporeon, lapras, dragonite, lapras, dragonite]
+        let golduck = Pokemon(name: "Golduck", defense: [.Water])
+        let exeggutor = Pokemon(name: "Exeggutor", defense: [.Psychic, .Grass])
+        let slowbro = Pokemon(name: "Slowbro", defense: [.Psychic, .Water])
+        let aerodactyl = Pokemon(name: "Aerodactyl", defense: [.Flying, .Rock])
+        let arcanine = Pokemon(name: "Arcanine", defense: [.Fire])
+        return [
+            vaporeon, flareon, jolteon,
+            lapras, dragonite, gyrados,
+            snorlax, golduck, exeggutor,
+            slowbro, aerodactyl, arcanine
+        ]
     }
     
     init(name: String, defense: [ElementType]){

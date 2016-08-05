@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Gym Leaders-->
@@ -26,8 +27,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="107" height="101"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eI8-Qe-zrT">
-                                            <rect key="frame" x="32" y="40" width="42" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eI8-Qe-zrT">
+                                            <rect key="frame" x="8" y="50.5" width="91" height="0.0"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -36,6 +37,11 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <color key="backgroundColor" red="0.27058823529999998" green="0.76862745099999996" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailingMargin" secondItem="eI8-Qe-zrT" secondAttribute="trailing" id="Dr6-Q0-hrI"/>
+                                    <constraint firstItem="eI8-Qe-zrT" firstAttribute="leading" secondItem="BFd-Js-7u0" secondAttribute="leadingMargin" id="Zzb-Js-HpL"/>
+                                    <constraint firstItem="eI8-Qe-zrT" firstAttribute="centerY" secondItem="BFd-Js-7u0" secondAttribute="centerY" id="eQi-LU-L0q"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="pokemonName" destination="eI8-Qe-zrT" id="ybf-GN-Dxn"/>
                                     <segue destination="PPD-6K-mKn" kind="push" id="FQu-3I-jLE"/>
