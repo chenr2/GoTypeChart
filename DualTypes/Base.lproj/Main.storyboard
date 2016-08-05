@@ -86,7 +86,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="aQq-LE-MFb" customClass="GymLeaderDetailTypeCell" customModule="DualTypes" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GymLeaderDetailTypeCell" id="aQq-LE-MFb" customClass="GymLeaderDetailTypeCell" customModule="DualTypes" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="136" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aQq-LE-MFb" id="ugX-MN-GNK">
