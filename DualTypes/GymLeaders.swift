@@ -12,12 +12,10 @@ class GymLeaders: UICollectionViewController {
     
     var searchBar = UISearchBar()
     
-    var gymLeadersArray = Pokemon.gymLeaders()
+    var gymLeadersArray: [Pokemon] = []
     
     @IBAction func sortAlphabetically(sender: AnyObject) {
-        gymLeadersArray = gymLeadersArray.sort { pokemonA, pokemonB in
-            return pokemonA.name.lowercaseString < pokemonB.name.lowercaseString
-        }
+        sortExistingArrayAlphabetically()
         reloadSectionZero()
     }
     
@@ -63,6 +61,12 @@ class GymLeaders: UICollectionViewController {
         collectionView?.reloadSections(sectionZero)
     }
     
+    func sortExistingArrayAlphabetically() {
+        gymLeadersArray = gymLeadersArray.sort { pokemonA, pokemonB in
+            return pokemonA.name.lowercaseString < pokemonB.name.lowercaseString
+        }
+    }
+    
     func sortExistingArrayByIndex(){
         gymLeadersArray = gymLeadersArray.sort { pokemonA, pokemonB in
             return pokemonA.pokedex < pokemonB.pokedex
@@ -76,6 +80,11 @@ class GymLeaders: UICollectionViewController {
         searchBar.placeholder = "Pokemon name or type"
         searchBar.delegate = self
         navigationItem.titleView = searchBar
+        // show the best guys
+        gymLeadersArray = Pokemon.gymLeaders().filter {
+            $0.tier == Tier.S || $0.tier == Tier.A
+        }
+        sortExistingArrayAlphabetically()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
