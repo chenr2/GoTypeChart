@@ -33,13 +33,13 @@
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="eI8-Qe-zrT">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="eI8-Qe-zrT">
                                             <rect key="frame" x="8" y="13" width="91" height="0.0"/>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m90-2o-x9L">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="m90-2o-x9L">
                                             <rect key="frame" x="8" y="16" width="91" height="0.0"/>
                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -72,6 +72,15 @@
                             <outlet property="delegate" destination="mp8-fV-bTH" id="4L8-cS-d1y"/>
                         </connections>
                     </collectionView>
+                    <toolbarItems>
+                        <barButtonItem title="AZ" id="GeG-55-Dz3"/>
+                        <barButtonItem title="Index" id="cj7-0M-Due"/>
+                        <barButtonItem title="Dual" id="QaX-IW-t4h"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="W3q-sU-iSP"/>
+                        <barButtonItem title="S-Tier" id="rHD-sD-evB"/>
+                        <barButtonItem title="A-Tier" id="8ng-qY-gow"/>
+                        <barButtonItem title="B-Tier" id="viU-N6-Owv"/>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" id="7Hv-AN-OeZ"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kuW-Oe-wCB" userLabel="First Responder" sceneMemberID="firstResponder"/>
