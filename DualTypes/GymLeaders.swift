@@ -9,6 +9,9 @@
 import UIKit
 
 class GymLeaders: UICollectionViewController {
+    
+    var searchBar = UISearchBar()
+    
     var gymLeadersArray = Pokemon.gymLeaders()
     
     @IBAction func sortAlphabetically(sender: AnyObject) {
@@ -66,6 +69,15 @@ class GymLeaders: UICollectionViewController {
         }
     }
     
+    override func viewDidLoad() {
+        searchBar = UISearchBar()
+        searchBar.sizeToFit()
+        searchBar.showsCancelButton = true
+        searchBar.placeholder = "Pokemon name or type"
+        searchBar.delegate = self
+        navigationItem.titleView = searchBar
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let destination = segue.destinationViewController as? GymLeaderDetail,
             let cell = sender as? GymLeaderCell {
@@ -96,5 +108,33 @@ extension GymLeaders {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("GymLeaderCell", forIndexPath: indexPath) as! GymLeaderCell
         cell.pokemon = gymLeadersArray[indexPath.row]
         return cell
+    }
+}
+
+extension GymLeaders: UISearchBarDelegate {
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.isEmpty {
+            gymLeadersArray = Pokemon.gymLeaders()
+        } else {
+            gymLeadersArray = Pokemon.gymLeaders().filter { pokemon in
+                // filter by names
+                if pokemon.name.lowercaseString.containsString(searchText.lowercaseString) {
+                    return true
+                }
+                // filter by elements
+                let elementNames = pokemon.defense.map {
+                    $0.rawValue
+                    }.joinWithSeparator(" ")
+                if elementNames.lowercaseString.containsString(searchText.lowercaseString) {
+                    return true
+                }
+                // filter by number
+                if "\(pokemon.pokedex)".containsString(searchText) {
+                    return true
+                }
+                return false
+            }
+        }
+        reloadSectionZero()
     }
 }

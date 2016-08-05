@@ -84,12 +84,12 @@
                                 <action selector="sortByIndex:" destination="mp8-fV-bTH" id="D0E-vl-dZr"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="W3q-sU-iSP"/>
                         <barButtonItem title="Hybrid" id="QaX-IW-t4h">
                             <connections>
                                 <action selector="showOnlyDualTypes:" destination="mp8-fV-bTH" id="Zn0-MQ-8Wb"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="W3q-sU-iSP"/>
                         <barButtonItem title="S-Tier" id="rHD-sD-evB">
                             <connections>
                                 <action selector="showOnlySTier:" destination="mp8-fV-bTH" id="GwQ-S8-bwe"/>
