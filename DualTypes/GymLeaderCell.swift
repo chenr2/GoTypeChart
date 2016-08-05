@@ -12,10 +12,12 @@ class GymLeaderCell: UICollectionViewCell {
     
     @IBOutlet var pokemonName: UILabel!
     @IBOutlet weak var pokemonType: UILabel!
+    @IBOutlet weak var pokedexNumber: UILabel!
     
     var pokemon: Pokemon? = nil {
         didSet {
             if let pokemon = pokemon {
+                pokedexNumber?.text = "\(pokemon.pokedex)"
                 pokemonName?.text = pokemon.name
                 let elementArray = pokemon.defense.map {
                     return $0.rawValue
