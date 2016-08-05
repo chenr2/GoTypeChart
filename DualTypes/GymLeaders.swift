@@ -9,7 +9,15 @@
 import UIKit
 
 class GymLeaders: UICollectionViewController {
-    let gymLeadersArray = Pokemon.gymLeaders()
+    var gymLeadersArray = Pokemon.gymLeaders()
+    
+    @IBAction func sortAlphabetically(sender: AnyObject) {
+        gymLeadersArray = gymLeadersArray.sort { pokemonA, pokemonB in
+            return pokemonA.name.lowercaseString < pokemonB.name.lowercaseString
+        }
+        let sectionZero = NSIndexSet(index: 0)
+        collectionView?.reloadSections(sectionZero)
+    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let destination = segue.destinationViewController as? GymLeaderDetail,
