@@ -12,11 +12,16 @@ enum DamageType {
     case none, single, double, quadruple, half, quarter
 }
 
+enum Tier {
+    case S, A, B, F
+}
+
 class Pokemon {
     var name: String
     var defense: [ElementType]
     var vulnerabilitySet: [ElementType: DamageType]
     var pokedex: Int
+    var tier: Tier
     
     class func vulnerabilitySet(element: ElementType) -> [ElementType: DamageType] {
         var returnSet = Pokemon.identityVulnerabilitySet()
@@ -220,18 +225,18 @@ class Pokemon {
     }
     
     class func gymLeaders() -> [Pokemon] {
-        let vaporeon = Pokemon(pokedex: 134, name: "Vaporeon", defense: [.Water])
-        let flareon = Pokemon(pokedex: 136, name: "Flareon", defense: [.Fire])
-        let jolteon = Pokemon(pokedex: 135, name: "Jolteon", defense: [.Electric])
-        let lapras = Pokemon(pokedex: 131, name: "Lapras", defense: [.Ice, .Water])
-        let gyarados = Pokemon(pokedex: 130, name: "Gyarados", defense: [.Flying, .Water])
-        let snorlax = Pokemon(pokedex: 143, name: "Snorlax", defense: [.Normal])
-        let dragonite = Pokemon(pokedex: 149, name: "Dragonite", defense: [.Flying, .Dragon])
-        let golduck = Pokemon(pokedex: 55, name: "Golduck", defense: [.Water])
-        let exeggutor = Pokemon(pokedex: 103, name: "Exeggutor", defense: [.Psychic, .Grass])
-        let slowbro = Pokemon(pokedex: 80, name: "Slowbro", defense: [.Psychic, .Water])
-        let aerodactyl = Pokemon(pokedex: 142, name: "Aerodactyl", defense: [.Flying, .Rock])
-        let arcanine = Pokemon(pokedex: 59, name: "Arcanine", defense: [.Fire])
+        let vaporeon = Pokemon(pokedex: 134, name: "Vaporeon", defense: [.Water], tier: .S)
+        let flareon = Pokemon(pokedex: 136, name: "Flareon", defense: [.Fire], tier: .S)
+        let jolteon = Pokemon(pokedex: 135, name: "Jolteon", defense: [.Electric], tier: .A)
+        let lapras = Pokemon(pokedex: 131, name: "Lapras", defense: [.Ice, .Water], tier: .S)
+        let gyarados = Pokemon(pokedex: 130, name: "Gyarados", defense: [.Flying, .Water], tier: .A)
+        let snorlax = Pokemon(pokedex: 143, name: "Snorlax", defense: [.Normal], tier: .A)
+        let dragonite = Pokemon(pokedex: 149, name: "Dragonite", defense: [.Flying, .Dragon], tier: .S)
+        let golduck = Pokemon(pokedex: 55, name: "Golduck", defense: [.Water], tier: .A)
+        let exeggutor = Pokemon(pokedex: 103, name: "Exeggutor", defense: [.Psychic, .Grass], tier: .S)
+        let slowbro = Pokemon(pokedex: 80, name: "Slowbro", defense: [.Psychic, .Water], tier: .S)
+        let aerodactyl = Pokemon(pokedex: 142, name: "Aerodactyl", defense: [.Flying, .Rock], tier: .B)
+        let arcanine = Pokemon(pokedex: 59, name: "Arcanine", defense: [.Fire], tier: .S)
         
         return [
             vaporeon, flareon, jolteon,
@@ -241,10 +246,11 @@ class Pokemon {
         ]
     }
     
-    init(pokedex: Int, name: String, defense: [ElementType]){
+    init(pokedex: Int, name: String, defense: [ElementType], tier: Tier){
         self.pokedex = pokedex
         self.name = name
         self.defense = defense
+        self.tier = tier
         let vulnerabilitySets = defense.map {
             return Pokemon.vulnerabilitySet($0)
         }

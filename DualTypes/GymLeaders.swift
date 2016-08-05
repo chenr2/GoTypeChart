@@ -31,6 +31,30 @@ class GymLeaders: UICollectionViewController {
         reloadSectionZero()
     }
     
+    @IBAction func showOnlySTier(sender: AnyObject) {
+        gymLeadersArray = Pokemon.gymLeaders().filter {
+            $0.tier == Tier.S
+        }
+        sortExistingArrayByIndex()
+        reloadSectionZero()
+    }
+    
+    @IBAction func showOnlyATier(sender: AnyObject) {
+        gymLeadersArray = Pokemon.gymLeaders().filter {
+            $0.tier == Tier.A
+        }
+        sortExistingArrayByIndex()
+        reloadSectionZero()
+    }
+    
+    @IBAction func showOnlyBTier(sender: AnyObject) {
+        gymLeadersArray = Pokemon.gymLeaders().filter {
+            $0.tier == Tier.B
+        }
+        sortExistingArrayByIndex()
+        reloadSectionZero()
+    }
+    
     func reloadSectionZero(){
         let sectionZero = NSIndexSet(index: 0)
         collectionView?.reloadSections(sectionZero)
