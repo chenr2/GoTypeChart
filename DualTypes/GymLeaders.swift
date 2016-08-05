@@ -15,12 +15,23 @@ class GymLeaders: UICollectionViewController {
         gymLeadersArray = gymLeadersArray.sort { pokemonA, pokemonB in
             return pokemonA.name.lowercaseString < pokemonB.name.lowercaseString
         }
-        let sectionZero = NSIndexSet(index: 0)
-        collectionView?.reloadSections(sectionZero)
+        reloadSectionZero()
     }
     
     @IBAction func sortByIndex(sender: AnyObject) {
         sortExistingArrayByIndex()
+        reloadSectionZero()
+    }
+    
+    @IBAction func showOnlyDualTypes(sender: AnyObject) {
+        gymLeadersArray = Pokemon.gymLeaders().filter {
+            $0.defense.count > 1
+        }
+        sortExistingArrayByIndex()
+        reloadSectionZero()
+    }
+    
+    func reloadSectionZero(){
         let sectionZero = NSIndexSet(index: 0)
         collectionView?.reloadSections(sectionZero)
     }
