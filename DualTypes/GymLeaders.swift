@@ -71,6 +71,13 @@ class GymLeaders: UICollectionViewController {
         }
     }
     
+    func showTheBestMons(){
+        gymLeadersArray = Pokemon.gymLeaders().filter {
+            $0.tier == Tier.S || $0.tier == Tier.A
+        }
+        sortExistingArrayAlphabetically()
+    }
+    
     override func viewDidLoad() {
         searchBar = UISearchBar()
         searchBar.sizeToFit()
@@ -78,11 +85,7 @@ class GymLeaders: UICollectionViewController {
         searchBar.placeholder = "Pokemon name or type"
         searchBar.delegate = self
         navigationItem.titleView = searchBar
-        // show the best guys
-        gymLeadersArray = Pokemon.gymLeaders().filter {
-            $0.tier == Tier.S || $0.tier == Tier.A
-        }
-        sortExistingArrayAlphabetically()
+        showTheBestMons()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -121,7 +124,7 @@ extension GymLeaders {
 extension GymLeaders: UISearchBarDelegate {
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.isEmpty {
-            gymLeadersArray = Pokemon.gymLeaders()
+            showTheBestMons()
         } else {
             gymLeadersArray = Pokemon.gymLeaders().filter { pokemon in
                 // filter by names
