@@ -24,10 +24,8 @@ class GymLeaders: UICollectionViewController {
         reloadSectionZero()
     }
     
-    @IBAction func showOnlyDualTypes(sender: AnyObject) {
-        gymLeadersArray = Pokemon.gymLeaders().filter {
-            $0.defense.count > 1
-        }
+    @IBAction func showAllTypes(sender: AnyObject) {
+        gymLeadersArray = Pokemon.gymLeaders()
         sortExistingArrayByIndex()
         reloadSectionZero()
     }
