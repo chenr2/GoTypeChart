@@ -13,6 +13,7 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="H3b-rr-yW6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="kNH-1d-X6T">
                             <size key="itemSize" width="107" height="101"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -27,20 +28,20 @@
                                     <rect key="frame" x="0.0" y="0.0" width="107" height="101"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vsV-nY-tpR">
-                                            <rect key="frame" x="53" y="8" width="0.0" height="0.0"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vsV-nY-tpR">
+                                            <rect key="frame" x="53" y="50.5" width="0.0" height="0.0"/>
                                             <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="26"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="eI8-Qe-zrT">
-                                            <rect key="frame" x="8" y="13" width="91" height="0.0"/>
+                                            <rect key="frame" x="8" y="50.5" width="91" height="0.0"/>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="m90-2o-x9L">
-                                            <rect key="frame" x="8" y="16" width="91" height="0.0"/>
+                                            <rect key="frame" x="8" y="53.5" width="91" height="0.0"/>
                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -48,15 +49,15 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
-                                <color key="backgroundColor" red="0.27058823529999998" green="0.76862745099999996" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.19215686274509802" green="0.30980392156862746" blue="0.63529411764705879" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="m90-2o-x9L" firstAttribute="leading" secondItem="BFd-Js-7u0" secondAttribute="leadingMargin" id="1yN-Hx-PcK"/>
-                                    <constraint firstAttribute="topMargin" secondItem="vsV-nY-tpR" secondAttribute="top" id="58a-vc-Z8N"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="eI8-Qe-zrT" secondAttribute="trailing" id="Dr6-Q0-hrI"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="m90-2o-x9L" secondAttribute="trailing" id="J8c-m1-5op"/>
                                     <constraint firstItem="vsV-nY-tpR" firstAttribute="centerX" secondItem="BFd-Js-7u0" secondAttribute="centerX" id="Luz-Rf-Dey"/>
-                                    <constraint firstItem="eI8-Qe-zrT" firstAttribute="top" secondItem="vsV-nY-tpR" secondAttribute="bottom" constant="5" id="UDF-dy-vGa"/>
+                                    <constraint firstItem="eI8-Qe-zrT" firstAttribute="top" secondItem="vsV-nY-tpR" secondAttribute="bottom" id="UDF-dy-vGa"/>
                                     <constraint firstItem="eI8-Qe-zrT" firstAttribute="leading" secondItem="BFd-Js-7u0" secondAttribute="leadingMargin" id="Zzb-Js-HpL"/>
+                                    <constraint firstItem="eI8-Qe-zrT" firstAttribute="centerY" secondItem="BFd-Js-7u0" secondAttribute="centerY" id="j15-Rn-RQU"/>
                                     <constraint firstItem="m90-2o-x9L" firstAttribute="top" secondItem="eI8-Qe-zrT" secondAttribute="bottom" constant="3" id="m4f-wc-1dS"/>
                                 </constraints>
                                 <connections>
@@ -75,7 +76,7 @@
                     <toolbarItems>
                         <barButtonItem title="AZ" id="GeG-55-Dz3"/>
                         <barButtonItem title="Index" id="cj7-0M-Due"/>
-                        <barButtonItem title="Dual" id="QaX-IW-t4h"/>
+                        <barButtonItem title="Hybrid" id="QaX-IW-t4h"/>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="W3q-sU-iSP"/>
                         <barButtonItem title="S-Tier" id="rHD-sD-evB"/>
                         <barButtonItem title="A-Tier" id="8ng-qY-gow"/>
@@ -164,4 +165,5 @@
             <point key="canvasLocation" x="392" y="-2273"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.19215686274509802" green="0.30980392156862746" blue="0.63529411764705879" alpha="1" colorSpace="calibratedRGB"/>
 </document>
