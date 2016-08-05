@@ -27,6 +27,13 @@ class Pokemon {
             returnSet[.Grass] = .double
             returnSet[.Electric] = .double
             returnSet[.Ice] = .half
+        case .Ice:
+            returnSet[.Fight] = .double
+            returnSet[.Rock] = .double
+            returnSet[.Steel] = .double
+            returnSet[.Fire] = .double
+            returnSet[.Ice] = .half
+
         default:
             break
         }
