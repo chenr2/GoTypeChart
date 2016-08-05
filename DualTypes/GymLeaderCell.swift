@@ -11,11 +11,16 @@ import UIKit
 class GymLeaderCell: UICollectionViewCell {
     
     @IBOutlet var pokemonName: UILabel!
+    @IBOutlet weak var pokemonType: UILabel!
     
     var pokemon: Pokemon? = nil {
         didSet {
             if let pokemon = pokemon {
-                pokemonName?.text = pokemon.name                
+                pokemonName?.text = pokemon.name
+                let elementArray = pokemon.defense.map {
+                    return $0.rawValue
+                }
+                pokemonType?.text = elementArray.joinWithSeparator(" / ")
             }
         }
     }
