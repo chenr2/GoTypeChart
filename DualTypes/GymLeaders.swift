@@ -25,6 +25,10 @@ class GymLeaders: UICollectionViewController {
         let eachSide = widthMinusPadding / cellsPerRow
         return CGSize(width: eachSide, height:eachSide)
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        navigationController?.setToolbarHidden(false, animated: true)
+    }
 }
 
 extension GymLeaders {
