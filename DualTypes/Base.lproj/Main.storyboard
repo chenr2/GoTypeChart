@@ -79,7 +79,11 @@
                                 <action selector="sortAlphabetically:" destination="mp8-fV-bTH" id="nN8-gr-WlE"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem title="Index" id="cj7-0M-Due"/>
+                        <barButtonItem title="Index" id="cj7-0M-Due">
+                            <connections>
+                                <action selector="sortByIndex:" destination="mp8-fV-bTH" id="D0E-vl-dZr"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem title="Hybrid" id="QaX-IW-t4h"/>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="W3q-sU-iSP"/>
                         <barButtonItem title="S-Tier" id="rHD-sD-evB"/>

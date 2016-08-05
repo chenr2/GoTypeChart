@@ -19,6 +19,18 @@ class GymLeaders: UICollectionViewController {
         collectionView?.reloadSections(sectionZero)
     }
     
+    @IBAction func sortByIndex(sender: AnyObject) {
+        sortExistingArrayByIndex()
+        let sectionZero = NSIndexSet(index: 0)
+        collectionView?.reloadSections(sectionZero)
+    }
+    
+    func sortExistingArrayByIndex(){
+        gymLeadersArray = gymLeadersArray.sort { pokemonA, pokemonB in
+            return pokemonA.pokedex < pokemonB.pokedex
+        }
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let destination = segue.destinationViewController as? GymLeaderDetail,
             let cell = sender as? GymLeaderCell {
