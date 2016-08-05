@@ -9,7 +9,7 @@
 import Foundation
 
 enum DamageType {
-    case none, single, double, quadruple, half, quarter
+    case single, double, half
 }
 
 enum Tier {
@@ -28,7 +28,7 @@ class Pokemon {
         switch element {
         case .Normal:
             returnSet[.Fight] = .double
-            returnSet[.Ghost] = .none
+            returnSet[.Ghost] = .half
         case .Fight:
             returnSet[.Flying] = .double
             returnSet[.Rock] = .half
@@ -38,7 +38,7 @@ class Pokemon {
             returnSet[.Fairy] = .double
         case .Flying:
             returnSet[.Fight] = .half
-            returnSet[.Ground] = .none
+            returnSet[.Ground] = .half
             returnSet[.Rock] = .double
             returnSet[.Bug] = .half
             returnSet[.Grass] = .half
@@ -57,7 +57,7 @@ class Pokemon {
             returnSet[.Rock] = .half
             returnSet[.Water] = .double
             returnSet[.Grass] = .double
-            returnSet[.Electric] = .none
+            returnSet[.Electric] = .half
             returnSet[.Ice] = .double
         case .Rock:
             returnSet[.Normal] = .half
@@ -77,8 +77,8 @@ class Pokemon {
             returnSet[.Fire] = .double
             returnSet[.Grass] = .half
         case .Ghost:
-            returnSet[.Normal] = .none
-            returnSet[.Fight] = .none
+            returnSet[.Normal] = .half
+            returnSet[.Fight] = .half
             returnSet[.Poison] = .half
             returnSet[.Bug] = .half
             returnSet[.Ghost] = .double
@@ -87,7 +87,7 @@ class Pokemon {
             returnSet[.Normal] = .half
             returnSet[.Fight] = .double
             returnSet[.Flying] = .half
-            returnSet[.Poison] = .none
+            returnSet[.Poison] = .half
             returnSet[.Ground] = .double
             returnSet[.Rock] = .half
             returnSet[.Bug] = .half
@@ -155,7 +155,7 @@ class Pokemon {
             returnSet[.Poison] = .double
             returnSet[.Bug] = .half
             returnSet[.Steel] = .double
-            returnSet[.Dragon] = .none
+            returnSet[.Dragon] = .half
             returnSet[.Dark] = .half
         default:
             break
@@ -189,27 +189,21 @@ class Pokemon {
     class func multiplyDamageTypes(a:DamageType?, b:DamageType?) -> DamageType {
         guard let a = a else { return b! }
         guard let b = b else { return a }
-        // multiply by zero
-        if a == .none || b == .none {
-            return .none
-        }
+
+        // multiply by one
         if a == .single {
             return b
         }
-        // multiply by one
         if b == .single {
             return a
         }
         // multiply halves or double
         switch (a, b) {
-        case (.half, .double), (.double, .half):
-            return .single
         case (.half, .half):
-            return .quarter
+            return .half
         case (.double, .double):
-            return .quadruple
+            return .double
         default:
-            print("This should not happen")
             return .single
         }
     }
