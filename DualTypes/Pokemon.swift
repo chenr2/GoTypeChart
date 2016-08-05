@@ -223,8 +223,13 @@ class Pokemon {
         let ivysaur = Pokemon(pokedex: 2, name: "Ivysaur", defense: [.Grass, .Poison], tier: .B)
         let venasaur = Pokemon(pokedex: 3, name: "Venasaur", defense: [.Grass, .Poison], tier: .B)
         let charmander = Pokemon(pokedex: 4, name: "Charmander", defense: [.Fire], tier: .F)
-        //        let foo = Pokemon(pokedex: 0, name: "", defense: [], tier: .F)
-        //        let foo = Pokemon(pokedex: 0, name: "", defense: [], tier: .F)
+        let charmeleon = Pokemon(pokedex: 5, name: "Charmeleon", defense: [.Fire], tier: .B)
+        let charizard = Pokemon(pokedex: 6, name: "Charizard", defense: [.Fire, .Flying], tier: .S)
+        let squirtle = Pokemon(pokedex: 7, name: "Squirtle", defense: [.Water], tier: .F)
+        let wartortle = Pokemon(pokedex: 8, name: "Wartortle", defense: [.Water], tier: .B)
+        let blastoise = Pokemon(pokedex: 9, name: "Blastoise", defense: [.Water], tier: .A)
+        let caterpie = Pokemon(pokedex: 10, name: "Caterpie", defense: [.Bug], tier: .F)
+//        let foo = Pokemon(pokedex: 0, name: "", defense: [], tier: .F)
         let golduck = Pokemon(pokedex: 55, name: "Golduck", defense: [.Water], tier: .A)
         let arcanine = Pokemon(pokedex: 59, name: "Arcanine", defense: [.Fire], tier: .S)
         let slowbro = Pokemon(pokedex: 80, name: "Slowbro", defense: [.Psychic, .Water], tier: .S)
@@ -240,7 +245,9 @@ class Pokemon {
         
         return [
             bulbasaur, ivysaur, venasaur,
-            charmander,
+            charmander, charmeleon, charizard,
+            squirtle, wartortle, blastoise,
+            caterpie,
             vaporeon, flareon, jolteon,
             lapras, dragonite, gyarados,
             snorlax, golduck, exeggutor,
