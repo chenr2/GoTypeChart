@@ -23,6 +23,9 @@ class GymLeaderDetailHeader: UICollectionViewCell {
     
     override func layoutSubviews() {
         circularView.layer.cornerRadius = bounds.size.width / 2
+        if let singleElement = defense.first where defense.count == 1 {
+            circularView.backgroundColor = Colors.colorForElement(singleElement)
+        }
         let elementString = defense.map {
             return $0.rawValue
         }.joinWithSeparator(" / ")
