@@ -150,4 +150,8 @@ extension GymLeaders: UISearchBarDelegate {
         }
         reloadSectionZero()
     }
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
 }
