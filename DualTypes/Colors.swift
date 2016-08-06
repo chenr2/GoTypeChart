@@ -16,7 +16,7 @@ struct Colors {
     static let ground = UIColor(colorLiteralRed: 0.545, green: 0.341, blue: 0.165, alpha: 1)
     static let rock = UIColor(colorLiteralRed: 0.475, green: 0.400, blue: 0.373, alpha: 1)
     static let bug = UIColor(colorLiteralRed: 0.400, green: 0.435, blue: 0.239, alpha: 1)
-    static let ghost = UIColor(colorLiteralRed: 0.847, green: 0.827, blue: 0.867, alpha: 1)
+    static let ghost = UIColor(colorLiteralRed: 0.353, green: 0.329, blue: 0.525, alpha: 1)
     static let steel = UIColor(colorLiteralRed: 0.627, green: 0.667, blue: 0.725, alpha: 1)
     static let fire = UIColor(colorLiteralRed: 0.816, green: 0.008, blue: 0.106, alpha: 1)
     static let water = UIColor(colorLiteralRed: 0.286, green: 0.675, blue: 0.804, alpha: 1)
