@@ -25,6 +25,13 @@ class GymLeaderDetailHeader: UICollectionViewCell {
         circularView.layer.cornerRadius = bounds.size.width / 2
         if let singleElement = defense.first where defense.count == 1 {
             circularView.backgroundColor = Colors.colorForElement(singleElement)
+        } else if let firstElement = defense.first,
+            let lastElement = defense.last
+            where defense.count == 2 {
+            UIView.animateWithDuration(3, delay: 0.0, options:[UIViewAnimationOptions.Repeat, UIViewAnimationOptions.Autoreverse], animations: {
+                self.circularView.backgroundColor = Colors.colorForElement(firstElement)
+                self.circularView.backgroundColor = Colors.colorForElement(lastElement)
+                }, completion: nil)
         }
         let elementString = defense.map {
             return $0.rawValue

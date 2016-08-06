@@ -101,7 +101,7 @@ extension GymLeaderDetail: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        let cellPadding:CGFloat = 5
+        let cellPadding:CGFloat = 10
         let cellsPerRow:CGFloat = 3
         let widthMinusPadding = collectionView.bounds.width - (cellPadding + cellPadding * cellsPerRow)
         let eachSide = widthMinusPadding / cellsPerRow
