@@ -27,6 +27,7 @@
 		FCA742A41D5360EF003DAC35 /* GymLeaderDetailHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA742A31D5360EF003DAC35 /* GymLeaderDetailHeader.swift */; };
 		FCA742A61D536115003DAC35 /* GymLeaderDetailTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA742A51D536115003DAC35 /* GymLeaderDetailTypeCell.swift */; };
 		FCA742A81D536192003DAC35 /* ElementType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA742A71D536192003DAC35 /* ElementType.swift */; };
+		FCB17E0B1D556A3E00F0CCBB /* GymLeaderDetailSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB17E0A1D556A3E00F0CCBB /* GymLeaderDetailSectionHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,7 @@
 		FCA742A31D5360EF003DAC35 /* GymLeaderDetailHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GymLeaderDetailHeader.swift; sourceTree = "<group>"; };
 		FCA742A51D536115003DAC35 /* GymLeaderDetailTypeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GymLeaderDetailTypeCell.swift; sourceTree = "<group>"; };
 		FCA742A71D536192003DAC35 /* ElementType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElementType.swift; sourceTree = "<group>"; };
+		FCB17E0A1D556A3E00F0CCBB /* GymLeaderDetailSectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GymLeaderDetailSectionHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +193,7 @@
 				FCA742A01D535EE0003DAC35 /* GymLeaderDetail.swift */,
 				FCA742A31D5360EF003DAC35 /* GymLeaderDetailHeader.swift */,
 				FCA742A51D536115003DAC35 /* GymLeaderDetailTypeCell.swift */,
+				FCB17E0A1D556A3E00F0CCBB /* GymLeaderDetailSectionHeader.swift */,
 			);
 			name = GymLeaderTab;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCA7429D1D52E86D003DAC35 /* Pokemon.swift in Sources */,
+				FCB17E0B1D556A3E00F0CCBB /* GymLeaderDetailSectionHeader.swift in Sources */,
 				FCA742981D52E7D5003DAC35 /* TypeCalculator.swift in Sources */,
 				FCA742961D52E732003DAC35 /* GymLeaders.swift in Sources */,
 				FCA7429A1D52E81D003DAC35 /* Hexagon.swift in Sources */,

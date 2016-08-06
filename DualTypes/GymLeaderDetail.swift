@@ -74,19 +74,43 @@ extension GymLeaderDetail {
         return detailTypeCell
     }
     
+    override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+        let cell = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: "GymLeaderDetailSectionHeader", forIndexPath: indexPath) as! GymLeaderDetailSectionHeader
+        switch indexPath.section {
+        case 1:
+            cell.sectionHeaderText = "Super effective against \(pokemon!.name)"
+        case 2:
+            cell.sectionHeaderText = "Not very effective against \(pokemon!.name)"
+        default:
+            break
+        }        
+        return cell
+    }
+    
 }
 
-extension GymLeaderDetail {
+extension GymLeaderDetail: UICollectionViewDelegateFlowLayout {
     
-//    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        switch section {
-//        case 1:
-//            return "Super effective against \(pokemon!.name)"
-//        case 2:
-//            return "Not very effective against \(pokemon!.name)"
-//        default:
-//            return ""
-//        }
-//    }
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        switch section {
+        case 0:
+            return CGSizeZero
+        default:
+            return CGSize(width: 0, height: 50)            
+        }
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        let cellPadding:CGFloat = 5
+        let cellsPerRow:CGFloat = 3
+        let widthMinusPadding = collectionView.bounds.width - (cellPadding + cellPadding * cellsPerRow)
+        let eachSide = widthMinusPadding / cellsPerRow
+        switch indexPath.section {
+        case 0:
+            return CGSize(width: eachSide, height:eachSide + 30)
+        default:
+            return CGSize(width: eachSide, height:eachSide)
+        }
+    }
 
 }

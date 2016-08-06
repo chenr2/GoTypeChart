@@ -15,7 +15,14 @@ class GymLeaderDetailHeader: UICollectionViewCell {
     @IBOutlet weak var circularView: UIView!
     @IBOutlet weak var elementName: UILabel!
     
+    // prevents a lot of constraint conflicts
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        contentView.autoresizingMask = [.FlexibleHeight, .FlexibleWidth]
+    }
+    
     override func layoutSubviews() {
+        circularView.layer.cornerRadius = bounds.size.width / 2
         let elementString = defense.map {
             return $0.rawValue
         }.joinWithSeparator(" / ")
