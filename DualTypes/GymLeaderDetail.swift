@@ -67,12 +67,13 @@ extension GymLeaderDetail {
         switch indexPath.section {
         case 0:
             let cell = tableView.dequeueReusableCellWithIdentifier("GymLeaderDetailHeader") as! GymLeaderDetailHeader
+            cell.textLabel?.text = "Type"
             let elementArray = pokemon?.defense.map {
                 return $0.rawValue
             }
             let elementString = elementArray?.joinWithSeparator(" / ")
             if let elementString = elementString {
-                cell.textLabel?.text = "Type:  \(elementString)"
+                cell.detailTextLabel?.text = elementString
             }
             return cell
         case 1:

@@ -107,6 +107,10 @@ class GymLeaders: UICollectionViewController {
         navigationController?.hidesBarsOnSwipe = true
         navigationController?.setToolbarHidden(false, animated: true)
     }
+    
+    override func viewWillDisappear(animated: Bool) {
+        navigationController?.setToolbarHidden(true, animated: true)
+    }
 }
 
 extension GymLeaders {
