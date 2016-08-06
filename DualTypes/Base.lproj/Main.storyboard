@@ -198,7 +198,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" red="1" green="0.0" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" red="0.19215686274509802" green="0.30980392156862746" blue="0.63529411764705879" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="1KI-AU-0rv" secondAttribute="height" multiplier="1:1" id="0N9-Yb-C2K"/>
                                                 <constraint firstItem="sv9-LM-5u3" firstAttribute="centerY" secondItem="1KI-AU-0rv" secondAttribute="centerY" id="5Ca-zP-kGb"/>
@@ -236,22 +236,33 @@
                                     <rect key="frame" x="0.0" y="0.0" width="101" height="97"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qVY-6j-hYM">
-                                            <rect key="frame" x="0.0" y="8" width="101" height="81"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qVY-6j-hYM">
+                                            <rect key="frame" x="0.0" y="0.0" width="101" height="97"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1U-Yb-PXE">
-                                                    <rect key="frame" x="29" y="30" width="42" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1U-Yb-PXE">
+                                                    <rect key="frame" x="29" y="38" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" red="0.19215686274509802" green="0.30980392156862746" blue="0.63529411764705879" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="N1U-Yb-PXE" firstAttribute="centerY" secondItem="qVY-6j-hYM" secondAttribute="centerY" id="2cB-zy-FrB"/>
+                                                <constraint firstItem="N1U-Yb-PXE" firstAttribute="centerX" secondItem="qVY-6j-hYM" secondAttribute="centerX" id="Hzy-do-huX"/>
+                                            </constraints>
                                         </view>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="qVY-6j-hYM" firstAttribute="top" secondItem="0cS-HD-xdR" secondAttribute="top" id="B8y-Jf-Mgn"/>
+                                    <constraint firstAttribute="trailing" secondItem="qVY-6j-hYM" secondAttribute="trailing" id="E9Z-oM-Qtn"/>
+                                    <constraint firstAttribute="bottom" secondItem="qVY-6j-hYM" secondAttribute="bottom" id="Oox-2O-83u"/>
+                                    <constraint firstItem="qVY-6j-hYM" firstAttribute="leading" secondItem="0cS-HD-xdR" secondAttribute="leading" id="pwG-rC-0UT"/>
+                                </constraints>
                                 <connections>
+                                    <outlet property="circularView" destination="qVY-6j-hYM" id="jvq-6e-zEV"/>
                                     <outlet property="elementType" destination="N1U-Yb-PXE" id="DdD-OI-LEU"/>
                                 </connections>
                             </collectionViewCell>

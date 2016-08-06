@@ -78,9 +78,9 @@ extension GymLeaderDetail {
         let cell = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: "GymLeaderDetailSectionHeader", forIndexPath: indexPath) as! GymLeaderDetailSectionHeader
         switch indexPath.section {
         case 1:
-            cell.sectionHeaderText = "Super effective against \(pokemon!.name)"
+            cell.sectionHeaderText = "Super effective against \(pokemon!.name):"
         case 2:
-            cell.sectionHeaderText = "Not very effective against \(pokemon!.name)"
+            cell.sectionHeaderText = "Not very effective against \(pokemon!.name):"
         default:
             break
         }        
