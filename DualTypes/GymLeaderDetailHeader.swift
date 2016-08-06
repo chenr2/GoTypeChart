@@ -8,6 +8,18 @@
 
 import UIKit
 
-class GymLeaderDetailHeader: UITableViewCell {
+class GymLeaderDetailHeader: UICollectionViewCell {
 
+    var defense: [ElementType] = []
+    
+    @IBOutlet weak var circularView: UIView!
+    @IBOutlet weak var elementName: UILabel!
+    
+    override func layoutSubviews() {
+        let elementString = defense.map {
+            return $0.rawValue
+        }.joinWithSeparator(" / ")
+        elementName?.text = elementString
+    }
+    
 }

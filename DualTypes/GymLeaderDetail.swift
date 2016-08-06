@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GymLeaderDetail: UITableViewController {
+class GymLeaderDetail: UICollectionViewController {
     
     var pokemon: Pokemon? = nil {
         didSet {
@@ -40,11 +40,11 @@ class GymLeaderDetail: UITableViewController {
 
 extension GymLeaderDetail {
     
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 3
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
         case 0:
             return 1
@@ -57,45 +57,36 @@ extension GymLeaderDetail {
         }
     }
     
-}
-
-extension GymLeaderDetail {
-
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-
-        let detailTypeCell = tableView.dequeueReusableCellWithIdentifier("GymLeaderDetailTypeCell") as! GymLeaderDetailTypeCell
+    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let detailTypeCell = collectionView.dequeueReusableCellWithReuseIdentifier("GymLeaderDetailTypeCell", forIndexPath: indexPath) as! GymLeaderDetailTypeCell
         switch indexPath.section {
         case 0:
-            let cell = tableView.dequeueReusableCellWithIdentifier("GymLeaderDetailHeader") as! GymLeaderDetailHeader
-            cell.textLabel?.text = "Type"
-            let elementArray = pokemon?.defense.map {
-                return $0.rawValue
-            }
-            let elementString = elementArray?.joinWithSeparator(" / ")
-            if let elementString = elementString {
-                cell.detailTextLabel?.text = elementString
-            }
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("GymLeaderDetailHeader", forIndexPath: indexPath) as! GymLeaderDetailHeader
+            cell.defense = pokemon!.defense            
             return cell
         case 1:
-            detailTypeCell.textLabel?.text = double[indexPath.row].rawValue
+            detailTypeCell.element = double[indexPath.row]
         case 2:
-            detailTypeCell.textLabel?.text = half[indexPath.row].rawValue
+            detailTypeCell.element = half[indexPath.row]
         default:
             break
         }
         return detailTypeCell
-
     }
     
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        switch section {
-        case 1:
-            return "Super effective against \(pokemon!.name)"
-        case 2:
-            return "Not very effective against \(pokemon!.name)"
-        default:
-            return ""
-        }
-    }
+}
+
+extension GymLeaderDetail {
+    
+//    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        switch section {
+//        case 1:
+//            return "Super effective against \(pokemon!.name)"
+//        case 2:
+//            return "Not very effective against \(pokemon!.name)"
+//        default:
+//            return ""
+//        }
+//    }
 
 }

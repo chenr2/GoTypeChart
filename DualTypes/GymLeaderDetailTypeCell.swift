@@ -8,7 +8,15 @@
 
 import UIKit
 
-class GymLeaderDetailTypeCell: UITableViewCell {
+class GymLeaderDetailTypeCell: UICollectionViewCell {
 
+    var element: ElementType? = nil 
 
+    @IBOutlet weak var elementType: UILabel!
+    
+    override func layoutSubviews() {
+        if let element = element {
+            elementType?.text = element.rawValue
+        }
+    }
 }
