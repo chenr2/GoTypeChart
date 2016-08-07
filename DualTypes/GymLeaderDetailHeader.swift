@@ -28,7 +28,7 @@ class GymLeaderDetailHeader: UICollectionViewCell {
         } else if let firstElement = defense.first,
             let lastElement = defense.last
             where defense.count == 2 {
-            UIView.animateWithDuration(3, delay: 0.0, options:[UIViewAnimationOptions.Repeat, UIViewAnimationOptions.Autoreverse], animations: {
+            UIView.animateWithDuration(2, delay: 0.0, options:[UIViewAnimationOptions.Repeat, UIViewAnimationOptions.Autoreverse], animations: {
                 self.circularView.backgroundColor = Colors.colorForElement(firstElement)
                 self.circularView.backgroundColor = Colors.colorForElement(lastElement)
                 }, completion: nil)

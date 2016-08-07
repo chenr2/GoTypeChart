@@ -71,8 +71,27 @@ class Pokemon {
         case 2:
             guard let firstElement = type.first,
                 let secondElement = type.last else { return [] }
-
-            return []
+            switch (firstElement, secondElement) {
+            case (.Psychic, .Grass), (.Grass, .Psychic): // exegguctor
+                return [.Bug]
+            case (.Dragon, .Flying), (.Flying, .Dragon): // dragonite
+                return [.Ice]
+            case (.Fire, .Flying), (.Flying, .Fire): // charizard
+                return [.Rock]
+            case (.Psychic, .Water), (.Water, .Psychic): // showbro
+                return [] // that's why psychic is good
+            case (.Ice, .Water), (.Water, .Ice): // lapras
+                return [] // that's why lapras is good
+            case (.Grass, .Poison), (.Poison, .Grass): // venasaur, victreebel
+                return [] // nothing really stands out among the super effectives
+            case (.Water, .Fight), (.Fight, .Water): // poliwrath
+                return [] // nothing really stands out among the super effectives
+            case (.Ground, .Poison), (.Poison, .Ground): // nidoking, nidoqueen
+                return [] // nothing really stands out among the super effectives
+                
+            default:
+                return []
+            }
         default:
             break
         }
@@ -277,7 +296,7 @@ class Pokemon {
     class func gymLeaders() -> [Pokemon] {
         let bulbasaur = Pokemon(pokedex: 1, name: "Bulbasaur", defense: [.Grass, .Poison], tier: .F)
         let ivysaur = Pokemon(pokedex: 2, name: "Ivysaur", defense: [.Grass, .Poison], tier: .B)
-        let venasaur = Pokemon(pokedex: 3, name: "Venasaur", defense: [.Grass, .Poison], tier: .B)
+        let venasaur = Pokemon(pokedex: 3, name: "Venasaur", defense: [.Grass, .Poison], tier: .S)
         let charmander = Pokemon(pokedex: 4, name: "Charmander", defense: [.Fire], tier: .F)
         let charmeleon = Pokemon(pokedex: 5, name: "Charmeleon", defense: [.Fire], tier: .B)
         let charizard = Pokemon(pokedex: 6, name: "Charizard", defense: [.Fire, .Flying], tier: .S)
@@ -285,10 +304,16 @@ class Pokemon {
         let wartortle = Pokemon(pokedex: 8, name: "Wartortle", defense: [.Water], tier: .B)
         let blastoise = Pokemon(pokedex: 9, name: "Blastoise", defense: [.Water], tier: .A)
         let caterpie = Pokemon(pokedex: 10, name: "Caterpie", defense: [.Bug], tier: .F)
-//        let foo = Pokemon(pokedex: 0, name: "", defense: [], tier: .F)
+        let nidoking = Pokemon(pokedex: 34, name: "Nidoking", defense: [.Ground, .Poison], tier: .S)
+        let nidoqueen = Pokemon(pokedex: 31, name: "Nidoqueen", defense: [.Ground, .Poison], tier: .S)
+        //        let foo = Pokemon(pokedex: 0, name: "", defense: [], tier: .F)
         let golduck = Pokemon(pokedex: 55, name: "Golduck", defense: [.Water], tier: .A)
         let arcanine = Pokemon(pokedex: 59, name: "Arcanine", defense: [.Fire], tier: .S)
+        let poliwrath = Pokemon(pokedex: 62, name: "Poliwrath", defense: [.Fight, .Water], tier: .S)
+        let machamp = Pokemon(pokedex: 68, name: "Machamp", defense: [.Fight], tier: .S)
+        let victreebel = Pokemon(pokedex: 71, name: "Victreebel", defense: [.Grass, .Poison], tier: .S)
         let slowbro = Pokemon(pokedex: 80, name: "Slowbro", defense: [.Psychic, .Water], tier: .S)
+        let muk = Pokemon(pokedex: 89, name: "Muk", defense: [.Poison], tier: .S)
         let exeggutor = Pokemon(pokedex: 103, name: "Exeggutor", defense: [.Psychic, .Grass], tier: .S)
         let gyarados = Pokemon(pokedex: 130, name: "Gyarados", defense: [.Flying, .Water], tier: .A)
         let lapras = Pokemon(pokedex: 131, name: "Lapras", defense: [.Ice, .Water], tier: .S)
@@ -307,7 +332,9 @@ class Pokemon {
             vaporeon, flareon, jolteon,
             lapras, dragonite, gyarados,
             snorlax, golduck, exeggutor,
-            slowbro, aerodactyl, arcanine
+            slowbro, aerodactyl, arcanine,
+            muk, machamp, victreebel,
+            poliwrath, nidoking, nidoqueen
         ]
     }
     
