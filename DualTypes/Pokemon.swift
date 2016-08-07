@@ -78,7 +78,7 @@ class Pokemon {
                 return [.Ice]
             case (.Fire, .Flying), (.Flying, .Fire): // charizard
                 return [.Rock]
-            case (.Psychic, .Water), (.Water, .Psychic): // showbro
+            case (.Psychic, .Water), (.Water, .Psychic): // showbro, starmie
                 return [] // that's why psychic is good
             case (.Ice, .Water), (.Water, .Ice): // lapras
                 return [] // that's why lapras is good
@@ -88,7 +88,14 @@ class Pokemon {
                 return [] // nothing really stands out among the super effectives
             case (.Ground, .Poison), (.Poison, .Ground): // nidoking, nidoqueen
                 return [] // nothing really stands out among the super effectives
-                
+            case (.Ground, .Rock), (.Rock, .Ground): // golem, rhydon
+                return [.Water, .Grass] // two!
+            case (.Rock, .Water), (.Water, .Rock): // omastar
+                return [.Electric] // 4x
+            case (.Normal, .Fairy), (.Fairy, .Normal):
+                return [] // both poison and steel are fine, but one is not better than the other
+            case (.Water, .Poison), (.Poison, .Water): // tentacruel
+                return [.Electric, .Psychic]
             default:
                 return []
             }
@@ -307,21 +314,33 @@ class Pokemon {
         let nidoking = Pokemon(pokedex: 34, name: "Nidoking", defense: [.Ground, .Poison], tier: .S)
         let nidoqueen = Pokemon(pokedex: 31, name: "Nidoqueen", defense: [.Ground, .Poison], tier: .S)
         let clefable = Pokemon(pokedex: 36, name: "Clefable", defense: [.Fairy], tier: .A)
+        let ninetales = Pokemon(pokedex: 38, name: "Ninetales", defense: [.Fire], tier: .A)
+        let wigglytuff = Pokemon(pokedex: 40, name: "Wigglytuff", defense: [.Normal, .Fairy], tier: .A)
         let vileplume = Pokemon(pokedex: 45, name: "Vileplume", defense: [.Grass, .Poison], tier: .S)
+
+
         //        let foo = Pokemon(pokedex: 0, name: "", defense: [], tier: .A)
+        let tentacruel = Pokemon(pokedex: 73, name: "Tentacruel", defense: [.Water, .Poison], tier: .A)
         let golduck = Pokemon(pokedex: 55, name: "Golduck", defense: [.Water], tier: .A)
         let arcanine = Pokemon(pokedex: 59, name: "Arcanine", defense: [.Fire], tier: .S)
         let poliwrath = Pokemon(pokedex: 62, name: "Poliwrath", defense: [.Fight, .Water], tier: .S)
         let machamp = Pokemon(pokedex: 68, name: "Machamp", defense: [.Fight], tier: .S)
         let victreebel = Pokemon(pokedex: 71, name: "Victreebel", defense: [.Grass, .Poison], tier: .S)
+        let golem = Pokemon(pokedex: 76, name: "Golem", defense: [.Ground, .Rock], tier: .A)
+        let rapidash = Pokemon(pokedex: 78, name: "Rapidash", defense: [.Fire], tier: .A)
         let slowbro = Pokemon(pokedex: 80, name: "Slowbro", defense: [.Psychic, .Water], tier: .S)
         let muk = Pokemon(pokedex: 89, name: "Muk", defense: [.Poison], tier: .S)
         let exeggutor = Pokemon(pokedex: 103, name: "Exeggutor", defense: [.Psychic, .Grass], tier: .S)
+        let weezing = Pokemon(pokedex: 110, name: "Weezing", defense: [.Poison], tier: .A)
+        let rhydon = Pokemon(pokedex: 112, name: "Rhydon", defense: [.Ground, .Rock], tier: .A)
+        let starmie = Pokemon(pokedex: 121, name: "Starmie", defense: [.Water, .Psychic], tier: .A)
+        let magmar = Pokemon(pokedex: 126, name: "Magmar", defense: [.Fire], tier: .A)
         let gyarados = Pokemon(pokedex: 130, name: "Gyarados", defense: [.Flying, .Water], tier: .A)
         let lapras = Pokemon(pokedex: 131, name: "Lapras", defense: [.Ice, .Water], tier: .S)
         let vaporeon = Pokemon(pokedex: 134, name: "Vaporeon", defense: [.Water], tier: .S)
         let jolteon = Pokemon(pokedex: 135, name: "Jolteon", defense: [.Electric], tier: .A)
         let flareon = Pokemon(pokedex: 136, name: "Flareon", defense: [.Fire], tier: .S)
+        let omastar = Pokemon(pokedex: 139, name: "Omastar", defense: [.Rock, .Water], tier: .A)
         let aerodactyl = Pokemon(pokedex: 142, name: "Aerodactyl", defense: [.Flying, .Rock], tier: .B)
         let snorlax = Pokemon(pokedex: 143, name: "Snorlax", defense: [.Normal], tier: .A)
         let dragonite = Pokemon(pokedex: 149, name: "Dragonite", defense: [.Flying, .Dragon], tier: .S)
@@ -337,7 +356,10 @@ class Pokemon {
             slowbro, aerodactyl, arcanine,
             muk, machamp, victreebel,
             poliwrath, nidoking, nidoqueen,
-            vileplume, clefable
+            vileplume, clefable, golem,
+            magmar, weezing, rhydon,
+            omastar, wigglytuff, ninetales,
+            starmie, rapidash, tentacruel
         ]
     }
     
