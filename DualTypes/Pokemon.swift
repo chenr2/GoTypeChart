@@ -82,7 +82,7 @@ class Pokemon {
                 return [] // that's why psychic is good
             case (.Ice, .Water), (.Water, .Ice): // lapras
                 return [] // that's why lapras is good
-            case (.Grass, .Poison), (.Poison, .Grass): // venasaur, victreebel
+            case (.Grass, .Poison), (.Poison, .Grass): // venasaur, victreebel, vileplume
                 return [] // nothing really stands out among the super effectives
             case (.Water, .Fight), (.Fight, .Water): // poliwrath
                 return [] // nothing really stands out among the super effectives
@@ -306,7 +306,9 @@ class Pokemon {
         let caterpie = Pokemon(pokedex: 10, name: "Caterpie", defense: [.Bug], tier: .F)
         let nidoking = Pokemon(pokedex: 34, name: "Nidoking", defense: [.Ground, .Poison], tier: .S)
         let nidoqueen = Pokemon(pokedex: 31, name: "Nidoqueen", defense: [.Ground, .Poison], tier: .S)
-        //        let foo = Pokemon(pokedex: 0, name: "", defense: [], tier: .F)
+        let clefable = Pokemon(pokedex: 36, name: "Clefable", defense: [.Fairy], tier: .A)
+        let vileplume = Pokemon(pokedex: 45, name: "Vileplume", defense: [.Grass, .Poison], tier: .S)
+        //        let foo = Pokemon(pokedex: 0, name: "", defense: [], tier: .A)
         let golduck = Pokemon(pokedex: 55, name: "Golduck", defense: [.Water], tier: .A)
         let arcanine = Pokemon(pokedex: 59, name: "Arcanine", defense: [.Fire], tier: .S)
         let poliwrath = Pokemon(pokedex: 62, name: "Poliwrath", defense: [.Fight, .Water], tier: .S)
@@ -334,7 +336,8 @@ class Pokemon {
             snorlax, golduck, exeggutor,
             slowbro, aerodactyl, arcanine,
             muk, machamp, victreebel,
-            poliwrath, nidoking, nidoqueen
+            poliwrath, nidoking, nidoqueen,
+            vileplume, clefable
         ]
     }
     
