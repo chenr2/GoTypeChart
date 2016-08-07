@@ -22,6 +22,62 @@ class Pokemon {
     var vulnerabilitySet: [ElementType: DamageType]
     var pokedex: Int
     var tier: Tier
+    var bestCounter: [ElementType] {
+        return Pokemon.directCounter(defense)
+    }
+    
+    class func directCounter(type: [ElementType]) -> [ElementType] {
+        switch type.count {
+        case 1:
+            guard let singleElement = type.first else { return [] }
+            switch singleElement {
+            case .Normal:
+                return [.Fight]
+            case .Fight:
+                return [.Fairy, .Flying]
+            case .Flying:
+                return [.Electric, .Rock]
+            case .Poison:
+                return [.Ground]
+            case .Ground:
+                return [.Grass]
+            case .Rock:
+                return [.Fight, .Steel]
+            case .Bug:
+                return [.Fire, .Flying]
+            case .Ghost:
+                return [.Dark]
+            case .Steel:
+                return [.Fire]
+            case .Fire:
+                return [.Rock, .Water]
+            case .Water:
+                return [.Grass]
+            case .Grass:
+                return [.Bug, .Flying, .Poison]
+            case .Electric:
+                return [.Ground]
+            case .Psychic:
+                return [.Dark]
+            case .Ice:
+                return [.Fire, .Steel]
+            case .Dragon:
+                return [.Fairy]
+            case .Dark:
+                return [.Fairy, .Fight]
+            case .Fairy:
+                return [.Poison, .Steel]
+            }
+        case 2:
+            guard let firstElement = type.first,
+                let secondElement = type.last else { return [] }
+
+            return []
+        default:
+            break
+        }
+        return []
+    }
     
     class func vulnerabilitySet(element: ElementType) -> [ElementType: DamageType] {
         var returnSet = Pokemon.identityVulnerabilitySet()
