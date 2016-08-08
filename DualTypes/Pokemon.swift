@@ -96,6 +96,16 @@ class Pokemon {
                 return [] // both poison and steel are fine, but one is not better than the other
             case (.Water, .Poison), (.Poison, .Water): // tentacruel
                 return [.Electric, .Psychic]
+            case (.Bug, .Flying), (.Flying, .Bug): // scyther
+                return [.Rock]
+            case (.Ghost, .Poison), (.Poison, .Ghost): // gengar
+                return [.Dark, .Ground]
+            case (.Normal, .Flying), (.Flying, .Normal): // pidgeot
+                return [.Rock] // all are pretty good, but Rock is resistant to both!
+            case (.Poison, .Flying), (.Flying, .Poison): // golbat
+                return [.Rock]
+            case (.Bug, .Poison), (.Poison, .Bug): // venomoth
+                return [.Fire, .Flying, .Rock]
             default:
                 return []
             }
@@ -311,36 +321,49 @@ class Pokemon {
         let wartortle = Pokemon(pokedex: 8, name: "Wartortle", defense: [.Water], tier: .B)
         let blastoise = Pokemon(pokedex: 9, name: "Blastoise", defense: [.Water], tier: .A)
         let caterpie = Pokemon(pokedex: 10, name: "Caterpie", defense: [.Bug], tier: .F)
+        let pidgeot = Pokemon(pokedex: 18, name: "Pidgeot", defense: [.Normal, .Flying], tier: .A)
+        let raichu = Pokemon(pokedex: 0, name: "Raichu", defense: [.Electric], tier: .A)
         let nidoking = Pokemon(pokedex: 34, name: "Nidoking", defense: [.Ground, .Poison], tier: .S)
         let nidoqueen = Pokemon(pokedex: 31, name: "Nidoqueen", defense: [.Ground, .Poison], tier: .S)
         let clefable = Pokemon(pokedex: 36, name: "Clefable", defense: [.Fairy], tier: .A)
         let ninetales = Pokemon(pokedex: 38, name: "Ninetales", defense: [.Fire], tier: .A)
         let wigglytuff = Pokemon(pokedex: 40, name: "Wigglytuff", defense: [.Normal, .Fairy], tier: .A)
+        let golbat = Pokemon(pokedex: 42, name: "Golbat", defense: [.Poison, .Flying], tier: .B)
         let vileplume = Pokemon(pokedex: 45, name: "Vileplume", defense: [.Grass, .Poison], tier: .S)
-
-
-        //        let foo = Pokemon(pokedex: 0, name: "", defense: [], tier: .A)
-        let tentacruel = Pokemon(pokedex: 73, name: "Tentacruel", defense: [.Water, .Poison], tier: .A)
+        let venomoth = Pokemon(pokedex: 49, name: "Venomoth", defense: [.Bug, .Poison], tier: .B)
+        //        let foo = Pokemon(pokedex: 0, name: "", defense: [], tier: .B)
         let golduck = Pokemon(pokedex: 55, name: "Golduck", defense: [.Water], tier: .A)
+        let primeape = Pokemon(pokedex: 57, name: "Primeape", defense: [.Fight], tier: .B)
         let arcanine = Pokemon(pokedex: 59, name: "Arcanine", defense: [.Fire], tier: .S)
         let poliwrath = Pokemon(pokedex: 62, name: "Poliwrath", defense: [.Fight, .Water], tier: .S)
         let machamp = Pokemon(pokedex: 68, name: "Machamp", defense: [.Fight], tier: .S)
         let victreebel = Pokemon(pokedex: 71, name: "Victreebel", defense: [.Grass, .Poison], tier: .S)
+        let tentacruel = Pokemon(pokedex: 73, name: "Tentacruel", defense: [.Water, .Poison], tier: .A)
         let golem = Pokemon(pokedex: 76, name: "Golem", defense: [.Ground, .Rock], tier: .A)
         let rapidash = Pokemon(pokedex: 78, name: "Rapidash", defense: [.Fire], tier: .A)
         let slowbro = Pokemon(pokedex: 80, name: "Slowbro", defense: [.Psychic, .Water], tier: .S)
+        let dewgong = Pokemon(pokedex: 87, name: "Dewgong", defense: [.Ice, .Water], tier: .A)
         let muk = Pokemon(pokedex: 89, name: "Muk", defense: [.Poison], tier: .S)
+        let cloyster = Pokemon(pokedex: 91, name: "Cloyster", defense: [.Ice, .Water], tier: .A)
+        let gengar = Pokemon(pokedex: 94, name: "Gengar", defense: [.Ghost, .Poison], tier: .A)
+        let hypno = Pokemon(pokedex: 97, name: "Hypno", defense: [.Psychic], tier: .A)
         let exeggutor = Pokemon(pokedex: 103, name: "Exeggutor", defense: [.Psychic, .Grass], tier: .S)
         let weezing = Pokemon(pokedex: 110, name: "Weezing", defense: [.Poison], tier: .A)
         let rhydon = Pokemon(pokedex: 112, name: "Rhydon", defense: [.Ground, .Rock], tier: .A)
+        let kangaskhan = Pokemon(pokedex: 115, name: "Kangaskhan", defense: [.Normal], tier: .A)
+        let seaking = Pokemon(pokedex: 119, name: "Seaking", defense: [.Water], tier: .A)
         let starmie = Pokemon(pokedex: 121, name: "Starmie", defense: [.Water, .Psychic], tier: .A)
+        let scyther = Pokemon(pokedex: 123, name: "Scyther", defense: [.Bug, .Flying], tier: .A)
+        let electabuzz = Pokemon(pokedex: 125, name: "Electabuzz", defense: [.Electric], tier: .A)
         let magmar = Pokemon(pokedex: 126, name: "Magmar", defense: [.Fire], tier: .A)
+        let pinsir = Pokemon(pokedex: 127, name: "Pinsir", defense: [.Bug], tier: .A)
         let gyarados = Pokemon(pokedex: 130, name: "Gyarados", defense: [.Flying, .Water], tier: .A)
         let lapras = Pokemon(pokedex: 131, name: "Lapras", defense: [.Ice, .Water], tier: .S)
         let vaporeon = Pokemon(pokedex: 134, name: "Vaporeon", defense: [.Water], tier: .S)
         let jolteon = Pokemon(pokedex: 135, name: "Jolteon", defense: [.Electric], tier: .A)
         let flareon = Pokemon(pokedex: 136, name: "Flareon", defense: [.Fire], tier: .S)
         let omastar = Pokemon(pokedex: 139, name: "Omastar", defense: [.Rock, .Water], tier: .A)
+        let kabutops = Pokemon(pokedex: 141, name: "Kabutops", defense: [.Rock, .Water], tier: .A)
         let aerodactyl = Pokemon(pokedex: 142, name: "Aerodactyl", defense: [.Flying, .Rock], tier: .B)
         let snorlax = Pokemon(pokedex: 143, name: "Snorlax", defense: [.Normal], tier: .A)
         let dragonite = Pokemon(pokedex: 149, name: "Dragonite", defense: [.Flying, .Dragon], tier: .S)
@@ -359,7 +382,12 @@ class Pokemon {
             vileplume, clefable, golem,
             magmar, weezing, rhydon,
             omastar, wigglytuff, ninetales,
-            starmie, rapidash, tentacruel
+            starmie, rapidash, tentacruel,
+            hypno, dewgong, kabutops,
+            electabuzz, pinsir, scyther,
+            gengar, pidgeot, seaking,
+            kangaskhan, raichu, cloyster,
+            golbat, venomoth, primeape
         ]
     }
     
