@@ -23,13 +23,13 @@
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "types-circle-120.png",
+      "filename" : "type-circle-120.png",
       "scale" : "2x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "types-circle.png",
+      "filename" : "type-circle-180.png",
       "scale" : "3x"
     },
     {
