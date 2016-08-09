@@ -75,7 +75,7 @@
                         </connections>
                     </collectionView>
                     <toolbarItems>
-                        <barButtonItem title="AZ" id="GeG-55-Dz3">
+                        <barButtonItem title=" AZ " id="GeG-55-Dz3">
                             <connections>
                                 <action selector="sortAlphabetically:" destination="mp8-fV-bTH" id="nN8-gr-WlE"/>
                             </connections>
@@ -86,22 +86,22 @@
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="W3q-sU-iSP"/>
-                        <barButtonItem title="All" id="QaX-IW-t4h">
+                        <barButtonItem title=" All " id="QaX-IW-t4h">
                             <connections>
                                 <action selector="showAllTypes:" destination="mp8-fV-bTH" id="Uua-Kh-caf"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem title="S-Tier" id="rHD-sD-evB">
+                        <barButtonItem title=" Top " id="rHD-sD-evB">
                             <connections>
                                 <action selector="showOnlySTier:" destination="mp8-fV-bTH" id="GwQ-S8-bwe"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem title="A-Tier" id="8ng-qY-gow">
+                        <barButtonItem title="Good" id="8ng-qY-gow">
                             <connections>
                                 <action selector="showOnlyATier:" destination="mp8-fV-bTH" id="NS5-X7-psn"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem title="B-Tier" id="viU-N6-Owv">
+                        <barButtonItem title="Average" id="viU-N6-Owv">
                             <connections>
                                 <action selector="showOnlyBTier:" destination="mp8-fV-bTH" id="K7v-vF-X6r"/>
                             </connections>
