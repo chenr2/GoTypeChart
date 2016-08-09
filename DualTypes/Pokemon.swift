@@ -76,7 +76,7 @@ class Pokemon {
                 return [.Bug]
             case (.Dragon, .Flying), (.Flying, .Dragon): // dragonite
                 return [.Ice]
-            case (.Fire, .Flying), (.Flying, .Fire): // charizard
+            case (.Fire, .Flying), (.Flying, .Fire): // charizard, moltres
                 return [.Rock]
             case (.Psychic, .Water), (.Water, .Psychic): // showbro, starmie
                 return [] // that's why psychic is good
@@ -106,6 +106,10 @@ class Pokemon {
                 return [.Rock]
             case (.Bug, .Poison), (.Poison, .Bug): // venomoth
                 return [.Fire, .Flying, .Rock]
+            case (.Electric, .Flying), (.Flying, .Electric): // zapdos
+                return [.Rock]
+            case (.Ice, .Flying), (.Flying, .Ice): // articuno
+                return [.Rock]
             default:
                 return []
             }
@@ -322,7 +326,7 @@ class Pokemon {
         let blastoise = Pokemon(pokedex: 9, name: "Blastoise", defense: [.Water], tier: .A)
         let caterpie = Pokemon(pokedex: 10, name: "Caterpie", defense: [.Bug], tier: .F)
         let pidgeot = Pokemon(pokedex: 18, name: "Pidgeot", defense: [.Normal, .Flying], tier: .A)
-        let raichu = Pokemon(pokedex: 0, name: "Raichu", defense: [.Electric], tier: .A)
+        let raichu = Pokemon(pokedex: 26, name: "Raichu", defense: [.Electric], tier: .A)
         let nidoking = Pokemon(pokedex: 34, name: "Nidoking", defense: [.Ground, .Poison], tier: .S)
         let nidoqueen = Pokemon(pokedex: 31, name: "Nidoqueen", defense: [.Ground, .Poison], tier: .S)
         let clefable = Pokemon(pokedex: 36, name: "Clefable", defense: [.Fairy], tier: .A)
@@ -347,6 +351,7 @@ class Pokemon {
         let cloyster = Pokemon(pokedex: 91, name: "Cloyster", defense: [.Ice, .Water], tier: .A)
         let gengar = Pokemon(pokedex: 94, name: "Gengar", defense: [.Ghost, .Poison], tier: .A)
         let hypno = Pokemon(pokedex: 97, name: "Hypno", defense: [.Psychic], tier: .A)
+        let kingler = Pokemon(pokedex: 99, name: "Kingler", defense: [.Water], tier: .B)
         let exeggutor = Pokemon(pokedex: 103, name: "Exeggutor", defense: [.Psychic, .Grass], tier: .S)
         let weezing = Pokemon(pokedex: 110, name: "Weezing", defense: [.Poison], tier: .A)
         let rhydon = Pokemon(pokedex: 112, name: "Rhydon", defense: [.Ground, .Rock], tier: .A)
@@ -366,7 +371,13 @@ class Pokemon {
         let kabutops = Pokemon(pokedex: 141, name: "Kabutops", defense: [.Rock, .Water], tier: .A)
         let aerodactyl = Pokemon(pokedex: 142, name: "Aerodactyl", defense: [.Flying, .Rock], tier: .B)
         let snorlax = Pokemon(pokedex: 143, name: "Snorlax", defense: [.Normal], tier: .A)
+        let articuno = Pokemon(pokedex: 144, name: "Articuno", defense: [.Ice, .Flying], tier: .S)
+        let zapdos = Pokemon(pokedex: 145, name: "Zapdos", defense: [.Electric, .Flying], tier: .S)
+        let moltres = Pokemon(pokedex: 146, name: "Moltres", defense: [.Flying, .Fire], tier: .S)
         let dragonite = Pokemon(pokedex: 149, name: "Dragonite", defense: [.Flying, .Dragon], tier: .S)
+        let mewtwo = Pokemon(pokedex: 150, name: "Mewtwo", defense: [.Psychic], tier: .S)
+        let mew = Pokemon(pokedex: 151, name: "Mew", defense: [.Psychic], tier: .S)
+
         
         return [
             bulbasaur, ivysaur, venasaur,
@@ -387,7 +398,9 @@ class Pokemon {
             electabuzz, pinsir, scyther,
             gengar, pidgeot, seaking,
             kangaskhan, raichu, cloyster,
-            golbat, venomoth, primeape
+            golbat, venomoth, primeape,
+            kingler, mew, mewtwo,
+            moltres, zapdos, articuno
         ]
     }
     
