@@ -72,9 +72,7 @@ class GymLeaders: UICollectionViewController {
     }
     
     func showTheBestMons(){
-        gymLeadersArray = Pokemon.gymLeaders().filter {
-            $0.tier == Tier.S || $0.tier == Tier.A
-        }
+        gymLeadersArray = Pokemon.gymLeaders()
         sortExistingArrayAlphabetically()
     }
     
