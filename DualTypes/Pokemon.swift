@@ -13,7 +13,7 @@ enum DamageType {
 }
 
 enum Tier {
-    case S, A, B, F
+    case S, A, B
 }
 
 class Pokemon {
@@ -315,16 +315,12 @@ class Pokemon {
     }
     
     class func gymLeaders() -> [Pokemon] {
-        let bulbasaur = Pokemon(pokedex: 1, name: "Bulbasaur", defense: [.Grass, .Poison], tier: .F)
         let ivysaur = Pokemon(pokedex: 2, name: "Ivysaur", defense: [.Grass, .Poison], tier: .B)
         let venasaur = Pokemon(pokedex: 3, name: "Venasaur", defense: [.Grass, .Poison], tier: .S)
-        let charmander = Pokemon(pokedex: 4, name: "Charmander", defense: [.Fire], tier: .F)
         let charmeleon = Pokemon(pokedex: 5, name: "Charmeleon", defense: [.Fire], tier: .B)
         let charizard = Pokemon(pokedex: 6, name: "Charizard", defense: [.Fire, .Flying], tier: .S)
-        let squirtle = Pokemon(pokedex: 7, name: "Squirtle", defense: [.Water], tier: .F)
         let wartortle = Pokemon(pokedex: 8, name: "Wartortle", defense: [.Water], tier: .B)
         let blastoise = Pokemon(pokedex: 9, name: "Blastoise", defense: [.Water], tier: .A)
-        let caterpie = Pokemon(pokedex: 10, name: "Caterpie", defense: [.Bug], tier: .F)
         let pidgeot = Pokemon(pokedex: 18, name: "Pidgeot", defense: [.Normal, .Flying], tier: .A)
         let raichu = Pokemon(pokedex: 26, name: "Raichu", defense: [.Electric], tier: .A)
         let nidoking = Pokemon(pokedex: 34, name: "Nidoking", defense: [.Ground, .Poison], tier: .S)
@@ -380,10 +376,9 @@ class Pokemon {
 
         
         return [
-            bulbasaur, ivysaur, venasaur,
-            charmander, charmeleon, charizard,
-            squirtle, wartortle, blastoise,
-            caterpie,
+            ivysaur, venasaur,
+            charmeleon, charizard,
+            wartortle, blastoise,
             vaporeon, flareon, jolteon,
             lapras, dragonite, gyarados,
             snorlax, golduck, exeggutor,
