@@ -11,13 +11,6 @@
 		FCA742641D52E675003DAC35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCA742621D52E675003DAC35 /* Main.storyboard */; };
 		FCA742661D52E675003DAC35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCA742651D52E675003DAC35 /* Assets.xcassets */; };
 		FCA742691D52E675003DAC35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCA742671D52E675003DAC35 /* LaunchScreen.storyboard */; };
-		FCA7426E1D52E675003DAC35 /* DualTypes WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = FCA7426D1D52E675003DAC35 /* DualTypes WatchKit App.app */; };
-		FCA742741D52E675003DAC35 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCA742721D52E675003DAC35 /* Interface.storyboard */; };
-		FCA742761D52E675003DAC35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCA742751D52E675003DAC35 /* Assets.xcassets */; };
-		FCA7427D1D52E675003DAC35 /* DualTypes WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FCA7427C1D52E675003DAC35 /* DualTypes WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		FCA742821D52E675003DAC35 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA742811D52E675003DAC35 /* InterfaceController.swift */; };
-		FCA742841D52E675003DAC35 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA742831D52E675003DAC35 /* ExtensionDelegate.swift */; };
-		FCA742861D52E675003DAC35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCA742851D52E675003DAC35 /* Assets.xcassets */; };
 		FCA742961D52E732003DAC35 /* GymLeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA742951D52E732003DAC35 /* GymLeaders.swift */; };
 		FCA742981D52E7D5003DAC35 /* TypeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA742971D52E7D5003DAC35 /* TypeCalculator.swift */; };
 		FCA7429A1D52E81D003DAC35 /* Hexagon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA742991D52E81D003DAC35 /* Hexagon.swift */; };
@@ -31,42 +24,13 @@
 		FCB17E131D557D4000F0CCBB /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB17E121D557D4000F0CCBB /* Colors.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		FCA7426F1D52E675003DAC35 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FCA742531D52E675003DAC35 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FCA7426C1D52E675003DAC35;
-			remoteInfo = "DualTypes WatchKit App";
-		};
-		FCA7427E1D52E675003DAC35 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FCA742531D52E675003DAC35 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FCA7427B1D52E675003DAC35;
-			remoteInfo = "DualTypes WatchKit Extension";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
-		FCA7428D1D52E675003DAC35 /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				FCA7427D1D52E675003DAC35 /* DualTypes WatchKit Extension.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		FCA742911D52E675003DAC35 /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				FCA7426E1D52E675003DAC35 /* DualTypes WatchKit App.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -80,11 +44,9 @@
 		FCA742651D52E675003DAC35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FCA742681D52E675003DAC35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FCA7426A1D52E675003DAC35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FCA7426D1D52E675003DAC35 /* DualTypes WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DualTypes WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCA742731D52E675003DAC35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		FCA742751D52E675003DAC35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FCA742771D52E675003DAC35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FCA7427C1D52E675003DAC35 /* DualTypes WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "DualTypes WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCA742811D52E675003DAC35 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
 		FCA742831D52E675003DAC35 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		FCA742851D52E675003DAC35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -110,13 +72,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FCA742791D52E675003DAC35 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -135,8 +90,6 @@
 			isa = PBXGroup;
 			children = (
 				FCA7425B1D52E675003DAC35 /* DualTypes.app */,
-				FCA7426D1D52E675003DAC35 /* DualTypes WatchKit App.app */,
-				FCA7427C1D52E675003DAC35 /* DualTypes WatchKit Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -216,46 +169,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				FCA742701D52E675003DAC35 /* PBXTargetDependency */,
 			);
 			name = DualTypes;
 			productName = DualTypes;
 			productReference = FCA7425B1D52E675003DAC35 /* DualTypes.app */;
 			productType = "com.apple.product-type.application";
-		};
-		FCA7426C1D52E675003DAC35 /* DualTypes WatchKit App */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FCA7428E1D52E675003DAC35 /* Build configuration list for PBXNativeTarget "DualTypes WatchKit App" */;
-			buildPhases = (
-				FCA7426B1D52E675003DAC35 /* Resources */,
-				FCA7428D1D52E675003DAC35 /* Embed App Extensions */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				FCA7427F1D52E675003DAC35 /* PBXTargetDependency */,
-			);
-			name = "DualTypes WatchKit App";
-			productName = "DualTypes WatchKit App";
-			productReference = FCA7426D1D52E675003DAC35 /* DualTypes WatchKit App.app */;
-			productType = "com.apple.product-type.application.watchapp2";
-		};
-		FCA7427B1D52E675003DAC35 /* DualTypes WatchKit Extension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FCA7428A1D52E675003DAC35 /* Build configuration list for PBXNativeTarget "DualTypes WatchKit Extension" */;
-			buildPhases = (
-				FCA742781D52E675003DAC35 /* Sources */,
-				FCA742791D52E675003DAC35 /* Frameworks */,
-				FCA7427A1D52E675003DAC35 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "DualTypes WatchKit Extension";
-			productName = "DualTypes WatchKit Extension";
-			productReference = FCA7427C1D52E675003DAC35 /* DualTypes WatchKit Extension.appex */;
-			productType = "com.apple.product-type.watchkit2-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -268,12 +186,6 @@
 				ORGANIZATIONNAME = "Robert Chen";
 				TargetAttributes = {
 					FCA7425A1D52E675003DAC35 = {
-						CreatedOnToolsVersion = 7.3.1;
-					};
-					FCA7426C1D52E675003DAC35 = {
-						CreatedOnToolsVersion = 7.3.1;
-					};
-					FCA7427B1D52E675003DAC35 = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
 				};
@@ -292,8 +204,6 @@
 			projectRoot = "";
 			targets = (
 				FCA7425A1D52E675003DAC35 /* DualTypes */,
-				FCA7426C1D52E675003DAC35 /* DualTypes WatchKit App */,
-				FCA7427B1D52E675003DAC35 /* DualTypes WatchKit Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -306,23 +216,6 @@
 				FCA742691D52E675003DAC35 /* LaunchScreen.storyboard in Resources */,
 				FCA742661D52E675003DAC35 /* Assets.xcassets in Resources */,
 				FCA742641D52E675003DAC35 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FCA7426B1D52E675003DAC35 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FCA742761D52E675003DAC35 /* Assets.xcassets in Resources */,
-				FCA742741D52E675003DAC35 /* Interface.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FCA7427A1D52E675003DAC35 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FCA742861D52E675003DAC35 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,29 +241,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FCA742781D52E675003DAC35 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FCA742841D52E675003DAC35 /* ExtensionDelegate.swift in Sources */,
-				FCA742821D52E675003DAC35 /* InterfaceController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		FCA742701D52E675003DAC35 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FCA7426C1D52E675003DAC35 /* DualTypes WatchKit App */;
-			targetProxy = FCA7426F1D52E675003DAC35 /* PBXContainerItemProxy */;
-		};
-		FCA7427F1D52E675003DAC35 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FCA7427B1D52E675003DAC35 /* DualTypes WatchKit Extension */;
-			targetProxy = FCA7427E1D52E675003DAC35 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		FCA742621D52E675003DAC35 /* Main.storyboard */ = {
@@ -485,66 +356,6 @@
 			};
 			name = Release;
 		};
-		FCA7428B1D52E675003DAC35 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = "DualTypes WatchKit Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.thorntech.DualTypes.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.2;
-			};
-			name = Debug;
-		};
-		FCA7428C1D52E675003DAC35 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = "DualTypes WatchKit Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.thorntech.DualTypes.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.2;
-			};
-			name = Release;
-		};
-		FCA7428F1D52E675003DAC35 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				IBSC_MODULE = DualTypes_WatchKit_Extension;
-				INFOPLIST_FILE = "DualTypes WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = com.thorntech.DualTypes.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.2;
-			};
-			name = Debug;
-		};
-		FCA742901D52E675003DAC35 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				IBSC_MODULE = DualTypes_WatchKit_Extension;
-				INFOPLIST_FILE = "DualTypes WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = com.thorntech.DualTypes.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.2;
-			};
-			name = Release;
-		};
 		FCA742931D52E675003DAC35 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -553,6 +364,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.thorntech.DualTypes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -564,6 +376,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.thorntech.DualTypes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -575,24 +388,6 @@
 			buildConfigurations = (
 				FCA742881D52E675003DAC35 /* Debug */,
 				FCA742891D52E675003DAC35 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FCA7428A1D52E675003DAC35 /* Build configuration list for PBXNativeTarget "DualTypes WatchKit Extension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FCA7428B1D52E675003DAC35 /* Debug */,
-				FCA7428C1D52E675003DAC35 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FCA7428E1D52E675003DAC35 /* Build configuration list for PBXNativeTarget "DualTypes WatchKit App" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FCA7428F1D52E675003DAC35 /* Debug */,
-				FCA742901D52E675003DAC35 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
