@@ -102,6 +102,14 @@ extension GymLeaderDetail {
 extension GymLeaderDetail: UICollectionViewDelegateFlowLayout {
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        switch section {
+        case 1:
+            if pokemon!.bestCounter.isEmpty {
+                return CGSizeZero
+            }
+        default:
+            break
+        }
         return CGSize(width: 0, height: 50)
     }
     
