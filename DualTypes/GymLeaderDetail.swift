@@ -134,7 +134,7 @@ extension GymLeaderDetail: UICollectionViewDelegateFlowLayout {
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         var cellsPerRow:CGFloat = 4
         switch indexPath.section {
-        case 0, 1:
+        case 0, 1, 2:
             cellsPerRow = 3
         default:
             break
