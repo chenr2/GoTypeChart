@@ -43,18 +43,20 @@ class GymLeaderDetail: UICollectionViewController {
 extension GymLeaderDetail {
     
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 4
+        return 5
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
         case 0:
             return 1
-        case 1:
-            return pokemon!.bestCounter.count
+        case 1: // stats
+            return 3
         case 2:
-            return double.count
+            return pokemon!.bestCounter.count
         case 3:
+            return double.count
+        case 4:
             return half.count
         default:
             return 0
@@ -69,10 +71,24 @@ extension GymLeaderDetail {
             cell.defense = pokemon!.type
             return cell
         case 1:
-            detailTypeCell.element = pokemon!.bestCounter[indexPath.row]
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("GymLeaderDetailStatCell", forIndexPath: indexPath) as! GymLeaderDetailStatCell
+            cell.pokemon = pokemon
+            switch indexPath.row {
+            case 0:
+                cell.statType = .attack
+            case 1:
+                cell.statType = .defense
+            case 2:
+                cell.statType = .stamina
+            default:
+                break 
+            }
+            return cell
         case 2:
-            detailTypeCell.element = double[indexPath.row]
+            detailTypeCell.element = pokemon!.bestCounter[indexPath.row]
         case 3:
+            detailTypeCell.element = double[indexPath.row]
+        case 4:
             detailTypeCell.element = half[indexPath.row]
         default:
             break
@@ -86,10 +102,12 @@ extension GymLeaderDetail {
         case 0:
             cell.sectionHeaderText = "Type:"            
         case 1:
-            cell.sectionHeaderText = "Recommended against \(pokemon!.name):"
+            cell.sectionHeaderText = "Stats:"
         case 2:
-            cell.sectionHeaderText = "Super effective against \(pokemon!.name):"
+            cell.sectionHeaderText = "Recommended against \(pokemon!.name):"
         case 3:
+            cell.sectionHeaderText = "Super effective against \(pokemon!.name):"
+        case 4:
             cell.sectionHeaderText = "Not very effective against \(pokemon!.name):"
         default:
             break
@@ -103,7 +121,7 @@ extension GymLeaderDetail: UICollectionViewDelegateFlowLayout {
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         switch section {
-        case 1:
+        case 2:
             if pokemon!.bestCounter.isEmpty {
                 return CGSizeZero
             }

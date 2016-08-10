@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FC04C59C1D5BEB5400BCB6AB /* StatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC04C59B1D5BEB5400BCB6AB /* StatCell.swift */; };
+		FC04C59E1D5BF05300BCB6AB /* GymLeaderDetailStatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC04C59D1D5BF05300BCB6AB /* GymLeaderDetailStatCell.swift */; };
 		FCA7425F1D52E675003DAC35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA7425E1D52E675003DAC35 /* AppDelegate.swift */; };
 		FCA742641D52E675003DAC35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCA742621D52E675003DAC35 /* Main.storyboard */; };
 		FCA742661D52E675003DAC35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCA742651D52E675003DAC35 /* Assets.xcassets */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		FC04C59B1D5BEB5400BCB6AB /* StatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatCell.swift; sourceTree = "<group>"; };
+		FC04C59D1D5BF05300BCB6AB /* GymLeaderDetailStatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GymLeaderDetailStatCell.swift; sourceTree = "<group>"; };
 		FCA7425B1D52E675003DAC35 /* DualTypes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DualTypes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCA7425E1D52E675003DAC35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCA742631D52E675003DAC35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				FC04C59B1D5BEB5400BCB6AB /* StatCell.swift */,
 				FCA742A01D535EE0003DAC35 /* GymLeaderDetail.swift */,
 				FCA742A31D5360EF003DAC35 /* GymLeaderDetailHeader.swift */,
+				FC04C59D1D5BF05300BCB6AB /* GymLeaderDetailStatCell.swift */,
 				FCA742A51D536115003DAC35 /* GymLeaderDetailTypeCell.swift */,
 				FCB17E0A1D556A3E00F0CCBB /* GymLeaderDetailSectionHeader.swift */,
 			);
@@ -243,6 +246,7 @@
 				FCA7425F1D52E675003DAC35 /* AppDelegate.swift in Sources */,
 				FCA742A61D536115003DAC35 /* GymLeaderDetailTypeCell.swift in Sources */,
 				FCA742A11D535EE0003DAC35 /* GymLeaderDetail.swift in Sources */,
+				FC04C59E1D5BF05300BCB6AB /* GymLeaderDetailStatCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

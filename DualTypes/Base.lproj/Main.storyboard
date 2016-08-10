@@ -228,7 +228,7 @@
                                 </connections>
                             </collectionViewCell>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GymLeaderDetailTypeCell" id="0cS-HD-xdR" customClass="GymLeaderDetailTypeCell" customModule="DualTypes" customModuleProvider="target">
-                                <rect key="frame" x="154" y="159" width="101" height="97"/>
+                                <rect key="frame" x="209" y="159" width="101" height="97"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="101" height="97"/>
@@ -263,6 +263,53 @@
                                 <connections>
                                     <outlet property="circularView" destination="qVY-6j-hYM" id="jvq-6e-zEV"/>
                                     <outlet property="elementType" destination="N1U-Yb-PXE" id="DdD-OI-LEU"/>
+                                </connections>
+                            </collectionViewCell>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GymLeaderDetailStatCell" id="hik-fD-s34" customClass="GymLeaderDetailStatCell" customModule="DualTypes" customModuleProvider="target">
+                                <rect key="frame" x="10" y="301" width="101" height="97"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="101" height="97"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ySd-0z-xyP">
+                                            <rect key="frame" x="0.0" y="0.0" width="101" height="97"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="h6z-4n-P4w">
+                                                    <rect key="frame" x="0.0" y="17" width="101" height="43"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="36"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vU3-NO-e0j">
+                                                    <rect key="frame" x="29" y="60" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="h6z-4n-P4w" firstAttribute="leading" secondItem="ySd-0z-xyP" secondAttribute="leading" id="0Ib-Mu-1HH"/>
+                                                <constraint firstItem="h6z-4n-P4w" firstAttribute="centerY" secondItem="ySd-0z-xyP" secondAttribute="centerY" constant="-10" id="L8s-vE-zh3"/>
+                                                <constraint firstItem="vU3-NO-e0j" firstAttribute="top" secondItem="h6z-4n-P4w" secondAttribute="bottom" id="VLr-8O-jTj"/>
+                                                <constraint firstItem="vU3-NO-e0j" firstAttribute="centerX" secondItem="ySd-0z-xyP" secondAttribute="centerX" id="tQv-cU-GW7"/>
+                                                <constraint firstAttribute="trailing" secondItem="h6z-4n-P4w" secondAttribute="trailing" id="vjO-Cu-fgX"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="ySd-0z-xyP" firstAttribute="leading" secondItem="hik-fD-s34" secondAttribute="leading" id="FuR-GT-U1j"/>
+                                    <constraint firstAttribute="trailing" secondItem="ySd-0z-xyP" secondAttribute="trailing" id="T8i-cG-L00"/>
+                                    <constraint firstAttribute="bottom" secondItem="ySd-0z-xyP" secondAttribute="bottom" id="omw-6y-8EX"/>
+                                    <constraint firstItem="ySd-0z-xyP" firstAttribute="top" secondItem="hik-fD-s34" secondAttribute="top" id="yLu-4r-ojB"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="circularView" destination="ySd-0z-xyP" id="2fe-1j-uWj"/>
+                                    <outlet property="elementType" destination="h6z-4n-P4w" id="sjY-On-f7e"/>
+                                    <outlet property="statTypeLabel" destination="vU3-NO-e0j" id="1Q2-x0-dML"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
