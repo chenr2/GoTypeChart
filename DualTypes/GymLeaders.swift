@@ -114,6 +114,10 @@ class GymLeaders: UICollectionViewController {
             let cell = sender as? GymLeaderCell {
             destination.pokemon = cell.pokemon
         }
+        if let destination = segue.destinationViewController as? GymLeaderDetail,
+            let cell = sender as? StatCell {
+            destination.pokemon = cell.pokemon
+        }
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
