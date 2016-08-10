@@ -66,7 +66,7 @@ extension GymLeaderDetail {
         switch indexPath.section {
         case 0:
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("GymLeaderDetailHeader", forIndexPath: indexPath) as! GymLeaderDetailHeader
-            cell.defense = pokemon!.defense            
+            cell.defense = pokemon!.type
             return cell
         case 1:
             detailTypeCell.element = pokemon!.bestCounter[indexPath.row]

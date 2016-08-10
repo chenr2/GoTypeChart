@@ -8,19 +8,27 @@
 
 import UIKit
 
+enum SortType {
+    case attack, defense, stamina, index, alphabetical
+}
+
 class GymLeaders: UICollectionViewController {
     
     var searchBar = UISearchBar()
     
     var gymLeadersArray: [Pokemon] = []
     
+    var sortType:SortType = .index
+    
     @IBAction func sortAlphabetically(sender: AnyObject) {
         sortExistingArrayAlphabetically()
+        sortType = .alphabetical
         reloadSectionZero()
     }
     
     @IBAction func sortByIndex(sender: AnyObject) {
         sortExistingArrayByIndex()
+        sortType = .index
         reloadSectionZero()
     }
     
@@ -31,26 +39,23 @@ class GymLeaders: UICollectionViewController {
     }
     
     @IBAction func showOnlySTier(sender: AnyObject) {
-        gymLeadersArray = Pokemon.gymLeaders().filter {
-            $0.tier == Tier.S
-        }
-        sortExistingArrayByIndex()
+        gymLeadersArray = Pokemon.gymLeaders()
+        sortType = .attack
+        sortExistingArrayByAttack()
         reloadSectionZero()
     }
     
     @IBAction func showOnlyATier(sender: AnyObject) {
-        gymLeadersArray = Pokemon.gymLeaders().filter {
-            $0.tier == Tier.A
-        }
-        sortExistingArrayByIndex()
+        gymLeadersArray = Pokemon.gymLeaders()
+        sortType = .defense
+        sortExistingArrayByDefense()
         reloadSectionZero()
     }
     
     @IBAction func showOnlyBTier(sender: AnyObject) {
-        gymLeadersArray = Pokemon.gymLeaders().filter {
-            $0.tier == Tier.B
-        }
-        sortExistingArrayByIndex()
+        gymLeadersArray = Pokemon.gymLeaders()
+        sortType = .stamina
+        sortExistingArrayByStamina()
         reloadSectionZero()
     }
     
@@ -71,9 +76,27 @@ class GymLeaders: UICollectionViewController {
         }
     }
     
+    func sortExistingArrayByStamina(){
+        gymLeadersArray = gymLeadersArray.sort { pokemonA, pokemonB in
+            return pokemonA.stamina > pokemonB.stamina
+        }
+    }
+    
+    func sortExistingArrayByDefense(){
+        gymLeadersArray = gymLeadersArray.sort { pokemonA, pokemonB in
+            return pokemonA.defense > pokemonB.defense
+        }
+    }
+    
+    func sortExistingArrayByAttack(){
+        gymLeadersArray = gymLeadersArray.sort { pokemonA, pokemonB in
+            return pokemonA.attack > pokemonB.attack
+        }
+    }
+    
     func showTheBestMons(){
         gymLeadersArray = Pokemon.gymLeaders()
-        sortExistingArrayAlphabetically()
+        sortExistingArrayByIndex()
     }
     
     override func viewDidLoad() {
@@ -117,7 +140,7 @@ extension GymLeaders {
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("GymLeaderCell", forIndexPath: indexPath) as! GymLeaderCell
-        cell.pokemon = gymLeadersArray[indexPath.row]
+        cell.configureCell(gymLeadersArray[indexPath.row], sortType: sortType)
         return cell
     }
 }
@@ -133,7 +156,7 @@ extension GymLeaders: UISearchBarDelegate {
                     return true
                 }
                 // filter by elements
-                let elementNames = pokemon.defense.map {
+                let elementNames = pokemon.type.map {
                     $0.rawValue
                     }.joinWithSeparator(" ")
                 if elementNames.lowercaseString.containsString(searchText.lowercaseString) {

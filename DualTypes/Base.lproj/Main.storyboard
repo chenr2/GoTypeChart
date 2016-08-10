@@ -35,6 +35,12 @@
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6bd-GT-OgF">
+                                            <rect key="frame" x="99" y="8" width="0.0" height="0.0"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="eI8-Qe-zrT">
                                             <rect key="frame" x="8" y="50.5" width="91" height="0.0"/>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
@@ -55,6 +61,8 @@
                                     <constraint firstItem="m90-2o-x9L" firstAttribute="leading" secondItem="BFd-Js-7u0" secondAttribute="leadingMargin" id="1yN-Hx-PcK"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="eI8-Qe-zrT" secondAttribute="trailing" id="Dr6-Q0-hrI"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="m90-2o-x9L" secondAttribute="trailing" id="J8c-m1-5op"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="6bd-GT-OgF" secondAttribute="trailing" id="JXx-WO-LIN"/>
+                                    <constraint firstItem="6bd-GT-OgF" firstAttribute="top" secondItem="BFd-Js-7u0" secondAttribute="topMargin" id="VPl-CA-c01"/>
                                     <constraint firstItem="vsV-nY-tpR" firstAttribute="leading" secondItem="BFd-Js-7u0" secondAttribute="leadingMargin" id="W8b-vr-N1m"/>
                                     <constraint firstItem="eI8-Qe-zrT" firstAttribute="leading" secondItem="BFd-Js-7u0" secondAttribute="leadingMargin" id="Zzb-Js-HpL"/>
                                     <constraint firstItem="eI8-Qe-zrT" firstAttribute="centerY" secondItem="BFd-Js-7u0" secondAttribute="centerY" id="j15-Rn-RQU"/>
@@ -65,6 +73,7 @@
                                     <outlet property="pokedexNumber" destination="vsV-nY-tpR" id="ILK-h1-MdM"/>
                                     <outlet property="pokemonName" destination="eI8-Qe-zrT" id="ybf-GN-Dxn"/>
                                     <outlet property="pokemonType" destination="m90-2o-x9L" id="k6F-Se-4uO"/>
+                                    <outlet property="sortLabel" destination="6bd-GT-OgF" id="Zvz-NK-FZb"/>
                                     <segue destination="eGV-m0-bll" kind="push" id="cdF-8S-ikr"/>
                                 </connections>
                             </collectionViewCell>
@@ -86,22 +95,17 @@
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="W3q-sU-iSP"/>
-                        <barButtonItem title=" All " id="QaX-IW-t4h">
-                            <connections>
-                                <action selector="showAllTypes:" destination="mp8-fV-bTH" id="Uua-Kh-caf"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem title=" Top " id="rHD-sD-evB">
+                        <barButtonItem title="Attack" id="rHD-sD-evB">
                             <connections>
                                 <action selector="showOnlySTier:" destination="mp8-fV-bTH" id="GwQ-S8-bwe"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem title="Good" id="8ng-qY-gow">
+                        <barButtonItem title="Defense" id="8ng-qY-gow">
                             <connections>
                                 <action selector="showOnlyATier:" destination="mp8-fV-bTH" id="NS5-X7-psn"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem title="Average" id="viU-N6-Owv">
+                        <barButtonItem title="Stamina" id="viU-N6-Owv">
                             <connections>
                                 <action selector="showOnlyBTier:" destination="mp8-fV-bTH" id="K7v-vF-X6r"/>
                             </connections>
