@@ -139,9 +139,16 @@ extension GymLeaders {
     }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("GymLeaderCell", forIndexPath: indexPath) as! GymLeaderCell
-        cell.configureCell(gymLeadersArray[indexPath.row], sortType: sortType)
-        return cell
+        switch sortType {
+        case .attack, .defense, .stamina:
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("StatCell", forIndexPath: indexPath) as! StatCell
+            cell.configureCell(gymLeadersArray[indexPath.row], sortType: sortType)
+            return cell
+        default:
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("GymLeaderCell", forIndexPath: indexPath) as! GymLeaderCell
+            cell.configureCell(gymLeadersArray[indexPath.row], sortType: sortType)
+            return cell
+        }
     }
 }
 
