@@ -14,6 +14,7 @@ class StatCell: UICollectionViewCell {
     @IBOutlet weak var pokemonType: UILabel!
     @IBOutlet weak var pokedexNumber: UILabel!
     @IBOutlet weak var sortLabel: UILabel!
+    @IBOutlet weak var statIcon: UILabel!
     
     var pokemon: Pokemon? = nil
     
@@ -28,12 +29,16 @@ class StatCell: UICollectionViewCell {
         switch sortType {
         case .attack:
             sortLabel.text = "\(pokemon.attack)"
+            statIcon.text = ""
         case .defense:
             sortLabel.text = "\(pokemon.defense)"
+            statIcon.text = ""
         case .stamina:
             sortLabel.text = "\(pokemon.stamina)"
+            statIcon.text = ""
         default:
             sortLabel.text = ""
+            statIcon.text = ""
         }
     }
 }

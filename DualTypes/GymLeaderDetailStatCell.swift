@@ -22,7 +22,7 @@ class GymLeaderDetailStatCell: UICollectionViewCell {
     @IBOutlet weak var circularView: UIView!
     @IBOutlet weak var elementType: UILabel!
     @IBOutlet weak var statTypeLabel: UILabel!
-    
+        
     // prevents a lot of constraint conflicts
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

@@ -6,6 +6,11 @@
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="fontawesome-webfont.ttf">
+            <string>FontAwesome</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Gym Leaders-->
         <scene sceneID="8bt-zf-Xvq">
@@ -108,6 +113,12 @@
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bbl-z5-0jN">
+                                            <rect key="frame" x="88.5" y="8" width="10.5" height="12"/>
+                                            <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="12"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
@@ -119,16 +130,19 @@
                                     <constraint firstAttribute="trailingMargin" secondItem="9ao-gh-uwf" secondAttribute="trailing" id="E1t-ym-W8P"/>
                                     <constraint firstItem="rhB-0w-5Ou" firstAttribute="leading" secondItem="KlK-3C-LDX" secondAttribute="leadingMargin" id="F0t-jA-ALc"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="rhB-0w-5Ou" secondAttribute="trailing" id="IGb-cf-vZh"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="bbl-z5-0jN" secondAttribute="trailing" id="fSy-nq-JqT"/>
                                     <constraint firstItem="9ao-gh-uwf" firstAttribute="leading" secondItem="KlK-3C-LDX" secondAttribute="leadingMargin" id="fzA-8c-LLO"/>
                                     <constraint firstItem="QWC-v4-gB8" firstAttribute="leading" secondItem="KlK-3C-LDX" secondAttribute="leadingMargin" id="k9E-hG-1Lq"/>
                                     <constraint firstItem="sSl-cV-Oyh" firstAttribute="centerX" secondItem="KlK-3C-LDX" secondAttribute="centerX" id="of9-gy-3KT"/>
                                     <constraint firstItem="sSl-cV-Oyh" firstAttribute="bottom" secondItem="rhB-0w-5Ou" secondAttribute="top" id="tUi-KW-KOP"/>
+                                    <constraint firstAttribute="topMargin" secondItem="bbl-z5-0jN" secondAttribute="top" id="xWV-zs-FHs"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="pokedexNumber" destination="QWC-v4-gB8" id="v9S-l3-Zdj"/>
                                     <outlet property="pokemonName" destination="rhB-0w-5Ou" id="YZr-oJ-zVo"/>
                                     <outlet property="pokemonType" destination="9ao-gh-uwf" id="ZAC-9v-7Yb"/>
                                     <outlet property="sortLabel" destination="sSl-cV-Oyh" id="XsY-6n-THY"/>
+                                    <outlet property="statIcon" destination="bbl-z5-0jN" id="cYy-Qw-x4p"/>
                                     <segue destination="eGV-m0-bll" kind="push" id="v66-8k-rYp"/>
                                 </connections>
                             </collectionViewCell>
