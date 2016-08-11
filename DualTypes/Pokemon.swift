@@ -155,6 +155,8 @@ class Pokemon {
     var stamina: Int
     var attack: Int
     var defense: Int
+    var quickAttacks: [QuickAttack]
+    var specialAttacks: [SpecialAttack]
     
     class func directCounter(type: [ElementType]) -> [ElementType] {
         switch type.count {
@@ -781,6 +783,8 @@ class Pokemon {
         let vulnerabilitySets = type.map {
             return Pokemon.vulnerabilitySet($0)
         }
+        self.quickAttacks = quickAttacks
+        self.specialAttacks = specialAttacks
         if type.count == 1 {
             self.vulnerabilitySet = vulnerabilitySets.first!
         } else {
