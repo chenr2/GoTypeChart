@@ -144,7 +144,7 @@ extension GymLeaderDetail: UICollectionViewDelegateFlowLayout {
         default:
             break
         }
-        return CGSize(width: 0, height: 50)
+        return CGSize(width: 0, height: 40)
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
