@@ -18,7 +18,7 @@ class GymLeaders: UICollectionViewController {
     
     var gymLeadersArray: [Pokemon] = []
     
-    var sortType:SortType = .index
+    var sortType:SortType = .attack
     
     let segmentedControl = UISegmentedControl(items: ["Index", "AZ", "Attack", "Defense", "Stamina"])
     
@@ -103,7 +103,7 @@ class GymLeaders: UICollectionViewController {
         resetMonsSortedBySelectedType()
         
         segmentedControl.addTarget(self, action: #selector(GymLeaders.segmentedControlTapped(_:)), forControlEvents: .ValueChanged)
-        segmentedControl.selectedSegmentIndex = 0
+        segmentedControl.selectedSegmentIndex = 2
         let segmentedControlButtonItem = UIBarButtonItem(customView: segmentedControl)
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil)
         setToolbarItems([flexibleSpace, segmentedControlButtonItem, flexibleSpace], animated: false)
