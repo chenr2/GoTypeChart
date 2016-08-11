@@ -90,7 +90,7 @@ enum SpecialAttack: String {
         flameBurst = "Flame Burst",
         flameCharge = "Flame Charge",
         flameWheel = "Flame Wheel",
-        flamethrower = "Flamethrower",
+        flamethrower = "Flame Thrower",
         flashCannon = "Flash Cannon",
         gunkShot = "Gunk Shot",
         heatWave = "Heat Wave",

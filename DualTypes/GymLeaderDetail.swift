@@ -50,12 +50,12 @@ extension GymLeaderDetail {
         switch section {
         case 0:
             return 1
-        case 1: // stats
-            return 3
-        case 2:
+        case 1:
             return pokemon!.quickAttacks.count
-        case 3:
+        case 2:
             return pokemon!.specialAttacks.count
+        case 3: // stats
+            return 3
         case 4:
             return pokemon!.bestCounter.count
         case 5:
@@ -75,6 +75,14 @@ extension GymLeaderDetail {
             cell.defense = pokemon!.type
             return cell
         case 1:
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("GymLeaderDetailQuickMoveCell", forIndexPath: indexPath) as! GymLeaderDetailQuickMoveCell
+            cell.quickMove = pokemon!.quickAttacks[indexPath.row]
+            return cell
+        case 2:
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("GymLeaderDetailSpecialMoveCell", forIndexPath: indexPath) as! GymLeaderDetailSpecialMoveCell
+            cell.specialMove = pokemon!.specialAttacks[indexPath.row]
+            return cell
+        case 3:
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("GymLeaderDetailStatCell", forIndexPath: indexPath) as! GymLeaderDetailStatCell
             cell.pokemon = pokemon
             switch indexPath.row {
@@ -85,19 +93,9 @@ extension GymLeaderDetail {
             case 2:
                 cell.statType = .stamina
             default:
-                break 
+                break
             }
             return cell
-        case 2:
-            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("GymLeaderDetailQuickMoveCell", forIndexPath: indexPath) as! GymLeaderDetailQuickMoveCell
-            cell.quickMove = pokemon!.quickAttacks[indexPath.row]
-            return cell
-
-        case 3:
-            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("GymLeaderDetailSpecialMoveCell", forIndexPath: indexPath) as! GymLeaderDetailSpecialMoveCell
-            cell.specialMove = pokemon!.specialAttacks[indexPath.row]
-            return cell
-
         case 4:
             detailTypeCell.element = pokemon!.bestCounter[indexPath.row]
         case 5:
@@ -116,11 +114,11 @@ extension GymLeaderDetail {
         case 0:
             cell.sectionHeaderText = "Type:"            
         case 1:
-            cell.sectionHeaderText = "Stats:"
-        case 2:
             cell.sectionHeaderText = "Quick Moves:"
-        case 3:
+        case 2:
             cell.sectionHeaderText = "Special Moves:"
+        case 3:
+            cell.sectionHeaderText = "Stats:"
         case 4:
             cell.sectionHeaderText = "Recommended against \(pokemon!.name):"
         case 5:
@@ -139,7 +137,7 @@ extension GymLeaderDetail: UICollectionViewDelegateFlowLayout {
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         switch section {
-        case 2:
+        case 4:
             if pokemon!.bestCounter.isEmpty {
                 return CGSizeZero
             }
@@ -161,7 +159,7 @@ extension GymLeaderDetail: UICollectionViewDelegateFlowLayout {
         let widthMinusPadding = collectionView.bounds.width - (cellPadding + cellPadding * cellsPerRow)
         let eachSide = widthMinusPadding / cellsPerRow
         switch indexPath.section {
-        case 0, 2, 3:
+        case 1, 2:
             return CGSize(width: eachSide, height:eachSide + 20)
         default:
             return CGSize(width: eachSide, height:eachSide)            

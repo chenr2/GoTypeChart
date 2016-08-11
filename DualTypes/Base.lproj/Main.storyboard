@@ -213,19 +213,11 @@
                                                 <constraint firstAttribute="trailing" secondItem="sv9-LM-5u3" secondAttribute="trailing" constant="10" id="kHg-wL-sjP"/>
                                             </constraints>
                                         </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0BR-xL-ttP">
-                                            <rect key="frame" x="51" y="137" width="32" height="17"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
                                     <constraint firstAttribute="leading" secondItem="1KI-AU-0rv" secondAttribute="leading" id="22T-MC-b2f"/>
-                                    <constraint firstItem="0BR-xL-ttP" firstAttribute="top" secondItem="1KI-AU-0rv" secondAttribute="bottom" constant="3" id="JDI-s7-gZo"/>
-                                    <constraint firstItem="0BR-xL-ttP" firstAttribute="centerX" secondItem="hYg-Hm-KIM" secondAttribute="centerX" id="byf-e4-aom"/>
                                     <constraint firstAttribute="top" secondItem="1KI-AU-0rv" secondAttribute="top" id="iDX-U2-cHr"/>
                                     <constraint firstAttribute="trailing" secondItem="1KI-AU-0rv" secondAttribute="trailing" id="p2C-dM-pBS"/>
                                 </constraints>
@@ -329,10 +321,10 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iA5-9M-l42">
-                                            <rect key="frame" x="0.0" y="0.0" width="101" height="96"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="101" height="100"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6cm-uT-FOO">
-                                                    <rect key="frame" x="10" y="31" width="81" height="24"/>
+                                                    <rect key="frame" x="10" y="38" width="81" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -340,14 +332,14 @@
                                             </subviews>
                                             <color key="backgroundColor" red="0.19215686269999999" green="0.30980392159999998" blue="0.63529411759999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
-                                                <constraint firstItem="6cm-uT-FOO" firstAttribute="centerY" secondItem="iA5-9M-l42" secondAttribute="centerY" constant="-5" id="4Va-bP-5Ji"/>
+                                                <constraint firstItem="6cm-uT-FOO" firstAttribute="centerY" secondItem="iA5-9M-l42" secondAttribute="centerY" id="4Va-bP-5Ji"/>
                                                 <constraint firstItem="6cm-uT-FOO" firstAttribute="leading" secondItem="iA5-9M-l42" secondAttribute="leading" constant="10" id="Ura-Qc-axr"/>
-                                                <constraint firstAttribute="width" secondItem="iA5-9M-l42" secondAttribute="height" multiplier="101:97" constant="1" id="eJk-bG-B0X"/>
+                                                <constraint firstAttribute="width" secondItem="iA5-9M-l42" secondAttribute="height" multiplier="1:1" constant="1" id="eJk-bG-B0X"/>
                                                 <constraint firstAttribute="trailing" secondItem="6cm-uT-FOO" secondAttribute="trailing" constant="10" id="rtG-Kl-eID"/>
                                             </constraints>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QCX-iG-EFH">
-                                            <rect key="frame" x="32" y="99" width="35.5" height="17"/>
+                                            <rect key="frame" x="32" y="103" width="35.5" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
