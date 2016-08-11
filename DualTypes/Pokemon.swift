@@ -157,6 +157,87 @@ class Pokemon {
     var defense: Int
     var quickAttacks: [QuickAttack]
     var specialAttacks: [SpecialAttack]
+
+    class func elementForSpecialAttack(specialAttack: SpecialAttack) -> ElementType {
+        switch specialAttack {
+        case .megahorn, .bugBuzz, .xScissor, .signalBeam:
+            return .Bug
+        case .darkPulse, .nightSlash:
+            return .Dark
+        case .dragonClaw, .dragonPulse, .twister:
+            return .Dragon
+        case .thunder, .thunderbolt, .thunderPunch, .discharge:
+            return .Electric
+        case .moonblast, .playRough, .dazzlingGleam, .drainingKiss, .disarmingVoice:
+            return .Fairy
+        case .crossChop, .brickBreak, .submission, .lowSweep:
+            return .Fight
+        case .fireBlast, .heatWave, .flamethrower, .firePunch, .flameBurst, .flameWheel, .flameCharge:
+            return .Fire
+        case .hurricane, .drillPeck, .aerialAce, .airCutter:
+            return .Flying
+        case .shadowBall, .ominousWind:
+            return .Ghost
+        case .solarBeam, .powerWhip, .leafBlade, .petalBlizzard, .seedBomb:
+            return .Grass
+        case .earthquake, .drillRun, .boneClub, .dig, .mudBomb, .bulldoze:
+            return .Ground
+        case .blizzard, .iceBeam, .icePunch, .icyWind:
+            return .Ice
+        case .bodySlam, .hyperBeam, .hyperFang, .stomp, .viceGrip,
+             .hornAttack, .swift, .struggle, .wrap:
+            return .Normal
+        case .gunkShot, .sludgeBomb, .sludgeWave, .crossPoison, .sludge, .poisonFang:
+            return .Poison
+        case .psychic, .psyshock, .psybeam:
+            return .Psychic
+        case .stoneEdge, .rockSlide, .powerGem, .ancientPower, .rockTomb:
+            return .Rock
+        case .flashCannon, .ironHead, .magnetBomb:
+            return .Steel
+        case .hydroPump, .aquaTail, .scald, .aquaJet, .waterPulse, .brine, .bubbleBeam:
+            return .Water 
+        }
+    }
+    
+    class func elementForQuickAttack(quickAttack: QuickAttack) -> ElementType {
+        switch quickAttack {
+        case .bugBite, .furyCutter:
+            return .Bug
+        case .bite, .feintAttack, .suckerPunch:
+            return .Dark
+        case .dragonBreath:
+            return .Dragon
+        case .spark, .thunderShock:
+            return .Electric
+        case .rockSmash, .lowKick, .karateChop:
+            return .Fight
+        case .fireFang, .ember:
+            return .Fire
+        case .wingAttack, .peck:
+            return .Flying
+        case .shadowClaw, .lick:
+            return .Ghost
+        case .vineWhip, .razorLeaf:
+            return .Grass
+        case .mudSlap, .mudShot:
+            return .Ground
+        case .frostBreath, .iceShard:
+            return .Ice
+        case .pound, .scratch, .tackle, .cut, .quickAttack:
+            return .Normal
+        case .poisonJab, .poisonSting, .acid:
+            return .Poison
+        case .psychoCut, .zenHeadbutt, .confusion:
+            return .Psychic
+        case .rockThrow:
+            return .Rock
+        case .metalClaw, .steelWing, .bulletPunch:
+            return .Steel
+        case .waterGun, .bubble, .splash:
+            return .Water
+        }
+    }
     
     class func directCounter(type: [ElementType]) -> [ElementType] {
         switch type.count {

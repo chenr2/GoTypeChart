@@ -13,7 +13,8 @@ class GymLeaderDetailSpecialMoveCell: UICollectionViewCell {
     var specialMove: SpecialAttack? = nil
     
     @IBOutlet weak var circularView: UIView!
-    @IBOutlet weak var elementType: UILabel!
+    @IBOutlet weak var moveName: UILabel!
+    @IBOutlet weak var elementName: UILabel!
     
     // prevents a lot of constraint conflicts
     required init?(coder aDecoder: NSCoder) {
@@ -24,8 +25,10 @@ class GymLeaderDetailSpecialMoveCell: UICollectionViewCell {
     override func layoutSubviews() {
         circularView.layer.cornerRadius = bounds.size.width / 2
         if let specialMove = specialMove {
-            circularView.backgroundColor = UIColor.redColor()
-            elementType?.text = specialMove.rawValue
+            moveName?.text = specialMove.rawValue
+            let element = Pokemon.elementForSpecialAttack(specialMove)
+            circularView.backgroundColor = Colors.colorForElement(element)
+            elementName?.text = element.rawValue
         }
     }
     

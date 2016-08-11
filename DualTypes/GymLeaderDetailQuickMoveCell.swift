@@ -13,6 +13,7 @@ class GymLeaderDetailQuickMoveCell: UICollectionViewCell {
     var quickMove: QuickAttack? = nil
     
     @IBOutlet weak var circularView: UIView!
+    @IBOutlet weak var moveName: UILabel!
     @IBOutlet weak var elementType: UILabel!
     
     // prevents a lot of constraint conflicts
@@ -24,8 +25,10 @@ class GymLeaderDetailQuickMoveCell: UICollectionViewCell {
     override func layoutSubviews() {
         circularView.layer.cornerRadius = bounds.size.width / 2
         if let quickMove = quickMove {
-            circularView.backgroundColor = UIColor.blueColor()
-            elementType?.text = quickMove.rawValue
+            moveName?.text = quickMove.rawValue
+            let element = Pokemon.elementForQuickAttack(quickMove)
+            circularView.backgroundColor = Colors.colorForElement(element)
+            elementType?.text = element.rawValue
         }
     }
     
