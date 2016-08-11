@@ -35,7 +35,7 @@ class GymLeaderDetail: UICollectionViewController {
     }
     
     override func viewDidLoad() {
-        title = pokemon!.name
+        title = "#\(pokemon!.pokedex) \(pokemon!.name)"
     }
     
 }
