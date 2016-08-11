@@ -20,44 +20,7 @@ class GymLeaders: UICollectionViewController {
     
     var sortType:SortType = .index
     
-    @IBAction func sortAlphabetically(sender: AnyObject) {
-        sortExistingArrayAlphabetically()
-        sortType = .alphabetical
-        reloadSectionZero()
-    }
-    
-    @IBAction func sortByIndex(sender: AnyObject) {
-        sortExistingArrayByIndex()
-        sortType = .index
-        reloadSectionZero()
-    }
-    
-    @IBAction func showAllTypes(sender: AnyObject) {
-        gymLeadersArray = Pokemon.gymLeaders()
-        sortExistingArrayByIndex()
-        reloadSectionZero()
-    }
-    
-    @IBAction func showOnlySTier(sender: AnyObject) {
-        gymLeadersArray = Pokemon.gymLeaders()
-        sortType = .attack
-        sortExistingArrayByAttack()
-        reloadSectionZero()
-    }
-    
-    @IBAction func showOnlyATier(sender: AnyObject) {
-        gymLeadersArray = Pokemon.gymLeaders()
-        sortType = .defense
-        sortExistingArrayByDefense()
-        reloadSectionZero()
-    }
-    
-    @IBAction func showOnlyBTier(sender: AnyObject) {
-        gymLeadersArray = Pokemon.gymLeaders()
-        sortType = .stamina
-        sortExistingArrayByStamina()
-        reloadSectionZero()
-    }
+    let segmentedControl = UISegmentedControl(items: ["Index", "AZ", "Attack", "Defense", "Stamina"])
     
     func reloadSectionZero(){
         let sectionZero = NSIndexSet(index: 0)
@@ -94,9 +57,40 @@ class GymLeaders: UICollectionViewController {
         }
     }
     
-    func showTheBestMons(){
+    func resetMonsSortedBySelectedType(){
         gymLeadersArray = Pokemon.gymLeaders()
-        sortExistingArrayByIndex()
+        switch sortType {
+        case .index:
+            sortExistingArrayByIndex()
+        case .alphabetical:
+            sortExistingArrayAlphabetically()
+        case .attack:
+            sortExistingArrayByAttack()
+        case .defense:
+            sortExistingArrayByDefense()
+        case .stamina:
+            sortExistingArrayByStamina()
+        }
+    }
+    
+    func segmentedControlTapped(segment: UISegmentedControl){
+        searchBar.text = ""
+        switch segment.selectedSegmentIndex {
+        case 0: // index
+            sortType = .index
+        case 1: // AZ
+            sortType = .alphabetical
+        case 2: // attack
+            sortType = .attack
+        case 3: // defense
+            sortType = .defense
+        case 4: // stamina
+            sortType = .stamina
+        default:
+            break
+        }
+        resetMonsSortedBySelectedType()
+        reloadSectionZero()
     }
     
     override func viewDidLoad() {
@@ -106,7 +100,13 @@ class GymLeaders: UICollectionViewController {
         searchBar.placeholder = "Pokemon name or type"
         searchBar.delegate = self
         navigationItem.titleView = searchBar
-        showTheBestMons()
+        resetMonsSortedBySelectedType()
+        
+        segmentedControl.addTarget(self, action: #selector(GymLeaders.segmentedControlTapped(_:)), forControlEvents: .ValueChanged)
+        segmentedControl.selectedSegmentIndex = 0
+        let segmentedControlButtonItem = UIBarButtonItem(customView: segmentedControl)
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil)
+        setToolbarItems([flexibleSpace, segmentedControlButtonItem, flexibleSpace], animated: false)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -159,7 +159,7 @@ extension GymLeaders {
 extension GymLeaders: UISearchBarDelegate {
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.isEmpty {
-            showTheBestMons()
+            resetMonsSortedBySelectedType()
         } else {
             gymLeadersArray = Pokemon.gymLeaders().filter { pokemon in
                 // filter by names
