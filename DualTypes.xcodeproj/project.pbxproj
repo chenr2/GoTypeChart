@@ -83,6 +83,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FC18BEF11D5E8B81004A0657 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				FCCD27FE1D5CA944000A6428 /* fontawesome-webfont.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		FC18BEF21D5E8B9E004A0657 /* MainPage */ = {
+			isa = PBXGroup;
+			children = (
+				FCA742951D52E732003DAC35 /* GymLeaders.swift */,
+				FCA7429E1D52E951003DAC35 /* GymLeaderCell.swift */,
+				FC04C59B1D5BEB5400BCB6AB /* StatCell.swift */,
+			);
+			name = MainPage;
+			sourceTree = "<group>";
+		};
+		FC18BEF31D5E8BB4004A0657 /* GymDetail */ = {
+			isa = PBXGroup;
+			children = (
+				FCA742A01D535EE0003DAC35 /* GymLeaderDetail.swift */,
+				FC04C59F1D5BF99C00BCB6AB /* GymLeaderDetailQuickMoveCell.swift */,
+				FC04C5A11D5BFACA00BCB6AB /* GymLeaderDetailSpecialMoveCell.swift */,
+				FCA742A31D5360EF003DAC35 /* GymLeaderDetailHeader.swift */,
+				FC04C59D1D5BF05300BCB6AB /* GymLeaderDetailStatCell.swift */,
+				FCEEB18A1D5D410C0020A2A1 /* StatRing.swift */,
+				FCA742A51D536115003DAC35 /* GymLeaderDetailTypeCell.swift */,
+				FCB17E0A1D556A3E00F0CCBB /* GymLeaderDetailSectionHeader.swift */,
+			);
+			name = GymDetail;
+			sourceTree = "<group>";
+		};
 		FCA742521D52E675003DAC35 = {
 			isa = PBXGroup;
 			children = (
@@ -105,10 +138,11 @@
 		FCA7425D1D52E675003DAC35 /* DualTypes */ = {
 			isa = PBXGroup;
 			children = (
-				FCCD27FE1D5CA944000A6428 /* fontawesome-webfont.ttf */,
+				FC18BEF31D5E8BB4004A0657 /* GymDetail */,
+				FC18BEF21D5E8B9E004A0657 /* MainPage */,
+				FC18BEF11D5E8B81004A0657 /* Fonts */,
 				FCA7425E1D52E675003DAC35 /* AppDelegate.swift */,
 				FCB17E121D557D4000F0CCBB /* Colors.swift */,
-				FCA742A21D53607C003DAC35 /* GymLeaderTab */,
 				FCA742621D52E675003DAC35 /* Main.storyboard */,
 				FCA742651D52E675003DAC35 /* Assets.xcassets */,
 				FCA742671D52E675003DAC35 /* LaunchScreen.storyboard */,
@@ -146,24 +180,6 @@
 			);
 			name = Models;
 			path = DualTypes;
-			sourceTree = "<group>";
-		};
-		FCA742A21D53607C003DAC35 /* GymLeaderTab */ = {
-			isa = PBXGroup;
-			children = (
-				FCA742951D52E732003DAC35 /* GymLeaders.swift */,
-				FCA7429E1D52E951003DAC35 /* GymLeaderCell.swift */,
-				FC04C59B1D5BEB5400BCB6AB /* StatCell.swift */,
-				FCA742A01D535EE0003DAC35 /* GymLeaderDetail.swift */,
-				FC04C59F1D5BF99C00BCB6AB /* GymLeaderDetailQuickMoveCell.swift */,
-				FC04C5A11D5BFACA00BCB6AB /* GymLeaderDetailSpecialMoveCell.swift */,
-				FCA742A31D5360EF003DAC35 /* GymLeaderDetailHeader.swift */,
-				FC04C59D1D5BF05300BCB6AB /* GymLeaderDetailStatCell.swift */,
-				FCEEB18A1D5D410C0020A2A1 /* StatRing.swift */,
-				FCA742A51D536115003DAC35 /* GymLeaderDetailTypeCell.swift */,
-				FCB17E0A1D556A3E00F0CCBB /* GymLeaderDetailSectionHeader.swift */,
-			);
-			name = GymLeaderTab;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
