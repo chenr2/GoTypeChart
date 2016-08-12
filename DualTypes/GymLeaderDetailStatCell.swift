@@ -19,7 +19,7 @@ class GymLeaderDetailStatCell: UICollectionViewCell {
     var pokemon: Pokemon? = nil
     var statType: StatType? = nil
     
-    @IBOutlet weak var circularView: UIView!
+    @IBOutlet weak var circularView: StatRing!
     @IBOutlet weak var elementType: UILabel!
     @IBOutlet weak var statTypeLabel: UILabel!
         
@@ -37,10 +37,13 @@ class GymLeaderDetailStatCell: UICollectionViewCell {
             switch statType {
             case .attack:
                 elementType.text = "\(pokemon.attack)"
+                circularView.percent = pokemon.attackPercentage
             case .defense:
                 elementType.text = "\(pokemon.defense)"
+                circularView.percent = pokemon.defensePercentage
             case .stamina:
-                elementType.text = "\(pokemon.stamina)"                
+                elementType.text = "\(pokemon.stamina)"
+                circularView.percent = pokemon.staminaPercentage
             }
             statTypeLabel.text = statType.rawValue
         }

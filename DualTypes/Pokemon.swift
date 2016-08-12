@@ -6,7 +6,7 @@
 //  Copyright © 2016 Robert Chen. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 enum DamageType {
     case single, double, half
@@ -157,7 +157,23 @@ class Pokemon {
     var defense: Int
     var quickAttacks: [QuickAttack]
     var specialAttacks: [SpecialAttack]
+    
+    let maxAttack: CGFloat = 282
+    let maxDefense: CGFloat = 242
+    let maxStamina: CGFloat = 500
+    
+    var attackPercentage: CGFloat {
+        return 100 * CGFloat(attack) / maxAttack
+    }
 
+    var defensePercentage: CGFloat {
+        return 100 * CGFloat(defense) / maxDefense
+    }
+
+    var staminaPercentage: CGFloat {
+        return 100 * CGFloat(stamina) / maxStamina
+    }
+    
     class func elementForSpecialAttack(specialAttack: SpecialAttack) -> ElementType {
         switch specialAttack {
         case .megahorn, .bugBuzz, .xScissor, .signalBeam:
