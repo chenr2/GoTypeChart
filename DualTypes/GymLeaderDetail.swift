@@ -157,7 +157,8 @@ extension GymLeaderDetail: UICollectionViewDelegateFlowLayout {
         }
         let cellPadding:CGFloat = 10
         let widthMinusPadding = collectionView.bounds.width - (cellPadding + cellPadding * cellsPerRow)
-        let eachSide = widthMinusPadding / cellsPerRow
+        // subtracting 1, because on the 6+ it's off by 1
+        let eachSide = (widthMinusPadding / cellsPerRow) - 1
         switch indexPath.section {
         case 1, 2:
             return CGSize(width: eachSide, height:eachSide + 20)

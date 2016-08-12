@@ -16,8 +16,6 @@
 		FCA742661D52E675003DAC35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCA742651D52E675003DAC35 /* Assets.xcassets */; };
 		FCA742691D52E675003DAC35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCA742671D52E675003DAC35 /* LaunchScreen.storyboard */; };
 		FCA742961D52E732003DAC35 /* GymLeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA742951D52E732003DAC35 /* GymLeaders.swift */; };
-		FCA742981D52E7D5003DAC35 /* TypeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA742971D52E7D5003DAC35 /* TypeCalculator.swift */; };
-		FCA7429A1D52E81D003DAC35 /* Hexagon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA742991D52E81D003DAC35 /* Hexagon.swift */; };
 		FCA7429D1D52E86D003DAC35 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA7429C1D52E86D003DAC35 /* Pokemon.swift */; };
 		FCA7429F1D52E951003DAC35 /* GymLeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA7429E1D52E951003DAC35 /* GymLeaderCell.swift */; };
 		FCA742A11D535EE0003DAC35 /* GymLeaderDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA742A01D535EE0003DAC35 /* GymLeaderDetail.swift */; };
@@ -62,8 +60,6 @@
 		FCA742851D52E675003DAC35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FCA742871D52E675003DAC35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCA742951D52E732003DAC35 /* GymLeaders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GymLeaders.swift; sourceTree = "<group>"; };
-		FCA742971D52E7D5003DAC35 /* TypeCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeCalculator.swift; sourceTree = "<group>"; };
-		FCA742991D52E81D003DAC35 /* Hexagon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hexagon.swift; sourceTree = "<group>"; };
 		FCA7429C1D52E86D003DAC35 /* Pokemon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 		FCA7429E1D52E951003DAC35 /* GymLeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GymLeaderCell.swift; sourceTree = "<group>"; };
 		FCA742A01D535EE0003DAC35 /* GymLeaderDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GymLeaderDetail.swift; sourceTree = "<group>"; };
@@ -113,8 +109,6 @@
 				FCA7425E1D52E675003DAC35 /* AppDelegate.swift */,
 				FCB17E121D557D4000F0CCBB /* Colors.swift */,
 				FCA742A21D53607C003DAC35 /* GymLeaderTab */,
-				FCA742971D52E7D5003DAC35 /* TypeCalculator.swift */,
-				FCA742991D52E81D003DAC35 /* Hexagon.swift */,
 				FCA742621D52E675003DAC35 /* Main.storyboard */,
 				FCA742651D52E675003DAC35 /* Assets.xcassets */,
 				FCA742671D52E675003DAC35 /* LaunchScreen.storyboard */,
@@ -249,10 +243,8 @@
 				FCA7429D1D52E86D003DAC35 /* Pokemon.swift in Sources */,
 				FCB17E131D557D4000F0CCBB /* Colors.swift in Sources */,
 				FCB17E0B1D556A3E00F0CCBB /* GymLeaderDetailSectionHeader.swift in Sources */,
-				FCA742981D52E7D5003DAC35 /* TypeCalculator.swift in Sources */,
 				FC04C5A21D5BFACA00BCB6AB /* GymLeaderDetailSpecialMoveCell.swift in Sources */,
 				FCA742961D52E732003DAC35 /* GymLeaders.swift in Sources */,
-				FCA7429A1D52E81D003DAC35 /* Hexagon.swift in Sources */,
 				FC04C59C1D5BEB5400BCB6AB /* StatCell.swift in Sources */,
 				FCEEB18B1D5D410C0020A2A1 /* StatRing.swift in Sources */,
 				FC04C5A01D5BF99C00BCB6AB /* GymLeaderDetailQuickMoveCell.swift in Sources */,
