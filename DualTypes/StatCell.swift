@@ -14,7 +14,7 @@ class StatCell: UICollectionViewCell {
     @IBOutlet weak var pokemonType: UILabel!
     @IBOutlet weak var pokedexNumber: UILabel!
     @IBOutlet weak var sortLabel: UILabel!
-    @IBOutlet weak var statIcon: UILabel!
+    @IBOutlet weak var statIcon: UIImageView!
     
     var pokemon: Pokemon? = nil
     
@@ -29,16 +29,15 @@ class StatCell: UICollectionViewCell {
         switch sortType {
         case .attack:
             sortLabel.text = "\(pokemon.attack)"
-            statIcon.text = ""
+            statIcon.image = UIImage.init(named: "punch")
         case .defense:
             sortLabel.text = "\(pokemon.defense)"
-            statIcon.text = ""
+            statIcon.image = UIImage.init(named: "shield")
         case .stamina:
             sortLabel.text = "\(pokemon.stamina)"
-            statIcon.text = ""
+            statIcon.image = UIImage.init(named: "energy")
         default:
             sortLabel.text = ""
-            statIcon.text = ""
         }
     }
 }
