@@ -132,11 +132,11 @@ enum SpecialAttack: String {
         stomp = "Stomp",
         stoneEdge = "Stone Edge",
         struggle = "Struggle",
-        submission = "Submission",
+        submission = "Sub-mission",
         swift = "Swift",
         thunder = "Thunder",
         thunderbolt = "Thunder Punch",
-        thunderPunch = "Thunderbolt",
+        thunderPunch = "Thunder bolt",
         twister = "Twister",
         viceGrip = "Vice Grip",
         waterPulse = "Water Pulse",
@@ -261,7 +261,7 @@ class Pokemon {
             guard let singleElement = type.first else { return [] }
             switch singleElement {
             case .Normal:
-                return [.Fight]
+                return []
             case .Fight:
                 return [.Fairy, .Flying]
             case .Flying:
@@ -285,7 +285,7 @@ class Pokemon {
             case .Grass:
                 return [.Bug, .Flying, .Poison]
             case .Electric:
-                return [.Ground]
+                return []
             case .Psychic:
                 return [.Dark]
             case .Ice:
@@ -295,7 +295,7 @@ class Pokemon {
             case .Dark:
                 return [.Fairy, .Fight]
             case .Fairy:
-                return [.Poison, .Steel]
+                return []
             }
         case 2:
             guard let firstElement = type.first,
