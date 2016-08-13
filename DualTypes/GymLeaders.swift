@@ -178,22 +178,31 @@ extension GymLeaders: UISearchBarDelegate {
                 resetMonsSortedBySelectedType()
             } else {
                 gymLeadersArray = Pokemon.gymLeaders().filter { pokemon in
-                    // filter by names
-                    if pokemon.name.lowercaseString.containsString(searchText.lowercaseString) {
-                        return true
-                    }
-                    // filter by elements
+                    // what to include in the "search index"
+                    let pokemonName = pokemon.name.lowercaseString
+                    let pokemonIndex = "\(pokemon.pokedex)"
                     let elementNames = pokemon.type.map {
-                        $0.rawValue
-                        }.joinWithSeparator(" ")
-                    if elementNames.lowercaseString.containsString(searchText.lowercaseString) {
-                        return true
+                        $0.rawValue.lowercaseString
                     }
-                    // filter by number
-                    if "\(pokemon.pokedex)".containsString(searchText) {
-                        return true
+                    var whatToSearchOnArray = [pokemonName, pokemonIndex]
+                    whatToSearchOnArray += elementNames
+                    let descriptionText = whatToSearchOnArray.joinWithSeparator(" ")
+                    // trim beginning and end for whitespace.
+                    // then separate each search text word into its own search query
+                    let searchQueries: [String] = searchText
+                        .stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+                        .componentsSeparatedByCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+                        .filter {
+                            return !$0.isEmpty
+                        }
+                    // all queries must pass. e.g. "bug flying" both words must hit.
+                    var response = true
+                    for query in searchQueries {
+                        if !descriptionText.containsString(query) {
+                            response = false
+                        }
                     }
-                    return false
+                    return response
                 }
             }
             reloadSectionZero()
@@ -218,7 +227,7 @@ extension GymLeaders: UISearchControllerDelegate {
 extension GymLeaders: ModifySearchTextDelegate {
     func tappedElement(element: ElementType){
         if let searchBarText = resultSearchController?.searchBar.text {
-            resultSearchController?.searchBar.text = "\(searchBarText) \(element.rawValue.lowercaseString)"
+            resultSearchController?.searchBar.text = "\(searchBarText) \(element.rawValue.lowercaseString) "
         }
     }
 }
