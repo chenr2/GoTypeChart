@@ -11,6 +11,8 @@
 		FC04C59E1D5BF05300BCB6AB /* GymLeaderDetailStatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC04C59D1D5BF05300BCB6AB /* GymLeaderDetailStatCell.swift */; };
 		FC04C5A01D5BF99C00BCB6AB /* GymLeaderDetailQuickMoveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC04C59F1D5BF99C00BCB6AB /* GymLeaderDetailQuickMoveCell.swift */; };
 		FC04C5A21D5BFACA00BCB6AB /* GymLeaderDetailSpecialMoveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC04C5A11D5BFACA00BCB6AB /* GymLeaderDetailSpecialMoveCell.swift */; };
+		FC17FA021D5EC635006EAE3D /* SearchElementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC17FA011D5EC635006EAE3D /* SearchElementCell.swift */; };
+		FC18BEF61D5E8D21004A0657 /* SearchOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC18BEF51D5E8D21004A0657 /* SearchOverlay.swift */; };
 		FCA7425F1D52E675003DAC35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA7425E1D52E675003DAC35 /* AppDelegate.swift */; };
 		FCA742641D52E675003DAC35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCA742621D52E675003DAC35 /* Main.storyboard */; };
 		FCA742661D52E675003DAC35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCA742651D52E675003DAC35 /* Assets.xcassets */; };
@@ -46,6 +48,8 @@
 		FC04C59D1D5BF05300BCB6AB /* GymLeaderDetailStatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GymLeaderDetailStatCell.swift; sourceTree = "<group>"; };
 		FC04C59F1D5BF99C00BCB6AB /* GymLeaderDetailQuickMoveCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GymLeaderDetailQuickMoveCell.swift; sourceTree = "<group>"; };
 		FC04C5A11D5BFACA00BCB6AB /* GymLeaderDetailSpecialMoveCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GymLeaderDetailSpecialMoveCell.swift; sourceTree = "<group>"; };
+		FC17FA011D5EC635006EAE3D /* SearchElementCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchElementCell.swift; sourceTree = "<group>"; };
+		FC18BEF51D5E8D21004A0657 /* SearchOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchOverlay.swift; sourceTree = "<group>"; };
 		FCA7425B1D52E675003DAC35 /* DualTypes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DualTypes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCA7425E1D52E675003DAC35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCA742631D52E675003DAC35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -116,6 +120,15 @@
 			name = GymDetail;
 			sourceTree = "<group>";
 		};
+		FC18BEF41D5E8CE7004A0657 /* SearchHelper */ = {
+			isa = PBXGroup;
+			children = (
+				FC18BEF51D5E8D21004A0657 /* SearchOverlay.swift */,
+				FC17FA011D5EC635006EAE3D /* SearchElementCell.swift */,
+			);
+			name = SearchHelper;
+			sourceTree = "<group>";
+		};
 		FCA742521D52E675003DAC35 = {
 			isa = PBXGroup;
 			children = (
@@ -138,8 +151,9 @@
 		FCA7425D1D52E675003DAC35 /* DualTypes */ = {
 			isa = PBXGroup;
 			children = (
-				FC18BEF31D5E8BB4004A0657 /* GymDetail */,
 				FC18BEF21D5E8B9E004A0657 /* MainPage */,
+				FC18BEF41D5E8CE7004A0657 /* SearchHelper */,
+				FC18BEF31D5E8BB4004A0657 /* GymDetail */,
 				FC18BEF11D5E8B81004A0657 /* Fonts */,
 				FCA7425E1D52E675003DAC35 /* AppDelegate.swift */,
 				FCB17E121D557D4000F0CCBB /* Colors.swift */,
@@ -261,7 +275,9 @@
 				FCB17E0B1D556A3E00F0CCBB /* GymLeaderDetailSectionHeader.swift in Sources */,
 				FC04C5A21D5BFACA00BCB6AB /* GymLeaderDetailSpecialMoveCell.swift in Sources */,
 				FCA742961D52E732003DAC35 /* GymLeaders.swift in Sources */,
+				FC17FA021D5EC635006EAE3D /* SearchElementCell.swift in Sources */,
 				FC04C59C1D5BEB5400BCB6AB /* StatCell.swift in Sources */,
+				FC18BEF61D5E8D21004A0657 /* SearchOverlay.swift in Sources */,
 				FCEEB18B1D5D410C0020A2A1 /* StatRing.swift in Sources */,
 				FC04C5A01D5BF99C00BCB6AB /* GymLeaderDetailQuickMoveCell.swift in Sources */,
 				FCA742A81D536192003DAC35 /* ElementType.swift in Sources */,

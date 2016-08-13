@@ -21,7 +21,7 @@ class GymLeaderDetail: UICollectionViewController {
     
     var double: [ElementType] = []
     var half: [ElementType] = []
-
+    
     func getKeysOfValue(damage: DamageType, pokemon: Pokemon) -> [ElementType] {
         var elements: [ElementType] = []
         for (key, value) in pokemon.vulnerabilitySet {

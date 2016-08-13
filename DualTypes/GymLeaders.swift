@@ -8,19 +8,23 @@
 
 import UIKit
 
+protocol ModifySearchTextDelegate {
+    func tappedElement(element: ElementType)
+}
+
 enum SortType {
     case attack, defense, stamina, index, alphabetical
 }
 
 class GymLeaders: UICollectionViewController {
     
-    var searchBar = UISearchBar()
-    
     var gymLeadersArray: [Pokemon] = []
     
     var sortType:SortType = .attack
     
     let segmentedControl = UISegmentedControl(items: ["Index", "AZ", "Attack", "Defense", "Stamina"])
+    
+    var resultSearchController:UISearchController? = nil
     
     func reloadSectionZero(){
         let sectionZero = NSIndexSet(index: 0)
@@ -74,7 +78,6 @@ class GymLeaders: UICollectionViewController {
     }
     
     func segmentedControlTapped(segment: UISegmentedControl){
-        searchBar.text = ""
         switch segment.selectedSegmentIndex {
         case 0: // index
             sortType = .index
@@ -94,12 +97,6 @@ class GymLeaders: UICollectionViewController {
     }
     
     override func viewDidLoad() {
-        searchBar = UISearchBar()
-        searchBar.sizeToFit()
-        searchBar.showsCancelButton = true
-        searchBar.placeholder = "Pokemon name or type"
-        searchBar.delegate = self
-        navigationItem.titleView = searchBar
         resetMonsSortedBySelectedType()
         
         segmentedControl.addTarget(self, action: #selector(GymLeaders.segmentedControlTapped(_:)), forControlEvents: .ValueChanged)
@@ -107,6 +104,20 @@ class GymLeaders: UICollectionViewController {
         let segmentedControlButtonItem = UIBarButtonItem(customView: segmentedControl)
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil)
         setToolbarItems([flexibleSpace, segmentedControlButtonItem, flexibleSpace], animated: false)
+        
+        let searchOverlayCollection = storyboard!.instantiateViewControllerWithIdentifier("SearchOverlay") as! SearchOverlay
+        searchOverlayCollection.modifySearchTextDelegate = self
+        resultSearchController = UISearchController(searchResultsController: searchOverlayCollection)
+        resultSearchController?.searchResultsUpdater = searchOverlayCollection
+        let searchBar = resultSearchController!.searchBar
+        searchBar.sizeToFit()
+        searchBar.placeholder = "Pokemon name or type"
+        searchBar.delegate = self
+        navigationItem.titleView = resultSearchController?.searchBar
+        resultSearchController?.hidesNavigationBarDuringPresentation = false
+        resultSearchController?.dimsBackgroundDuringPresentation = true
+        definesPresentationContext = true
+        resultSearchController?.delegate = self
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -157,33 +168,55 @@ extension GymLeaders {
 }
 
 extension GymLeaders: UISearchBarDelegate {
-    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-        if searchText.isEmpty {
-            resetMonsSortedBySelectedType()
-        } else {
-            gymLeadersArray = Pokemon.gymLeaders().filter { pokemon in
-                // filter by names
-                if pokemon.name.lowercaseString.containsString(searchText.lowercaseString) {
-                    return true
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        if let searchText = searchBar.text {
+            if searchText.isEmpty {
+                resetMonsSortedBySelectedType()
+            } else {
+                gymLeadersArray = Pokemon.gymLeaders().filter { pokemon in
+                    // filter by names
+                    if pokemon.name.lowercaseString.containsString(searchText.lowercaseString) {
+                        return true
+                    }
+                    // filter by elements
+                    let elementNames = pokemon.type.map {
+                        $0.rawValue
+                        }.joinWithSeparator(" ")
+                    if elementNames.lowercaseString.containsString(searchText.lowercaseString) {
+                        return true
+                    }
+                    // filter by number
+                    if "\(pokemon.pokedex)".containsString(searchText) {
+                        return true
+                    }
+                    return false
                 }
-                // filter by elements
-                let elementNames = pokemon.type.map {
-                    $0.rawValue
-                    }.joinWithSeparator(" ")
-                if elementNames.lowercaseString.containsString(searchText.lowercaseString) {
-                    return true
-                }
-                // filter by number
-                if "\(pokemon.pokedex)".containsString(searchText) {
-                    return true
-                }
-                return false
             }
+            reloadSectionZero()
         }
-        reloadSectionZero()
+        resultSearchController?.active = false
     }
     
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
+    }
+}
+
+extension GymLeaders: UISearchControllerDelegate {
+    // search bar selection shows elements
+    func didPresentSearchController(searchController: UISearchController) {
+        if let searchResultsController = searchController.searchResultsController as? SearchOverlay {
+            searchResultsController.view.hidden = false
+        }
+    }
+}
+
+extension GymLeaders: ModifySearchTextDelegate {
+    func tappedElement(element: ElementType){
+        if let searchBarText = resultSearchController?.searchBar.text {
+            resultSearchController?.searchBar.text = "\(searchBarText) \(element.rawValue)"
+        }
     }
 }

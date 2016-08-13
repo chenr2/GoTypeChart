@@ -9,22 +9,6 @@
 import Foundation
 
 enum ElementType: String {
-    case Normal = "Normal"
-    case Fight = "Fight"
-    case Flying = "Flying"
-    case Poison = "Poison"
-    case Ground = "Ground"
-    case Rock = "Rock"
-    case Bug = "Bug"
-    case Ghost = "Ghost"
-    case Steel = "Steel"
-    case Fire = "Fire"
-    case Water = "Water"
-    case Grass = "Grass"
-    case Electric = "Electric"
-    case Psychic = "Psychic"
-    case Ice = "Ice"
-    case Dragon = "Dragon"
-    case Dark = "Dark"
-    case Fairy = "Fairy"
+    case Normal, Fight, Flying, Poison, Ground, Rock, Bug, Ghost, Steel, Fire, Water, Grass, Electric, Psychic, Ice, Dragon, Dark, Fairy
+    static let allValues = [Normal, Fight, Flying, Poison, Ground, Rock, Bug, Ghost, Steel, Fire, Water, Grass, Electric, Psychic, Ice, Dragon, Dark, Fairy]
 }
