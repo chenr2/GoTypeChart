@@ -118,6 +118,8 @@ class GymLeaders: UICollectionViewController {
         resultSearchController?.dimsBackgroundDuringPresentation = true
         definesPresentationContext = true
         resultSearchController?.delegate = self
+        resultSearchController?.searchBar.enablesReturnKeyAutomatically = false
+        resultSearchController?.searchBar.autocapitalizationType = .None
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -216,7 +218,7 @@ extension GymLeaders: UISearchControllerDelegate {
 extension GymLeaders: ModifySearchTextDelegate {
     func tappedElement(element: ElementType){
         if let searchBarText = resultSearchController?.searchBar.text {
-            resultSearchController?.searchBar.text = "\(searchBarText) \(element.rawValue)"
+            resultSearchController?.searchBar.text = "\(searchBarText) \(element.rawValue.lowercaseString)"
         }
     }
 }
