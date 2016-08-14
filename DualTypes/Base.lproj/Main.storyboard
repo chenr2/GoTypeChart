@@ -55,6 +55,39 @@
                                     <outlet property="elementName" destination="37K-F5-GVO" id="hkp-rL-c6O"/>
                                 </connections>
                             </collectionViewCell>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="searchResultCell" id="e4y-qY-Wuf" customClass="SearchResultCell" customModule="DualTypes" customModuleProvider="target">
+                                <rect key="frame" x="199" y="10" width="111" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="111" height="47"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="47N-hy-6B2">
+                                            <rect key="frame" x="8" y="8" width="95" height="31"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <color key="backgroundColor" red="0.23921568630000001" green="0.76470588240000004" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="47N-hy-6B2" firstAttribute="top" secondItem="e4y-qY-Wuf" secondAttribute="topMargin" id="1EW-qG-KZi"/>
+                                    <constraint firstItem="47N-hy-6B2" firstAttribute="leading" secondItem="e4y-qY-Wuf" secondAttribute="leadingMargin" id="MF5-5W-uRk"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="47N-hy-6B2" secondAttribute="trailing" id="d0r-7w-SSW"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="47N-hy-6B2" secondAttribute="bottom" id="k9P-3h-viu"/>
+                                </constraints>
+                                <size key="customSize" width="111" height="47"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="pokemonName" destination="47N-hy-6B2" id="bd8-UE-hBG"/>
+                                </connections>
+                            </collectionViewCell>
                         </cells>
                         <connections>
                             <outlet property="dataSource" destination="GnF-1p-wBA" id="unI-TT-Vo3"/>
