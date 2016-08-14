@@ -41,11 +41,13 @@ class SearchOverlay: UICollectionViewController {
         switch indexPath.section {
         case 0:
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("elementCell", forIndexPath: indexPath) as! SearchElementCell
-            cell.elementType = helperElements[indexPath.row]
+            let element = helperElements[indexPath.row]
+            let isFilter = elementFilters.contains(element)
+            cell.configureCell(element, isFilter: isFilter)
             return cell
         default:
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("searchResultCell", forIndexPath: indexPath) as! SearchResultCell
-            cell.pokemon = searchResultsSet[indexPath.row]
+            cell.configureCell(searchResultsSet[indexPath.row])
             return cell
         }
     }
@@ -110,13 +112,19 @@ extension SearchOverlay: UICollectionViewDelegateFlowLayout {
         let cellPadding:CGFloat = 10
         let widthMinusPadding = collectionView.bounds.width - (cellPadding + cellPadding * cellsPerRow)
         let eachSide = (widthMinusPadding / cellsPerRow) - 1
-        return CGSize(width: eachSide, height: height)
+        switch indexPath.section {
+        case 0:
+            return CGSize(width: eachSide, height: height)
+        default:
+            return CGSize(width: eachSide, height: eachSide)
+        }
     }
     
 }
 
 extension SearchOverlay : UISearchResultsUpdating {
     func updateSearchResultsForSearchController(searchController: UISearchController) {
+        view.hidden = false 
         if let searchText = searchController.searchBar.text {
             if searchText.isEmpty {
                 helperElements = ElementType.allValues

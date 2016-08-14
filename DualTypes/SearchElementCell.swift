@@ -11,13 +11,12 @@ import UIKit
 class SearchElementCell: UICollectionViewCell {
     
     @IBOutlet weak var elementName: UILabel!
+    @IBOutlet weak var closeButton: UILabel!
     
-    var elementType: ElementType? = nil
-    
-    override func layoutSubviews() {
-        if let elementType = elementType {
-            elementName?.text = elementType.rawValue
-            backgroundColor = Colors.colorForElement(elementType)
-        }
+    func configureCell(element: ElementType, isFilter: Bool){
+        elementName?.text = element.rawValue
+        backgroundColor = Colors.colorForElement(element)
+        closeButton.hidden = !isFilter
     }
+    
 }
