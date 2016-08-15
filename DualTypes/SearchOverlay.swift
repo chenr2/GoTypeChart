@@ -17,14 +17,7 @@ class SearchOverlay: UICollectionViewController {
     var helperElements: [ElementType] = []
     
     var elementFilters: [ElementType] = []
-    
-    override func viewDidAppear(animated: Bool) {
-        helperElements = ElementType.allValues
-        elementFilters = []
-        searchResultsSet = Pokemon.gymLeaders()
-        collectionView?.reloadData()
-    }
-    
+        
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 3
     }
@@ -59,6 +52,13 @@ class SearchOverlay: UICollectionViewController {
         }
     }
     
+    func resetSearch(){
+        helperElements = ElementType.allValues
+        elementFilters = []
+        searchResultsSet = Pokemon.gymLeaders()
+        collectionView?.reloadData()
+    }
+    
     func recalculateFilters(){
         if elementFilters.isEmpty {
             helperElements = ElementType.allValues
@@ -81,7 +81,7 @@ class SearchOverlay: UICollectionViewController {
             otherElementsSet.remove(singleElement)
             helperElements = Array(otherElementsSet)
         } else {
-            // show everything
+            // show nothing
             helperElements = []
         }
         searchResultsSet = Pokemon.gymLeaders().filter { pokemon in
