@@ -24,24 +24,27 @@
                             <size key="itemSize" width="50" height="50"/>
                             <size key="headerReferenceSize" width="50" height="30"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
+                            <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="elementCell" id="d39-at-mfJ" customClass="SearchElementCell" customModule="DualTypes" customModuleProvider="target">
-                                <rect key="frame" x="10" y="83.5" width="111" height="47"/>
+                                <rect key="frame" x="10" y="73.5" width="111" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="111" height="47"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="37K-F5-GVO">
-                                            <rect key="frame" x="8" y="8" width="95" height="31"/>
+                                            <rect key="frame" x="8" y="8" width="81.5" height="31"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mVk-b7-fUk">
                                             <rect key="frame" x="89.5" y="15" width="13.5" height="17"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="13.5" id="6VQ-Yj-HRr"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="17"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -54,9 +57,9 @@
                                     <constraint firstAttribute="trailingMargin" secondItem="mVk-b7-fUk" secondAttribute="trailing" id="ADS-HR-TEU"/>
                                     <constraint firstItem="37K-F5-GVO" firstAttribute="leading" secondItem="d39-at-mfJ" secondAttribute="leadingMargin" id="Fa4-o7-LZf"/>
                                     <constraint firstItem="mVk-b7-fUk" firstAttribute="centerY" secondItem="d39-at-mfJ" secondAttribute="centerY" id="FfU-w6-jeH"/>
+                                    <constraint firstItem="mVk-b7-fUk" firstAttribute="leading" secondItem="37K-F5-GVO" secondAttribute="trailing" id="LX9-M0-kkr"/>
                                     <constraint firstItem="37K-F5-GVO" firstAttribute="top" secondItem="d39-at-mfJ" secondAttribute="topMargin" id="S3j-Ul-rky"/>
                                     <constraint firstAttribute="bottomMargin" secondItem="37K-F5-GVO" secondAttribute="bottom" id="hNU-IT-CYg"/>
-                                    <constraint firstAttribute="trailingMargin" secondItem="37K-F5-GVO" secondAttribute="trailing" id="xsH-Fk-7aK"/>
                                 </constraints>
                                 <size key="customSize" width="111" height="47"/>
                                 <userDefinedRuntimeAttributes>
@@ -66,11 +69,12 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="closeButton" destination="mVk-b7-fUk" id="Hij-XW-Ndk"/>
+                                    <outlet property="closeButtonWidth" destination="6VQ-Yj-HRr" id="D71-xH-RdC"/>
                                     <outlet property="elementName" destination="37K-F5-GVO" id="hkp-rL-c6O"/>
                                 </connections>
                             </collectionViewCell>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="searchResultCell" id="e4y-qY-Wuf" customClass="SearchResultCell" customModule="DualTypes" customModuleProvider="target">
-                                <rect key="frame" x="131" y="40" width="139" height="134"/>
+                                <rect key="frame" x="131" y="30" width="139" height="134"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="139" height="134"/>

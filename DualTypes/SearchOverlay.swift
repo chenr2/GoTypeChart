@@ -22,6 +22,7 @@ class SearchOverlay: UICollectionViewController {
         helperElements = ElementType.allValues
         elementFilters = []
         searchResultsSet = Pokemon.gymLeaders()
+        collectionView?.reloadData()
     }
     
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -88,7 +89,7 @@ class SearchOverlay: UICollectionViewController {
             let elementFilterTypes = Set(elementFilters)
             return elementFilterTypes.isSubsetOf(pokemonType)
         }
-        collectionView?.reloadData()    
+        collectionView?.reloadData()
     }
     
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
@@ -137,6 +138,21 @@ extension SearchOverlay: UICollectionViewDelegateFlowLayout {
         }
     }
     
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        switch section {
+        case 0:
+            if elementFilters.isEmpty {
+                return CGSizeZero
+            }
+        case 1:
+            if helperElements.isEmpty {
+                return CGSizeZero
+            }
+        default:
+            break
+        }
+        return CGSize(width: 0, height: 40)
+    }
 }
 
 extension SearchOverlay : UISearchResultsUpdating {

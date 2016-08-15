@@ -12,11 +12,18 @@ class SearchElementCell: UICollectionViewCell {
     
     @IBOutlet weak var elementName: UILabel!
     @IBOutlet weak var closeButton: UILabel!
+    @IBOutlet weak var closeButtonWidth: NSLayoutConstraint!
     
     func configureCell(element: ElementType, isFilter: Bool){
         elementName?.text = element.rawValue
         backgroundColor = Colors.colorForElement(element)
-        closeButton.hidden = !isFilter
+        if isFilter {
+            closeButtonWidth.constant = 13.5
+            closeButton.hidden = false
+        } else {
+            closeButtonWidth.constant = 0
+            closeButton.hidden = true
+        }
     }
     
 }

@@ -112,7 +112,7 @@ class GymLeaders: UICollectionViewController {
         resultSearchController?.searchResultsUpdater = searchOverlayCollection
         let searchBar = resultSearchController!.searchBar
         searchBar.sizeToFit()
-        searchBar.placeholder = "Pokemon name or type"
+        searchBar.placeholder = "Enter a name, or filter by type."
         searchBar.delegate = self
         navigationItem.titleView = resultSearchController?.searchBar
         resultSearchController?.hidesNavigationBarDuringPresentation = false
