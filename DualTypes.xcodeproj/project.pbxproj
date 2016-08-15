@@ -29,6 +29,7 @@
 		FCCD27FF1D5CA944000A6428 /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FCCD27FE1D5CA944000A6428 /* fontawesome-webfont.ttf */; };
 		FCEEB18B1D5D410C0020A2A1 /* StatRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB18A1D5D410C0020A2A1 /* StatRing.swift */; };
 		FCF975BF1D5FA9DF00AA0E3D /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF975BE1D5FA9DF00AA0E3D /* SearchResultCell.swift */; };
+		FCF975C11D6140D900AA0E3D /* SearchResultSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF975C01D6140D900AA0E3D /* SearchResultSectionHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -76,6 +77,7 @@
 		FCCD27FE1D5CA944000A6428 /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.ttf"; sourceTree = "<group>"; };
 		FCEEB18A1D5D410C0020A2A1 /* StatRing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatRing.swift; sourceTree = "<group>"; };
 		FCF975BE1D5FA9DF00AA0E3D /* SearchResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
+		FCF975C01D6140D900AA0E3D /* SearchResultSectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultSectionHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 				FC18BEF51D5E8D21004A0657 /* SearchOverlay.swift */,
 				FC17FA011D5EC635006EAE3D /* SearchElementCell.swift */,
 				FCF975BE1D5FA9DF00AA0E3D /* SearchResultCell.swift */,
+				FCF975C01D6140D900AA0E3D /* SearchResultSectionHeader.swift */,
 			);
 			name = SearchHelper;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 				FC04C5A01D5BF99C00BCB6AB /* GymLeaderDetailQuickMoveCell.swift in Sources */,
 				FCA742A81D536192003DAC35 /* ElementType.swift in Sources */,
 				FCA742A41D5360EF003DAC35 /* GymLeaderDetailHeader.swift in Sources */,
+				FCF975C11D6140D900AA0E3D /* SearchResultSectionHeader.swift in Sources */,
 				FCA7429F1D52E951003DAC35 /* GymLeaderCell.swift in Sources */,
 				FCA7425F1D52E675003DAC35 /* AppDelegate.swift in Sources */,
 				FCA742A61D536115003DAC35 /* GymLeaderDetailTypeCell.swift in Sources */,

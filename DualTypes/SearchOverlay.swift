@@ -25,12 +25,14 @@ class SearchOverlay: UICollectionViewController {
     }
     
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 2
+        return 3
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch section {
         case 0:
+            return elementFilters.count
+        case 1:
             return helperElements.count
         default:
             return searchResultsSet.count
@@ -41,9 +43,13 @@ class SearchOverlay: UICollectionViewController {
         switch indexPath.section {
         case 0:
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("elementCell", forIndexPath: indexPath) as! SearchElementCell
+            let element = elementFilters[indexPath.row]
+            cell.configureCell(element, isFilter: true)
+            return cell
+        case 1:
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("elementCell", forIndexPath: indexPath) as! SearchElementCell
             let element = helperElements[indexPath.row]
-            let isFilter = elementFilters.contains(element)
-            cell.configureCell(element, isFilter: isFilter)
+            cell.configureCell(element, isFilter: false)
             return cell
         default:
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("searchResultCell", forIndexPath: indexPath) as! SearchResultCell
@@ -52,55 +58,66 @@ class SearchOverlay: UICollectionViewController {
         }
     }
     
+    func recalculateFilters(){
+        if elementFilters.isEmpty {
+            helperElements = ElementType.allValues
+        } else if elementFilters.count == 1 {
+            // there's only one element, if there's a count of 1.
+            let singleElement = elementFilters.first!
+            // should show other element if it exists.
+            // start with all pokemon.
+            let dualTypePokemonOfThatElement = Pokemon.gymLeaders().filter {
+                $0.type.contains(singleElement)
+            }.filter {
+                    // just those pokemon with 2 elements
+                    $0.type.count == 2
+            }
+            var otherElements: [ElementType] = []
+            for dualType in dualTypePokemonOfThatElement {
+                otherElements += dualType.type
+            }
+            var otherElementsSet = Set(otherElements)
+            otherElementsSet.remove(singleElement)
+            helperElements = Array(otherElementsSet)
+        } else {
+            // show everything
+            helperElements = []
+        }
+        searchResultsSet = Pokemon.gymLeaders().filter { pokemon in
+            let pokemonType = Set(pokemon.type)
+            let elementFilterTypes = Set(elementFilters)
+            return elementFilterTypes.isSubsetOf(pokemonType)
+        }
+        collectionView?.reloadData()    
+    }
+    
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         switch indexPath.section {
         case 0:
+            elementFilters.removeAtIndex(indexPath.row)
+            recalculateFilters()
+        case 1:
             let selectedItem = helperElements[indexPath.row]
-            if elementFilters.contains(selectedItem) {
-                // already a filter, so remove it
-                elementFilters = elementFilters.filter {
-                    $0 != selectedItem
-                }
-            } else {
-                // not a filter, so add it
-                elementFilters.append(selectedItem)
-            }
-            if elementFilters.isEmpty {
-                helperElements = ElementType.allValues
-            } else if elementFilters.count == 1 {
-                // there's only one element, if there's a count of 1.
-                let singleElement = elementFilters.first!
-                // should show other element if it exists.
-                // start with all pokemon.
-                let dualTypePokemonOfThatElement = Pokemon.gymLeaders().filter {
-                    $0.type.contains(singleElement)
-                }.filter {
-                    // just those pokemon with 2 elements
-                    $0.type.count == 2
-                }
-                var otherElements: [ElementType] = []
-                for dualType in dualTypePokemonOfThatElement {
-                    otherElements += dualType.type
-                }
-                helperElements = Array(Set(otherElements))
-            } else {
-                // show everything
-                helperElements = elementFilters
-            }
-
-            searchResultsSet = Pokemon.gymLeaders().filter { pokemon in
-                let pokemonType = Set(pokemon.type)
-                let elementFilterTypes = Set(elementFilters)
-                return elementFilterTypes.isSubsetOf(pokemonType)
-            }
-            
-            print("helperElements: \(helperElements)")
-            print("elementFilters: \(elementFilters)")
-            
-            self.collectionView?.reloadData()
+            elementFilters.append(selectedItem)
+            recalculateFilters()
         default:
+            let selectedPokemon = searchResultsSet[indexPath.row]
+            modifySearchTextDelegate?.tappedPokemon(selectedPokemon)
             break
         }
+    }
+    
+    override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+        let cell = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: "SearchResultSectionHeader", forIndexPath: indexPath) as! SearchResultSectionHeader
+        switch indexPath.section {
+        case 0:
+            cell.sectionHeaderText = "Filtering on these types".uppercaseString
+        case 1:
+            cell.sectionHeaderText = "Choose from these types".uppercaseString
+        default:
+            cell.sectionHeaderText = "Search filter results".uppercaseString
+        }
+        return cell
     }
 }
 
@@ -113,7 +130,7 @@ extension SearchOverlay: UICollectionViewDelegateFlowLayout {
         let widthMinusPadding = collectionView.bounds.width - (cellPadding + cellPadding * cellsPerRow)
         let eachSide = (widthMinusPadding / cellsPerRow) - 1
         switch indexPath.section {
-        case 0:
+        case 0, 1:
             return CGSize(width: eachSide, height: height)
         default:
             return CGSize(width: eachSide, height: eachSide)

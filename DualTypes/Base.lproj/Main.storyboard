@@ -22,13 +22,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="oJ9-Cm-8nV">
                             <size key="itemSize" width="50" height="50"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="headerReferenceSize" width="50" height="30"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="elementCell" id="d39-at-mfJ" customClass="SearchElementCell" customModule="DualTypes" customModuleProvider="target">
-                                <rect key="frame" x="10" y="53.5" width="111" height="47"/>
+                                <rect key="frame" x="10" y="83.5" width="111" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="111" height="47"/>
@@ -70,7 +70,7 @@
                                 </connections>
                             </collectionViewCell>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="searchResultCell" id="e4y-qY-Wuf" customClass="SearchResultCell" customModule="DualTypes" customModuleProvider="target">
-                                <rect key="frame" x="131" y="10" width="139" height="134"/>
+                                <rect key="frame" x="131" y="40" width="139" height="134"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="139" height="134"/>
@@ -107,6 +107,45 @@
                                 </connections>
                             </collectionViewCell>
                         </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SearchResultSectionHeader" id="LFe-Q3-1N7" customClass="SearchResultSectionHeader" customModule="DualTypes" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Ym-ut-OP1">
+                                    <rect key="frame" x="8" y="14.5" width="131.5" height="1"/>
+                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="bRT-9V-Ghg"/>
+                                    </constraints>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hve-aB-1Iu">
+                                    <rect key="frame" x="144.5" y="7.5" width="31" height="14.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d5H-L3-o1T">
+                                    <rect key="frame" x="181" y="14.5" width="131" height="1"/>
+                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="iv2-m3-gc3"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="leadingMargin" secondItem="6Ym-ut-OP1" secondAttribute="leading" id="BVJ-gQ-Tli"/>
+                                <constraint firstAttribute="trailingMargin" secondItem="d5H-L3-o1T" secondAttribute="trailing" id="DfR-za-IX9"/>
+                                <constraint firstItem="6Ym-ut-OP1" firstAttribute="centerY" secondItem="LFe-Q3-1N7" secondAttribute="centerY" id="JVP-ug-rM7"/>
+                                <constraint firstItem="d5H-L3-o1T" firstAttribute="centerY" secondItem="LFe-Q3-1N7" secondAttribute="centerY" id="XUt-rx-UNg"/>
+                                <constraint firstItem="d5H-L3-o1T" firstAttribute="leading" secondItem="hve-aB-1Iu" secondAttribute="trailing" constant="5" id="dQE-Sc-rcn"/>
+                                <constraint firstItem="hve-aB-1Iu" firstAttribute="leading" secondItem="6Ym-ut-OP1" secondAttribute="trailing" constant="5" id="kTz-Ve-XZD"/>
+                                <constraint firstItem="hve-aB-1Iu" firstAttribute="centerX" secondItem="LFe-Q3-1N7" secondAttribute="centerX" id="rOt-YZ-WAg"/>
+                                <constraint firstItem="hve-aB-1Iu" firstAttribute="centerY" secondItem="LFe-Q3-1N7" secondAttribute="centerY" id="tHr-JR-0wT"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="sectionTitle" destination="hve-aB-1Iu" id="yfA-ib-ujF"/>
+                            </connections>
+                        </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="GnF-1p-wBA" id="unI-TT-Vo3"/>
                             <outlet property="delegate" destination="GnF-1p-wBA" id="F9G-SQ-J6W"/>
@@ -259,7 +298,7 @@
                                     <outlet property="pokemonType" destination="9ao-gh-uwf" id="ZAC-9v-7Yb"/>
                                     <outlet property="sortLabel" destination="sSl-cV-Oyh" id="XsY-6n-THY"/>
                                     <outlet property="statIcon" destination="KgS-N9-OVN" id="1fa-Bw-DUR"/>
-                                    <segue destination="eGV-m0-bll" kind="push" id="v66-8k-rYp"/>
+                                    <segue destination="eGV-m0-bll" kind="push" identifier="pushPokemonDetail" id="v66-8k-rYp"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -270,6 +309,9 @@
                     </collectionView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="7Hv-AN-OeZ"/>
+                    <connections>
+                        <segue destination="eGV-m0-bll" kind="push" id="WSq-Fh-NOE"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kuW-Oe-wCB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

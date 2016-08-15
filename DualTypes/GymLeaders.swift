@@ -10,6 +10,7 @@ import UIKit
 
 protocol ModifySearchTextDelegate {
     func tappedElement(element: ElementType)
+    func tappedPokemon(pokemon: Pokemon)
 }
 
 enum SortType {
@@ -124,6 +125,11 @@ class GymLeaders: UICollectionViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let destination = segue.destinationViewController as? GymLeaderDetail,
+            let pokemon = sender as? Pokemon
+            where segue.identifier == "pushPokemonDetail" {
+            destination.pokemon = pokemon
+        }
+        if let destination = segue.destinationViewController as? GymLeaderDetail,
             let cell = sender as? GymLeaderCell {
             destination.pokemon = cell.pokemon
         }
@@ -230,4 +236,9 @@ extension GymLeaders: ModifySearchTextDelegate {
             resultSearchController?.searchBar.text = "\(searchBarText) \(element.rawValue.lowercaseString) "
         }
     }
+    
+    func tappedPokemon(pokemon: Pokemon){
+        performSegueWithIdentifier("pushPokemonDetail", sender: pokemon)
+    }
+
 }
