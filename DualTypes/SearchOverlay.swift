@@ -163,16 +163,21 @@ extension SearchOverlay : UISearchResultsUpdating {
                 helperElements = ElementType.allValues
                 searchResultsSet = Pokemon.gymLeaders()
             } else {
+                elementFilters = []
                 helperElements = []
                 searchResultsSet = Pokemon.gymLeaders().filter { pokemon in
                     // what to include in the "search index"
                     let pokemonName = pokemon.name.lowercaseString
                     let pokemonIndex = "\(pokemon.pokedex)"
-                    let elementNames = pokemon.type.map {
+                    let quickAttacks = pokemon.quickAttacks.map {
+                        $0.rawValue.lowercaseString
+                    }
+                    let specialAttacks = pokemon.specialAttacks.map {
                         $0.rawValue.lowercaseString
                     }
                     var whatToSearchOnArray = [pokemonName, pokemonIndex]
-                    whatToSearchOnArray += elementNames
+                    whatToSearchOnArray += quickAttacks
+                    whatToSearchOnArray += specialAttacks
                     let descriptionText = whatToSearchOnArray.joinWithSeparator(" ")
                     // trim beginning and end for whitespace.
                     // then separate each search text word into its own search query
