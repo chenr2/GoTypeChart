@@ -186,6 +186,13 @@ extension GymLeaders: UISearchBarDelegate {
             searchResults.resetSearch()
         }
     }
+    
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        // handles clearing of search bar.
+        if let searchResults = resultSearchController?.searchResultsController as? SearchOverlay where searchText.isEmpty {
+            searchResults.resetSearch()
+        }
+    }
 }
 
 extension GymLeaders: UISearchControllerDelegate {
