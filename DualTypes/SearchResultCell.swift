@@ -22,7 +22,7 @@ class SearchResultCell: FlexibleCollectionCell {
         if let element = pokemon.type.first {
             elementName?.text = element.rawValue
             elementContainerView.backgroundColor = Colors.colorForElement(element)
-            elementName?.textColor = (element == .Electric) ? .grayColor() : .whiteColor()
+            elementName?.textColor = Colors.textColorForElement(element)
         }
     }
     

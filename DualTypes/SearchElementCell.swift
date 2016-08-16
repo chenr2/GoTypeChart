@@ -16,7 +16,7 @@ class SearchElementCell: FlexibleCollectionCell {
     
     func configureCell(element: ElementType, isFilter: Bool){
         elementName?.text = element.rawValue
-        elementName?.textColor = (element == .Electric) ? .grayColor() : .whiteColor()
+        elementName?.textColor = Colors.textColorForElement(element)
         backgroundColor = Colors.colorForElement(element)
         if isFilter {
             closeButtonWidth.constant = 13.5

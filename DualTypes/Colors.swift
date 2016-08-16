@@ -68,4 +68,15 @@ struct Colors {
             return Colors.fairy
         }
     }
+    
+    static func textColorForElement(elementType: ElementType) -> UIColor {
+        switch elementType {
+        case .Electric:
+            return .grayColor()
+        case .Normal:
+            return .darkGrayColor()
+        default:
+            return .whiteColor()
+        }
+    }
 }

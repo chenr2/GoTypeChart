@@ -24,12 +24,12 @@ class SearchResultDualCell: FlexibleCollectionCell {
         if let firstElement = pokemon.type.first {
             elementName?.text = firstElement.rawValue
             firstElementView?.backgroundColor = Colors.colorForElement(firstElement)
-            elementName?.textColor = (firstElement == .Electric) ? .grayColor() : .whiteColor()
+            elementName?.textColor = Colors.textColorForElement(firstElement)
         }
         if let lastElement = pokemon.type.last {
             secondElementName?.text = lastElement.rawValue
             secondElementView?.backgroundColor = Colors.colorForElement(lastElement)
-            secondElementName?.textColor = (lastElement == .Electric) ? .grayColor() : .whiteColor()
+            secondElementName?.textColor = Colors.textColorForElement(lastElement)
         }
     }
     
