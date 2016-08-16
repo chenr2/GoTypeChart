@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchElementCell: UICollectionViewCell {
+class SearchElementCell: FlexibleCollectionCell {
     
     @IBOutlet weak var elementName: UILabel!
     @IBOutlet weak var closeButton: UILabel!
@@ -16,6 +16,7 @@ class SearchElementCell: UICollectionViewCell {
     
     func configureCell(element: ElementType, isFilter: Bool){
         elementName?.text = element.rawValue
+        elementName?.textColor = (element == .Electric) ? .grayColor() : .whiteColor()
         backgroundColor = Colors.colorForElement(element)
         if isFilter {
             closeButtonWidth.constant = 13.5

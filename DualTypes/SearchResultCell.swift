@@ -8,19 +8,22 @@
 
 import UIKit
 
-class SearchResultCell: UICollectionViewCell {
+class SearchResultCell: FlexibleCollectionCell {
 
     @IBOutlet weak var pokemonName: UILabel!
     @IBOutlet weak var elementName: UILabel!
+    @IBOutlet weak var elementContainerView: UIView!
     
     var pokemon: Pokemon? = nil 
     
     func configureCell(pokemon: Pokemon){
         self.pokemon = pokemon
         pokemonName?.text = pokemon.name
-        elementName?.text = pokemon.type.map {
-            $0.rawValue
-        }.joinWithSeparator(" / ")
+        if let element = pokemon.type.first {
+            elementName?.text = element.rawValue
+            elementContainerView.backgroundColor = Colors.colorForElement(element)
+            elementName?.textColor = (element == .Electric) ? .grayColor() : .whiteColor()
+        }
     }
     
 }

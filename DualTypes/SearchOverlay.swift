@@ -50,9 +50,16 @@ class SearchOverlay: UICollectionViewController {
             cell.configureCell(element, isFilter: false)
             return cell
         default:
-            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("searchResultCell", forIndexPath: indexPath) as! SearchResultCell
-            cell.configureCell(searchResultsSet[indexPath.row])
-            return cell
+            let selectedPokemon = searchResultsSet[indexPath.row]
+            if selectedPokemon.type.count == 2 {
+                let cell = collectionView.dequeueReusableCellWithReuseIdentifier(String(SearchResultDualCell), forIndexPath: indexPath) as! SearchResultDualCell
+                cell.configureCell(selectedPokemon)
+                return cell
+            } else {
+                let cell = collectionView.dequeueReusableCellWithReuseIdentifier(String(SearchResultCell), forIndexPath: indexPath) as! SearchResultCell
+                cell.configureCell(selectedPokemon)
+                return cell
+            }
         }
     }
     
@@ -131,7 +138,7 @@ extension SearchOverlay: UICollectionViewDelegateFlowLayout {
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         let cellsPerRow:CGFloat = 3
         let height: CGFloat = 48
-        let cellPadding:CGFloat = 10
+        let cellPadding:CGFloat = 5
         let widthMinusPadding = collectionView.bounds.width - (cellPadding + cellPadding * cellsPerRow)
         let eachSide = (widthMinusPadding / cellsPerRow) - 1
         switch indexPath.section {

@@ -14,7 +14,7 @@ enum StatType: String {
     case stamina = "Stamina"
 }
 
-class GymLeaderDetailStatCell: UICollectionViewCell {
+class GymLeaderDetailStatCell: FlexibleCollectionCell {
     
     var pokemon: Pokemon? = nil
     var statType: StatType? = nil
@@ -22,12 +22,6 @@ class GymLeaderDetailStatCell: UICollectionViewCell {
     @IBOutlet weak var circularView: StatRing!
     @IBOutlet weak var elementType: UILabel!
     @IBOutlet weak var statTypeLabel: UILabel!
-        
-    // prevents a lot of constraint conflicts
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        contentView.autoresizingMask = [.FlexibleHeight, .FlexibleWidth]
-    }
     
     override func layoutSubviews() {
         circularView.layer.cornerRadius = bounds.size.width / 2
