@@ -12,17 +12,27 @@ protocol ModifySearchTextDelegate {
     func tappedPokemon(pokemon: Pokemon)
 }
 
-enum SortType {
-    case attack, defense, stamina, index, alphabetical
+protocol ChangeSortType {
+    func setSortType(sortType: SortType)
+}
+
+enum SortType: String {
+    case Attack, Defense, Stamina, Index, Alphabetical = "AZ"
 }
 
 class GymLeaders: UICollectionViewController {
     
     var gymLeadersArray: [Pokemon] = []
     
-    var sortType:SortType = .attack
+    var containerEventRelay: ContainerEventRelay? = nil
     
-    let segmentedControl = UISegmentedControl(items: ["Index", "AZ", "Attack", "Defense", "Stamina"])
+    var sortType:SortType = .Attack {
+        didSet {
+            containerEventRelay?.detectActionMenuChange(sortType)
+            resetMonsSortedBySelectedType()
+            reloadSectionZero()
+        }
+    }
     
     var resultSearchController:UISearchController? = nil
     
@@ -64,46 +74,21 @@ class GymLeaders: UICollectionViewController {
     func resetMonsSortedBySelectedType(){
         gymLeadersArray = Pokemon.gymLeaders()
         switch sortType {
-        case .index:
+        case .Index:
             sortExistingArrayByIndex()
-        case .alphabetical:
+        case .Alphabetical:
             sortExistingArrayAlphabetically()
-        case .attack:
+        case .Attack:
             sortExistingArrayByAttack()
-        case .defense:
+        case .Defense:
             sortExistingArrayByDefense()
-        case .stamina:
+        case .Stamina:
             sortExistingArrayByStamina()
         }
     }
     
-    func segmentedControlTapped(segment: UISegmentedControl){
-        switch segment.selectedSegmentIndex {
-        case 0: // index
-            sortType = .index
-        case 1: // AZ
-            sortType = .alphabetical
-        case 2: // attack
-            sortType = .attack
-        case 3: // defense
-            sortType = .defense
-        case 4: // stamina
-            sortType = .stamina
-        default:
-            break
-        }
-        resetMonsSortedBySelectedType()
-        reloadSectionZero()
-    }
-    
     override func viewDidLoad() {
         resetMonsSortedBySelectedType()
-        
-        segmentedControl.addTarget(self, action: #selector(GymLeaders.segmentedControlTapped(_:)), forControlEvents: .ValueChanged)
-        segmentedControl.selectedSegmentIndex = 2
-        let segmentedControlButtonItem = UIBarButtonItem(customView: segmentedControl)
-        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, target: nil, action: nil)
-        setToolbarItems([flexibleSpace, segmentedControlButtonItem, flexibleSpace], animated: false)
         
         let searchOverlayCollection = storyboard!.instantiateViewControllerWithIdentifier("SearchOverlay") as! SearchOverlay
         searchOverlayCollection.modifySearchTextDelegate = self
@@ -136,6 +121,9 @@ class GymLeaders: UICollectionViewController {
             let cell = sender as? StatCell {
             destination.pokemon = cell.pokemon
         }
+        if let destination = segue.destinationViewController as? MenuModal {
+            destination.changeSortType = self 
+        }
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
@@ -146,13 +134,6 @@ class GymLeaders: UICollectionViewController {
         return CGSize(width: eachSide, height:eachSide)
     }
     
-    override func viewDidAppear(animated: Bool) {
-        navigationController?.setToolbarHidden(false, animated: true)
-    }
-    
-    override func viewWillDisappear(animated: Bool) {
-        navigationController?.setToolbarHidden(true, animated: true)
-    }
 }
 
 extension GymLeaders {
@@ -162,7 +143,7 @@ extension GymLeaders {
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         switch sortType {
-        case .attack, .defense, .stamina:
+        case .Attack, .Defense, .Stamina:
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("StatCell", forIndexPath: indexPath) as! StatCell
             cell.configureCell(gymLeadersArray[indexPath.row], sortType: sortType)
             return cell
@@ -208,5 +189,10 @@ extension GymLeaders: ModifySearchTextDelegate {
     func tappedPokemon(pokemon: Pokemon){
         performSegueWithIdentifier("pushPokemonDetail", sender: pokemon)
     }
+}
 
+extension GymLeaders: ChangeSortType {
+    func setSortType(sortType: SortType){
+        self.sortType = sortType
+    }
 }

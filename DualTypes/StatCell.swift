@@ -18,15 +18,12 @@ class StatCell: UICollectionViewCell {
     func configureCell(pokemon: Pokemon, sortType: SortType){
         self.pokemon = pokemon
         pokemonName?.text = pokemon.name
-        let elementArray = pokemon.type.map {
-            return $0.rawValue
-        }
         switch sortType {
-        case .attack:
+        case .Attack:
             sortLabel.text = "\(pokemon.attack)"
-        case .defense:
+        case .Defense:
             sortLabel.text = "\(pokemon.defense)"
-        case .stamina:
+        case .Stamina:
             sortLabel.text = "\(pokemon.stamina)"
         default:
             sortLabel.text = ""
