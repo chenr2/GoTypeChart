@@ -170,30 +170,22 @@ extension SearchOverlay : UISearchResultsUpdating {
     func updateSearchResultsForSearchController(searchController: UISearchController) {
         view.hidden = false 
         if let searchText = searchController.searchBar.text where !searchText.isEmpty {
+            // trim beginning and end for whitespace.
+            // then separate each search text word into its own search query
+            let searchQueries: [String] = searchText
+                .stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+                .componentsSeparatedByCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+                .filter {
+                    return !$0.isEmpty
+            }
             elementFilters = []
             helperElements = []
             searchResultsSet = Pokemon.gymLeaders().filter { pokemon in
                 // what to include in the "search index"
                 let pokemonName = pokemon.name.lowercaseString
                 let pokemonIndex = "\(pokemon.pokedex)"
-                let quickAttacks = pokemon.quickAttacks.map {
-                    $0.rawValue.lowercaseString
-                }
-                let specialAttacks = pokemon.specialAttacks.map {
-                    $0.rawValue.lowercaseString
-                }
-                var whatToSearchOnArray = [pokemonName, pokemonIndex]
-                whatToSearchOnArray += quickAttacks
-                whatToSearchOnArray += specialAttacks
+                let whatToSearchOnArray = [pokemonName, pokemonIndex]
                 let descriptionText = whatToSearchOnArray.joinWithSeparator(" ")
-                // trim beginning and end for whitespace.
-                // then separate each search text word into its own search query
-                let searchQueries: [String] = searchText
-                    .stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
-                    .componentsSeparatedByCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
-                    .filter {
-                        return !$0.isEmpty
-                }
                 // all queries must pass. e.g. "bug flying" both words must hit.
                 var response = true
                 for query in searchQueries {
