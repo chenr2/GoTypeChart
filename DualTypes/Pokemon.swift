@@ -160,18 +160,24 @@ class Pokemon {
     
     let maxAttack: CGFloat = 282
     let maxDefense: CGFloat = 242
-    let maxStamina: CGFloat = 500
+    let maxStamina: CGFloat = 350 // it's actually 500. TODO: create a bell curve
+    
+    func getPercentage(stat: CGFloat, total: CGFloat) -> CGFloat {
+        let percentage = CGFloat(stat) / total
+        let percentageMax1 = min(percentage, 1)
+        return 100 * percentageMax1
+    }
     
     var attackPercentage: CGFloat {
-        return 100 * CGFloat(attack) / maxAttack
+        return getPercentage(CGFloat(attack), total: maxAttack)
     }
 
     var defensePercentage: CGFloat {
-        return 100 * CGFloat(defense) / maxDefense
+        return getPercentage(CGFloat(defense), total: maxDefense)
     }
 
     var staminaPercentage: CGFloat {
-        return 100 * CGFloat(stamina) / maxStamina
+        return getPercentage(CGFloat(stamina), total: maxStamina)
     }
     
     class func elementForSpecialAttack(specialAttack: SpecialAttack) -> ElementType {

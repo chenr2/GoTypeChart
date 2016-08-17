@@ -33,6 +33,7 @@
 		FCCD27FF1D5CA944000A6428 /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FCCD27FE1D5CA944000A6428 /* fontawesome-webfont.ttf */; };
 		FCDFE7751D63FD360002DF04 /* AlphabeticalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDFE7741D63FD360002DF04 /* AlphabeticalCell.swift */; };
 		FCDFE7771D63FE5F0002DF04 /* GridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDFE7761D63FE5F0002DF04 /* GridCell.swift */; };
+		FCDFE7791D6419AF0002DF04 /* StatArc.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDFE7781D6419AF0002DF04 /* StatArc.swift */; };
 		FCEEB18B1D5D410C0020A2A1 /* StatRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEB18A1D5D410C0020A2A1 /* StatRing.swift */; };
 		FCF975BF1D5FA9DF00AA0E3D /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF975BE1D5FA9DF00AA0E3D /* SearchResultCell.swift */; };
 		FCF975C11D6140D900AA0E3D /* SearchResultSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF975C01D6140D900AA0E3D /* SearchResultSectionHeader.swift */; };
@@ -87,6 +88,7 @@
 		FCCD27FE1D5CA944000A6428 /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.ttf"; sourceTree = "<group>"; };
 		FCDFE7741D63FD360002DF04 /* AlphabeticalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlphabeticalCell.swift; sourceTree = "<group>"; };
 		FCDFE7761D63FE5F0002DF04 /* GridCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridCell.swift; sourceTree = "<group>"; };
+		FCDFE7781D6419AF0002DF04 /* StatArc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatArc.swift; sourceTree = "<group>"; };
 		FCEEB18A1D5D410C0020A2A1 /* StatRing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatRing.swift; sourceTree = "<group>"; };
 		FCF975BE1D5FA9DF00AA0E3D /* SearchResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		FCF975C01D6140D900AA0E3D /* SearchResultSectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultSectionHeader.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				FCA7429E1D52E951003DAC35 /* GymLeaderCell.swift */,
 				FCDFE7741D63FD360002DF04 /* AlphabeticalCell.swift */,
 				FC04C59B1D5BEB5400BCB6AB /* StatCell.swift */,
+				FCDFE7781D6419AF0002DF04 /* StatArc.swift */,
 			);
 			name = MainPage;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 				FCA7429F1D52E951003DAC35 /* GymLeaderCell.swift in Sources */,
 				FCA7425F1D52E675003DAC35 /* AppDelegate.swift in Sources */,
 				FCA742A61D536115003DAC35 /* GymLeaderDetailTypeCell.swift in Sources */,
+				FCDFE7791D6419AF0002DF04 /* StatArc.swift in Sources */,
 				FCA742A11D535EE0003DAC35 /* GymLeaderDetail.swift in Sources */,
 				FCF975BF1D5FA9DF00AA0E3D /* SearchResultCell.swift in Sources */,
 				FC04C59E1D5BF05300BCB6AB /* GymLeaderDetailStatCell.swift in Sources */,

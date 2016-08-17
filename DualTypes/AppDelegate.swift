@@ -8,6 +8,8 @@
 
 import UIKit
 
+let π = CGFloat(M_PI)
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

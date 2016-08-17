@@ -8,8 +8,6 @@
 
 import UIKit
 
-let π = CGFloat(M_PI)
-
 class StatRing: UIView {
 
     var percent: CGFloat = 0 

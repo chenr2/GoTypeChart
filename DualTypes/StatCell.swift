@@ -12,6 +12,7 @@ class StatCell: GridCell {
     
     @IBOutlet var pokemonName: UILabel!
     @IBOutlet weak var sortLabel: UILabel!
+    @IBOutlet weak var statArc: StatArc!
     
     func configureCell(pokemon: Pokemon, sortType: SortType){
         self.pokemon = pokemon
@@ -19,10 +20,13 @@ class StatCell: GridCell {
         switch sortType {
         case .Attack:
             sortLabel.text = "\(pokemon.attack)"
+            statArc.percent = pokemon.attackPercentage
         case .Defense:
             sortLabel.text = "\(pokemon.defense)"
+            statArc.percent = pokemon.defensePercentage
         case .Stamina:
             sortLabel.text = "\(pokemon.stamina)"
+            statArc.percent = pokemon.staminaPercentage
         default:
             sortLabel.text = ""
         }
