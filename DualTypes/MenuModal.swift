@@ -47,6 +47,12 @@ class MenuModal: UIViewController {
         dismissViewControllerAnimated(true){}
     }
     
+    @IBAction func changeToType(sender: AnyObject) {
+        dismissViewControllerAnimated(true){
+            self.changeSortType?.activateSearch()
+        }
+    }
+    
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         dismissViewControllerAnimated(true, completion: nil)
     }

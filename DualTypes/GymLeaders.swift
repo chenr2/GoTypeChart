@@ -14,6 +14,7 @@ protocol ModifySearchTextDelegate {
 
 protocol ChangeSortType {
     func setSortType(sortType: SortType)
+    func activateSearch()
 }
 
 enum SortType: String {
@@ -199,5 +200,9 @@ extension GymLeaders: ModifySearchTextDelegate {
 extension GymLeaders: ChangeSortType {
     func setSortType(sortType: SortType){
         self.sortType = sortType
+    }
+    
+    func activateSearch(){
+        resultSearchController?.searchBar.becomeFirstResponder()
     }
 }

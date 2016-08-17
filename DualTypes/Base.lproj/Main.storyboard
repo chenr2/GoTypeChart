@@ -106,6 +106,16 @@
                                                 <action selector="changeToIndex:" destination="eSr-5e-RVY" eventType="touchUpInside" id="2jP-xD-Wum"/>
                                             </connections>
                                         </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1wu-C5-wGA">
+                                            <rect key="frame" x="227" y="154" width="43" height="34"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                            <state key="normal" title="Type">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="changeToType:" destination="eSr-5e-RVY" eventType="touchUpInside" id="xGI-0y-Nua"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="p1Y-88-gg0" firstAttribute="trailing" secondItem="MIf-rc-7r2" secondAttribute="trailing" id="6eg-z0-1dV"/>
@@ -118,7 +128,9 @@
                                         <constraint firstItem="bUj-HC-p3y" firstAttribute="top" secondItem="L5G-de-2Cn" secondAttribute="bottom" constant="20" id="lMb-oy-Y6b"/>
                                         <constraint firstItem="p1Y-88-gg0" firstAttribute="top" secondItem="dko-ye-BIk" secondAttribute="bottom" constant="20" id="ml5-Pi-uav"/>
                                         <constraint firstItem="MIf-rc-7r2" firstAttribute="top" secondItem="p1Y-88-gg0" secondAttribute="bottom" constant="20" id="msf-Nr-wRx"/>
+                                        <constraint firstItem="dko-ye-BIk" firstAttribute="top" secondItem="1wu-C5-wGA" secondAttribute="bottom" constant="20" id="pdl-62-fbu"/>
                                         <constraint firstItem="MIf-rc-7r2" firstAttribute="trailing" secondItem="UpI-Bm-cBy" secondAttribute="trailing" id="tJ6-Yp-hYS"/>
+                                        <constraint firstItem="1wu-C5-wGA" firstAttribute="trailing" secondItem="dko-ye-BIk" secondAttribute="trailing" id="uFj-H9-cPw"/>
                                         <constraint firstItem="UpI-Bm-cBy" firstAttribute="top" secondItem="MIf-rc-7r2" secondAttribute="bottom" constant="20" id="xC6-qY-dii"/>
                                     </constraints>
                                 </view>
