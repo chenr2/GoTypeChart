@@ -1,22 +1,19 @@
 //
-//  GymLeaderCell.swift
+//  AlphabeticalCell.swift
 //  DualTypes
 //
-//  Created by Robert Chen on 8/3/16.
+//  Created by Robert Chen on 8/16/16.
 //  Copyright © 2016 Robert Chen. All rights reserved.
 //
 
 import UIKit
 
-class GymLeaderCell: GridCell {
+class AlphabeticalCell: GridCell {
     
     @IBOutlet var pokemonName: UILabel!
-
-    @IBOutlet weak var indexNumber: UILabel!
         
     func configureCell(pokemon: Pokemon, sortType: SortType){
         self.pokemon = pokemon
         pokemonName?.text = pokemon.name
-        indexNumber?.text = "#\(pokemon.pokedex)"
     }
 }

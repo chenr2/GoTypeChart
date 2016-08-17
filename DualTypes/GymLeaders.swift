@@ -114,11 +114,7 @@ class GymLeaders: UICollectionViewController {
             destination.pokemon = pokemon
         }
         if let destination = segue.destinationViewController as? GymLeaderDetail,
-            let cell = sender as? GymLeaderCell {
-            destination.pokemon = cell.pokemon
-        }
-        if let destination = segue.destinationViewController as? GymLeaderDetail,
-            let cell = sender as? StatCell {
+            let cell = sender as? GridCell {
             destination.pokemon = cell.pokemon
         }
         if let destination = segue.destinationViewController as? MenuModal {
@@ -131,7 +127,12 @@ class GymLeaders: UICollectionViewController {
         let cellsPerRow:CGFloat = 3
         let widthMinusPadding = collectionView.bounds.width - (cellPadding + cellPadding * cellsPerRow)
         let eachSide = widthMinusPadding / cellsPerRow
-        return CGSize(width: eachSide, height:eachSide)
+        switch sortType {
+        case .Index, .Alphabetical:
+            return CGSize(width: eachSide, height:70)
+        default:
+            return CGSize(width: eachSide, height:eachSide)
+        }
     }
     
 }
@@ -147,8 +148,12 @@ extension GymLeaders {
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("StatCell", forIndexPath: indexPath) as! StatCell
             cell.configureCell(gymLeadersArray[indexPath.row], sortType: sortType)
             return cell
-        default:
-            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("GymLeaderCell", forIndexPath: indexPath) as! GymLeaderCell
+        case .Alphabetical:
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier(String(AlphabeticalCell), forIndexPath: indexPath) as! AlphabeticalCell
+            cell.configureCell(gymLeadersArray[indexPath.row], sortType: sortType)
+            return cell
+        case .Index:
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier(String(GymLeaderCell), forIndexPath: indexPath) as! GymLeaderCell
             cell.configureCell(gymLeadersArray[indexPath.row], sortType: sortType)
             return cell
         }

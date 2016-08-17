@@ -8,12 +8,10 @@
 
 import UIKit
 
-class StatCell: UICollectionViewCell {
+class StatCell: GridCell {
     
     @IBOutlet var pokemonName: UILabel!
     @IBOutlet weak var sortLabel: UILabel!
-    
-    var pokemon: Pokemon? = nil
     
     func configureCell(pokemon: Pokemon, sortType: SortType){
         self.pokemon = pokemon
