@@ -10,6 +10,7 @@ import UIKit
 
 protocol ContainerEventRelay {
     func detectActionMenuChange(sortType: SortType)
+    func toggleActionButtonVisibility(visible: Bool)
 }
 
 class ContainerVC: UIViewController {
@@ -38,5 +39,8 @@ class ContainerVC: UIViewController {
 extension ContainerVC: ContainerEventRelay {
     func detectActionMenuChange(sortType: SortType){
         actionButton.setTitle(sortType.rawValue, forState: .Normal)
+    }
+    func toggleActionButtonVisibility(visible: Bool){
+        actionButton.hidden = !visible
     }
 }

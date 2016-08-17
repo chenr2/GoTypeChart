@@ -108,6 +108,18 @@ class GymLeaders: UICollectionViewController {
         resultSearchController?.searchBar.autocapitalizationType = .None
     }
     
+    override func viewWillAppear(animated: Bool) {
+        if let resultSearchController = resultSearchController where resultSearchController.active {
+            // don't show the action button
+        } else {
+            containerEventRelay?.toggleActionButtonVisibility(true)
+        }
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        containerEventRelay?.toggleActionButtonVisibility(false)
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let destination = segue.destinationViewController as? GymLeaderDetail,
             let pokemon = sender as? Pokemon
@@ -171,6 +183,7 @@ extension GymLeaders: UISearchBarDelegate {
         searchBar.resignFirstResponder()
         if let searchResults = resultSearchController?.searchResultsController as? SearchOverlay {
             searchResults.resetSearch()
+            containerEventRelay?.toggleActionButtonVisibility(true)
         }
     }
     
@@ -187,6 +200,7 @@ extension GymLeaders: UISearchControllerDelegate {
     func didPresentSearchController(searchController: UISearchController) {
         if let searchResultsController = searchController.searchResultsController as? SearchOverlay {
             searchResultsController.view.hidden = false
+            containerEventRelay?.toggleActionButtonVisibility(false)
         }
     }
 }

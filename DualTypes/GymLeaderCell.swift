@@ -18,5 +18,6 @@ class GymLeaderCell: GridCell {
         self.pokemon = pokemon
         pokemonName?.text = pokemon.name
         indexNumber?.text = "#\(pokemon.pokedex)"
+        backgroundColor = Colors.purple
     }
 }

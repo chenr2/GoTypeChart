@@ -145,7 +145,7 @@ extension SearchOverlay: UICollectionViewDelegateFlowLayout {
         case 0, 1:
             return CGSize(width: eachSide, height: height)
         default:
-            return CGSize(width: eachSide, height: eachSide)
+            return CGSize(width: eachSide, height: 90)
         }
     }
     

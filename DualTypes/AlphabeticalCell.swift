@@ -15,5 +15,6 @@ class AlphabeticalCell: GridCell {
     func configureCell(pokemon: Pokemon, sortType: SortType){
         self.pokemon = pokemon
         pokemonName?.text = pokemon.name
+        backgroundColor = Colors.purple
     }
 }

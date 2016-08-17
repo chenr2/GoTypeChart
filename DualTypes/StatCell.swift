@@ -21,12 +21,15 @@ class StatCell: GridCell {
         case .Attack:
             sortLabel.text = "\(pokemon.attack)"
             statArc.percent = pokemon.attackPercentage
+            backgroundColor = Colors.red
         case .Defense:
             sortLabel.text = "\(pokemon.defense)"
             statArc.percent = pokemon.defensePercentage
+            backgroundColor = Colors.blue
         case .Stamina:
             sortLabel.text = "\(pokemon.stamina)"
             statArc.percent = pokemon.staminaPercentage
+            backgroundColor = Colors.orange
         default:
             sortLabel.text = ""
         }
