@@ -272,7 +272,7 @@ class Pokemon {
             case .Normal:
                 return []
             case .Fight:
-                return [.Fairy, .Flying]
+                return [.Fairy, .Flying, .Psychic]
             case .Flying:
                 return [.Electric, .Rock]
             case .Poison:
