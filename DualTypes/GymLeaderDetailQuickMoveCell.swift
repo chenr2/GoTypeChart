@@ -26,7 +26,7 @@ class GymLeaderDetailQuickMoveCell: UICollectionViewCell {
         circularView.layer.cornerRadius = bounds.size.width / 2
         if let quickMove = quickMove {
             moveName?.text = quickMove.rawValue
-            let element = Pokemon.elementForQuickAttack(quickMove)
+            let element = Pokemon.moveForQuickAttack(quickMove).element
             circularView.backgroundColor = Colors.colorForElement(element)
             elementType?.text = element.rawValue
         }
