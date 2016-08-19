@@ -670,32 +670,56 @@
                                 </connections>
                             </collectionViewCell>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GymLeaderDetailQuickMoveCell" id="zqc-Nq-L6w" customClass="GymLeaderDetailQuickMoveCell" customModule="DualTypes" customModuleProvider="target">
-                                <rect key="frame" x="10" y="281" width="101" height="122"/>
+                                <rect key="frame" x="10" y="281" width="101" height="146"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="101" height="122"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="101" height="146"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hI5-hw-DuD">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="El5-Od-2bB" customClass="StatRing" customModule="DualTypes" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="101" height="101"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="Kdb-HL-iL2">
-                                                    <rect key="frame" x="5" y="40" width="91" height="22"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="Kdb-HL-iL2">
+                                                    <rect key="frame" x="15" y="40" width="71" height="22"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.19215686269999999" green="0.30980392159999998" blue="0.63529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstItem="Kdb-HL-iL2" firstAttribute="centerY" secondItem="hI5-hw-DuD" secondAttribute="centerY" id="0zk-Mz-EWX"/>
-                                                <constraint firstItem="Kdb-HL-iL2" firstAttribute="leading" secondItem="hI5-hw-DuD" secondAttribute="leading" constant="5" id="Dmh-uz-qLj"/>
-                                                <constraint firstAttribute="trailing" secondItem="Kdb-HL-iL2" secondAttribute="trailing" constant="5" id="vRt-t0-RCf"/>
-                                                <constraint firstAttribute="width" secondItem="hI5-hw-DuD" secondAttribute="height" multiplier="1:1" id="xms-rl-Tx7"/>
+                                                <constraint firstAttribute="width" secondItem="El5-Od-2bB" secondAttribute="height" multiplier="1:1" id="Cl0-gv-IeU"/>
+                                                <constraint firstItem="Kdb-HL-iL2" firstAttribute="centerY" secondItem="El5-Od-2bB" secondAttribute="centerY" id="LCh-lG-3hr"/>
+                                                <constraint firstAttribute="trailing" secondItem="Kdb-HL-iL2" secondAttribute="trailing" constant="15" id="q7r-OW-xEh"/>
+                                                <constraint firstItem="Kdb-HL-iL2" firstAttribute="leading" secondItem="El5-Od-2bB" secondAttribute="leading" constant="15" id="ygM-8Q-Fke"/>
                                             </constraints>
                                         </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Njs-Y5-QXn">
-                                            <rect key="frame" x="33" y="104" width="36" height="17"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GFv-v1-n70">
+                                            <rect key="frame" x="25" y="109" width="52" height="20"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Njs-Y5-QXn">
+                                                    <rect key="frame" x="8" y="0.0" width="36" height="20"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="Njs-Y5-QXn" firstAttribute="leading" secondItem="GFv-v1-n70" secondAttribute="leading" constant="8" id="0SR-c0-iRV"/>
+                                                <constraint firstAttribute="bottom" secondItem="Njs-Y5-QXn" secondAttribute="bottom" id="Fis-f2-tPc"/>
+                                                <constraint firstAttribute="trailing" secondItem="Njs-Y5-QXn" secondAttribute="trailing" constant="8" id="Y3e-Vt-gZd"/>
+                                                <constraint firstItem="Njs-Y5-QXn" firstAttribute="top" secondItem="GFv-v1-n70" secondAttribute="top" id="aa0-Bs-Cfm"/>
+                                                <constraint firstAttribute="height" constant="20" id="jJD-Sz-dXv"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="10"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ijZ-VK-TiS">
+                                            <rect key="frame" x="32" y="132" width="36" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -704,21 +728,25 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="hI5-hw-DuD" firstAttribute="leading" secondItem="zqc-Nq-L6w" secondAttribute="leading" id="J9z-i3-yxx"/>
-                                    <constraint firstItem="Njs-Y5-QXn" firstAttribute="centerX" secondItem="zqc-Nq-L6w" secondAttribute="centerX" id="jP8-VX-ggh"/>
-                                    <constraint firstAttribute="trailing" secondItem="hI5-hw-DuD" secondAttribute="trailing" id="qsU-l4-1oJ"/>
-                                    <constraint firstItem="hI5-hw-DuD" firstAttribute="top" secondItem="zqc-Nq-L6w" secondAttribute="top" id="xLK-bP-kvL"/>
-                                    <constraint firstItem="Njs-Y5-QXn" firstAttribute="top" secondItem="hI5-hw-DuD" secondAttribute="bottom" constant="3" id="zFE-ZQ-nJL"/>
+                                    <constraint firstItem="GFv-v1-n70" firstAttribute="bottom" secondItem="ijZ-VK-TiS" secondAttribute="top" constant="-3" id="0RR-9Y-y7u"/>
+                                    <constraint firstItem="GFv-v1-n70" firstAttribute="top" secondItem="El5-Od-2bB" secondAttribute="bottom" constant="8" id="3cm-HG-iSE"/>
+                                    <constraint firstAttribute="trailing" secondItem="El5-Od-2bB" secondAttribute="trailing" id="EHh-wx-4gL"/>
+                                    <constraint firstItem="El5-Od-2bB" firstAttribute="leading" secondItem="zqc-Nq-L6w" secondAttribute="leading" id="GkR-di-n0b"/>
+                                    <constraint firstItem="El5-Od-2bB" firstAttribute="top" secondItem="zqc-Nq-L6w" secondAttribute="top" id="Hbe-vD-mvv"/>
+                                    <constraint firstItem="GFv-v1-n70" firstAttribute="centerX" secondItem="El5-Od-2bB" secondAttribute="centerX" id="dCs-qE-Ucc"/>
+                                    <constraint firstItem="ijZ-VK-TiS" firstAttribute="centerX" secondItem="zqc-Nq-L6w" secondAttribute="centerX" id="l32-yq-gYY"/>
                                 </constraints>
-                                <size key="customSize" width="101" height="122"/>
+                                <size key="customSize" width="101" height="146"/>
                                 <connections>
-                                    <outlet property="circularView" destination="hI5-hw-DuD" id="bmC-Kd-Jnk"/>
+                                    <outlet property="dpsStat" destination="ijZ-VK-TiS" id="IcN-mA-9q1"/>
+                                    <outlet property="elementBubble" destination="GFv-v1-n70" id="Tzh-xl-nOa"/>
                                     <outlet property="elementType" destination="Njs-Y5-QXn" id="N2G-ZP-Ls2"/>
                                     <outlet property="moveName" destination="Kdb-HL-iL2" id="whA-HC-Yxx"/>
+                                    <outlet property="statArc" destination="El5-Od-2bB" id="6T1-zJ-e8k"/>
                                 </connections>
                             </collectionViewCell>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GymLeaderDetailSpecialMoveCell" id="WBp-cD-WhO" customClass="GymLeaderDetailSpecialMoveCell" customModule="DualTypes" customModuleProvider="target">
-                                <rect key="frame" x="209" y="282" width="101" height="120"/>
+                                <rect key="frame" x="209" y="294" width="101" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="101" height="120"/>
@@ -766,7 +794,7 @@
                                 </connections>
                             </collectionViewCell>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GymLeaderDetailStatCell" id="hik-fD-s34" customClass="GymLeaderDetailStatCell" customModule="DualTypes" customModuleProvider="target">
-                                <rect key="frame" x="10" y="413" width="101" height="97"/>
+                                <rect key="frame" x="10" y="437" width="101" height="97"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="101" height="97"/>

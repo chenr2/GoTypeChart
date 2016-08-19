@@ -25,8 +25,6 @@ class GymLeaderDetailStatCell: FlexibleCollectionCell {
     
     override func layoutSubviews() {
         circularView.layer.cornerRadius = bounds.size.width / 2
-        circularView.layer.borderWidth = 1
-        circularView.layer.borderColor = UIColor.darkGrayColor().CGColor
         if let pokemon = pokemon, let statType = statType {
             switch statType {
             case .attack:

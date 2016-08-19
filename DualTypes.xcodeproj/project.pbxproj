@@ -14,6 +14,7 @@
 		FC17FA021D5EC635006EAE3D /* SearchElementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC17FA011D5EC635006EAE3D /* SearchElementCell.swift */; };
 		FC18BEF61D5E8D21004A0657 /* SearchOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC18BEF51D5E8D21004A0657 /* SearchOverlay.swift */; };
 		FC2585841D667766001F3434 /* QuickMove.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2585831D667766001F3434 /* QuickMove.swift */; };
+		FC2585891D669A47001F3434 /* SpecialMove.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2585881D669A47001F3434 /* SpecialMove.swift */; };
 		FC341D261D62922A007D28FA /* SearchResultDualCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC341D251D62922A007D28FA /* SearchResultDualCell.swift */; };
 		FC341D281D62A743007D28FA /* FlexibleCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC341D271D62A743007D28FA /* FlexibleCollectionCell.swift */; };
 		FC341D2B1D62BB14007D28FA /* ContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC341D2A1D62BB14007D28FA /* ContainerVC.swift */; };
@@ -61,6 +62,7 @@
 		FC17FA011D5EC635006EAE3D /* SearchElementCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchElementCell.swift; sourceTree = "<group>"; };
 		FC18BEF51D5E8D21004A0657 /* SearchOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchOverlay.swift; sourceTree = "<group>"; };
 		FC2585831D667766001F3434 /* QuickMove.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickMove.swift; sourceTree = "<group>"; };
+		FC2585881D669A47001F3434 /* SpecialMove.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecialMove.swift; sourceTree = "<group>"; };
 		FC341D251D62922A007D28FA /* SearchResultDualCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultDualCell.swift; sourceTree = "<group>"; };
 		FC341D271D62A743007D28FA /* FlexibleCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlexibleCollectionCell.swift; sourceTree = "<group>"; };
 		FC341D2A1D62BB14007D28FA /* ContainerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerVC.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 			children = (
 				FCA7429C1D52E86D003DAC35 /* Pokemon.swift */,
 				FC2585831D667766001F3434 /* QuickMove.swift */,
+				FC2585881D669A47001F3434 /* SpecialMove.swift */,
 				FCA742A71D536192003DAC35 /* ElementType.swift */,
 			);
 			name = Models;
@@ -324,6 +327,7 @@
 				FC341D2B1D62BB14007D28FA /* ContainerVC.swift in Sources */,
 				FC341D281D62A743007D28FA /* FlexibleCollectionCell.swift in Sources */,
 				FC04C5A01D5BF99C00BCB6AB /* GymLeaderDetailQuickMoveCell.swift in Sources */,
+				FC2585891D669A47001F3434 /* SpecialMove.swift in Sources */,
 				FCA742A81D536192003DAC35 /* ElementType.swift in Sources */,
 				FCA742A41D5360EF003DAC35 /* GymLeaderDetailHeader.swift in Sources */,
 				FCF975C11D6140D900AA0E3D /* SearchResultSectionHeader.swift in Sources */,

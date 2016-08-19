@@ -76,11 +76,11 @@ extension GymLeaderDetail {
             return cell
         case 1:
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("GymLeaderDetailQuickMoveCell", forIndexPath: indexPath) as! GymLeaderDetailQuickMoveCell
-            cell.quickMove = pokemon!.quickAttacks[indexPath.row]
+            cell.configureCell(pokemon!.quickAttacks[indexPath.row], pokemon: pokemon!)
             return cell
         case 2:
-            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("GymLeaderDetailSpecialMoveCell", forIndexPath: indexPath) as! GymLeaderDetailSpecialMoveCell
-            cell.specialMove = pokemon!.specialAttacks[indexPath.row]
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("GymLeaderDetailQuickMoveCell", forIndexPath: indexPath) as! GymLeaderDetailQuickMoveCell
+            cell.configureCellSpecial(pokemon!.specialAttacks[indexPath.row], pokemon: pokemon!)
             return cell
         case 3:
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("GymLeaderDetailStatCell", forIndexPath: indexPath) as! GymLeaderDetailStatCell
@@ -161,7 +161,8 @@ extension GymLeaderDetail: UICollectionViewDelegateFlowLayout {
         let eachSide = (widthMinusPadding / cellsPerRow) - 1
         switch indexPath.section {
         case 1, 2:
-            return CGSize(width: eachSide, height:eachSide + 20)
+            // move sets
+            return CGSize(width: eachSide, height:eachSide + 50)
         default:
             return CGSize(width: eachSide, height:eachSide)            
         }
