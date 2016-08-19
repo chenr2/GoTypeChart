@@ -141,7 +141,7 @@ enum SpecialAttack: String {
         viceGrip = "Vice Grip",
         waterPulse = "Water Pulse",
         wrap = "Wrap",
-        xScissor = "X-Scissor "
+        xScissor = "X-Scissor"
 }
 
 class Pokemon {
