@@ -36,7 +36,7 @@ class GymLeaders: UICollectionViewController {
         didSet {
             containerEventRelay?.detectActionMenuChange(sortType)
             resetMonsSortedBySelectedType()
-            reloadSectionZero()
+            collectionView?.reloadData()
         }
     }
     
@@ -47,11 +47,6 @@ class GymLeaders: UICollectionViewController {
         elementFilters = []
         searchResultsSet = Pokemon.gymLeaders()
         collectionView?.reloadData()
-    }
-    
-    func reloadSectionZero(){
-        let sectionZero = NSIndexSet(index: 0)
-        collectionView?.reloadSections(sectionZero)
     }
     
     func sortExistingArrayAlphabetically() {
@@ -183,30 +178,24 @@ class GymLeaders: UICollectionViewController {
         }
     }
     
-//    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-//        let cellPadding:CGFloat = 5
-//        let cellsPerRow:CGFloat = 3
-//        let widthMinusPadding = collectionView.bounds.width - (cellPadding + cellPadding * cellsPerRow)
-//        let eachSide = widthMinusPadding / cellsPerRow
-//        switch sortType {
-//        case .Index, .Alphabetical:
-//            return CGSize(width: eachSide, height:70)
-//        default:
-//            return CGSize(width: eachSide, height:eachSide)
-//        }
-//    }
-    
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         let cellsPerRow:CGFloat = 3
         let height: CGFloat = 48
         let cellPadding:CGFloat = 5
         let widthMinusPadding = collectionView.bounds.width - (cellPadding + cellPadding * cellsPerRow)
         let eachSide = (widthMinusPadding / cellsPerRow) - 1
-        switch indexPath.section {
-        case 0, 1:
-            return CGSize(width: eachSide, height: height)
+        switch sortType {
+        case .Index, .Alphabetical:
+            return CGSize(width: eachSide, height:70)
+        case .Type:
+            switch indexPath.section {
+            case 0, 1:
+                return CGSize(width: eachSide, height: height)
+            default:
+                return CGSize(width: eachSide, height: 90)
+            }
         default:
-            return CGSize(width: eachSide, height: 90)
+            return CGSize(width: eachSide, height:eachSide)
         }
     }
     
@@ -214,18 +203,29 @@ class GymLeaders: UICollectionViewController {
 
 extension GymLeaders {
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 3
+        switch sortType {
+        case .Type:
+            return 3
+        default:
+            return 1
+        }
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        switch section {
-        case 0:
-            return elementFilters.count
-        case 1:
-            return helperElements.count
+        switch sortType {
+        case .Type:
+            switch section {
+            case 0:
+                return elementFilters.count
+            case 1:
+                return helperElements.count
+            default:
+                return searchResultsSet.count
+            }
         default:
-            return searchResultsSet.count
+            return gymLeadersArray.count
         }
+
     }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -270,18 +270,20 @@ extension GymLeaders {
     }
     
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        switch indexPath.section {
-        case 0:
-            elementFilters.removeAtIndex(indexPath.row)
-            recalculateFilters()
-        case 1:
-            let selectedItem = helperElements[indexPath.row]
-            elementFilters.append(selectedItem)
-            recalculateFilters()
-        default:
-            let selectedPokemon = searchResultsSet[indexPath.row]
-            tappedPokemon(selectedPokemon)
-            break
+        if sortType == .Type {
+            switch indexPath.section {
+            case 0:
+                elementFilters.removeAtIndex(indexPath.row)
+                recalculateFilters()
+            case 1:
+                let selectedItem = helperElements[indexPath.row]
+                elementFilters.append(selectedItem)
+                recalculateFilters()
+            default:
+                let selectedPokemon = searchResultsSet[indexPath.row]
+                tappedPokemon(selectedPokemon)
+                break
+            }
         }
     }
     
@@ -302,19 +304,25 @@ extension GymLeaders {
 extension GymLeaders: UICollectionViewDelegateFlowLayout {
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        switch section {
-        case 0:
-            if elementFilters.isEmpty {
-                return CGSizeZero
+        switch sortType {
+        case .Type:
+            switch section {
+            case 0:
+                if elementFilters.isEmpty {
+                    return CGSizeZero
+                }
+            case 1:
+                if helperElements.isEmpty {
+                    return CGSizeZero
+                }
+            default:
+                break
             }
-        case 1:
-            if helperElements.isEmpty {
-                return CGSizeZero
-            }
+            return CGSize(width: 0, height: 40)
         default:
             break
         }
-        return CGSize(width: 0, height: 40)
+        return CGSizeZero
     }
 }
 

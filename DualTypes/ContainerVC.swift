@@ -21,6 +21,8 @@ class ContainerVC: UIViewController {
         gymLeaders?.performSegueWithIdentifier("openMenuModal", sender: nil)
     }
     
+    @IBOutlet weak var actionButtonContainer: UIView!
+    
     var gymLeaders: GymLeaders? = nil
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -41,6 +43,6 @@ extension ContainerVC: ContainerEventRelay {
         actionButton.setTitle(sortType.rawValue, forState: .Normal)
     }
     func toggleActionButtonVisibility(visible: Bool){
-        actionButton.hidden = !visible
+        actionButtonContainer.hidden = !visible
     }
 }
