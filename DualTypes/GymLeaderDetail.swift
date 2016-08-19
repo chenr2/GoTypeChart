@@ -15,9 +15,32 @@ class GymLeaderDetail: UICollectionViewController {
             if let pokemon = pokemon {
                 double = getKeysOfValue(.double, pokemon: pokemon)
                 half = getKeysOfValue(.half, pokemon: pokemon)
+                quickAttacks = pokemon.quickAttacks.sort { attackA, attackB in
+                    let baseAttack = CGFloat(pokemon.attack)
+                    let moveA = Pokemon.moveForQuickAttack(attackA)
+                    let stabA = pokemon.type.contains(moveA.element)
+                    let statA = moveA.quickMovePercentage(baseAttack, stab: stabA)
+                    let moveB = Pokemon.moveForQuickAttack(attackB)
+                    let stabB = pokemon.type.contains(moveB.element)
+                    let statB = moveB.quickMovePercentage(baseAttack, stab: stabB)
+                    return statA > statB
+                }
+                specialAttacks = pokemon.specialAttacks.sort { attackA, attackB in
+                    let baseAttack = CGFloat(pokemon.attack)
+                    let moveA = Pokemon.moveForSpecialAttack(attackA)
+                    let stabA = pokemon.type.contains(moveA.element)
+                    let statA = moveA.specialMovePercentage(baseAttack, stab: stabA)
+                    let moveB = Pokemon.moveForSpecialAttack(attackB)
+                    let stabB = pokemon.type.contains(moveB.element)
+                    let statB = moveB.specialMovePercentage(baseAttack, stab: stabB)
+                    return statA > statB
+                }
             }
         }
     }
+    
+    var quickAttacks: [QuickAttack] = []
+    var specialAttacks: [SpecialAttack] = []
     
     var double: [ElementType] = []
     var half: [ElementType] = []
@@ -51,9 +74,9 @@ extension GymLeaderDetail {
         case 0:
             return 1
         case 1:
-            return pokemon!.quickAttacks.count
+            return quickAttacks.count
         case 2:
-            return pokemon!.specialAttacks.count
+            return specialAttacks.count
         case 3: // stats
             return 3
         case 4:
@@ -76,11 +99,11 @@ extension GymLeaderDetail {
             return cell
         case 1:
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("GymLeaderDetailQuickMoveCell", forIndexPath: indexPath) as! GymLeaderDetailQuickMoveCell
-            cell.configureCell(pokemon!.quickAttacks[indexPath.row], pokemon: pokemon!)
+            cell.configureCell(quickAttacks[indexPath.row], pokemon: pokemon!)
             return cell
         case 2:
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("GymLeaderDetailQuickMoveCell", forIndexPath: indexPath) as! GymLeaderDetailQuickMoveCell
-            cell.configureCellSpecial(pokemon!.specialAttacks[indexPath.row], pokemon: pokemon!)
+            cell.configureCellSpecial(specialAttacks[indexPath.row], pokemon: pokemon!)
             return cell
         case 3:
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("GymLeaderDetailStatCell", forIndexPath: indexPath) as! GymLeaderDetailStatCell

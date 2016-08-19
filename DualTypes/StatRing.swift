@@ -10,7 +10,11 @@ import UIKit
 
 class StatRing: UIView {
 
-    var percent: CGFloat = 0 
+    var percent: CGFloat = 0 {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
     
     let units = 2 * π / 100
     
