@@ -21,7 +21,7 @@ class GymLeaderDetailQuickMoveCell: FlexibleCollectionCell {
             NSForegroundColorAttributeName : UIColor.darkGrayColor()
         ]
         let dpsNumberString = String(format: "%.1f", dps)
-        let mainString = "DPS: \(dpsNumberString)"
+        let mainString = dpsNumberString
         let mainAttributedString = NSMutableAttributedString(string: mainString, attributes:mainAttributes)
         if stab {
             let stabValue = dps * 0.25
