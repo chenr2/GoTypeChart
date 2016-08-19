@@ -14,20 +14,25 @@ protocol ModifySearchTextDelegate {
 
 protocol ChangeSortType {
     func setSortType(sortType: SortType)
-    func activateSearch()
 }
 
 enum SortType: String {
-    case Attack, Defense, Stamina, Index, Alphabetical = "AZ"
+    case Attack, Defense, Stamina, Index, Alphabetical = "AZ", Type
 }
 
 class GymLeaders: UICollectionViewController {
+    
+    var searchResultsSet: [Pokemon] = []
+    
+    var helperElements: [ElementType] = []
+    
+    var elementFilters: [ElementType] = []
     
     var gymLeadersArray: [Pokemon] = []
     
     var containerEventRelay: ContainerEventRelay? = nil
     
-    var sortType:SortType = .Attack {
+    var sortType:SortType = .Type {
         didSet {
             containerEventRelay?.detectActionMenuChange(sortType)
             resetMonsSortedBySelectedType()
@@ -36,6 +41,13 @@ class GymLeaders: UICollectionViewController {
     }
     
     var resultSearchController:UISearchController? = nil
+    
+    func resetSearch(){
+        helperElements = ElementType.allValues
+        elementFilters = []
+        searchResultsSet = Pokemon.gymLeaders()
+        collectionView?.reloadData()
+    }
     
     func reloadSectionZero(){
         let sectionZero = NSIndexSet(index: 0)
@@ -85,10 +97,46 @@ class GymLeaders: UICollectionViewController {
             sortExistingArrayByDefense()
         case .Stamina:
             sortExistingArrayByStamina()
+        case .Type:
+            sortExistingArrayAlphabetically()
         }
     }
     
+    func recalculateFilters(){
+        if elementFilters.isEmpty {
+            helperElements = ElementType.allValues
+        } else if elementFilters.count == 1 {
+            // there's only one element, if there's a count of 1.
+            let singleElement = elementFilters.first!
+            // should show other element if it exists.
+            // start with all pokemon.
+            let dualTypePokemonOfThatElement = Pokemon.gymLeaders().filter {
+                $0.type.contains(singleElement)
+                }.filter {
+                    // just those pokemon with 2 elements
+                    $0.type.count == 2
+            }
+            var otherElements: [ElementType] = []
+            for dualType in dualTypePokemonOfThatElement {
+                otherElements += dualType.type
+            }
+            var otherElementsSet = Set(otherElements)
+            otherElementsSet.remove(singleElement)
+            helperElements = Array(otherElementsSet)
+        } else {
+            // show nothing
+            helperElements = []
+        }
+        searchResultsSet = Pokemon.gymLeaders().filter { pokemon in
+            let pokemonType = Set(pokemon.type)
+            let elementFilterTypes = Set(elementFilters)
+            return elementFilterTypes.isSubsetOf(pokemonType)
+        }
+        collectionView?.reloadData()
+    }
+    
     override func viewDidLoad() {
+        resetSearch()
         resetMonsSortedBySelectedType()
         
         let searchOverlayCollection = storyboard!.instantiateViewControllerWithIdentifier("SearchOverlay") as! SearchOverlay
@@ -135,24 +183,49 @@ class GymLeaders: UICollectionViewController {
         }
     }
     
+//    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+//        let cellPadding:CGFloat = 5
+//        let cellsPerRow:CGFloat = 3
+//        let widthMinusPadding = collectionView.bounds.width - (cellPadding + cellPadding * cellsPerRow)
+//        let eachSide = widthMinusPadding / cellsPerRow
+//        switch sortType {
+//        case .Index, .Alphabetical:
+//            return CGSize(width: eachSide, height:70)
+//        default:
+//            return CGSize(width: eachSide, height:eachSide)
+//        }
+//    }
+    
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        let cellPadding:CGFloat = 5
         let cellsPerRow:CGFloat = 3
+        let height: CGFloat = 48
+        let cellPadding:CGFloat = 5
         let widthMinusPadding = collectionView.bounds.width - (cellPadding + cellPadding * cellsPerRow)
-        let eachSide = widthMinusPadding / cellsPerRow
-        switch sortType {
-        case .Index, .Alphabetical:
-            return CGSize(width: eachSide, height:70)
+        let eachSide = (widthMinusPadding / cellsPerRow) - 1
+        switch indexPath.section {
+        case 0, 1:
+            return CGSize(width: eachSide, height: height)
         default:
-            return CGSize(width: eachSide, height:eachSide)
+            return CGSize(width: eachSide, height: 90)
         }
     }
     
 }
 
 extension GymLeaders {
+    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return 3
+    }
+    
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return gymLeadersArray.count
+        switch section {
+        case 0:
+            return elementFilters.count
+        case 1:
+            return helperElements.count
+        default:
+            return searchResultsSet.count
+        }
     }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -169,7 +242,79 @@ extension GymLeaders {
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier(String(GymLeaderCell), forIndexPath: indexPath) as! GymLeaderCell
             cell.configureCell(gymLeadersArray[indexPath.row], sortType: sortType)
             return cell
+        case .Type:
+            switch indexPath.section {
+            case 0:
+                let cell = collectionView.dequeueReusableCellWithReuseIdentifier("elementCell", forIndexPath: indexPath) as! SearchElementCell
+                let element = elementFilters[indexPath.row]
+                cell.configureCell(element, isFilter: true)
+                return cell
+            case 1:
+                let cell = collectionView.dequeueReusableCellWithReuseIdentifier("elementCell", forIndexPath: indexPath) as! SearchElementCell
+                let element = helperElements[indexPath.row]
+                cell.configureCell(element, isFilter: false)
+                return cell
+            default:
+                let selectedPokemon = searchResultsSet[indexPath.row]
+                if selectedPokemon.type.count == 2 {
+                    let cell = collectionView.dequeueReusableCellWithReuseIdentifier(String(SearchResultDualCell), forIndexPath: indexPath) as! SearchResultDualCell
+                    cell.configureCell(selectedPokemon)
+                    return cell
+                } else {
+                    let cell = collectionView.dequeueReusableCellWithReuseIdentifier(String(SearchResultCell), forIndexPath: indexPath) as! SearchResultCell
+                    cell.configureCell(selectedPokemon)
+                    return cell
+                }
+            }
         }
+    }
+    
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        switch indexPath.section {
+        case 0:
+            elementFilters.removeAtIndex(indexPath.row)
+            recalculateFilters()
+        case 1:
+            let selectedItem = helperElements[indexPath.row]
+            elementFilters.append(selectedItem)
+            recalculateFilters()
+        default:
+            let selectedPokemon = searchResultsSet[indexPath.row]
+            tappedPokemon(selectedPokemon)
+            break
+        }
+    }
+    
+    override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+        let cell = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: "SearchResultSectionHeader", forIndexPath: indexPath) as! SearchResultSectionHeader
+        switch indexPath.section {
+        case 0:
+            cell.sectionHeaderText = "Filtering on these types".uppercaseString
+        case 1:
+            cell.sectionHeaderText = "Choose from these types".uppercaseString
+        default:
+            cell.sectionHeaderText = "Search filter results".uppercaseString
+        }
+        return cell
+    }
+}
+
+extension GymLeaders: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        switch section {
+        case 0:
+            if elementFilters.isEmpty {
+                return CGSizeZero
+            }
+        case 1:
+            if helperElements.isEmpty {
+                return CGSizeZero
+            }
+        default:
+            break
+        }
+        return CGSize(width: 0, height: 40)
     }
 }
 
@@ -214,9 +359,5 @@ extension GymLeaders: ModifySearchTextDelegate {
 extension GymLeaders: ChangeSortType {
     func setSortType(sortType: SortType){
         self.sortType = sortType
-    }
-    
-    func activateSearch(){
-        resultSearchController?.searchBar.becomeFirstResponder()
     }
 }
