@@ -134,10 +134,10 @@ class GymLeaders: UICollectionViewController {
         resetSearch()
         resetMonsSortedBySelectedType()
         
-        let searchOverlayCollection = storyboard!.instantiateViewControllerWithIdentifier("SearchOverlay") as! SearchOverlay
-        searchOverlayCollection.modifySearchTextDelegate = self
-        resultSearchController = UISearchController(searchResultsController: searchOverlayCollection)
-        resultSearchController?.searchResultsUpdater = searchOverlayCollection
+        let searchOverlayTable = storyboard!.instantiateViewControllerWithIdentifier(String(SearchOverlayTable)) as! SearchOverlayTable
+        searchOverlayTable.modifySearchTextDelegate = self
+        resultSearchController = UISearchController(searchResultsController: searchOverlayTable)
+        resultSearchController?.searchResultsUpdater = searchOverlayTable
         let searchBar = resultSearchController!.searchBar
         searchBar.sizeToFit()
         searchBar.placeholder = "Enter a name, or filter by type."
