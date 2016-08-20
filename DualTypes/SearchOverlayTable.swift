@@ -12,12 +12,23 @@ class SearchOverlayTable: UITableViewController {
     var searchResultsSet: [Pokemon] = []
     var moveSet: [QuickMove] = []
     var modifySearchTextDelegate: ModifySearchTextDelegate? = nil
+    
+    func resetSearchResults(){
+        searchResultsSet = Pokemon.gymLeaders()
+        moveSet = QuickAttack.allValues.map { quickAttack in
+            return Pokemon.moveForQuickAttack(quickAttack)
+        }
+    }
+    
+    override func viewDidLoad() {
+        resetSearchResults()
+    }
 }
 
 extension SearchOverlayTable {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 2
+        return 1
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

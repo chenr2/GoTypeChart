@@ -55,6 +55,49 @@ enum QuickAttack: String {
         waterGun = "Water Gun",
         wingAttack = "Wing Attack",
         zenHeadbutt = "Zen Headbutt"
+    static let allValues = [
+        acid,
+        bite,
+        bubble,
+        bugBite,
+        bulletPunch,
+        confusion,
+        cut,
+        dragonBreath,
+        ember,
+        feintAttack,
+        fireFang,
+        frostBreath,
+        furyCutter,
+        iceShard,
+        karateChop,
+        lick,
+        lowKick,
+        metalClaw,
+        mudShot,
+        mudSlap,
+        peck,
+        poisonJab,
+        poisonSting,
+        pound,
+        psychoCut,
+        quickAttack,
+        razorLeaf,
+        rockSmash,
+        rockThrow,
+        scratch,
+        shadowClaw,
+        spark,
+        splash,
+        steelWing,
+        suckerPunch,
+        tackle,
+        thunderShock,
+        vineWhip,
+        waterGun,
+        wingAttack,
+        zenHeadbutt
+    ]
 }
 
 enum SpecialAttack: String {
@@ -970,7 +1013,6 @@ class Pokemon {
             dragonite,
             mewtwo,
             mew
-            
           ]
     }
     

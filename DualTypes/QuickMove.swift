@@ -24,5 +24,4 @@ struct QuickMove {
         let curve = 10 * sqrt(percentage)
         return min(curve, 100)
     }
-    
 }
