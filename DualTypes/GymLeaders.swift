@@ -140,7 +140,7 @@ class GymLeaders: UICollectionViewController {
         resultSearchController?.searchResultsUpdater = searchOverlayTable
         let searchBar = resultSearchController!.searchBar
         searchBar.sizeToFit()
-        searchBar.placeholder = "Enter a name, or filter by type."
+        searchBar.placeholder = "Enter a name"
         searchBar.delegate = self
         navigationItem.titleView = resultSearchController?.searchBar
         resultSearchController?.hidesNavigationBarDuringPresentation = false
@@ -334,24 +334,15 @@ extension GymLeaders: UISearchBarDelegate {
     
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
-        if let searchResults = resultSearchController?.searchResultsController as? SearchOverlay {
-            searchResults.resetSearch()
-            containerEventRelay?.toggleActionButtonVisibility(true)
-        }
+        containerEventRelay?.toggleActionButtonVisibility(true)
     }
-    
-    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-        // handles clearing of search bar.
-        if let searchResults = resultSearchController?.searchResultsController as? SearchOverlay where searchText.isEmpty {
-            searchResults.resetSearch()
-        }
-    }
+
 }
 
 extension GymLeaders: UISearchControllerDelegate {
     // search bar selection shows elements
     func didPresentSearchController(searchController: UISearchController) {
-        if let searchResultsController = searchController.searchResultsController as? SearchOverlay {
+        if let searchResultsController = searchController.searchResultsController as? SearchOverlayTable {
             searchResultsController.view.hidden = false
             containerEventRelay?.toggleActionButtonVisibility(false)
         }

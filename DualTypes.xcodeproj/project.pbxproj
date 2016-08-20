@@ -13,7 +13,6 @@
 		FC04C5A01D5BF99C00BCB6AB /* GymLeaderDetailQuickMoveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC04C59F1D5BF99C00BCB6AB /* GymLeaderDetailQuickMoveCell.swift */; };
 		FC04C5A21D5BFACA00BCB6AB /* GymLeaderDetailSpecialMoveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC04C5A11D5BFACA00BCB6AB /* GymLeaderDetailSpecialMoveCell.swift */; };
 		FC17FA021D5EC635006EAE3D /* SearchElementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC17FA011D5EC635006EAE3D /* SearchElementCell.swift */; };
-		FC18BEF61D5E8D21004A0657 /* SearchOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC18BEF51D5E8D21004A0657 /* SearchOverlay.swift */; };
 		FC2585841D667766001F3434 /* QuickMove.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2585831D667766001F3434 /* QuickMove.swift */; };
 		FC2585891D669A47001F3434 /* SpecialMove.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2585881D669A47001F3434 /* SpecialMove.swift */; };
 		FC341D261D62922A007D28FA /* SearchResultDualCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC341D251D62922A007D28FA /* SearchResultDualCell.swift */; };
@@ -62,7 +61,6 @@
 		FC04C59F1D5BF99C00BCB6AB /* GymLeaderDetailQuickMoveCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GymLeaderDetailQuickMoveCell.swift; sourceTree = "<group>"; };
 		FC04C5A11D5BFACA00BCB6AB /* GymLeaderDetailSpecialMoveCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GymLeaderDetailSpecialMoveCell.swift; sourceTree = "<group>"; };
 		FC17FA011D5EC635006EAE3D /* SearchElementCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchElementCell.swift; sourceTree = "<group>"; };
-		FC18BEF51D5E8D21004A0657 /* SearchOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchOverlay.swift; sourceTree = "<group>"; };
 		FC2585831D667766001F3434 /* QuickMove.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickMove.swift; sourceTree = "<group>"; };
 		FC2585881D669A47001F3434 /* SpecialMove.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecialMove.swift; sourceTree = "<group>"; };
 		FC341D251D62922A007D28FA /* SearchResultDualCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultDualCell.swift; sourceTree = "<group>"; };
@@ -150,7 +148,6 @@
 		FC18BEF41D5E8CE7004A0657 /* SearchHelper */ = {
 			isa = PBXGroup;
 			children = (
-				FC18BEF51D5E8D21004A0657 /* SearchOverlay.swift */,
 				FC03254D1D67CAC7007A3F3B /* SearchOverlayTable.swift */,
 				FC17FA011D5EC635006EAE3D /* SearchElementCell.swift */,
 				FCF975BE1D5FA9DF00AA0E3D /* SearchResultCell.swift */,
@@ -323,7 +320,6 @@
 				FCA742961D52E732003DAC35 /* GymLeaders.swift in Sources */,
 				FC17FA021D5EC635006EAE3D /* SearchElementCell.swift in Sources */,
 				FC04C59C1D5BEB5400BCB6AB /* StatCell.swift in Sources */,
-				FC18BEF61D5E8D21004A0657 /* SearchOverlay.swift in Sources */,
 				FCDFE7771D63FE5F0002DF04 /* GridCell.swift in Sources */,
 				FCEEB18B1D5D410C0020A2A1 /* StatRing.swift in Sources */,
 				FC341D2D1D62BE22007D28FA /* MenuModal.swift in Sources */,
