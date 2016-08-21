@@ -10,12 +10,13 @@ import UIKit
 
 class SearchOverlayTable: UITableViewController {
     var searchResultsSet: [Pokemon] = []
-    var moveSet: [QuickMove] = []
+    var quickMoveSet: [QuickMove] = []
+    var specialMoveSet: [SpecialMove] = []
     var modifySearchTextDelegate: ModifySearchTextDelegate? = nil
     
     func resetSearchResults(){
         searchResultsSet = Pokemon.gymLeaders()
-        moveSet = QuickAttack.allValues.map { quickAttack in
+        quickMoveSet = QuickAttack.allValues.map { quickAttack in
             return Pokemon.moveForQuickAttack(quickAttack)
         }
     }
@@ -28,15 +29,17 @@ class SearchOverlayTable: UITableViewController {
 extension SearchOverlayTable {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        return 3
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
             return searchResultsSet.count
+        case 1:
+            return quickMoveSet.count
         default:
-            return moveSet.count
+            return specialMoveSet.count
         }
     }
     
@@ -48,16 +51,36 @@ extension SearchOverlayTable {
             let selectedPokemon = searchResultsSet[indexPath.row]
             cell.textLabel?.text = "#\(selectedPokemon.pokedex) \(selectedPokemon.name)"
             return cell
+        case 1:
+            let cell = tableView.dequeueReusableCellWithIdentifier("moveCell")!
+            cell.textLabel?.text = quickMoveSet[indexPath.row].quickAttack.rawValue
+            return cell
         default:
             let cell = tableView.dequeueReusableCellWithIdentifier("moveCell")!
-            cell.textLabel?.text = moveSet[indexPath.row].quickAttack.rawValue
+            cell.textLabel?.text = specialMoveSet[indexPath.row].specialAttack.rawValue
             return cell
         }
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let selectedPokemon = searchResultsSet[indexPath.row]
-        modifySearchTextDelegate?.tappedPokemon(selectedPokemon)
+        switch indexPath.section {
+        case 0:
+            let selectedPokemon = searchResultsSet[indexPath.row]
+            modifySearchTextDelegate?.tappedPokemon(selectedPokemon)
+        default:
+            break 
+        }
+    }
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 0:
+            return "Pokemon search results"
+        case 1:
+            return "Quick move search results"
+        default:
+            return "Special move search results"
+        }
     }
     
 }
@@ -85,6 +108,28 @@ extension SearchOverlayTable : UISearchResultsUpdating {
                 for query in searchQueries {
                     if !descriptionText.containsString(query) {
                         response = false
+                    }
+                }
+                return response
+            }
+            quickMoveSet = QuickAttack.allValues.map { quickAttack in
+                return Pokemon.moveForQuickAttack(quickAttack)
+            }.filter { quickMove in
+                var response = false
+                for query in searchQueries {
+                    if quickMove.quickAttack.rawValue.lowercaseString.containsString(query) {
+                        response = true
+                    }
+                }
+                return response
+            }
+            specialMoveSet = SpecialAttack.allValues.map { specialMove in
+                return Pokemon.moveForSpecialAttack(specialMove)
+            }.filter { specialMove in
+                var response = false
+                for query in searchQueries {
+                    if specialMove.specialAttack.rawValue.lowercaseString.containsString(query) {
+                        response = true
                     }
                 }
                 return response
