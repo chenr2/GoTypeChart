@@ -294,16 +294,21 @@ extension GymLeaders {
     }
     
     override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
-        let cell = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: "SearchResultSectionHeader", forIndexPath: indexPath) as! SearchResultSectionHeader
-        switch indexPath.section {
-        case 0:
-            cell.sectionHeaderText = "Filtering on these types".uppercaseString
-        case 1:
-            cell.sectionHeaderText = "Choose from these types".uppercaseString
+        switch kind {
+        case UICollectionElementKindSectionHeader:
+            let cell = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: "SearchResultSectionHeader", forIndexPath: indexPath) as! SearchResultSectionHeader
+            switch indexPath.section {
+            case 0:
+                cell.sectionHeaderText = "Filtering on these types".uppercaseString
+            case 1:
+                cell.sectionHeaderText = "Choose from these types".uppercaseString
+            default:
+                cell.sectionHeaderText = "Search filter results".uppercaseString
+            }
+            return cell
         default:
-            cell.sectionHeaderText = "Search filter results".uppercaseString
+            return collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionFooter, withReuseIdentifier: "Footer", forIndexPath: indexPath)
         }
-        return cell
     }
 }
 
@@ -327,6 +332,27 @@ extension GymLeaders: UICollectionViewDelegateFlowLayout {
             return CGSize(width: 0, height: 40)
         default:
             break
+        }
+        return CGSizeZero
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        let footerSize = CGSize(width: 0, height: 100)
+        switch sortType {
+        case .Type:
+            switch section {
+            case 2:
+                return footerSize
+            default:
+                break
+            }
+        default:
+            switch section {
+            case 0:
+                return footerSize
+            default:
+                break
+            }
         }
         return CGSizeZero
     }
