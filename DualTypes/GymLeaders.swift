@@ -16,6 +16,10 @@ protocol ChangeSortType {
     func setSortType(sortType: SortType)
 }
 
+protocol FilterJump {
+    func setFilters(elements: [ElementType])
+}
+
 enum SortType: String {
     case Attack, Defense, Stamina, Index, Alphabetical = "AZ", Type
 }
@@ -168,10 +172,12 @@ class GymLeaders: UICollectionViewController {
             let pokemon = sender as? Pokemon
             where segue.identifier == "pushPokemonDetail" {
             destination.pokemon = pokemon
+            destination.filterJump = self
         }
         if let destination = segue.destinationViewController as? GymLeaderDetail,
             let cell = sender as? GridCell {
             destination.pokemon = cell.pokemon
+            destination.filterJump = self
         }
         if let destination = segue.destinationViewController as? MenuModal {
             destination.changeSortType = self 
@@ -358,5 +364,17 @@ extension GymLeaders: ModifySearchTextDelegate {
 extension GymLeaders: ChangeSortType {
     func setSortType(sortType: SortType){
         self.sortType = sortType
+    }
+}
+
+extension GymLeaders: FilterJump {
+    func setFilters(elements: [ElementType]){
+        navigationController?.popViewControllerAnimated(true)
+        resultSearchController?.active = false
+        elementFilters = elements
+        sortType = .Type
+        recalculateFilters()
+        // scroll to top
+        collectionView?.setContentOffset(CGPointZero, animated: true)
     }
 }

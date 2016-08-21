@@ -45,6 +45,8 @@ class GymLeaderDetail: UICollectionViewController {
     var double: [ElementType] = []
     var half: [ElementType] = []
     
+    var filterJump: FilterJump? = nil
+    
     func getKeysOfValue(damage: DamageType, pokemon: Pokemon) -> [ElementType] {
         var elements: [ElementType] = []
         for (key, value) in pokemon.vulnerabilitySet {
@@ -191,4 +193,23 @@ extension GymLeaderDetail: UICollectionViewDelegateFlowLayout {
         }
     }
 
+}
+
+extension GymLeaderDetail {
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        var elements: [ElementType] = []
+        switch indexPath.section {
+        case 0:
+            elements = pokemon!.type
+        case 4:
+            elements = [pokemon!.bestCounter[indexPath.row]]
+        case 5:
+            elements = [double[indexPath.row]]
+        case 6:
+            elements = [half[indexPath.row]]
+        default:
+            return
+        }
+        filterJump?.setFilters(elements)
+    }
 }
