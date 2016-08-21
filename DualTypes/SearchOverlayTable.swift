@@ -53,16 +53,21 @@ extension SearchOverlayTable {
             return cell
         case 1:
             let cell = tableView.dequeueReusableCellWithIdentifier("moveCell")!
-            cell.textLabel?.text = quickMoveSet[indexPath.row].quickAttack.rawValue
+            let selectedMove = quickMoveSet[indexPath.row]
+            cell.textLabel?.text = selectedMove.quickAttack.rawValue
+            cell.detailTextLabel?.text = selectedMove.element.rawValue
             return cell
         default:
             let cell = tableView.dequeueReusableCellWithIdentifier("moveCell")!
-            cell.textLabel?.text = specialMoveSet[indexPath.row].specialAttack.rawValue
+            let selectedMove = specialMoveSet[indexPath.row]
+            cell.textLabel?.text = selectedMove.specialAttack.rawValue
+            cell.detailTextLabel?.text = selectedMove.element.rawValue
             return cell
         }
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
         switch indexPath.section {
         case 0:
             let selectedPokemon = searchResultsSet[indexPath.row]
