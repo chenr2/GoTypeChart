@@ -46,10 +46,9 @@ extension SearchOverlayTable {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 0:
-            let cell = tableView.dequeueReusableCellWithIdentifier("pokemonCell")!
-            cell.textLabel?.textColor = UIColor.darkGrayColor()
+            let cell = tableView.dequeueReusableCellWithIdentifier(String(PokemonSearchTableResult)) as! PokemonSearchTableResult
             let selectedPokemon = searchResultsSet[indexPath.row]
-            cell.textLabel?.text = "#\(selectedPokemon.pokedex) \(selectedPokemon.name)"
+            cell.configureCell(selectedPokemon)
             return cell
         case 1:
             let cell = tableView.dequeueReusableCellWithIdentifier("moveCell")!

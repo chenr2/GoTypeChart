@@ -15,6 +15,7 @@
 		FC17FA021D5EC635006EAE3D /* SearchElementCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC17FA011D5EC635006EAE3D /* SearchElementCell.swift */; };
 		FC2585841D667766001F3434 /* QuickMove.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2585831D667766001F3434 /* QuickMove.swift */; };
 		FC2585891D669A47001F3434 /* SpecialMove.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2585881D669A47001F3434 /* SpecialMove.swift */; };
+		FC2E4C451D6E615D008B8EFD /* PokemonSearchTableResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2E4C441D6E615D008B8EFD /* PokemonSearchTableResult.swift */; };
 		FC341D261D62922A007D28FA /* SearchResultDualCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC341D251D62922A007D28FA /* SearchResultDualCell.swift */; };
 		FC341D281D62A743007D28FA /* FlexibleCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC341D271D62A743007D28FA /* FlexibleCollectionCell.swift */; };
 		FC341D2B1D62BB14007D28FA /* ContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC341D2A1D62BB14007D28FA /* ContainerVC.swift */; };
@@ -64,6 +65,7 @@
 		FC17FA011D5EC635006EAE3D /* SearchElementCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchElementCell.swift; sourceTree = "<group>"; };
 		FC2585831D667766001F3434 /* QuickMove.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickMove.swift; sourceTree = "<group>"; };
 		FC2585881D669A47001F3434 /* SpecialMove.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecialMove.swift; sourceTree = "<group>"; };
+		FC2E4C441D6E615D008B8EFD /* PokemonSearchTableResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonSearchTableResult.swift; sourceTree = "<group>"; };
 		FC341D251D62922A007D28FA /* SearchResultDualCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultDualCell.swift; sourceTree = "<group>"; };
 		FC341D271D62A743007D28FA /* FlexibleCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlexibleCollectionCell.swift; sourceTree = "<group>"; };
 		FC341D2A1D62BB14007D28FA /* ContainerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerVC.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				FC03254D1D67CAC7007A3F3B /* SearchOverlayTable.swift */,
+				FC2E4C441D6E615D008B8EFD /* PokemonSearchTableResult.swift */,
 				FC17FA011D5EC635006EAE3D /* SearchElementCell.swift */,
 				FCF975BE1D5FA9DF00AA0E3D /* SearchResultCell.swift */,
 				FC341D251D62922A007D28FA /* SearchResultDualCell.swift */,
@@ -329,6 +332,7 @@
 				FCDFE7751D63FD360002DF04 /* AlphabeticalCell.swift in Sources */,
 				FC341D2B1D62BB14007D28FA /* ContainerVC.swift in Sources */,
 				FC341D281D62A743007D28FA /* FlexibleCollectionCell.swift in Sources */,
+				FC2E4C451D6E615D008B8EFD /* PokemonSearchTableResult.swift in Sources */,
 				FC04C5A01D5BF99C00BCB6AB /* GymLeaderDetailQuickMoveCell.swift in Sources */,
 				FC2585891D669A47001F3434 /* SpecialMove.swift in Sources */,
 				FCA742A81D536192003DAC35 /* ElementType.swift in Sources */,
