@@ -21,17 +21,23 @@ protocol FilterJump {
 }
 
 enum SortType: String {
-    case Attack, Defense, Stamina, Index, Alphabetical = "AZ", Type
+    case Attack, Defense, Stamina, Index, Alphabetical = "AZ", Type, MoveType = "Move"
 }
 
 class GymLeaders: UICollectionViewController {
     
     var searchResultsSet: [Pokemon] = []
+
+    var moveSearchResultsSet: [Pokemon] = []
     
     var helperElements: [ElementType] = []
+
+    var moveHelperElements: [ElementType] = []
     
     var elementFilters: [ElementType] = []
-    
+
+    var moveElementFilters: [ElementType] = []
+
     var gymLeadersArray: [Pokemon] = []
     
     var containerEventRelay: ContainerEventRelay? = nil
@@ -48,8 +54,13 @@ class GymLeaders: UICollectionViewController {
     
     func resetSearch(){
         helperElements = ElementType.allValues
+        moveHelperElements = ElementType.allValues
         elementFilters = []
+        moveElementFilters = []
         searchResultsSet = Pokemon.gymLeaders()
+        moveSearchResultsSet = Pokemon.gymLeaders().sort { pokemonA, pokemonB in
+            return pokemonA.attack > pokemonB.attack
+        }
         collectionView?.reloadData()
     }
     
@@ -98,7 +109,31 @@ class GymLeaders: UICollectionViewController {
             sortExistingArrayByStamina()
         case .Type:
             sortExistingArrayAlphabetically()
+        case .MoveType:
+            sortExistingArrayByAttack()
         }
+    }
+    
+    func recalculateMoveFilters(){
+        if moveElementFilters.isEmpty {
+            moveHelperElements = ElementType.allValues
+        } else {
+            moveHelperElements = []
+        }
+        moveSearchResultsSet = Pokemon.gymLeaders().filter { pokemon in
+            let pokemonQuickMoveTypes: [ElementType] = pokemon.quickAttacks.map { quickAttack in
+                return Pokemon.moveForQuickAttack(quickAttack).element
+            }
+            let pokemonSpecialMoveTypes: [ElementType] = pokemon.specialAttacks.map { specialAttack in
+                return Pokemon.moveForSpecialAttack(specialAttack).element
+            }
+            let allMoveTypes = Set(pokemonQuickMoveTypes + pokemonSpecialMoveTypes)
+            let moveElementFilterTypes = Set(moveElementFilters)
+            return moveElementFilterTypes.isSubsetOf(allMoveTypes)
+        }.sort { pokemonA, pokemonB in
+            return pokemonA.attack > pokemonB.attack
+        }
+        collectionView?.reloadData()
     }
     
     func recalculateFilters(){
@@ -200,6 +235,13 @@ class GymLeaders: UICollectionViewController {
             default:
                 return CGSize(width: eachSide, height: 90)
             }
+        case .MoveType:
+            switch indexPath.section {
+            case 0, 1:
+                return CGSize(width: eachSide, height: height)
+            default:
+                return CGSize(width: collectionView.bounds.width - 2 * cellPadding, height: 95)
+            }
         default:
             return CGSize(width: eachSide, height:eachSide)
         }
@@ -210,7 +252,7 @@ class GymLeaders: UICollectionViewController {
 extension GymLeaders {
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         switch sortType {
-        case .Type:
+        case .Type, .MoveType:
             return 3
         default:
             return 1
@@ -227,6 +269,15 @@ extension GymLeaders {
                 return helperElements.count
             default:
                 return searchResultsSet.count
+            }
+        case .MoveType:
+            switch section {
+            case 0:
+                return moveElementFilters.count
+            case 1:
+                return moveHelperElements.count
+            default:
+                return moveSearchResultsSet.count
             }
         default:
             return gymLeadersArray.count
@@ -272,11 +323,30 @@ extension GymLeaders {
                     return cell
                 }
             }
+        case .MoveType:
+            switch indexPath.section {
+            case 0:
+                let cell = collectionView.dequeueReusableCellWithReuseIdentifier("elementCell", forIndexPath: indexPath) as! SearchElementCell
+                let element = moveElementFilters[indexPath.row]
+                cell.configureCell(element, isFilter: true)
+                return cell
+            case 1:
+                let cell = collectionView.dequeueReusableCellWithReuseIdentifier("elementCell", forIndexPath: indexPath) as! SearchElementCell
+                let element = moveHelperElements[indexPath.row]
+                cell.configureCell(element, isFilter: false)
+                return cell
+            default:
+                let selectedPokemon = moveSearchResultsSet[indexPath.row]
+                let cell = collectionView.dequeueReusableCellWithReuseIdentifier(String(MoveTypeCell), forIndexPath: indexPath) as! MoveTypeCell
+                cell.configureCell(selectedPokemon)
+                return cell
+            }
         }
     }
     
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        if sortType == .Type {
+        switch sortType {
+        case .Type:
             switch indexPath.section {
             case 0:
                 elementFilters.removeAtIndex(indexPath.row)
@@ -290,6 +360,22 @@ extension GymLeaders {
                 tappedPokemon(selectedPokemon)
                 break
             }
+        case .MoveType:
+            switch indexPath.section {
+            case 0:
+                moveElementFilters.removeAtIndex(indexPath.row)
+                recalculateMoveFilters()
+            case 1:
+                let selectedItem = moveHelperElements[indexPath.row]
+                moveElementFilters.append(selectedItem)
+                recalculateMoveFilters()
+            default:
+                let selectedPokemon = moveSearchResultsSet[indexPath.row]
+                tappedPokemon(selectedPokemon)
+                break
+            }
+        default:
+            break
         }
     }
     
@@ -330,6 +416,20 @@ extension GymLeaders: UICollectionViewDelegateFlowLayout {
                 break
             }
             return CGSize(width: 0, height: 40)
+        case .MoveType:
+            switch section {
+            case 0:
+                if moveElementFilters.isEmpty {
+                    return CGSizeZero
+                }
+            case 1:
+                if moveHelperElements.isEmpty {
+                    return CGSizeZero
+                }
+            default:
+                break
+            }
+            return CGSize(width: 0, height: 40)
         default:
             break
         }
@@ -339,7 +439,7 @@ extension GymLeaders: UICollectionViewDelegateFlowLayout {
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
         let footerSize = CGSize(width: 0, height: 100)
         switch sortType {
-        case .Type:
+        case .Type, .MoveType:
             switch section {
             case 2:
                 return footerSize

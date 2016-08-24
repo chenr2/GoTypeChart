@@ -30,6 +30,7 @@
 		FCA742A41D5360EF003DAC35 /* GymLeaderDetailHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA742A31D5360EF003DAC35 /* GymLeaderDetailHeader.swift */; };
 		FCA742A61D536115003DAC35 /* GymLeaderDetailTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA742A51D536115003DAC35 /* GymLeaderDetailTypeCell.swift */; };
 		FCA742A81D536192003DAC35 /* ElementType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA742A71D536192003DAC35 /* ElementType.swift */; };
+		FCAB10591D6D2DD700395975 /* MoveTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAB10581D6D2DD700395975 /* MoveTypeCell.swift */; };
 		FCB17E0B1D556A3E00F0CCBB /* GymLeaderDetailSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB17E0A1D556A3E00F0CCBB /* GymLeaderDetailSectionHeader.swift */; };
 		FCB17E131D557D4000F0CCBB /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB17E121D557D4000F0CCBB /* Colors.swift */; };
 		FCCD27FF1D5CA944000A6428 /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FCCD27FE1D5CA944000A6428 /* fontawesome-webfont.ttf */; };
@@ -87,6 +88,7 @@
 		FCA742A31D5360EF003DAC35 /* GymLeaderDetailHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GymLeaderDetailHeader.swift; sourceTree = "<group>"; };
 		FCA742A51D536115003DAC35 /* GymLeaderDetailTypeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GymLeaderDetailTypeCell.swift; sourceTree = "<group>"; };
 		FCA742A71D536192003DAC35 /* ElementType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElementType.swift; sourceTree = "<group>"; };
+		FCAB10581D6D2DD700395975 /* MoveTypeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoveTypeCell.swift; sourceTree = "<group>"; };
 		FCB17E0A1D556A3E00F0CCBB /* GymLeaderDetailSectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GymLeaderDetailSectionHeader.swift; sourceTree = "<group>"; };
 		FCB17E121D557D4000F0CCBB /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		FCCD27FE1D5CA944000A6428 /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.ttf"; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				FCA742951D52E732003DAC35 /* GymLeaders.swift */,
+				FCAB10581D6D2DD700395975 /* MoveTypeCell.swift */,
 				FCDFE7761D63FE5F0002DF04 /* GridCell.swift */,
 				FCA7429E1D52E951003DAC35 /* GymLeaderCell.swift */,
 				FCDFE7741D63FD360002DF04 /* AlphabeticalCell.swift */,
@@ -338,6 +341,7 @@
 				FCDFE7791D6419AF0002DF04 /* StatArc.swift in Sources */,
 				FCA742A11D535EE0003DAC35 /* GymLeaderDetail.swift in Sources */,
 				FCF975BF1D5FA9DF00AA0E3D /* SearchResultCell.swift in Sources */,
+				FCAB10591D6D2DD700395975 /* MoveTypeCell.swift in Sources */,
 				FC04C59E1D5BF05300BCB6AB /* GymLeaderDetailStatCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

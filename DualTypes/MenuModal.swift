@@ -52,6 +52,11 @@ class MenuModal: UIViewController {
         dismissViewControllerAnimated(true){}
     }
     
+    @IBAction func changeToMoveType(sender: AnyObject) {
+        changeSortType?.setSortType(.MoveType)
+        dismissViewControllerAnimated(true){}        
+    }
+    
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         dismissViewControllerAnimated(true, completion: nil)
     }
