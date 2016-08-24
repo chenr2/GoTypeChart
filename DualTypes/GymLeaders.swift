@@ -18,6 +18,7 @@ protocol ChangeSortType {
 
 protocol FilterJump {
     func setFilters(elements: [ElementType])
+    func setMoveFilter(element: ElementType)
 }
 
 enum SortType: String {
@@ -500,6 +501,16 @@ extension GymLeaders: FilterJump {
         elementFilters = elements
         sortType = .Type
         recalculateFilters()
+        // scroll to top
+        collectionView?.setContentOffset(CGPointZero, animated: true)
+    }
+    
+    func setMoveFilter(element: ElementType){
+        navigationController?.popViewControllerAnimated(true)
+        resultSearchController?.active = false
+        moveElementFilters = [element]
+        sortType = .MoveType
+        recalculateMoveFilters()
         // scroll to top
         collectionView?.setContentOffset(CGPointZero, animated: true)
     }

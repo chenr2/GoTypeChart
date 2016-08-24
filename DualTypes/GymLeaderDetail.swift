@@ -197,19 +197,22 @@ extension GymLeaderDetail: UICollectionViewDelegateFlowLayout {
 
 extension GymLeaderDetail {
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        var elements: [ElementType] = []
+        var moveElement: ElementType? = nil
         switch indexPath.section {
         case 0:
-            elements = pokemon!.type
+            let elements = pokemon!.type
+            filterJump?.setFilters(elements)
         case 4:
-            elements = [pokemon!.bestCounter[indexPath.row]]
+            moveElement = pokemon!.bestCounter[indexPath.row]
         case 5:
-            elements = [double[indexPath.row]]
+            moveElement = double[indexPath.row]
         case 6:
-            elements = [half[indexPath.row]]
+            moveElement = half[indexPath.row]
         default:
             return
         }
-        filterJump?.setFilters(elements)
+        if let moveElement = moveElement {
+            filterJump?.setMoveFilter(moveElement)
+        }
     }
 }
