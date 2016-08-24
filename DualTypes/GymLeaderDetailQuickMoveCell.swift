@@ -37,7 +37,7 @@ class GymLeaderDetailQuickMoveCell: FlexibleCollectionCell {
     }
     
     func configureCell(quickAttack: QuickAttack, pokemon: Pokemon){
-        let move = Pokemon.moveForQuickAttack(quickAttack)
+        let move = QuickMove.moveForQuickAttack(quickAttack)
         let element = move.element
         let stabFlag = pokemon.type.contains(element)
         moveName?.text = quickAttack.rawValue
@@ -51,7 +51,7 @@ class GymLeaderDetailQuickMoveCell: FlexibleCollectionCell {
     }
     
     func configureCellSpecial(specialAttack: SpecialAttack, pokemon: Pokemon){
-        let move = Pokemon.moveForSpecialAttack(specialAttack)
+        let move = SpecialMove.moveForSpecialAttack(specialAttack)
         let element = move.element
         let stabFlag = pokemon.type.contains(element)
         moveName?.text = specialAttack.rawValue

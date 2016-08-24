@@ -51,45 +51,45 @@ class MoveTypeCell: GridCell {
         }
         let quickAttacks: [QuickAttack] = pokemon.quickAttacks.sort { attackA, attackB in
             let baseAttack = CGFloat(pokemon.attack)
-            let moveA = Pokemon.moveForQuickAttack(attackA)
+            let moveA = QuickMove.moveForQuickAttack(attackA)
             let stabA = pokemon.type.contains(moveA.element)
             let statA = moveA.quickMovePercentage(baseAttack, stab: stabA)
-            let moveB = Pokemon.moveForQuickAttack(attackB)
+            let moveB = QuickMove.moveForQuickAttack(attackB)
             let stabB = pokemon.type.contains(moveB.element)
             let statB = moveB.quickMovePercentage(baseAttack, stab: stabB)
             return statA > statB
         }
         let specialAttacks: [SpecialAttack] = pokemon.specialAttacks.sort { attackA, attackB in
             let baseAttack = CGFloat(pokemon.attack)
-            let moveA = Pokemon.moveForSpecialAttack(attackA)
+            let moveA = SpecialMove.moveForSpecialAttack(attackA)
             let stabA = pokemon.type.contains(moveA.element)
             let statA = moveA.specialMovePercentage(baseAttack, stab: stabA)
-            let moveB = Pokemon.moveForSpecialAttack(attackB)
+            let moveB = SpecialMove.moveForSpecialAttack(attackB)
             let stabB = pokemon.type.contains(moveB.element)
             let statB = moveB.specialMovePercentage(baseAttack, stab: stabB)
             return statA > statB
         }
         if let firstQuickAttack = quickAttacks.first {
-            let element = Pokemon.moveForQuickAttack(firstQuickAttack).element
+            let element = QuickMove.moveForQuickAttack(firstQuickAttack).element
             quickMove1.backgroundColor = Colors.colorForElement(element)
         }
         if let lastQuickAttack = quickAttacks.last where quickAttacks.count == 2 {
-            let element = Pokemon.moveForQuickAttack(lastQuickAttack).element
+            let element = QuickMove.moveForQuickAttack(lastQuickAttack).element
             quickMove2.backgroundColor = Colors.colorForElement(element)
         }
         if let firstSpecialAttack = specialAttacks.first {
-            let element = Pokemon.moveForSpecialAttack(firstSpecialAttack).element
+            let element = SpecialMove.moveForSpecialAttack(firstSpecialAttack).element
             chargeMove1.backgroundColor = Colors.colorForElement(element)
         }
         if specialAttacks.count > 2 {
             let secondSpecialAttack = specialAttacks[1]
-            let element = Pokemon.moveForSpecialAttack(secondSpecialAttack).element
+            let element = SpecialMove.moveForSpecialAttack(secondSpecialAttack).element
             chargeMove2.backgroundColor = Colors.colorForElement(element)
         }
 
         if specialAttacks.count > 2 {
             let thirdSpecialAttack = specialAttacks[2]
-            let element = Pokemon.moveForSpecialAttack(thirdSpecialAttack).element
+            let element = SpecialMove.moveForSpecialAttack(thirdSpecialAttack).element
             chargeMove3.backgroundColor = Colors.colorForElement(element)
         }
         

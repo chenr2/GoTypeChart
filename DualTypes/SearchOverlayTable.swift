@@ -17,7 +17,7 @@ class SearchOverlayTable: UITableViewController {
     func resetSearchResults(){
         searchResultsSet = Pokemon.gymLeaders()
         quickMoveSet = QuickAttack.allValues.map { quickAttack in
-            return Pokemon.moveForQuickAttack(quickAttack)
+            return QuickMove.moveForQuickAttack(quickAttack)
         }
     }
     
@@ -118,7 +118,7 @@ extension SearchOverlayTable : UISearchResultsUpdating {
                 return response
             }
             quickMoveSet = QuickAttack.allValues.map { quickAttack in
-                return Pokemon.moveForQuickAttack(quickAttack)
+                return QuickMove.moveForQuickAttack(quickAttack)
             }.filter { quickMove in
                 var response = false
                 for query in searchQueries {
@@ -129,7 +129,7 @@ extension SearchOverlayTable : UISearchResultsUpdating {
                 return response
             }
             specialMoveSet = SpecialAttack.allValues.map { specialMove in
-                return Pokemon.moveForSpecialAttack(specialMove)
+                return SpecialMove.moveForSpecialAttack(specialMove)
             }.filter { specialMove in
                 var response = false
                 for query in searchQueries {

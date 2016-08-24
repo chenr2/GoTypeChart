@@ -26,7 +26,7 @@ class GymLeaderDetailSpecialMoveCell: UICollectionViewCell {
         circularView.layer.cornerRadius = bounds.size.width / 2
         if let specialMove = specialMove {
             moveName?.text = specialMove.rawValue
-            let element = Pokemon.elementForSpecialAttack(specialMove)
+            let element = SpecialMove.elementForSpecialAttack(specialMove)
             circularView.backgroundColor = Colors.colorForElement(element)
             elementName?.text = element.rawValue
         }

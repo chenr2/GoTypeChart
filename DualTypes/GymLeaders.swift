@@ -123,10 +123,10 @@ class GymLeaders: UICollectionViewController {
         }
         moveSearchResultsSet = Pokemon.gymLeaders().filter { pokemon in
             let pokemonQuickMoveTypes: [ElementType] = pokemon.quickAttacks.map { quickAttack in
-                return Pokemon.moveForQuickAttack(quickAttack).element
+                return QuickMove.moveForQuickAttack(quickAttack).element
             }
             let pokemonSpecialMoveTypes: [ElementType] = pokemon.specialAttacks.map { specialAttack in
-                return Pokemon.moveForSpecialAttack(specialAttack).element
+                return SpecialMove.moveForSpecialAttack(specialAttack).element
             }
             let allMoveTypes = Set(pokemonQuickMoveTypes + pokemonSpecialMoveTypes)
             let moveElementFilterTypes = Set(moveElementFilters)

@@ -17,20 +17,20 @@ class GymLeaderDetail: UICollectionViewController {
                 half = getKeysOfValue(.half, pokemon: pokemon)
                 quickAttacks = pokemon.quickAttacks.sort { attackA, attackB in
                     let baseAttack = CGFloat(pokemon.attack)
-                    let moveA = Pokemon.moveForQuickAttack(attackA)
+                    let moveA = QuickMove.moveForQuickAttack(attackA)
                     let stabA = pokemon.type.contains(moveA.element)
                     let statA = moveA.quickMovePercentage(baseAttack, stab: stabA)
-                    let moveB = Pokemon.moveForQuickAttack(attackB)
+                    let moveB = QuickMove.moveForQuickAttack(attackB)
                     let stabB = pokemon.type.contains(moveB.element)
                     let statB = moveB.quickMovePercentage(baseAttack, stab: stabB)
                     return statA > statB
                 }
                 specialAttacks = pokemon.specialAttacks.sort { attackA, attackB in
                     let baseAttack = CGFloat(pokemon.attack)
-                    let moveA = Pokemon.moveForSpecialAttack(attackA)
+                    let moveA = SpecialMove.moveForSpecialAttack(attackA)
                     let stabA = pokemon.type.contains(moveA.element)
                     let statA = moveA.specialMovePercentage(baseAttack, stab: stabA)
-                    let moveB = Pokemon.moveForSpecialAttack(attackB)
+                    let moveB = SpecialMove.moveForSpecialAttack(attackB)
                     let stabB = pokemon.type.contains(moveB.element)
                     let statB = moveB.specialMovePercentage(baseAttack, stab: stabB)
                     return statA > statB
