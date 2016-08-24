@@ -76,17 +76,17 @@ extension GymLeaderDetail {
         case 0:
             return 1
         case 1:
-            return quickAttacks.count
-        case 2:
-            return specialAttacks.count
-        case 3: // stats
-            return 3
-        case 4:
             return pokemon!.bestCounter.count
-        case 5:
+        case 2:
             return double.count
-        case 6:
+        case 3:
             return half.count
+        case 4:
+            return quickAttacks.count
+        case 5:
+            return specialAttacks.count
+        case 6: // stats
+            return 3
         default:
             return 0
         }
@@ -100,14 +100,20 @@ extension GymLeaderDetail {
             cell.defense = pokemon!.type
             return cell
         case 1:
+            detailTypeCell.element = pokemon!.bestCounter[indexPath.row]
+        case 2:
+            detailTypeCell.element = double[indexPath.row]
+        case 3:
+            detailTypeCell.element = half[indexPath.row]
+        case 4:
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("GymLeaderDetailQuickMoveCell", forIndexPath: indexPath) as! GymLeaderDetailQuickMoveCell
             cell.configureCell(quickAttacks[indexPath.row], pokemon: pokemon!)
             return cell
-        case 2:
+        case 5:
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("GymLeaderDetailQuickMoveCell", forIndexPath: indexPath) as! GymLeaderDetailQuickMoveCell
             cell.configureCellSpecial(specialAttacks[indexPath.row], pokemon: pokemon!)
             return cell
-        case 3:
+        case 6:
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("GymLeaderDetailStatCell", forIndexPath: indexPath) as! GymLeaderDetailStatCell
             cell.pokemon = pokemon
             switch indexPath.row {
@@ -121,12 +127,6 @@ extension GymLeaderDetail {
                 break
             }
             return cell
-        case 4:
-            detailTypeCell.element = pokemon!.bestCounter[indexPath.row]
-        case 5:
-            detailTypeCell.element = double[indexPath.row]
-        case 6:
-            detailTypeCell.element = half[indexPath.row]
         default:
             break
         }
@@ -139,17 +139,17 @@ extension GymLeaderDetail {
         case 0:
             cell.sectionHeaderText = "Type:"            
         case 1:
-            cell.sectionHeaderText = "Quick Moves:"
-        case 2:
-            cell.sectionHeaderText = "Special Moves:"
-        case 3:
-            cell.sectionHeaderText = "Stats:"
-        case 4:
             cell.sectionHeaderText = "Recommended against \(pokemon!.name):"
-        case 5:
+        case 2:
             cell.sectionHeaderText = "Super effective against \(pokemon!.name):"
-        case 6:
+        case 3:
             cell.sectionHeaderText = "Not very effective against \(pokemon!.name):"
+        case 4:
+            cell.sectionHeaderText = "Quick Moves:"
+        case 5:
+            cell.sectionHeaderText = "Special Moves:"
+        case 6:
+            cell.sectionHeaderText = "Stats:"
         default:
             break
         }        
@@ -162,7 +162,7 @@ extension GymLeaderDetail: UICollectionViewDelegateFlowLayout {
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         switch section {
-        case 4:
+        case 1:
             if pokemon!.bestCounter.isEmpty {
                 return CGSizeZero
             }
@@ -175,7 +175,7 @@ extension GymLeaderDetail: UICollectionViewDelegateFlowLayout {
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         var cellsPerRow:CGFloat = 4
         switch indexPath.section {
-        case 0, 1, 2, 3, 4:
+        case 0, 4, 5, 6, 1:
             cellsPerRow = 3
         default:
             break
@@ -185,7 +185,7 @@ extension GymLeaderDetail: UICollectionViewDelegateFlowLayout {
         // subtracting 1, because on the 6+ it's off by 1
         let eachSide = (widthMinusPadding / cellsPerRow) - 1
         switch indexPath.section {
-        case 1, 2:
+        case 4, 5:
             // move sets
             return CGSize(width: eachSide, height:eachSide + 50)
         default:
@@ -202,11 +202,11 @@ extension GymLeaderDetail {
         case 0:
             let elements = pokemon!.type
             filterJump?.setFilters(elements)
-        case 4:
+        case 1:
             moveElement = pokemon!.bestCounter[indexPath.row]
-        case 5:
+        case 2:
             moveElement = double[indexPath.row]
-        case 6:
+        case 3:
             moveElement = half[indexPath.row]
         default:
             return
