@@ -20,7 +20,7 @@ class SearchOverlayTable: UITableViewController {
             return QuickMove.moveForQuickAttack(quickAttack)
         }
     }
-    
+        
     override func viewDidLoad() {
         resetSearchResults()
     }
@@ -51,16 +51,14 @@ extension SearchOverlayTable {
             cell.configureCell(selectedPokemon)
             return cell
         case 1:
-            let cell = tableView.dequeueReusableCellWithIdentifier("moveCell")!
+            let cell = tableView.dequeueReusableCellWithIdentifier(String(QuickMoveSearchResult)) as! QuickMoveSearchResult
             let selectedMove = quickMoveSet[indexPath.row]
-            cell.textLabel?.text = selectedMove.quickAttack.rawValue
-            cell.detailTextLabel?.text = selectedMove.element.rawValue
+            cell.configureCell(selectedMove)
             return cell
         default:
-            let cell = tableView.dequeueReusableCellWithIdentifier("moveCell")!
+            let cell = tableView.dequeueReusableCellWithIdentifier(String(SpecialMoveSearchResult)) as! SpecialMoveSearchResult
             let selectedMove = specialMoveSet[indexPath.row]
-            cell.textLabel?.text = selectedMove.specialAttack.rawValue
-            cell.detailTextLabel?.text = selectedMove.element.rawValue
+            cell.configureCell(selectedMove)
             return cell
         }
     }
