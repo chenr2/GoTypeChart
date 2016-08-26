@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Appraisal Cheat Sheet.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 		<key>DualTypes WatchKit App.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -17,6 +22,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>FC9B63F51D6FE8C400467EDA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>FCA7425A1D52E675003DAC35</key>
 		<dict>
 			<key>primary</key>

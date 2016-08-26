@@ -22,6 +22,10 @@
 		FC341D281D62A743007D28FA /* FlexibleCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC341D271D62A743007D28FA /* FlexibleCollectionCell.swift */; };
 		FC341D2B1D62BB14007D28FA /* ContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC341D2A1D62BB14007D28FA /* ContainerVC.swift */; };
 		FC341D2D1D62BE22007D28FA /* MenuModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC341D2C1D62BE22007D28FA /* MenuModal.swift */; };
+		FC9B63F91D6FE8C400467EDA /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC9B63F81D6FE8C400467EDA /* NotificationCenter.framework */; };
+		FC9B63FC1D6FE8C400467EDA /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9B63FB1D6FE8C400467EDA /* TodayViewController.swift */; };
+		FC9B63FF1D6FE8C400467EDA /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC9B63FD1D6FE8C400467EDA /* MainInterface.storyboard */; };
+		FC9B64031D6FE8C400467EDA /* Appraisal Cheat Sheet.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FC9B63F61D6FE8C400467EDA /* Appraisal Cheat Sheet.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FCA7425F1D52E675003DAC35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA7425E1D52E675003DAC35 /* AppDelegate.swift */; };
 		FCA742641D52E675003DAC35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCA742621D52E675003DAC35 /* Main.storyboard */; };
 		FCA742661D52E675003DAC35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCA742651D52E675003DAC35 /* Assets.xcassets */; };
@@ -45,7 +49,28 @@
 		FCF975C11D6140D900AA0E3D /* SearchResultSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF975C01D6140D900AA0E3D /* SearchResultSectionHeader.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		FC9B64011D6FE8C400467EDA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FCA742531D52E675003DAC35 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FC9B63F51D6FE8C400467EDA;
+			remoteInfo = "Appraisal Cheat Sheet";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
+		FC9B64071D6FE8C400467EDA /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				FC9B64031D6FE8C400467EDA /* Appraisal Cheat Sheet.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FCA742911D52E675003DAC35 /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -74,6 +99,11 @@
 		FC341D271D62A743007D28FA /* FlexibleCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlexibleCollectionCell.swift; sourceTree = "<group>"; };
 		FC341D2A1D62BB14007D28FA /* ContainerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerVC.swift; sourceTree = "<group>"; };
 		FC341D2C1D62BE22007D28FA /* MenuModal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuModal.swift; sourceTree = "<group>"; };
+		FC9B63F61D6FE8C400467EDA /* Appraisal Cheat Sheet.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Appraisal Cheat Sheet.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC9B63F81D6FE8C400467EDA /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		FC9B63FB1D6FE8C400467EDA /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		FC9B63FE1D6FE8C400467EDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		FC9B64001D6FE8C400467EDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCA7425B1D52E675003DAC35 /* DualTypes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DualTypes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCA7425E1D52E675003DAC35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCA742631D52E675003DAC35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -107,6 +137,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		FC9B63F31D6FE8C400467EDA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC9B63F91D6FE8C400467EDA /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FCA742581D52E675003DAC35 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -178,6 +216,24 @@
 			name = Container;
 			sourceTree = "<group>";
 		};
+		FC9B63F71D6FE8C400467EDA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FC9B63F81D6FE8C400467EDA /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FC9B63FA1D6FE8C400467EDA /* Appraisal Cheat Sheet */ = {
+			isa = PBXGroup;
+			children = (
+				FC9B63FB1D6FE8C400467EDA /* TodayViewController.swift */,
+				FC9B63FD1D6FE8C400467EDA /* MainInterface.storyboard */,
+				FC9B64001D6FE8C400467EDA /* Info.plist */,
+			);
+			path = "Appraisal Cheat Sheet";
+			sourceTree = "<group>";
+		};
 		FCA742521D52E675003DAC35 = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +241,8 @@
 				FCA7425D1D52E675003DAC35 /* DualTypes */,
 				FCA742711D52E675003DAC35 /* DualTypes WatchKit App */,
 				FCA742801D52E675003DAC35 /* DualTypes WatchKit Extension */,
+				FC9B63FA1D6FE8C400467EDA /* Appraisal Cheat Sheet */,
+				FC9B63F71D6FE8C400467EDA /* Frameworks */,
 				FCA7425C1D52E675003DAC35 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -193,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				FCA7425B1D52E675003DAC35 /* DualTypes.app */,
+				FC9B63F61D6FE8C400467EDA /* Appraisal Cheat Sheet.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -252,6 +311,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		FC9B63F51D6FE8C400467EDA /* Appraisal Cheat Sheet */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC9B64061D6FE8C400467EDA /* Build configuration list for PBXNativeTarget "Appraisal Cheat Sheet" */;
+			buildPhases = (
+				FC9B63F21D6FE8C400467EDA /* Sources */,
+				FC9B63F31D6FE8C400467EDA /* Frameworks */,
+				FC9B63F41D6FE8C400467EDA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Appraisal Cheat Sheet";
+			productName = "Appraisal Cheat Sheet";
+			productReference = FC9B63F61D6FE8C400467EDA /* Appraisal Cheat Sheet.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		FCA7425A1D52E675003DAC35 /* DualTypes */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FCA742921D52E675003DAC35 /* Build configuration list for PBXNativeTarget "DualTypes" */;
@@ -260,10 +336,12 @@
 				FCA742581D52E675003DAC35 /* Frameworks */,
 				FCA742591D52E675003DAC35 /* Resources */,
 				FCA742911D52E675003DAC35 /* Embed Watch Content */,
+				FC9B64071D6FE8C400467EDA /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				FC9B64021D6FE8C400467EDA /* PBXTargetDependency */,
 			);
 			name = DualTypes;
 			productName = DualTypes;
@@ -280,6 +358,10 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Robert Chen";
 				TargetAttributes = {
+					FC9B63F51D6FE8C400467EDA = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = XMBBQU2VF8;
+					};
 					FCA7425A1D52E675003DAC35 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = XMBBQU2VF8;
@@ -300,11 +382,20 @@
 			projectRoot = "";
 			targets = (
 				FCA7425A1D52E675003DAC35 /* DualTypes */,
+				FC9B63F51D6FE8C400467EDA /* Appraisal Cheat Sheet */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		FC9B63F41D6FE8C400467EDA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC9B63FF1D6FE8C400467EDA /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FCA742591D52E675003DAC35 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -319,6 +410,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		FC9B63F21D6FE8C400467EDA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC9B63FC1D6FE8C400467EDA /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FCA742571D52E675003DAC35 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -360,7 +459,23 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		FC9B64021D6FE8C400467EDA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FC9B63F51D6FE8C400467EDA /* Appraisal Cheat Sheet */;
+			targetProxy = FC9B64011D6FE8C400467EDA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		FC9B63FD1D6FE8C400467EDA /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FC9B63FE1D6FE8C400467EDA /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		FCA742621D52E675003DAC35 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -388,6 +503,30 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		FC9B64041D6FE8C400467EDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "Appraisal Cheat Sheet/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.robcornerstone.gotypechart.Appraisal-Cheat-Sheet";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		FC9B64051D6FE8C400467EDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "Appraisal Cheat Sheet/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.robcornerstone.gotypechart.Appraisal-Cheat-Sheet";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		FCA742881D52E675003DAC35 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -478,6 +617,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = DualTypes/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -492,6 +632,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = DualTypes/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -504,6 +645,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		FC9B64061D6FE8C400467EDA /* Build configuration list for PBXNativeTarget "Appraisal Cheat Sheet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC9B64041D6FE8C400467EDA /* Debug */,
+				FC9B64051D6FE8C400467EDA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		FCA742561D52E675003DAC35 /* Build configuration list for PBXProject "DualTypes" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
