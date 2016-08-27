@@ -10,7 +10,7 @@ import UIKit
 import NotificationCenter
 
 enum Team: Int {
-    case Mystic = 0, Valor, Instinct
+    case Instinct = 0, Valor, Mystic
 }
 
 enum IV: Int {
@@ -22,7 +22,15 @@ enum Stat: Int {
 }
 
 class TodayViewController: UIViewController, NCWidgetProviding {
-        
+    
+    let teamKey = "teamSegment"
+    let ivKey = "ivSegment"
+    let statKey = "statSegment"
+    
+    var team: Team = .Instinct
+    var iv: IV = .A
+    var stat: Stat = .A
+
     @IBOutlet weak var teamSegment: UISegmentedControl!
     
     @IBOutlet weak var ivSegment: UISegmentedControl! 
@@ -34,7 +42,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     @IBOutlet weak var statFraction: UILabel!
     
     @IBAction func teamSegmentSelected(sender: UISegmentedControl) {
-        switch sender.selectedSegmentIndex {
+        let index = sender.selectedSegmentIndex
+        switch index {
         case 0:
             team = .Instinct
         case 1:
@@ -44,13 +53,10 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         default:
             break
         }
-        teamSegment.tintColor = colorForTeam(team)
-        ivSegment.tintColor = colorForTeam(team)
-        statSegment.tintColor = colorForTeam(team)
-        teamSegment.backgroundColor = backgroundColorForTeam(team)
-        ivSegment.backgroundColor = backgroundColorForTeam(team)
-        statSegment.backgroundColor = backgroundColorForTeam(team)
         refreshSegmentNames()
+        let defaults = NSUserDefaults(suiteName: "group.gotypechart.appraisalcheatsheet")
+        defaults?.setInteger(index, forKey: teamKey)
+        defaults?.synchronize()
     }
     
     func refreshSegmentNames(){
@@ -60,17 +66,30 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             let statTitle = messageForStat(team, stat: Stat.init(rawValue: index)!)
             statSegment.setTitle(statTitle, forSegmentAtIndex: index)
         }
+        teamSegment.tintColor = colorForTeam(team)
+        ivSegment.tintColor = colorForTeam(team)
+        statSegment.tintColor = colorForTeam(team)
+        teamSegment.backgroundColor = backgroundColorForTeam(team)
+        ivSegment.backgroundColor = backgroundColorForTeam(team)
+        statSegment.backgroundColor = backgroundColorForTeam(team)
     }
     
     @IBAction func ivSegmentSelected(sender: UISegmentedControl) {
         let selectedIndex = sender.selectedSegmentIndex
         ivPercentage?.text = valueForIV(IV.init(rawValue: selectedIndex)!)
+        iv = IV.init(rawValue: selectedIndex)!
+        let defaults = NSUserDefaults(suiteName: "group.gotypechart.appraisalcheatsheet")
+        defaults?.setInteger(selectedIndex, forKey: ivKey)
+        defaults?.synchronize()
     }
-    
     
     @IBAction func statSegmentSelected(sender: UISegmentedControl) {
         let selectedIndex = sender.selectedSegmentIndex
         statFraction?.text = valueForStat(Stat.init(rawValue: selectedIndex)!)
+        stat = Stat.init(rawValue: selectedIndex)!
+        let defaults = NSUserDefaults(suiteName: "group.gotypechart.appraisalcheatsheet")
+        defaults?.setInteger(selectedIndex, forKey: statKey)
+        defaults?.synchronize()
     }
     
     func colorForTeam(team: Team) -> UIColor {
@@ -94,8 +113,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             return UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.5)
         }
     }
-    
-    var team: Team = .Instinct
     
     func messageForIV(team: Team, iv: IV) -> String {
         switch (team, iv) {
@@ -181,12 +198,31 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         }
     }
     
+    override func viewWillAppear(animated: Bool) {
+        let defaults = NSUserDefaults(suiteName: "group.gotypechart.appraisalcheatsheet")
+        if let teamIndex = defaults?.integerForKey(teamKey),
+            let teamEnumValue = Team.init(rawValue: teamIndex) {
+            team = teamEnumValue
+            teamSegment.selectedSegmentIndex = teamIndex
+        }
+        if let ivIndex = defaults?.integerForKey(ivKey),
+            let ivEnumValue = IV.init(rawValue: ivIndex) {
+            iv = ivEnumValue
+            ivSegment.selectedSegmentIndex = ivIndex
+        }
+        if let statIndex = defaults?.integerForKey(statKey),
+            let statEnumValue = Stat.init(rawValue: statIndex) {
+            stat = statEnumValue
+            statSegment.selectedSegmentIndex = statIndex
+        }
+        refreshSegmentNames()
+        ivPercentage?.text = valueForIV(iv)
+        statFraction?.text = valueForStat(stat)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         preferredContentSize = CGSizeMake(0, 175)
-        refreshSegmentNames()
-        ivPercentage?.text = valueForIV(IV.init(rawValue: 0)!)
-        statFraction?.text = valueForStat(Stat.init(rawValue: 0)!)
     }
     
     func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)) {

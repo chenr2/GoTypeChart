@@ -131,6 +131,7 @@
 		FCDFE7741D63FD360002DF04 /* AlphabeticalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlphabeticalCell.swift; sourceTree = "<group>"; };
 		FCDFE7761D63FE5F0002DF04 /* GridCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridCell.swift; sourceTree = "<group>"; };
 		FCDFE7781D6419AF0002DF04 /* StatArc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatArc.swift; sourceTree = "<group>"; };
+		FCE2E89D1D710CF100FB43F0 /* DualTypes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = DualTypes.entitlements; sourceTree = "<group>"; };
 		FCEEB18A1D5D410C0020A2A1 /* StatRing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatRing.swift; sourceTree = "<group>"; };
 		FCF975BE1D5FA9DF00AA0E3D /* SearchResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		FCF975C01D6140D900AA0E3D /* SearchResultSectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultSectionHeader.swift; sourceTree = "<group>"; };
@@ -259,6 +260,7 @@
 		FCA7425D1D52E675003DAC35 /* DualTypes */ = {
 			isa = PBXGroup;
 			children = (
+				FCE2E89D1D710CF100FB43F0 /* DualTypes.entitlements */,
 				FC341D291D62BB07007D28FA /* Container */,
 				FC341D271D62A743007D28FA /* FlexibleCollectionCell.swift */,
 				FC18BEF21D5E8B9E004A0657 /* MainPage */,
@@ -365,6 +367,11 @@
 					FCA7425A1D52E675003DAC35 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = XMBBQU2VF8;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -616,6 +623,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DualTypes/DualTypes.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = DualTypes/Info.plist;
@@ -631,6 +639,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DualTypes/DualTypes.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = DualTypes/Info.plist;
@@ -652,6 +661,7 @@
 				FC9B64051D6FE8C400467EDA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FCA742561D52E675003DAC35 /* Build configuration list for PBXProject "DualTypes" */ = {
 			isa = XCConfigurationList;
