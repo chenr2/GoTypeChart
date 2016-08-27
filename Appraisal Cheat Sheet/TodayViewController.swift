@@ -173,7 +173,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         case (.Instinct, .D):
             return "Kinda basic"
         case (.Valor, .A):
-            return "Excellent, exciting"
+            return "Excellent stats"
         case (.Valor, .B):
             return "Blown away, WOW"
         case (.Valor, .C):
@@ -229,7 +229,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     override func viewDidLoad() {
         super.viewDidLoad()
         UILabel.appearanceWhenContainedInInstancesOfClasses([UISegmentedControl.self]).numberOfLines = 0
-        preferredContentSize = CGSizeMake(0, 200)
+        preferredContentSize = CGSizeMake(0, 220)
     }
     
     func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)) {
