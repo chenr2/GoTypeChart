@@ -33,7 +33,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 
     @IBOutlet weak var teamSegment: UISegmentedControl!
     
-    @IBOutlet weak var ivSegment: UISegmentedControl! 
+    @IBOutlet weak var ivSegment: UISegmentedControl!
     
     @IBOutlet weak var statSegment: UISegmentedControl!
     
@@ -65,6 +65,12 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             ivSegment.setTitle(title, forSegmentAtIndex: index)
             let statTitle = messageForStat(team, stat: Stat.init(rawValue: index)!)
             statSegment.setTitle(statTitle, forSegmentAtIndex: index)
+        }
+        for v in ivSegment.subviews {
+            v.layoutSubviews()
+        }
+        for v in statSegment.subviews {
+            v.layoutSubviews()
         }
         teamSegment.tintColor = colorForTeam(team)
         ivSegment.tintColor = colorForTeam(team)
@@ -117,29 +123,29 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     func messageForIV(team: Team, iv: IV) -> String {
         switch (team, iv) {
         case (.Instinct, .A):
-            return "Best"
+            return "Battle with the best"
         case (.Instinct, .B):
-            return "Strong"
+            return "Really strong"
         case (.Instinct, .C):
-            return "Decent"
+            return "Pretty decent"
         case (.Instinct, .D):
-            return "Battling"
+            return "Room for improvement"
         case (.Valor, .A):
-            return "Amazes"
+            return "Accomplish anything"
         case (.Valor, .B):
-            return "Proud"
+            return "Should be proud"
         case (.Valor, .C):
-            return "Decent"
+            return "Decent Pokemon"
         case (.Valor, .D):
-            return "Like it"
+            return "Not great in battle"
         case (.Mystic, .A):
-            return "Wonder"
+            return "Wonder, breath taking"
         case (.Mystic, .B):
-            return "Attention"
+            return "Caught my attention"
         case (.Mystic, .C):
-            return "Average"
+            return "Above average"
         case (.Mystic, .D):
-            return "Headway"
+            return "Not much headway"
         }
     }
     
@@ -159,29 +165,29 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     func messageForStat(team: Team, stat: Stat) -> String {
         switch (team, stat) {
         case (.Instinct, .A):
-            return "Best ever"
+            return "Best ever seen"
         case (.Instinct, .B):
-            return "Impressive"
+            return "Strong, impressive"
         case (.Instinct, .C):
-            return "Good"
+            return "Good stats"
         case (.Instinct, .D):
-            return "Basic"
+            return "Kinda basic"
         case (.Valor, .A):
-            return "Excellent"
+            return "Excellent, exciting"
         case (.Valor, .B):
-            return "WOW"
+            return "Blown away, WOW"
         case (.Valor, .C):
-            return "Job done"
+            return "Get the job done"
         case (.Valor, .D):
-            return "Battle"
+            return "Don't point to greatness"
         case (.Mystic, .A):
-            return "Incredible"
+            return "Exceed, incredible"
         case (.Mystic, .B):
-            return "Impressed"
+            return "Impressed by stats"
         case (.Mystic, .C):
-            return "Trending"
+            return "Trending positive"
         case (.Mystic, .D):
-            return "Norm"
+            return "Not out of norm"
         }
     }
     
@@ -222,7 +228,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        preferredContentSize = CGSizeMake(0, 175)
+        UILabel.appearanceWhenContainedInInstancesOfClasses([UISegmentedControl.self]).numberOfLines = 0
+        preferredContentSize = CGSizeMake(0, 200)
     }
     
     func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)) {
