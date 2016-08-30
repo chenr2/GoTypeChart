@@ -15,15 +15,34 @@ enum PidgeyRat: Int {
 
 class PidgeyGrinderViewController: UIViewController, NCWidgetProviding {
     
-    var pidgeyCount = 20
-    var pidgeyCandy = 200
-    var rattataCount = 10
-    var rattataCandy = 250
+    @IBOutlet weak var leftoverCandy: UILabel!
+    @IBOutlet weak var leftoverMons: UILabel!
+    @IBOutlet weak var evolutionCount: UILabel!
+    @IBOutlet weak var evolutions: UILabel!
+    @IBOutlet weak var candyButton: UIButton!
+    @IBOutlet weak var pidgeyRatButton: UIButton!
+    @IBOutlet weak var monCount: UILabel!
+    @IBOutlet weak var candyCount: UILabel!
+    @IBOutlet weak var monStepper: UIStepper!
+    @IBOutlet weak var candyStepper: UIStepper!
+    @IBOutlet weak var transferSwitch: UISwitch!
+
+    var pidgeyCount = 0
+    var pidgeyCandy = 0
+    var rattataCount = 0
+    var rattataCandy = 0
     var transfer = true {
         didSet {
             refreshUI()
         }
     }
+    
+    let monTypeKey = "monTypeKey"
+    let pidgeyCountKey = "pidgeyCountKey"
+    let rattataCountKey = "rattataCountKey"
+    let transferSwitchKey = "transferSwitchKey"
+    let pidgeyCandyKey = "pidgeyCandy"
+    let rattataCandyKey = "rattataCandyKey"
 
     let rattataPurple = UIColor(red: 0.663, green: 0.384, blue: 0.910, alpha: 1)
     let pidgeyYellow = UIColor(red: 0.976, green: 0.796, blue: 0.345, alpha: 1)
@@ -45,7 +64,7 @@ class PidgeyGrinderViewController: UIViewController, NCWidgetProviding {
         }
     }
     
-    func calculateEvolves(monCount: Int, candyCount: Int, candiesToEvolve: Int) -> (Int, Int) {
+    func calculateEvolves(monCount: Int, candyCount: Int, candiesToEvolve: Int) -> (Int, Int, Int) {
         var monTally = monCount
         var candyTally = candyCount
         var evolveTally = 0
@@ -60,42 +79,72 @@ class PidgeyGrinderViewController: UIViewController, NCWidgetProviding {
                 evolveTally += 1
             }
         }
-        return (evolveTally, candyTally)
+        return (evolveTally, candyTally, monTally)
     }
     
     func refreshUI(){
         var evolves = 0
-        var remaining = 0
+        var remainingCandy = 0
+        var remainingMons = 0
+        transferSwitch.on = transfer 
         switch pidgeyRat{
         case .pidgey:
             monStepper.value = Double(pidgeyCount)
             candyStepper.value = Double(pidgeyCandy)
             monCount?.text = "\(Int(pidgeyCount))"
             candyCount?.text = "\(Int(pidgeyCandy))"
-            (evolves, remaining) = calculateEvolves(pidgeyCount, candyCount: pidgeyCandy, candiesToEvolve: 12)
+            (evolves, remainingCandy, remainingMons) = calculateEvolves(pidgeyCount, candyCount: pidgeyCandy, candiesToEvolve: 12)
         case .rattata:
             monStepper.value = Double(rattataCount)
             candyStepper.value = Double(rattataCandy)
             monCount?.text = "\(Int(rattataCount))"
             candyCount?.text = "\(Int(rattataCandy))"
-            (evolves, remaining) = calculateEvolves(rattataCount, candyCount: rattataCandy, candiesToEvolve: 25)
+            (evolves, remainingCandy, remainingMons) = calculateEvolves(rattataCount, candyCount: rattataCandy, candiesToEvolve: 25)
         }
         evolutionCount?.text = "\(Int(evolves))"
-        leftoverCount?.text = "\(Int(remaining))"
-    }
-    
-    @IBOutlet weak var transferSwitch: UISwitch!
-    
-    @IBAction func transferSwitchChanged(sender: UISwitch) {
-        transfer = sender.on
+        leftoverCandy?.text = "\(Int(remainingCandy))"
+        leftoverMons?.text = "\(Int(remainingMons))"
     }
     
     override func viewDidAppear(animated: Bool) {
+        let defaults = NSUserDefaults(suiteName: "group.gotypechart.pidgeygrinder")
+        if let monTypeValue = defaults?.integerForKey(monTypeKey) {
+            pidgeyRat = PidgeyRat(rawValue: monTypeValue)!
+        }
+        if let pidgeyCountValue = defaults?.integerForKey(pidgeyCountKey) {
+            pidgeyCount = pidgeyCountValue
+        }
+        if let pidgeyCandyValue = defaults?.integerForKey(pidgeyCandyKey) {
+            pidgeyCandy = pidgeyCandyValue
+        }
+        if let rattataCountValue = defaults?.integerForKey(rattataCountKey) {
+            rattataCount = rattataCountValue
+        }
+        if let rattataCandyValue = defaults?.integerForKey(rattataCandyKey) {
+            rattataCandy = rattataCandyValue
+        }
+        if let transferValue = defaults?.boolForKey(transferSwitchKey) {
+            transfer = transferValue
+        }
         refreshUI()
     }
     
     func switchMon(){
         pidgeyRat = (pidgeyRat == .pidgey) ? .rattata : .pidgey
+        saveValue(pidgeyRat.rawValue, forKey: monTypeKey)
+    }
+    
+    func saveValue(value: Int, forKey key: String){
+        let defaults = NSUserDefaults(suiteName: "group.gotypechart.pidgeygrinder")
+        defaults?.setInteger(value, forKey: key)
+        defaults?.synchronize()
+    }
+    
+    @IBAction func transferSwitchChanged(sender: UISwitch) {
+        transfer = sender.on
+        let defaults = NSUserDefaults(suiteName: "group.gotypechart.pidgeygrinder")
+        defaults?.setBool(transfer, forKey: transferSwitchKey)
+        defaults?.synchronize()
     }
     
     @IBAction func candyToggle(sender: UIButton) {
@@ -107,57 +156,37 @@ class PidgeyGrinderViewController: UIViewController, NCWidgetProviding {
         switchMon()
         refreshUI()
     }
-    
-    @IBOutlet weak var leftoverCount: UILabel!
-    @IBOutlet weak var evolutionCount: UILabel!
-    @IBOutlet weak var leftovers: UILabel!
-    @IBOutlet weak var evolutions: UILabel!
-    @IBOutlet weak var candyButton: UIButton!
-
-    @IBOutlet weak var pidgeyRatButton: UIButton!
-    
-    @IBOutlet weak var monCount: UILabel!
-    @IBOutlet weak var candyCount: UILabel!
-
-    @IBOutlet weak var monStepper: UIStepper!
-    @IBOutlet weak var candyStepper: UIStepper!
 
     @IBAction func monStepperChanged(sender: UIStepper) {
         switch pidgeyRat {
         case .pidgey:
             pidgeyCount = Int(sender.value)
+            saveValue(pidgeyCount, forKey: pidgeyCountKey)
         case .rattata:
             rattataCount = Int(sender.value)
+            saveValue(rattataCount, forKey: rattataCountKey)
         }
         refreshUI()
     }
+    
     @IBAction func candyStepperChanged(sender: UIStepper) {
         switch pidgeyRat {
         case .pidgey:
             pidgeyCandy = Int(sender.value)
+            saveValue(pidgeyCandy, forKey: pidgeyCandyKey)
         case .rattata:
             rattataCandy = Int(sender.value)
+            saveValue(rattataCandy, forKey: rattataCandyKey)
         }
         refreshUI()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        preferredContentSize = CGSizeMake(0, 250)
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        preferredContentSize = CGSizeMake(0, 205)
     }
     
     func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)) {
-        // Perform any setup necessary in order to update the view.
-
-        // If an error is encountered, use NCUpdateResult.Failed
-        // If there's no update required, use NCUpdateResult.NoData
-        // If there's an update, use NCUpdateResult.NewData
-
         completionHandler(NCUpdateResult.NewData)
     }
     

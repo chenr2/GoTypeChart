@@ -5,6 +5,7 @@
 	<key>com.apple.security.application-groups</key>
 	<array>
 		<string>group.gotypechart.appraisalcheatsheet</string>
+		<string>group.gotypechart.pidgeygrinder</string>
 	</array>
 </dict>
 </plist>
