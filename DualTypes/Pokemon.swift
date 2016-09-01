@@ -51,12 +51,6 @@ class Pokemon {
         return getPercentage(CGFloat(stamina), total: maxStamina)
     }
     
-
-
-
-    
-
-    
     class func directCounter(type: [ElementType]) -> [ElementType] {
         switch type.count {
         case 1:
@@ -110,9 +104,9 @@ class Pokemon {
             case (.Fire, .Flying), (.Flying, .Fire): // charizard, moltres
                 return [.Rock]
             case (.Psychic, .Water), (.Water, .Psychic): // showbro, starmie
-                return [] // that's why psychic is good
+                return [.Grass, .Bug, .Electric] // dark and ghost don't really work out
             case (.Ice, .Water), (.Water, .Ice): // lapras
-                return [] // that's why lapras is good
+                return [.Electric, .Fight, .Rock] // don't use grass vs lapras
             case (.Grass, .Poison), (.Poison, .Grass): // venasaur, victreebel, vileplume, gloom
                 return [] // nothing really stands out among the super effectives
             case (.Water, .Fight), (.Fight, .Water): // poliwrath
