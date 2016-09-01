@@ -1,8 +1,8 @@
 //
 //  ExtensionDelegate.swift
-//  DualTypes WatchKit Extension
+//  Triangulate Extension
 //
-//  Created by Robert Chen on 8/3/16.
+//  Created by Robert Chen on 8/31/16.
 //  Copyright © 2016 Robert Chen. All rights reserved.
 //
 

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="10032"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Triangulate" customModuleProvider="target">
+                    <items>
+                        <map height="1" alignment="left" id="1DS-0l-8pD"/>
+                    </items>
+                    <menu key="menu" id="7Uh-sM-OlT">
+                        <items>
+                            <menuItem title="Clear" id="p9m-tY-OTC"/>
+                            <menuItem title="Here" id="nQ2-W4-PEZ"/>
+                            <menuItem title="Gone" id="0Sx-Os-J3O"/>
+                            <menuItem title="Back" id="TEN-sI-nG8"/>
+                        </items>
+                    </menu>
+                    <connections>
+                        <outlet property="mapView" destination="1DS-0l-8pD" id="Okw-hl-EYt"/>
+                    </connections>
+                </controller>
+            </objects>
+        </scene>
+    </scenes>
+</document>

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 protocol ModifySearchTextDelegate {
     func tappedPokemon(pokemon: Pokemon)
@@ -27,6 +28,8 @@ enum SortType: String {
 
 class GymLeaders: UICollectionViewController {
     
+    let locationManager = CLLocationManager()
+
     var searchResultsSet: [Pokemon] = []
 
     var moveSearchResultsSet: [Pokemon] = []
@@ -159,6 +162,7 @@ class GymLeaders: UICollectionViewController {
     }
     
     override func viewDidLoad() {
+        locationManager.requestAlwaysAuthorization()
         resetSearch()
         resetMonsSortedBySelectedType()
         
