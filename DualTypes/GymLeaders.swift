@@ -53,46 +53,54 @@ class GymLeaders: UICollectionViewController {
     
     var resultSearchController:UISearchController? = nil
     
+    func sortAlphabetically(pokemonA: Pokemon, pokemonB: Pokemon) -> Bool {
+        return pokemonA.name.lowercaseString < pokemonB.name.lowercaseString
+    }
+    
+    func sortByIndex(pokemonA: Pokemon, pokemonB: Pokemon) -> Bool {
+        return pokemonA.pokedex < pokemonB.pokedex
+    }
+
+    func sortByAttack(pokemonA: Pokemon, pokemonB: Pokemon) -> Bool {
+        return pokemonA.attack > pokemonB.attack
+    }
+
+    func sortByDefense(pokemonA: Pokemon, pokemonB: Pokemon) -> Bool {
+        return pokemonA.defense > pokemonB.defense
+    }
+
+    func sortByStamina(pokemonA: Pokemon, pokemonB: Pokemon) -> Bool {
+        return pokemonA.stamina > pokemonB.stamina
+    }
+    
     func resetSearch(){
         helperElements = ElementType.allValues
         moveHelperElements = ElementType.allValues
         elementFilters = []
         moveElementFilters = []
-        searchResultsSet = Pokemon.gymLeaders()
-        moveSearchResultsSet = Pokemon.gymLeaders().sort { pokemonA, pokemonB in
-            return pokemonA.attack > pokemonB.attack
-        }
+        searchResultsSet = Pokemon.gymLeaders().sort(sortAlphabetically)
+        moveSearchResultsSet = Pokemon.gymLeaders().sort(sortByAttack)
         collectionView?.reloadData()
     }
     
     func sortExistingArrayAlphabetically() {
-        gymLeadersArray = gymLeadersArray.sort { pokemonA, pokemonB in
-            return pokemonA.name.lowercaseString < pokemonB.name.lowercaseString
-        }
+        gymLeadersArray = gymLeadersArray.sort(sortAlphabetically)
     }
     
     func sortExistingArrayByIndex(){
-        gymLeadersArray = gymLeadersArray.sort { pokemonA, pokemonB in
-            return pokemonA.pokedex < pokemonB.pokedex
-        }
+        gymLeadersArray = gymLeadersArray.sort(sortByIndex)
     }
     
     func sortExistingArrayByStamina(){
-        gymLeadersArray = gymLeadersArray.sort { pokemonA, pokemonB in
-            return pokemonA.stamina > pokemonB.stamina
-        }
+        gymLeadersArray = gymLeadersArray.sort(sortByStamina)
     }
     
     func sortExistingArrayByDefense(){
-        gymLeadersArray = gymLeadersArray.sort { pokemonA, pokemonB in
-            return pokemonA.defense > pokemonB.defense
-        }
+        gymLeadersArray = gymLeadersArray.sort(sortByDefense)
     }
     
     func sortExistingArrayByAttack(){
-        gymLeadersArray = gymLeadersArray.sort { pokemonA, pokemonB in
-            return pokemonA.attack > pokemonB.attack
-        }
+        gymLeadersArray = gymLeadersArray.sort(sortByAttack)
     }
     
     func resetMonsSortedBySelectedType(){
@@ -131,9 +139,7 @@ class GymLeaders: UICollectionViewController {
             let allMoveTypes = Set(pokemonQuickMoveTypes + pokemonSpecialMoveTypes)
             let moveElementFilterTypes = Set(moveElementFilters)
             return moveElementFilterTypes.isSubsetOf(allMoveTypes)
-        }.sort { pokemonA, pokemonB in
-            return pokemonA.attack > pokemonB.attack
-        }
+        }.sort(sortByAttack)
         collectionView?.reloadData()
     }
     
@@ -147,9 +153,9 @@ class GymLeaders: UICollectionViewController {
             // start with all pokemon.
             let dualTypePokemonOfThatElement = Pokemon.gymLeaders().filter {
                 $0.type.contains(singleElement)
-                }.filter {
-                    // just those pokemon with 2 elements
-                    $0.type.count == 2
+            }.filter {
+                // just those pokemon with 2 elements
+                $0.type.count == 2
             }
             var otherElements: [ElementType] = []
             for dualType in dualTypePokemonOfThatElement {
@@ -166,7 +172,7 @@ class GymLeaders: UICollectionViewController {
             let pokemonType = Set(pokemon.type)
             let elementFilterTypes = Set(elementFilters)
             return elementFilterTypes.isSubsetOf(pokemonType)
-        }
+        }.sort(sortAlphabetically)
         collectionView?.reloadData()
     }
     
