@@ -83,24 +83,8 @@ class GymLeaders: UICollectionViewController {
         collectionView?.reloadData()
     }
     
-    func sortExistingArrayAlphabetically() {
-        gymLeadersArray = gymLeadersArray.sort(sortAlphabetically)
-    }
-    
     func sortExistingArrayByIndex(){
         gymLeadersArray = gymLeadersArray.sort(sortByIndex)
-    }
-    
-    func sortExistingArrayByStamina(){
-        gymLeadersArray = gymLeadersArray.sort(sortByStamina)
-    }
-    
-    func sortExistingArrayByDefense(){
-        gymLeadersArray = gymLeadersArray.sort(sortByDefense)
-    }
-    
-    func sortExistingArrayByAttack(){
-        gymLeadersArray = gymLeadersArray.sort(sortByAttack)
     }
     
     func resetMonsSortedBySelectedType(){
@@ -109,17 +93,15 @@ class GymLeaders: UICollectionViewController {
         case .Index:
             sortExistingArrayByIndex()
         case .Alphabetical:
-            sortExistingArrayAlphabetically()
+            gymLeadersArray = gymLeadersArray.sort(sortAlphabetically)
         case .Attack:
-            sortExistingArrayByAttack()
+            gymLeadersArray = gymLeadersArray.sort(sortByAttack)
         case .Defense:
-            sortExistingArrayByDefense()
+            gymLeadersArray = gymLeadersArray.sort(sortByDefense)
         case .Stamina:
-            sortExistingArrayByStamina()
-        case .Type:
-            sortExistingArrayAlphabetically()
-        case .MoveType:
-            sortExistingArrayByAttack()
+            gymLeadersArray = gymLeadersArray.sort(sortByStamina)
+        default:
+            break
         }
     }
     
