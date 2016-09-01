@@ -189,7 +189,7 @@ struct SpecialMove {
         let time = CGFloat(duration)/1000
         return CGFloat(power) / time
     }
-    let maxSpecialMove: CGFloat = 242 * 24.4 * 1.25 // moltres fire blast
+    let maxSpecialMove: CGFloat = 198 * 30 * 1.25 // machamp cross chop
     func specialMovePercentage(baseAttack: CGFloat, stab: Bool) -> CGFloat {
         let bonus: CGFloat = stab ? 1.25 : 1
         let percentage = 100 * baseAttack * dps * bonus / maxSpecialMove
