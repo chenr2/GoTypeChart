@@ -14,6 +14,36 @@ class InterfaceController: WKInterfaceController {
 
     let locationManager = CLLocationManager()
     
+    var currentLocation:CLLocationCoordinate2D? = nil
+    
+    var locationArray:[CLLocationCoordinate2D] = []
+    
+    func redrawCircles(){
+        mapView.removeAllAnnotations()
+        _ = locationArray.map { coordinate in
+            mapView.addAnnotation(coordinate, withImage: UIImage(named: "ring")!, centerOffset: CGPointZero)
+        }
+        addCurrentPosition()
+    }
+    
+    @IBAction func hereMenu() {
+        locationManager.requestLocation()
+    }
+    
+    @IBAction func clearMenu() {
+        locationArray = []
+        redrawCircles()
+    }
+    
+    @IBAction func addMenu() {
+        locationArray.append(currentLocation!)
+        redrawCircles()
+    }
+    
+    func addCurrentPosition(){
+        mapView.addAnnotation(currentLocation!, withImage: UIImage(named: "currentPosition")!, centerOffset: CGPointZero)
+    }
+    
     @IBOutlet var mapView: WKInterfaceMap!
     
     override func awakeWithContext(context: AnyObject?) {
@@ -71,12 +101,11 @@ extension InterfaceController : CLLocationManagerDelegate {
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
-            let span = MKCoordinateSpanMake(0.006, 0.006)
+            let span = MKCoordinateSpanMake(0.005, 0.005)
             let region = MKCoordinateRegion(center: location.coordinate, span: span)
             mapView.setRegion(region)
-            
-//            mapView.addAnnotation(location.coordinate, withImageNamed: "currentPosition", centerOffset: CGPointZero)
-            mapView.addAnnotation(location.coordinate, withImage: UIImage(named: "currentPosition")!, centerOffset: CGPointZero)
+            currentLocation = location.coordinate
+            redrawCircles()
         }
     }
     

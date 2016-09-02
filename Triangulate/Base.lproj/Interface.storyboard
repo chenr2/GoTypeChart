@@ -10,14 +10,26 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Triangulate" customModuleProvider="target">
                     <items>
-                        <map height="1" alignment="left" id="1DS-0l-8pD"/>
+                        <map height="1" alignment="left" enabled="NO" id="1DS-0l-8pD"/>
                     </items>
                     <menu key="menu" id="7Uh-sM-OlT">
                         <items>
-                            <menuItem title="Clear" id="p9m-tY-OTC"/>
-                            <menuItem title="Here" id="nQ2-W4-PEZ"/>
-                            <menuItem title="Gone" id="0Sx-Os-J3O"/>
-                            <menuItem title="Back" id="TEN-sI-nG8"/>
+                            <menuItem title="Add" icon="add" id="nQ2-W4-PEZ">
+                                <connections>
+                                    <action selector="addMenu" destination="AgC-eL-Hgc" id="dxh-2V-76o"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Clear" icon="block" id="p9m-tY-OTC">
+                                <connections>
+                                    <action selector="clearMenu" destination="AgC-eL-Hgc" id="zdI-h3-6dn"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Here" icon="repeat" id="TEN-sI-nG8">
+                                <connections>
+                                    <action selector="hereMenu" destination="AgC-eL-Hgc" id="8JZ-lC-jvw"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Back" icon="decline" id="qIQ-zc-AkF"/>
                         </items>
                     </menu>
                     <connections>
