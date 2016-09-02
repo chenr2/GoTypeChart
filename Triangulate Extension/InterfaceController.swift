@@ -19,15 +19,16 @@ class InterfaceController: WKInterfaceController {
     var locationArray:[CLLocationCoordinate2D] = []
     
     func redrawCircles(){
+        guard let ringImage = UIImage(named: "ring") else { return }
         mapView.removeAllAnnotations()
         _ = locationArray.map { coordinate in
-            mapView.addAnnotation(coordinate, withImage: UIImage(named: "ring")!, centerOffset: CGPointZero)
+            mapView.addAnnotation(coordinate, withImage: ringImage, centerOffset: CGPointZero)
         }
         addCurrentPosition()
     }
     
     @IBAction func hereMenu() {
-        locationManager.requestLocation()
+        here()
     }
     
     @IBAction func clearMenu() {
@@ -36,44 +37,43 @@ class InterfaceController: WKInterfaceController {
     }
     
     @IBAction func addMenu() {
-        locationArray.append(currentLocation!)
+        guard let currentLocation = currentLocation else { return }
+        locationArray.append(currentLocation)
         redrawCircles()
     }
     
     func addCurrentPosition(){
-        mapView.addAnnotation(currentLocation!, withImage: UIImage(named: "currentPosition")!, centerOffset: CGPointZero)
+        guard let currentLocation = currentLocation,
+            let pokeMarker = UIImage(named: "currentPosition") else { return }
+        mapView.addAnnotation(currentLocation, withImage: pokeMarker, centerOffset: CGPointZero)
     }
     
     @IBOutlet var mapView: WKInterfaceMap!
+    
+    func here(){
+        locationManager.requestLocation()
+    }
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         
-        // Configure interface objects here.
+        // infinite polling
+        let _ = NSTimer.scheduledTimerWithTimeInterval(5.0, target: self, selector: #selector(InterfaceController.here), userInfo: nil, repeats: true)
+
     }
     
     func handleLocationServicesStateNotDetermined(){
         locationManager.requestWhenInUseAuthorization()
     }
     
-    func handleLocationServicesStateUnavailable(){
-        
-    }
-    
-    func handleLocationServicesStateAvailable(){
-        
-    }
-    
     func handleLocationServicesAuthorizationStatus(status: CLAuthorizationStatus){
         switch status {
         case .NotDetermined:
             handleLocationServicesStateNotDetermined()
-        case .Restricted, .Denied:
-            handleLocationServicesStateUnavailable()
-        case .AuthorizedAlways, .AuthorizedWhenInUse:
-            handleLocationServicesStateAvailable()
+        default:
+            break
         }
     }
 
@@ -100,13 +100,12 @@ extension InterfaceController : CLLocationManagerDelegate {
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.first {
-            let span = MKCoordinateSpanMake(0.005, 0.005)
-            let region = MKCoordinateRegion(center: location.coordinate, span: span)
-            mapView.setRegion(region)
-            currentLocation = location.coordinate
-            redrawCircles()
-        }
+        guard let location = locations.first else { return }
+        let span = MKCoordinateSpanMake(0.005, 0.005)
+        let region = MKCoordinateRegion(center: location.coordinate, span: span)
+        mapView.setRegion(region)
+        currentLocation = location.coordinate
+        redrawCircles()
     }
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
