@@ -24,11 +24,6 @@
                                     <action selector="clearMenu" destination="AgC-eL-Hgc" id="zdI-h3-6dn"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Here" icon="repeat" id="TEN-sI-nG8">
-                                <connections>
-                                    <action selector="hereMenu" destination="AgC-eL-Hgc" id="8JZ-lC-jvw"/>
-                                </connections>
-                            </menuItem>
                             <menuItem title="Back" icon="decline" id="qIQ-zc-AkF"/>
                         </items>
                     </menu>

@@ -27,10 +27,6 @@ class InterfaceController: WKInterfaceController {
         addCurrentPosition()
     }
     
-    @IBAction func hereMenu() {
-        here()
-    }
-    
     @IBAction func clearMenu() {
         locationArray = []
         redrawCircles()
