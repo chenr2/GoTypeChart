@@ -11,6 +11,9 @@
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Triangulate" customModuleProvider="target">
                     <items>
                         <map height="1" alignment="left" enabled="NO" id="1DS-0l-8pD"/>
+                        <label alignment="left" text="On your iPhone, go to Settings &gt; Privacy &gt; Location Services and grant GoTypeChart location access." numberOfLines="0" id="RZv-Oj-OmI">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </label>
                     </items>
                     <menu key="menu" id="7Uh-sM-OlT">
                         <items>
@@ -29,6 +32,7 @@
                     </menu>
                     <connections>
                         <outlet property="mapView" destination="1DS-0l-8pD" id="Okw-hl-EYt"/>
+                        <outlet property="permissionsWarning" destination="RZv-Oj-OmI" id="MGe-YN-fEC"/>
                     </connections>
                 </controller>
             </objects>

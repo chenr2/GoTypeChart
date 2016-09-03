@@ -27,6 +27,8 @@ class InterfaceController: WKInterfaceController {
         addCurrentPosition()
     }
     
+    @IBOutlet var permissionsWarning: WKInterfaceLabel!
+    
     @IBAction func clearMenu() {
         locationArray = []
         redrawCircles()
@@ -36,6 +38,16 @@ class InterfaceController: WKInterfaceController {
         guard let currentLocation = currentLocation else { return }
         locationArray.append(currentLocation)
         redrawCircles()
+    }
+    
+    func handlePermissionsWarning(allowed: Bool){
+        if allowed {
+            mapView.setHidden(false)
+            permissionsWarning.setHidden(true)
+        } else {
+            mapView.setHidden(true)
+            permissionsWarning.setHidden(false)
+        }
     }
     
     func addCurrentPosition(){
@@ -68,16 +80,22 @@ class InterfaceController: WKInterfaceController {
         switch status {
         case .NotDetermined:
             handleLocationServicesStateNotDetermined()
-        default:
-            break
+        case .Denied, .Restricted:
+            handlePermissionsWarning(false)
+        case .AuthorizedWhenInUse, .AuthorizedAlways:
+            handlePermissionsWarning(true)
         }
+    }
+    
+    func checkPermissions(){
+        let authorizationStatus = CLLocationManager.authorizationStatus()
+        handleLocationServicesAuthorizationStatus(authorizationStatus)
     }
 
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
-        let authorizationStatus = CLLocationManager.authorizationStatus()
-        handleLocationServicesAuthorizationStatus(authorizationStatus)
+        checkPermissions()
         locationManager.requestLocation()
     }
 
@@ -96,7 +114,10 @@ extension InterfaceController : CLLocationManagerDelegate {
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = locations.first else { return }
+        guard let location = locations.first else {
+            return
+        }
+        handlePermissionsWarning(true)
         let span = MKCoordinateSpanMake(0.005, 0.005)
         let region = MKCoordinateRegion(center: location.coordinate, span: span)
         mapView.setRegion(region)
@@ -105,6 +126,7 @@ extension InterfaceController : CLLocationManagerDelegate {
     }
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        checkPermissions()
         print("error:: \(error)")
     }
 }

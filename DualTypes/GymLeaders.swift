@@ -162,7 +162,7 @@ class GymLeaders: UICollectionViewController {
     }
     
     override func viewDidLoad() {
-        locationManager.requestAlwaysAuthorization()
+        locationManager.requestWhenInUseAuthorization() 
         resetSearch()
         resetMonsSortedBySelectedType()
         
