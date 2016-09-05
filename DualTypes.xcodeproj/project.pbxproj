@@ -30,6 +30,7 @@
 		FC341D281D62A743007D28FA /* FlexibleCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC341D271D62A743007D28FA /* FlexibleCollectionCell.swift */; };
 		FC341D2B1D62BB14007D28FA /* ContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC341D2A1D62BB14007D28FA /* ContainerVC.swift */; };
 		FC341D2D1D62BE22007D28FA /* MenuModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC341D2C1D62BE22007D28FA /* MenuModal.swift */; };
+		FC4A83E61D7CED72004A8E7F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FC4A83E81D7CED72004A8E7F /* Localizable.strings */; };
 		FC9091431D7332D4007682BB /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC9B63F81D6FE8C400467EDA /* NotificationCenter.framework */; };
 		FC9091461D7332D4007682BB /* PidgeyGrinderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9091451D7332D4007682BB /* PidgeyGrinderViewController.swift */; };
 		FC9091491D7332D4007682BB /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC9091471D7332D4007682BB /* MainInterface.storyboard */; };
@@ -155,6 +156,13 @@
 		FC341D271D62A743007D28FA /* FlexibleCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlexibleCollectionCell.swift; sourceTree = "<group>"; };
 		FC341D2A1D62BB14007D28FA /* ContainerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerVC.swift; sourceTree = "<group>"; };
 		FC341D2C1D62BE22007D28FA /* MenuModal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuModal.swift; sourceTree = "<group>"; };
+		FC4A83CE1D7CE6F4004A8E7F /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		FC4A83CF1D7CE6F4004A8E7F /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/MainInterface.strings; sourceTree = "<group>"; };
+		FC4A83D01D7CE6F4004A8E7F /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/MainInterface.strings; sourceTree = "<group>"; };
+		FC4A83D11D7CE6F4004A8E7F /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Interface.strings; sourceTree = "<group>"; };
+		FC4A83E71D7CED72004A8E7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FC4A83E91D7CED74004A8E7F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FC4A83EA1D7CED76004A8E7F /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FC9091421D7332D4007682BB /* PidgeyGrinder.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PidgeyGrinder.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC9091451D7332D4007682BB /* PidgeyGrinderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PidgeyGrinderViewController.swift; sourceTree = "<group>"; };
 		FC9091481D7332D4007682BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
@@ -329,6 +337,7 @@
 			isa = PBXGroup;
 			children = (
 				FC9B63FB1D6FE8C400467EDA /* TodayViewController.swift */,
+				FC4A83E81D7CED72004A8E7F /* Localizable.strings */,
 				FC9B63FD1D6FE8C400467EDA /* MainInterface.storyboard */,
 				FC9B64001D6FE8C400467EDA /* Info.plist */,
 			);
@@ -529,6 +538,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = FCA742521D52E675003DAC35;
 			productRefGroup = FCA7425C1D52E675003DAC35 /* Products */;
@@ -576,6 +586,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC9B63FF1D6FE8C400467EDA /* MainInterface.storyboard in Resources */,
+				FC4A83E61D7CED72004A8E7F /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -687,14 +698,26 @@
 			isa = PBXVariantGroup;
 			children = (
 				FC2E2A3B1D77DA0B00E70DA1 /* Base */,
+				FC4A83D11D7CE6F4004A8E7F /* es */,
 			);
 			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+		FC4A83E81D7CED72004A8E7F /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FC4A83E71D7CED72004A8E7F /* Base */,
+				FC4A83E91D7CED74004A8E7F /* en */,
+				FC4A83EA1D7CED76004A8E7F /* es */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 		FC9091471D7332D4007682BB /* MainInterface.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				FC9091481D7332D4007682BB /* Base */,
+				FC4A83D01D7CE6F4004A8E7F /* es */,
 			);
 			name = MainInterface.storyboard;
 			sourceTree = "<group>";
@@ -703,6 +726,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				FC9B63FE1D6FE8C400467EDA /* Base */,
+				FC4A83CF1D7CE6F4004A8E7F /* es */,
 			);
 			name = MainInterface.storyboard;
 			sourceTree = "<group>";
@@ -711,6 +735,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				FCA742631D52E675003DAC35 /* Base */,
+				FC4A83CE1D7CE6F4004A8E7F /* es */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

@@ -38,9 +38,9 @@
                                 </connections>
                             </segmentedControl>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="bQD-t1-m9D">
-                                <rect key="frame" x="16" y="48" width="283" height="61"/>
+                                <rect key="frame" x="16" y="48" width="283" height="71"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="FZp-fn-7va"/>
+                                    <constraint firstAttribute="height" constant="70" id="FZp-fn-7va"/>
                                 </constraints>
                                 <segments>
                                     <segment title=""/>
@@ -59,9 +59,9 @@
                                 </connections>
                             </segmentedControl>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="P1b-ym-eMD">
-                                <rect key="frame" x="16" y="118" width="283" height="61"/>
+                                <rect key="frame" x="16" y="128" width="283" height="71"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="oEY-FJ-cdY"/>
+                                    <constraint firstAttribute="height" constant="70" id="oEY-FJ-cdY"/>
                                 </constraints>
                                 <segments>
                                     <segment title=""/>
@@ -80,25 +80,25 @@
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IV:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ejh-hA-evg">
-                                <rect key="frame" x="16" y="193" width="22" height="21"/>
+                                <rect key="frame" x="16" y="213" width="22" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="80%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tPz-v3-kD9">
-                                <rect key="frame" x="43" y="186" width="46" height="29"/>
+                                <rect key="frame" x="43" y="206" width="46" height="29"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top Stat:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gzr-ta-5g2">
-                                <rect key="frame" x="99" y="193" width="74" height="21"/>
+                                <rect key="frame" x="99" y="213" width="74" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="13/15" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2S5-3o-E63">
-                                <rect key="frame" x="178" y="186" width="53.5" height="29"/>
+                                <rect key="frame" x="178" y="206" width="53.5" height="29"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>

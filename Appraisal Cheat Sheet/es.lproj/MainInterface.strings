@@ -1,0 +1,21 @@
+
+/* Class = "UILabel"; text = "13/15"; ObjectID = "2S5-3o-E63"; */
+"2S5-3o-E63.text" = "13/15";
+
+/* Class = "UILabel"; text = "IV:"; ObjectID = "Ejh-hA-evg"; */
+"Ejh-hA-evg.text" = "IV:";
+
+/* Class = "UILabel"; text = "Top Stat:"; ObjectID = "Gzr-ta-5g2"; */
+"Gzr-ta-5g2.text" = "IV alta:";
+
+/* Class = "UISegmentedControl"; lhQ-rk-fCF.segmentTitles[0] = "Instinct"; ObjectID = "lhQ-rk-fCF"; */
+"lhQ-rk-fCF.segmentTitles[0]" = "Instinct";
+
+/* Class = "UISegmentedControl"; lhQ-rk-fCF.segmentTitles[1] = "Valor"; ObjectID = "lhQ-rk-fCF"; */
+"lhQ-rk-fCF.segmentTitles[1]" = "Valor";
+
+/* Class = "UISegmentedControl"; lhQ-rk-fCF.segmentTitles[2] = "Mystic"; ObjectID = "lhQ-rk-fCF"; */
+"lhQ-rk-fCF.segmentTitles[2]" = "Mystic";
+
+/* Class = "UILabel"; text = "80%"; ObjectID = "tPz-v3-kD9"; */
+"tPz-v3-kD9.text" = "80%";

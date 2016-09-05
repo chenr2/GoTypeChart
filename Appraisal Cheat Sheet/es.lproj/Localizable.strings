@@ -1,0 +1,38 @@
+/* 
+  Localizable.strings
+  DualTypes
+
+  Created by Robert Chen on 9/4/16.
+  Copyright © 2016 Robert Chen. All rights reserved.
+*/
+
+// http://pokemongomexico.com/2016/08/26/nuevo-sistema-valoracion-pokemon-go/
+"Instinct-IV-A" = "enfrentarse a los mejores"; // against the best
+"Instinct-IV-B" = "realmente fuerte"; // really strong
+"Instinct-IV-C" = "bastante bien"; // fairly good
+"Instinct-IV-D" = "podría mejorar algo"; // could improve something
+
+"Instinct-Stat-A" = "lo mejor que he visto nunca"; // the best i've ever seen
+"Instinct-Stat-B" = "realmente fuertes"; // really strong
+"Instinct-Stat-C" = "buenas, sin duda"; // good, definitely
+"Instinct-Stat-D" = "están… bien, supongo"; // it's... good, i guess
+
+"Valor-IV-A" = "lograr cualquier cosa"; // achieve anything
+"Valor-IV-B" = "orgullo debes sentir"; // you should feel proud
+"Valor-IV-C" = "bastante bien"; // fairly good
+"Valor-IV-D" = "puede que no sea el mejor"; // it may not be the best
+
+"Valor-Stat-A" = "Estoy flipando ¡GUAU!"; // i'm freaking out WOW
+"Valor-Stat-B" = "¡Qué emocionante!"; // how exciting
+"Valor-Stat-C" = "cumplir su objetivo"; // meet it's target
+"Valor-Stat-D" = "no te serán de mucha utilidad"; // you will not be very useful
+
+"Mystic-IV-A" = "maravilla para la vista"; // wonder to behold
+"Mystic-IV-B" = "me ha llamado la atención"; // the attention
+"Mystic-IV-C" = "encima de la media";
+"Mystic-IV-D" = "no que vaya a llegar muy lejos";
+
+"Mystic-Stat-A" = "fuera de todo cálculo";
+"Mystic-Stat-B" = "realmente impresionantes";
+"Mystic-Stat-C" = "están bastante bien";
+"Mystic-Stat-D" = "dejan un poco que desear";

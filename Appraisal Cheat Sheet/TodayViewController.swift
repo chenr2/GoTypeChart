@@ -123,38 +123,38 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     func messageForIV(team: Team, iv: IV) -> String {
         switch (team, iv) {
         case (.Instinct, .A):
-            return "Battle with the best"
+            return NSLocalizedString("Instinct-IV-A", comment: "Battle with the best")
         case (.Instinct, .B):
-            return "Really strong"
+            return NSLocalizedString("Instinct-IV-B", comment: "Really strong")
         case (.Instinct, .C):
-            return "Pretty decent"
+            return NSLocalizedString("Instinct-IV-C", comment: "Pretty decent")
         case (.Instinct, .D):
-            return "Room for improvement"
+            return NSLocalizedString("Instinct-IV-D", comment: "Room for improvement")
         case (.Valor, .A):
-            return "Accomplish anything"
+            return NSLocalizedString("Valor-IV-A", comment: "Accomplish anything")
         case (.Valor, .B):
-            return "Should be proud"
+            return NSLocalizedString("Valor-IV-B", comment: "Should be proud")
         case (.Valor, .C):
-            return "Decent Pokemon"
+            return NSLocalizedString("Valor-IV-C", comment: "Decent Pokemon")
         case (.Valor, .D):
-            return "Not great in battle"
+            return NSLocalizedString("Valor-IV-D", comment: "Not great in battle")
         case (.Mystic, .A):
-            return "Wonder, breath taking"
+            return NSLocalizedString("Mystic-IV-A", comment: "Wonder, breath taking")
         case (.Mystic, .B):
-            return "Caught my attention"
+            return NSLocalizedString("Mystic-IV-B", comment: "Caught my attention")
         case (.Mystic, .C):
-            return "Above average"
+            return NSLocalizedString("Mystic-IV-C", comment: "Above average")
         case (.Mystic, .D):
-            return "Not much headway"
+            return NSLocalizedString("Mystic-IV-D", comment: "Not much headway")
         }
     }
     
     func valueForIV(iv: IV) -> String {
         switch iv {
         case .A:
-            return "80-100%"
+            return "82-100%"
         case .B:
-            return "67-79%"
+            return "67-81%"
         case .C:
             return "51-66%"
         case .D:
@@ -165,29 +165,29 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     func messageForStat(team: Team, stat: Stat) -> String {
         switch (team, stat) {
         case (.Instinct, .A):
-            return "Best ever seen"
+            return NSLocalizedString("Instinct-Stat-A", comment: "Best ever seen")
         case (.Instinct, .B):
-            return "Strong, impressive"
+            return NSLocalizedString("Instinct-Stat-B", comment: "Strong, impressive")
         case (.Instinct, .C):
-            return "Good stats"
+            return NSLocalizedString("Instinct-Stat-C", comment: "Good stats")
         case (.Instinct, .D):
-            return "Kinda basic"
+            return NSLocalizedString("Instinct-Stat-D", comment: "Kinda basic")
         case (.Valor, .A):
-            return "Excellent stats"
+            return NSLocalizedString("Valor-Stat-A", comment: "Excellent stats")
         case (.Valor, .B):
-            return "Blown away, WOW"
+            return NSLocalizedString("Valor-Stat-B", comment: "Blown away, WOW")
         case (.Valor, .C):
-            return "Get the job done"
+            return NSLocalizedString("Valor-Stat-C", comment: "Get the job done")
         case (.Valor, .D):
-            return "Don't point to greatness"
+            return NSLocalizedString("Valor-Stat-D", comment: "Don't point to greatness")
         case (.Mystic, .A):
-            return "Exceed, incredible"
+            return NSLocalizedString("Mystic-Stat-A", comment: "Exceed, incredible")
         case (.Mystic, .B):
-            return "Impressed by stats"
+            return NSLocalizedString("Mystic-Stat-B", comment: "Impressed by stats")
         case (.Mystic, .C):
-            return "Trending positive"
+            return NSLocalizedString("Mystic-Stat-C", comment: "Trending positive")
         case (.Mystic, .D):
-            return "Not out of norm"
+            return NSLocalizedString("Mystic-Stat-D", comment: "Not out of norm")
         }
     }
     
@@ -229,7 +229,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     override func viewDidLoad() {
         super.viewDidLoad()
         UILabel.appearanceWhenContainedInInstancesOfClasses([UISegmentedControl.self]).numberOfLines = 0
-        preferredContentSize = CGSizeMake(0, 220)
+        preferredContentSize = CGSizeMake(0, 230)
     }
     
     func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)) {

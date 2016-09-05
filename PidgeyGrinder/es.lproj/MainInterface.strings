@@ -1,0 +1,36 @@
+
+/* Class = "UILabel"; text = "Evolves:"; ObjectID = "8Ux-X3-tRN"; */
+"8Ux-X3-tRN.text" = "Evolves:";
+
+/* Class = "UILabel"; text = "2"; ObjectID = "8od-AR-fdI"; */
+"8od-AR-fdI.text" = "2";
+
+/* Class = "UILabel"; text = "x"; ObjectID = "A9E-dL-jJE"; */
+"A9E-dL-jJE.text" = "x";
+
+/* Class = "UILabel"; text = "2"; ObjectID = "EpO-K2-K1S"; */
+"EpO-K2-K1S.text" = "2";
+
+/* Class = "UILabel"; text = "2"; ObjectID = "F4K-nP-kcj"; */
+"F4K-nP-kcj.text" = "2";
+
+/* Class = "UILabel"; text = "Icons by roundicons.com"; ObjectID = "H1x-HU-6rZ"; */
+"H1x-HU-6rZ.text" = "Icons by roundicons.com";
+
+/* Class = "UILabel"; text = "x"; ObjectID = "QiB-zb-Zmk"; */
+"QiB-zb-Zmk.text" = "x";
+
+/* Class = "UILabel"; text = "2"; ObjectID = "TnX-45-xyP"; */
+"TnX-45-xyP.text" = "2";
+
+/* Class = "UILabel"; text = "200"; ObjectID = "Z5B-zL-Cg4"; */
+"Z5B-zL-Cg4.text" = "200";
+
+/* Class = "UILabel"; text = "Before"; ObjectID = "pK4-C6-f8S"; */
+"pK4-C6-f8S.text" = "Before";
+
+/* Class = "UILabel"; text = "After"; ObjectID = "q8Z-24-VGg"; */
+"q8Z-24-VGg.text" = "After";
+
+/* Class = "UILabel"; text = "Transfer"; ObjectID = "szO-kL-m69"; */
+"szO-kL-m69.text" = "Transfer";
