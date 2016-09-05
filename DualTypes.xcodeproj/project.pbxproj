@@ -161,7 +161,6 @@
 		FC4A83D01D7CE6F4004A8E7F /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/MainInterface.strings; sourceTree = "<group>"; };
 		FC4A83D11D7CE6F4004A8E7F /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Interface.strings; sourceTree = "<group>"; };
 		FC4A83E71D7CED72004A8E7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		FC4A83E91D7CED74004A8E7F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FC4A83EA1D7CED76004A8E7F /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FC9091421D7332D4007682BB /* PidgeyGrinder.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PidgeyGrinder.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC9091451D7332D4007682BB /* PidgeyGrinderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PidgeyGrinderViewController.swift; sourceTree = "<group>"; };
@@ -707,7 +706,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				FC4A83E71D7CED72004A8E7F /* Base */,
-				FC4A83E91D7CED74004A8E7F /* en */,
 				FC4A83EA1D7CED76004A8E7F /* es */,
 			);
 			name = Localizable.strings;
