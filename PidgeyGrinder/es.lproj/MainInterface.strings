@@ -1,6 +1,6 @@
 
 /* Class = "UILabel"; text = "Evolves:"; ObjectID = "8Ux-X3-tRN"; */
-"8Ux-X3-tRN.text" = "Evolves:";
+"8Ux-X3-tRN.text" = "Evoluciona:";
 
 /* Class = "UILabel"; text = "2"; ObjectID = "8od-AR-fdI"; */
 "8od-AR-fdI.text" = "2";
@@ -15,7 +15,7 @@
 "F4K-nP-kcj.text" = "2";
 
 /* Class = "UILabel"; text = "Icons by roundicons.com"; ObjectID = "H1x-HU-6rZ"; */
-"H1x-HU-6rZ.text" = "Icons by roundicons.com";
+"H1x-HU-6rZ.text" = "Iconos de roundicons.com";
 
 /* Class = "UILabel"; text = "x"; ObjectID = "QiB-zb-Zmk"; */
 "QiB-zb-Zmk.text" = "x";
@@ -27,10 +27,10 @@
 "Z5B-zL-Cg4.text" = "200";
 
 /* Class = "UILabel"; text = "Before"; ObjectID = "pK4-C6-f8S"; */
-"pK4-C6-f8S.text" = "Before";
+"pK4-C6-f8S.text" = "Antes"; // before
 
 /* Class = "UILabel"; text = "After"; ObjectID = "q8Z-24-VGg"; */
-"q8Z-24-VGg.text" = "After";
+"q8Z-24-VGg.text" = "Sobrante"; // leftover
 
 /* Class = "UILabel"; text = "Transfer"; ObjectID = "szO-kL-m69"; */
-"szO-kL-m69.text" = "Transfer";
+"szO-kL-m69.text" = "Transferir";
