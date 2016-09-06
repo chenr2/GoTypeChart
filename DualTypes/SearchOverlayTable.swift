@@ -77,11 +77,11 @@ extension SearchOverlayTable {
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
         case 0:
-            return "Pokemon search results"
+            return "Pokemon"
         case 1:
-            return "Quick move search results"
+            return NSLocalizedString("QUICK_MOVES", comment: "")
         default:
-            return "Special move search results"
+            return NSLocalizedString("SPECIAL_MOVES", comment: "")
         }
     }
     
@@ -108,7 +108,7 @@ extension SearchOverlayTable : UISearchResultsUpdating {
                 // all queries must pass. e.g. "bug flying" both words must hit.
                 var response = true
                 for query in searchQueries {
-                    if !descriptionText.containsString(query) {
+                    if !descriptionText.containsString(query.lowercaseString) {
                         response = false
                     }
                 }
@@ -119,7 +119,7 @@ extension SearchOverlayTable : UISearchResultsUpdating {
             }.filter { quickMove in
                 var response = false
                 for query in searchQueries {
-                    if quickMove.quickAttack.rawValue.lowercaseString.containsString(query) {
+                    if NSLocalizedString(quickMove.quickAttack.rawValue, comment: "").lowercaseString.containsString(query.lowercaseString) {
                         response = true
                     }
                 }
@@ -130,7 +130,7 @@ extension SearchOverlayTable : UISearchResultsUpdating {
             }.filter { specialMove in
                 var response = false
                 for query in searchQueries {
-                    if specialMove.specialAttack.rawValue.lowercaseString.containsString(query) {
+                    if NSLocalizedString(specialMove.specialAttack.rawValue, comment: "").lowercaseString.containsString(query.lowercaseString) {
                         response = true
                     }
                 }

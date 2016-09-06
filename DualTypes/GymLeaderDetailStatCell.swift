@@ -37,7 +37,7 @@ class GymLeaderDetailStatCell: FlexibleCollectionCell {
                 elementType.text = "\(pokemon.stamina)"
                 circularView.percent = pokemon.staminaPercentage
             }
-            statTypeLabel.text = statType.rawValue
+            statTypeLabel.text = NSLocalizedString(statType.rawValue, comment: "")
         }
     }
     

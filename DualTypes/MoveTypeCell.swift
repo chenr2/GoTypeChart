@@ -38,13 +38,13 @@ class MoveTypeCell: GridCell {
         secondElementName?.textColor = UIColor.clearColor()
 
         if let firstElement = pokemon.type.first {
-            elementName?.text = firstElement.rawValue
+            elementName?.text = NSLocalizedString(firstElement.rawValue, comment: "")
             firstElementView?.backgroundColor = Colors.colorForElement(firstElement)
             elementName?.textColor = Colors.textColorForElement(firstElement)
         }
         if pokemon.type.count == 2 {
             if let lastElement = pokemon.type.last {
-                secondElementName?.text = lastElement.rawValue
+                secondElementName?.text = NSLocalizedString(lastElement.rawValue, comment: "")
                 secondElementView?.backgroundColor = Colors.colorForElement(lastElement)
                 secondElementName?.textColor = Colors.textColorForElement(lastElement)
             }

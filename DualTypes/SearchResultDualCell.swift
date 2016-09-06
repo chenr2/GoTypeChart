@@ -22,12 +22,12 @@ class SearchResultDualCell: FlexibleCollectionCell {
         self.pokemon = pokemon
         pokemonName?.text = pokemon.name
         if let firstElement = pokemon.type.first {
-            elementName?.text = firstElement.rawValue
+            elementName?.text = NSLocalizedString(firstElement.rawValue, comment: "")
             firstElementView?.backgroundColor = Colors.colorForElement(firstElement)
             elementName?.textColor = Colors.textColorForElement(firstElement)
         }
         if let lastElement = pokemon.type.last {
-            secondElementName?.text = lastElement.rawValue
+            secondElementName?.text = NSLocalizedString(lastElement.rawValue, comment: "")
             secondElementView?.backgroundColor = Colors.colorForElement(lastElement)
             secondElementName?.textColor = Colors.textColorForElement(lastElement)
         }

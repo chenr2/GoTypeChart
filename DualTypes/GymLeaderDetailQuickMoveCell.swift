@@ -40,8 +40,8 @@ class GymLeaderDetailQuickMoveCell: FlexibleCollectionCell {
         let move = QuickMove.moveForQuickAttack(quickAttack)
         let element = move.element
         let stabFlag = pokemon.type.contains(element)
-        moveName?.text = quickAttack.rawValue
-        elementType?.text = element.rawValue
+        moveName?.text = NSLocalizedString(quickAttack.rawValue, comment: "")
+        elementType?.text = NSLocalizedString(element.rawValue, comment: "")
         statArc.percent = move.quickMovePercentage(CGFloat(pokemon.attack), stab: stabFlag)
         let elementColor = Colors.colorForElement(element)
         elementBubble.backgroundColor = elementColor
@@ -54,8 +54,8 @@ class GymLeaderDetailQuickMoveCell: FlexibleCollectionCell {
         let move = SpecialMove.moveForSpecialAttack(specialAttack)
         let element = move.element
         let stabFlag = pokemon.type.contains(element)
-        moveName?.text = specialAttack.rawValue
-        elementType?.text = element.rawValue
+        moveName?.text = NSLocalizedString(specialAttack.rawValue, comment: "")
+        elementType?.text = NSLocalizedString(element.rawValue, comment: "")
         statArc.percent = move.specialMovePercentage(CGFloat(pokemon.attack), stab: stabFlag)
         let elementColor = Colors.colorForElement(element)
         elementBubble.backgroundColor = elementColor

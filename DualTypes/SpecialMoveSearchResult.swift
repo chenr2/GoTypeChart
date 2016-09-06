@@ -17,9 +17,9 @@ class SpecialMoveSearchResult: UITableViewCell {
     
     func configureCell(specialMove: SpecialMove){
         self.specialMove = specialMove
-        moveName?.text = specialMove.specialAttack.rawValue
+        moveName?.text = NSLocalizedString(specialMove.specialAttack.rawValue, comment: "")
         let element = specialMove.element
-        elementName?.text = element.rawValue
+        elementName?.text = NSLocalizedString(element.rawValue, comment: "") 
         elementView?.backgroundColor = Colors.colorForElement(element)
     }
 }

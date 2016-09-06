@@ -137,19 +137,19 @@ extension GymLeaderDetail {
         let cell = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: "GymLeaderDetailSectionHeader", forIndexPath: indexPath) as! GymLeaderDetailSectionHeader
         switch indexPath.section {
         case 0:
-            cell.sectionHeaderText = "Type:"            
+            cell.sectionHeaderText = "\(NSLocalizedString("Type", comment: "")):"
         case 1:
-            cell.sectionHeaderText = "Recommended against \(pokemon!.name):"
+            cell.sectionHeaderText = "\(NSLocalizedString("RECOMMENDED_AGAINST", comment: "")) \(pokemon!.name):"
         case 2:
-            cell.sectionHeaderText = "Super effective against \(pokemon!.name):"
+            cell.sectionHeaderText = "\(NSLocalizedString("SUPER_EFFECTIVE_AGAINST", comment: "")) \(pokemon!.name):"
         case 3:
-            cell.sectionHeaderText = "Not very effective against \(pokemon!.name):"
+            cell.sectionHeaderText = "\(NSLocalizedString("NOT_VERY_EFFECTIVE_AGAINST", comment: "")) \(pokemon!.name):"
         case 4:
-            cell.sectionHeaderText = "Quick Moves:"
+            cell.sectionHeaderText = "\(NSLocalizedString("QUICK_MOVES", comment: "")):"
         case 5:
-            cell.sectionHeaderText = "Special Moves:"
+            cell.sectionHeaderText = "\(NSLocalizedString("SPECIAL_MOVES", comment: "")):"
         case 6:
-            cell.sectionHeaderText = "Stats:"
+            cell.sectionHeaderText = "\(NSLocalizedString("STATS", comment: "")):"
         default:
             break
         }        

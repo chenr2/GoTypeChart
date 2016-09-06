@@ -172,7 +172,7 @@ class GymLeaders: UICollectionViewController {
         resultSearchController?.searchResultsUpdater = searchOverlayTable
         let searchBar = resultSearchController!.searchBar
         searchBar.sizeToFit()
-        searchBar.placeholder = "Enter a name"
+        searchBar.placeholder = NSLocalizedString("ENTER_A_NAME", comment: "") 
         searchBar.delegate = self
         navigationItem.titleView = resultSearchController?.searchBar
         resultSearchController?.hidesNavigationBarDuringPresentation = false
@@ -380,9 +380,9 @@ extension GymLeaders {
             case 0:
                 cell.sectionHeaderText = "Filtering on these types".uppercaseString
             case 1:
-                cell.sectionHeaderText = "Choose from these types".uppercaseString
+                cell.sectionHeaderText = NSLocalizedString("CHOOSE_FROM_THESE_TYPES", comment: "Choose from these types").uppercaseString
             default:
-                cell.sectionHeaderText = "Search filter results".uppercaseString
+                cell.sectionHeaderText = NSLocalizedString("FILTER_RESULTS", comment: "Filter results").uppercaseString
             }
             return cell
         default:

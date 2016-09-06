@@ -1,6 +1,6 @@
 
 /* Class = "UIButton"; normalTitle = "Move Type"; ObjectID = "1wu-C5-wGA"; */
-"1wu-C5-wGA.normalTitle" = "Move Type";
+"1wu-C5-wGA.normalTitle" = "Tipo de Movimiento";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "6cm-uT-FOO"; */
 "6cm-uT-FOO.text" = "Label";
@@ -33,10 +33,10 @@
 "Krx-Yq-QMM.text" = "Label";
 
 /* Class = "UIButton"; normalTitle = "Stamina"; ObjectID = "L5G-de-2Cn"; */
-"L5G-de-2Cn.normalTitle" = "Stamina";
+"L5G-de-2Cn.normalTitle" = "Resistencia";
 
 /* Class = "UIButton"; normalTitle = "Attack"; ObjectID = "MIf-rc-7r2"; */
-"MIf-rc-7r2.normalTitle" = "Attack";
+"MIf-rc-7r2.normalTitle" = "Ataque";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "N1U-Yb-PXE"; */
 "N1U-Yb-PXE.text" = "Label";
@@ -57,13 +57,13 @@
 "QCX-iG-EFH.text" = "Label";
 
 /* Class = "UIButton"; normalTitle = "Type"; ObjectID = "RwI-XR-USl"; */
-"RwI-XR-USl.normalTitle" = "Type";
+"RwI-XR-USl.normalTitle" = "Tipo";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "S7f-DS-XIz"; */
 "S7f-DS-XIz.text" = "Label";
 
 /* Class = "UIButton"; normalTitle = "Defense"; ObjectID = "UpI-Bm-cBy"; */
-"UpI-Bm-cBy.normalTitle" = "Defense";
+"UpI-Bm-cBy.normalTitle" = "Defensa";
 
 /* Class = "UILabel"; text = "#"; ObjectID = "VLq-BL-XI6"; */
 "VLq-BL-XI6.text" = "#";
@@ -78,10 +78,10 @@
 "bUj-HC-p3y.normalTitle" = "";
 
 /* Class = "UIButton"; normalTitle = "Species Type"; ObjectID = "dLd-ot-cyQ"; */
-"dLd-ot-cyQ.normalTitle" = "Species Type";
+"dLd-ot-cyQ.normalTitle" = "Tipo de Especie";
 
 /* Class = "UIButton"; normalTitle = "Index"; ObjectID = "dko-ye-BIk"; */
-"dko-ye-BIk.normalTitle" = "Index";
+"dko-ye-BIk.normalTitle" = "Número";
 
 /* Class = "UILabel"; text = " "; ObjectID = "eI8-Qe-zrT"; */
 "eI8-Qe-zrT.text" = " ";
@@ -108,7 +108,7 @@
 "lfh-Uu-sgT.text" = "Label";
 
 /* Class = "UIButton"; normalTitle = "Alphabetical"; ObjectID = "p1Y-88-gg0"; */
-"p1Y-88-gg0.normalTitle" = "Alphabetical";
+"p1Y-88-gg0.normalTitle" = "Alfabético";
 
 /* Class = "UILabel"; text = "DPS"; ObjectID = "phf-8h-e5V"; */
 "phf-8h-e5V.text" = "DPS";

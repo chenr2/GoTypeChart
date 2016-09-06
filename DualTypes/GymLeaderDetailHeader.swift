@@ -34,7 +34,7 @@ class GymLeaderDetailHeader: UICollectionViewCell {
                 }, completion: nil)
         }
         let elementString = defense.map {
-            return $0.rawValue
+            return NSLocalizedString($0.rawValue, comment: "")
         }.joinWithSeparator(" / ")
         elementName?.text = elementString
     }

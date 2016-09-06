@@ -15,7 +15,7 @@ class SearchElementCell: FlexibleCollectionCell {
     @IBOutlet weak var closeButtonWidth: NSLayoutConstraint!
     
     func configureCell(element: ElementType, isFilter: Bool){
-        elementName?.text = element.rawValue
+        elementName?.text = NSLocalizedString(element.rawValue, comment: "")
         elementName?.textColor = Colors.textColorForElement(element)
         backgroundColor = Colors.colorForElement(element)
         if isFilter {

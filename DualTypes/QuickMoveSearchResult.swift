@@ -17,9 +17,9 @@ class QuickMoveSearchResult: UITableViewCell {
     
     func configureCell(quickMove: QuickMove){
         self.quickMove = quickMove
-        moveName?.text = quickMove.quickAttack.rawValue
+        moveName?.text = NSLocalizedString(quickMove.quickAttack.rawValue, comment: "")
         let element = quickMove.element
-        elementName?.text = element.rawValue
+        elementName?.text = NSLocalizedString(element.rawValue, comment: "") 
         elementView?.backgroundColor = Colors.colorForElement(element)
     }
 }
