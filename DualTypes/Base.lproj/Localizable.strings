@@ -32,12 +32,13 @@
 "Type" = "Type";
 "RECOMMENDED_AGAINST" = "Recommended against";
 "SUPER_EFFECTIVE_AGAINST" = "Super effective against";
-"NOT_VERY_EFFECTIVE_AGAINST" = "No muy efectivo contra";
+"NOT_VERY_EFFECTIVE_AGAINST" = "Not very effective against";
 "QUICK_MOVES" = "Quick Moves";
 "SPECIAL_MOVES" = "Special Moves";
 "STATS" = "Stats";
 "ENTER_A_NAME" = "Enter a name";
 
+"FILTERING_ON_THESE_TYPES" = "Filtering on these types";
 "CHOOSE_FROM_THESE_TYPES" = "Choose from these types";
 "FILTER_RESULTS" = "Filter results";
 

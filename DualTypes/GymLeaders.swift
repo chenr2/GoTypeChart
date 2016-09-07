@@ -378,8 +378,8 @@ extension GymLeaders {
             let cell = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: "SearchResultSectionHeader", forIndexPath: indexPath) as! SearchResultSectionHeader
             switch indexPath.section {
             case 0:
-                cell.sectionHeaderText = "Filtering on these types".uppercaseString
-            case 1:
+                cell.sectionHeaderText = NSLocalizedString("FILTERING_ON_THESE_TYPES", comment: "Filtering on these types").uppercaseString 
+            case 0, 1:
                 cell.sectionHeaderText = NSLocalizedString("CHOOSE_FROM_THESE_TYPES", comment: "Choose from these types").uppercaseString
             default:
                 cell.sectionHeaderText = NSLocalizedString("FILTER_RESULTS", comment: "Filter results").uppercaseString

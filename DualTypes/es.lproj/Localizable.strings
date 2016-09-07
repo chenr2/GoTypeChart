@@ -38,6 +38,7 @@
 "STATS" = "Estadísticas";
 "ENTER_A_NAME" = "Ingresa un nombre";
 
+"FILTERING_ON_THESE_TYPES" = "Y filtros de estos tipos";
 "CHOOSE_FROM_THESE_TYPES" = "elegir entre estos tipos";
 "FILTER_RESULTS" = "Resultados de filtro";
 
