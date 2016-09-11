@@ -1,0 +1,12 @@
+
+/* Class = "WKInterfaceLabel"; text = "On your iPhone, go to Settings > Privacy > Location Services and grant GoTypeChart location access."; ObjectID = "RZv-Oj-OmI"; */
+"RZv-Oj-OmI.text" = "On your iPhone, go to Settings > Privacy > Location Services and grant GoTypeChart location access.";
+
+/* Class = "WKInterfaceMenuItem"; title = "Add"; ObjectID = "nQ2-W4-PEZ"; */
+"nQ2-W4-PEZ.title" = "Add";
+
+/* Class = "WKInterfaceMenuItem"; title = "Clear"; ObjectID = "p9m-tY-OTC"; */
+"p9m-tY-OTC.title" = "Clear";
+
+/* Class = "WKInterfaceMenuItem"; title = "Back"; ObjectID = "qIQ-zc-AkF"; */
+"qIQ-zc-AkF.title" = "Back";

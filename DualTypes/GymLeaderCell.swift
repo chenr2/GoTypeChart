@@ -16,7 +16,7 @@ class GymLeaderCell: GridCell {
         
     func configureCell(pokemon: Pokemon, sortType: SortType){
         self.pokemon = pokemon
-        pokemonName?.text = pokemon.name
+        pokemonName?.text = NSLocalizedString(pokemon.name, comment: "") 
         indexNumber?.text = "#\(pokemon.pokedex)"
         backgroundColor = Colors.purple
     }
