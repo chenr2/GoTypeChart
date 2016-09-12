@@ -77,7 +77,7 @@ extension SearchOverlayTable {
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
         case 0:
-            return "Pokemon"
+            return NSLocalizedString("Pokemon", comment: "")
         case 1:
             return NSLocalizedString("QUICK_MOVES", comment: "")
         default:
@@ -101,14 +101,14 @@ extension SearchOverlayTable : UISearchResultsUpdating {
             }
             searchResultsSet = Pokemon.gymLeaders().filter { pokemon in
                 // what to include in the "search index"
-                let pokemonName = pokemon.name.lowercaseString
+                let pokemonName = NSLocalizedString(pokemon.name, comment: "")
                 let pokemonIndex = "\(pokemon.pokedex)"
                 let whatToSearchOnArray = [pokemonName, pokemonIndex]
                 let descriptionText = whatToSearchOnArray.joinWithSeparator(" ")
                 // all queries must pass. e.g. "bug flying" both words must hit.
                 var response = true
                 for query in searchQueries {
-                    if !descriptionText.containsString(query.lowercaseString) {
+                    if !descriptionText.lowercaseString.containsString(query.lowercaseString) {
                         response = false
                     }
                 }

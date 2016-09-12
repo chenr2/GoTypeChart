@@ -6,32 +6,33 @@
   Copyright © 2016 Robert Chen. All rights reserved.
 */
 
-"Instinct-IV-A" = "Battle with the best";
-"Instinct-IV-B" = "Really strong";
-"Instinct-IV-C" = "Pretty decent";
-"Instinct-IV-D" = "Room for improvement";
+// https://pokemongo.gamewith.jp/article/show/36760
+"Instinct-IV-A" = "トップレベルだぜ!";
+"Instinct-IV-B" = "とっても強いぜ!";
+"Instinct-IV-C" = "普通だと思うぜ";
+"Instinct-IV-D" = "イマイチ、といったところだな";
 
-"Instinct-Stat-A" = "Best ever seen";
-"Instinct-Stat-B" = "Strong, impressive";
-"Instinct-Stat-C" = "Good stats";
-"Instinct-Stat-D" = "Kinda basic";
+"Instinct-Stat-A" = "間違いなくトップクラスだ";
+"Instinct-Stat-B" = "相当なものだぜ！本当にな!";
+"Instinct-Stat-C" = "いい線いってるぜ!";
+"Instinct-Stat-D" = "まずまず、だと思う";
 
-"Valor-IV-A" = "Accomplish anything";
-"Valor-IV-B" = "Should be proud";
-"Valor-IV-C" = "Decent Pokemon";
-"Valor-IV-D" = "Not great in battle";
+"Valor-IV-A" = "言うことなしね";
+"Valor-IV-B" = "とても強い。自慢できるわね!";
+"Valor-IV-C" = "普通に強いと思うわ";
+"Valor-IV-D" = "バトル向きではないけど";
 
-"Valor-Stat-A" = "Excellent stats";
-"Valor-Stat-B" = "Blown away, WOW";
-"Valor-Stat-C" = "Get the job done";
-"Valor-Stat-D" = "Don't point to greatness";
+"Valor-Stat-A" = "驚異的ね。すばらしいわ!";
+"Valor-Stat-B" = "充分高いからわくわくするわ!";
+"Valor-Stat-C" = "バトルで活躍してくれると思うわ!";
+"Valor-Stat-D" = "ここに注目するとまずまず、ね";
 
-"Mystic-IV-A" = "Wonder, breath taking";
-"Mystic-IV-B" = "Caught my attention";
-"Mystic-IV-C" = "Above average";
-"Mystic-IV-D" = "Not much headway";
+"Mystic-IV-A" = "驚異的で、芸術的だ";
+"Mystic-IV-B" = "目を引くものがある";
+"Mystic-IV-C" = "普通以上";
+"Mystic-IV-D" = "なかなか活躍が難しそうだ";
 
-"Mystic-Stat-A" = "Exceed, incredible";
-"Mystic-Stat-B" = "Impressed by stats";
-"Mystic-Stat-C" = "Trending positive";
-"Mystic-Stat-D" = "Not out of norm";
+"Mystic-Stat-A" = "測定できないほどだな";
+"Mystic-Stat-B" = "すごいな、驚きだ";
+"Mystic-Stat-C" = "ごく一般的、と言えるだろう";
+"Mystic-Stat-D" = "この点において、まずまずと言える";

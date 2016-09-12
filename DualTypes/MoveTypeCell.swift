@@ -24,7 +24,7 @@ class MoveTypeCell: GridCell {
     
     func configureCell(pokemon: Pokemon){
         self.pokemon = pokemon
-        pokemonName?.text = pokemon.name
+        pokemonName?.text = NSLocalizedString(pokemon.name, comment: "")
         quickMove1.backgroundColor = UIColor.clearColor()
         quickMove2.backgroundColor = UIColor.clearColor()
         chargeMove1.backgroundColor = UIColor.clearColor()

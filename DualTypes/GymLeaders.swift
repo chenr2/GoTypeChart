@@ -23,7 +23,7 @@ protocol FilterJump {
 }
 
 enum SortType: String {
-    case Attack, Defense, Stamina, Index, Alphabetical = "AZ", Type, MoveType = "Move"
+    case Attack, Defense, Stamina, Index, Alphabetical = "A-Z", Type, MoveType = "Move"
 }
 
 class GymLeaders: UICollectionViewController {
@@ -57,7 +57,7 @@ class GymLeaders: UICollectionViewController {
     var resultSearchController:UISearchController? = nil
     
     func sortAlphabetically(pokemonA: Pokemon, pokemonB: Pokemon) -> Bool {
-        return pokemonA.name.lowercaseString < pokemonB.name.lowercaseString
+        return NSLocalizedString(pokemonA.name, comment: "").lowercaseString < NSLocalizedString(pokemonB.name, comment: "").lowercaseString
     }
     
     func sortByIndex(pokemonA: Pokemon, pokemonB: Pokemon) -> Bool {

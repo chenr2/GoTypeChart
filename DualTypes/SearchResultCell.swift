@@ -18,7 +18,7 @@ class SearchResultCell: FlexibleCollectionCell {
     
     func configureCell(pokemon: Pokemon){
         self.pokemon = pokemon
-        pokemonName?.text = pokemon.name
+        pokemonName?.text = NSLocalizedString(pokemon.name, comment: "")
         if let element = pokemon.type.first {
             elementName?.text = NSLocalizedString(element.rawValue, comment: "")
             elementContainerView.backgroundColor = Colors.colorForElement(element)

@@ -40,7 +40,7 @@ class ContainerVC: UIViewController {
 
 extension ContainerVC: ContainerEventRelay {
     func detectActionMenuChange(sortType: SortType){
-        actionButton.setTitle(sortType.rawValue, forState: .Normal)
+        actionButton.setTitle(NSLocalizedString(sortType.rawValue, comment: ""), forState: .Normal) 
     }
     func toggleActionButtonVisibility(visible: Bool){
         actionButtonContainer.hidden = !visible

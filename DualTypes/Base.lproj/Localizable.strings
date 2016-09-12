@@ -26,7 +26,7 @@
 "FairyType" = "Fairy";
 
 "Attack" = "Attack";
-"Defence" = "Defense";
+"Defense" = "Defense";
 "Stamina" = "Stamina";
 
 "Type" = "Type";
@@ -34,7 +34,7 @@
 "SUPER_EFFECTIVE_AGAINST" = "Super effective against";
 "NOT_VERY_EFFECTIVE_AGAINST" = "Not very effective against";
 "QUICK_MOVES" = "Quick Moves";
-"SPECIAL_MOVES" = "Special Moves";
+"SPECIAL_MOVES" = "Charge Moves";
 "STATS" = "Stats";
 "ENTER_A_NAME" = "Enter a name";
 

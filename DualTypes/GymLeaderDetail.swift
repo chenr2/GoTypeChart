@@ -60,7 +60,10 @@ class GymLeaderDetail: UICollectionViewController {
     }
     
     override func viewDidLoad() {
-        title = "#\(pokemon!.pokedex) \(pokemon!.name)"
+        if let pokemon = pokemon {
+            let pokemonName = NSLocalizedString(pokemon.name, comment: "")
+            title = "#\(pokemon.pokedex) \(pokemonName)"
+        }
     }
     
 }
@@ -135,24 +138,28 @@ extension GymLeaderDetail {
     
     override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
         let cell = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: "GymLeaderDetailSectionHeader", forIndexPath: indexPath) as! GymLeaderDetailSectionHeader
-        switch indexPath.section {
-        case 0:
-            cell.sectionHeaderText = "\(NSLocalizedString("Type", comment: "")):"
-        case 1:
-            cell.sectionHeaderText = "\(NSLocalizedString("RECOMMENDED_AGAINST", comment: "")) \(pokemon!.name):"
-        case 2:
-            cell.sectionHeaderText = "\(NSLocalizedString("SUPER_EFFECTIVE_AGAINST", comment: "")) \(pokemon!.name):"
-        case 3:
-            cell.sectionHeaderText = "\(NSLocalizedString("NOT_VERY_EFFECTIVE_AGAINST", comment: "")) \(pokemon!.name):"
-        case 4:
-            cell.sectionHeaderText = "\(NSLocalizedString("QUICK_MOVES", comment: "")):"
-        case 5:
-            cell.sectionHeaderText = "\(NSLocalizedString("SPECIAL_MOVES", comment: "")):"
-        case 6:
-            cell.sectionHeaderText = "\(NSLocalizedString("STATS", comment: "")):"
-        default:
-            break
-        }        
+        if let pokemon = pokemon {
+            let pokemonName = NSLocalizedString(pokemon.name, comment: "")
+            switch indexPath.section {
+            case 0:
+                cell.sectionHeaderText = "\(NSLocalizedString("Type", comment: "")):"
+            case 1:
+
+                cell.sectionHeaderText = "\(NSLocalizedString("RECOMMENDED_AGAINST", comment: "")) \(pokemonName):"
+            case 2:
+                cell.sectionHeaderText = "\(NSLocalizedString("SUPER_EFFECTIVE_AGAINST", comment: "")) \(pokemonName):"
+            case 3:
+                cell.sectionHeaderText = "\(NSLocalizedString("NOT_VERY_EFFECTIVE_AGAINST", comment: "")) \(pokemonName):"
+            case 4:
+                cell.sectionHeaderText = "\(NSLocalizedString("QUICK_MOVES", comment: "")):"
+            case 5:
+                cell.sectionHeaderText = "\(NSLocalizedString("SPECIAL_MOVES", comment: "")):"
+            case 6:
+                cell.sectionHeaderText = "\(NSLocalizedString("STATS", comment: "")):"
+            default:
+                break
+            }
+        }
         return cell
     }
     

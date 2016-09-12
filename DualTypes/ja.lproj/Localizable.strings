@@ -26,21 +26,21 @@
 "FairyType" = "フェアリー";
 
 "Attack" = "攻撃";
-"Defence" = "防御";
+"Defense" = "防御";
 "Stamina" = "スタミナ";
 
 "Type" = "タイプ";
 "RECOMMENDED_AGAINST" = "推奨されます";
 "SUPER_EFFECTIVE_AGAINST" = "効果はばつぐんだ";
 "NOT_VERY_EFFECTIVE_AGAINST" = "効果はいまひとつだ";
-"QUICK_MOVES" = "Quick Moves";
-"SPECIAL_MOVES" = "Special Moves";
-"STATS" = "Stats";
-"ENTER_A_NAME" = "Enter a name";
+"QUICK_MOVES" = "通常攻撃"; // conventional attack
+"SPECIAL_MOVES" = "ゲージ攻撃"; // gauge attack
+"STATS" = "能力";
+"ENTER_A_NAME" = "名前を入力します";
 
-"FILTERING_ON_THESE_TYPES" = "Filtering on these types";
-"CHOOSE_FROM_THESE_TYPES" = "Choose from these types";
-"FILTER_RESULTS" = "Filter results";
+"FILTERING_ON_THESE_TYPES" = "これらのタイプのフィルタリング";
+"CHOOSE_FROM_THESE_TYPES" = "これらのタイプから選びます";
+"FILTER_RESULTS" = "フィルタ結果";
 
 "Acid" = "ようかいえき";
 "Bite" = "かみつく";
@@ -169,7 +169,7 @@
 "X-Scissor" = "シザークロス";
 
 //http://bulbapedia.bulbagarden.net/wiki/List_of_Japanese_Pok%C3%A9mon_names
-"Bulbasaur" = "フシギダネ	";
+"Bulbasaur" = "フシギダネ";
 "Ivysaur" = "フシギソウ";
 "Venusaur" = "フシギバナ";
 "Charmander" = "ヒトカゲ";
@@ -320,3 +320,7 @@
 "Dragonite" = "カイリュー";
 "Mewtwo" = "ミュウツー";
 "Mew" = "ミュウ";
+
+"Move" = "技タイプ";
+"Index" = "#";
+"Pokemon" = "ポケモン";

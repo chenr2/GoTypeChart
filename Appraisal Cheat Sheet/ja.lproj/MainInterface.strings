@@ -6,16 +6,16 @@
 "Ejh-hA-evg.text" = "IV:";
 
 /* Class = "UILabel"; text = "Top Stat:"; ObjectID = "Gzr-ta-5g2"; */
-"Gzr-ta-5g2.text" = "Top Stat:";
+"Gzr-ta-5g2.text" = "最高のIV:";
 
 /* Class = "UISegmentedControl"; lhQ-rk-fCF.segmentTitles[0] = "Instinct"; ObjectID = "lhQ-rk-fCF"; */
-"lhQ-rk-fCF.segmentTitles[0]" = "Instinct";
+"lhQ-rk-fCF.segmentTitles[0]" = "スパーク";
 
 /* Class = "UISegmentedControl"; lhQ-rk-fCF.segmentTitles[1] = "Valor"; ObjectID = "lhQ-rk-fCF"; */
-"lhQ-rk-fCF.segmentTitles[1]" = "Valor";
+"lhQ-rk-fCF.segmentTitles[1]" = "キャンデラ";
 
 /* Class = "UISegmentedControl"; lhQ-rk-fCF.segmentTitles[2] = "Mystic"; ObjectID = "lhQ-rk-fCF"; */
-"lhQ-rk-fCF.segmentTitles[2]" = "Mystic";
+"lhQ-rk-fCF.segmentTitles[2]" = "ブランシェ";
 
 /* Class = "UILabel"; text = "80%"; ObjectID = "tPz-v3-kD9"; */
 "tPz-v3-kD9.text" = "80%";
