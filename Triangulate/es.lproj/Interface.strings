@@ -1,6 +1,6 @@
 
 /* Class = "WKInterfaceLabel"; text = "On your iPhone, go to Settings > Privacy > Location Services and grant GoTypeChart location access."; ObjectID = "RZv-Oj-OmI"; */
-"RZv-Oj-OmI.text" = "En su iPhone, abre Ajustes > Privacidad > Localizacíon > GoTypeChart > Cuando se use la aplicación.";
+"RZv-Oj-OmI.text" = "En su iPhone, abre Configuración > Privacidad > Localizacíon > GoTypeChart > Al usar la app.";
 
 /* Class = "WKInterfaceMenuItem"; title = "Add"; ObjectID = "nQ2-W4-PEZ"; */
 "nQ2-W4-PEZ.title" = "Add";
