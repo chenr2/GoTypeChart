@@ -1078,7 +1078,7 @@
                                             </constraints>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="Kdb-HL-iL2">
-                                            <rect key="frame" x="8" y="106" width="85" height="17"/>
+                                            <rect key="frame" x="0.0" y="106" width="101" height="17"/>
                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
@@ -1121,11 +1121,11 @@
                                     <constraint firstItem="El5-Od-2bB" firstAttribute="leading" secondItem="zqc-Nq-L6w" secondAttribute="leading" id="GkR-di-n0b"/>
                                     <constraint firstItem="El5-Od-2bB" firstAttribute="top" secondItem="zqc-Nq-L6w" secondAttribute="top" id="Hbe-vD-mvv"/>
                                     <constraint firstItem="phf-8h-e5V" firstAttribute="centerX" secondItem="zqc-Nq-L6w" secondAttribute="centerX" id="Hen-xl-t3m"/>
-                                    <constraint firstItem="Kdb-HL-iL2" firstAttribute="leading" secondItem="zqc-Nq-L6w" secondAttribute="leadingMargin" id="I7H-dv-L3s"/>
+                                    <constraint firstItem="Kdb-HL-iL2" firstAttribute="leading" secondItem="zqc-Nq-L6w" secondAttribute="leading" id="I7H-dv-L3s"/>
                                     <constraint firstItem="GFv-v1-n70" firstAttribute="top" secondItem="Kdb-HL-iL2" secondAttribute="bottom" constant="5" id="RMd-qW-r1L"/>
                                     <constraint firstItem="ijZ-VK-TiS" firstAttribute="top" secondItem="phf-8h-e5V" secondAttribute="bottom" constant="1" id="XIi-uv-jSy"/>
                                     <constraint firstItem="GFv-v1-n70" firstAttribute="centerX" secondItem="El5-Od-2bB" secondAttribute="centerX" id="dCs-qE-Ucc"/>
-                                    <constraint firstAttribute="trailingMargin" secondItem="Kdb-HL-iL2" secondAttribute="trailing" id="tf9-YH-8B7"/>
+                                    <constraint firstAttribute="trailing" secondItem="Kdb-HL-iL2" secondAttribute="trailing" id="tf9-YH-8B7"/>
                                     <constraint firstItem="Kdb-HL-iL2" firstAttribute="top" secondItem="El5-Od-2bB" secondAttribute="bottom" constant="5" id="xD8-sa-gL4"/>
                                 </constraints>
                                 <size key="customSize" width="101" height="146"/>
