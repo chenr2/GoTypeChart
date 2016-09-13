@@ -108,7 +108,7 @@ class Pokemon {
             case (.Ice, .Water), (.Water, .Ice): // lapras
                 return [.Electric, .Fight, .Rock] // don't use grass vs lapras
             case (.Grass, .Poison), (.Poison, .Grass): // venasaur, victreebel, vileplume, gloom
-                return [] // nothing really stands out among the super effectives
+                return [.Fire] // nothing wrong with ice/psychic per se. but ice tends to pair with water (vuln to grass). and psychic tends to pair with water or grass (vuln to poison). just more straightforward to use fire. but some exceptions: jinx and pidgeot
             case (.Water, .Fight), (.Fight, .Water): // poliwrath
                 return [] // nothing really stands out among the super effectives
             case (.Ground, .Poison), (.Poison, .Ground): // nidoking, nidoqueen

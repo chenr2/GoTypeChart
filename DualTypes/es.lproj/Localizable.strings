@@ -7,7 +7,7 @@
 */
 
 "NormalType" = "Normal";
-"FightType" = "Lucha";
+"FightingType" = "Lucha";
 "BugType" = "Bicho";
 "FlyingType" = "Volador";
 "PoisonType" = "Veneno";
@@ -27,7 +27,7 @@
 
 "Attack" = "Ataque";
 "Defense" = "Defensa";
-"Stamina" = "Resistencia";
+"Stamina" = "Stamina";
 
 "Type" = "Tipo";
 "RECOMMENDED_AGAINST" = "Recomendado contra";
@@ -319,3 +319,5 @@
 "Dragonite" = "Dragonite";
 "Mewtwo" = "Mewtwo";
 "Mew" = "Mew";
+
+"Index" = "#";

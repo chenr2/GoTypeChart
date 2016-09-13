@@ -1,6 +1,6 @@
 
 /* Class = "WKInterfaceLabel"; text = "On your iPhone, go to Settings > Privacy > Location Services and grant GoTypeChart location access."; ObjectID = "RZv-Oj-OmI"; */
-"RZv-Oj-OmI.text" = "On your iPhone, go to Settings > Privacy > Location Services and grant GoTypeChart location access.";
+"RZv-Oj-OmI.text" = "iPhone > 「設定」アプリを起動して、>「プライバシー」>「位置情報サービス」> 「GoTypeChart」>「このappの使用中のみ許可」と進んでください。";
 
 /* Class = "WKInterfaceMenuItem"; title = "Add"; ObjectID = "nQ2-W4-PEZ"; */
 "nQ2-W4-PEZ.title" = "Add";
