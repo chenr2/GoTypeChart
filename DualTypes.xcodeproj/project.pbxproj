@@ -520,21 +520,27 @@
 					FC2E2A371D77DA0B00E70DA1 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = XMBBQU2VF8;
+						LastSwiftMigration = 0800;
 					};
 					FC2E2A431D77DA0B00E70DA1 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = XMBBQU2VF8;
+						LastSwiftMigration = 0800;
 					};
 					FC9091411D7332D4007682BB = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = XMBBQU2VF8;
+						LastSwiftMigration = 0800;
 					};
 					FC9B63F51D6FE8C400467EDA = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = XMBBQU2VF8;
+						LastSwiftMigration = 0800;
 					};
 					FCA7425A1D52E675003DAC35 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = XMBBQU2VF8;
+						LastSwiftMigration = 0800;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -792,6 +798,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.2;
 			};
@@ -809,6 +816,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.2;
 			};
@@ -817,12 +825,14 @@
 		FC2E2A551D77DA0B00E70DA1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = XMBBQU2VF8;
 				INFOPLIST_FILE = "Triangulate Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.robcornerstone.gotypechart.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.2;
 			};
@@ -831,12 +841,14 @@
 		FC2E2A561D77DA0B00E70DA1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = XMBBQU2VF8;
 				INFOPLIST_FILE = "Triangulate Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.robcornerstone.gotypechart.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.2;
 			};
@@ -852,6 +864,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.robcornerstone.gotypechart.PidgeyGrinder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -865,6 +878,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.robcornerstone.gotypechart.PidgeyGrinder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
@@ -877,6 +891,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.robcornerstone.gotypechart.Appraisal-Cheat-Sheet";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -889,6 +904,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.robcornerstone.gotypechart.Appraisal-Cheat-Sheet";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
@@ -989,6 +1005,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.robcornerstone.gotypechart;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1005,6 +1022,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.robcornerstone.gotypechart;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

@@ -8,32 +8,24 @@
 
 import UIKit
 
-class GymLeaderDetailHeader: UICollectionViewCell {
-
-    var defense: [ElementType] = []
+class GymLeaderDetailHeader: FlexibleCollectionCell {
     
     @IBOutlet weak var circularView: UIView!
     @IBOutlet weak var elementName: UILabel!
     
-    // prevents a lot of constraint conflicts
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        contentView.autoresizingMask = [.FlexibleHeight, .FlexibleWidth]
-    }
-    
-    override func layoutSubviews() {
+    func configureCell(elementTypes: [ElementType]){
         circularView.layer.cornerRadius = bounds.size.width / 2
-        if let singleElement = defense.first where defense.count == 1 {
+        if let singleElement = elementTypes.first where elementTypes.count == 1 {
             circularView.backgroundColor = Colors.colorForElement(singleElement)
-        } else if let firstElement = defense.first,
-            let lastElement = defense.last
-            where defense.count == 2 {
+        } else if let firstElement = elementTypes.first,
+            let lastElement = elementTypes.last
+            where elementTypes.count == 2 {
             UIView.animateWithDuration(2, delay: 0.0, options:[UIViewAnimationOptions.Repeat, UIViewAnimationOptions.Autoreverse], animations: {
                 self.circularView.backgroundColor = Colors.colorForElement(firstElement)
                 self.circularView.backgroundColor = Colors.colorForElement(lastElement)
-                }, completion: nil)
+            }, completion: nil)
         }
-        let elementString = defense.map {
+        let elementString = elementTypes.map {
             return NSLocalizedString($0.rawValue, comment: "")
         }.joinWithSeparator(" / ")
         elementName?.text = elementString

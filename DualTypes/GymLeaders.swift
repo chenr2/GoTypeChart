@@ -375,15 +375,17 @@ extension GymLeaders {
     override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
         switch kind {
         case UICollectionElementKindSectionHeader:
-            let cell = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: "SearchResultSectionHeader", forIndexPath: indexPath) as! SearchResultSectionHeader
+            let cell = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: String(SearchResultSectionHeader), forIndexPath: indexPath) as! SearchResultSectionHeader
+            var text = ""
             switch indexPath.section {
             case 0:
-                cell.sectionHeaderText = NSLocalizedString("FILTERING_ON_THESE_TYPES", comment: "Filtering on these types").uppercaseString 
+                text = NSLocalizedString("FILTERING_ON_THESE_TYPES", comment: "Filtering on these types").uppercaseString
             case 0, 1:
-                cell.sectionHeaderText = NSLocalizedString("CHOOSE_FROM_THESE_TYPES", comment: "Choose from these types").uppercaseString
+                text = NSLocalizedString("CHOOSE_FROM_THESE_TYPES", comment: "Choose from these types").uppercaseString
             default:
-                cell.sectionHeaderText = NSLocalizedString("FILTER_RESULTS", comment: "Filter results").uppercaseString
+                text = NSLocalizedString("FILTER_RESULTS", comment: "Filter results").uppercaseString
             }
+            cell.configureCell(text)
             return cell
         default:
             return collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionFooter, withReuseIdentifier: "Footer", forIndexPath: indexPath)

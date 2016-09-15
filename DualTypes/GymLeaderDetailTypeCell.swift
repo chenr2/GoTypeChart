@@ -10,17 +10,13 @@ import UIKit
 
 class GymLeaderDetailTypeCell: FlexibleCollectionCell {
 
-    var element: ElementType? = nil
-
     @IBOutlet weak var circularView: UIView!
     @IBOutlet weak var elementType: UILabel!
     
-    override func layoutSubviews() {
+    func configureCell(element: ElementType) {
         circularView.layer.cornerRadius = bounds.size.width / 2
-        if let element = element {
-            circularView.backgroundColor = Colors.colorForElement(element)
-            elementType?.text = NSLocalizedString(element.rawValue, comment: "")
-        }
+        circularView.backgroundColor = Colors.colorForElement(element)
+        elementType?.text = NSLocalizedString(element.rawValue, comment: "")
     }
     
 }

@@ -106,43 +106,42 @@ extension GymLeaderDetail {
     }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let detailTypeCell = collectionView.dequeueReusableCellWithReuseIdentifier("GymLeaderDetailTypeCell", forIndexPath: indexPath) as! GymLeaderDetailTypeCell
+        let detailTypeCell = collectionView.dequeueReusableCellWithReuseIdentifier(String(GymLeaderDetailTypeCell), forIndexPath: indexPath) as! GymLeaderDetailTypeCell
         switch indexPath.section {
         case 0:
-            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("GymLeaderDetailHeader", forIndexPath: indexPath) as! GymLeaderDetailHeader
-            cell.defense = pokemon!.type
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier(String(GymLeaderDetailHeader), forIndexPath: indexPath) as! GymLeaderDetailHeader
+            cell.configureCell(pokemon!.type)
             return cell
         case 1:
             let selectedItem = directCounters[indexPath.row]
             if let elementCounter = selectedItem as? ElementType {
-                detailTypeCell.element = elementCounter
+                detailTypeCell.configureCell(elementCounter)
             } else if let pokemonCounter = selectedItem as? PokemonCounter {
-                let pokemonCounterCell = collectionView.dequeueReusableCellWithReuseIdentifier("GymLeaderPokemonCounter", forIndexPath: indexPath) as! GymLeaderPokemonCounter
+                let pokemonCounterCell = collectionView.dequeueReusableCellWithReuseIdentifier(String(GymLeaderPokemonCounter), forIndexPath: indexPath) as! GymLeaderPokemonCounter
                 pokemonCounterCell.configureCell(pokemonCounter)
                 return pokemonCounterCell
             }
         case 2:
-            detailTypeCell.element = double[indexPath.row]
+            detailTypeCell.configureCell(double[indexPath.row])
         case 3:
-            detailTypeCell.element = half[indexPath.row]
+            detailTypeCell.configureCell(half[indexPath.row])
         case 4:
-            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("GymLeaderDetailQuickMoveCell", forIndexPath: indexPath) as! GymLeaderDetailQuickMoveCell
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier(String(GymLeaderDetailQuickMoveCell), forIndexPath: indexPath) as! GymLeaderDetailQuickMoveCell
             cell.configureCell(quickAttacks[indexPath.row], pokemon: pokemon!)
             return cell
         case 5:
-            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("GymLeaderDetailQuickMoveCell", forIndexPath: indexPath) as! GymLeaderDetailQuickMoveCell
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier(String(GymLeaderDetailQuickMoveCell), forIndexPath: indexPath) as! GymLeaderDetailQuickMoveCell
             cell.configureCellSpecial(specialAttacks[indexPath.row], pokemon: pokemon!)
             return cell
         case 6:
-            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("GymLeaderDetailStatCell", forIndexPath: indexPath) as! GymLeaderDetailStatCell
-            cell.pokemon = pokemon
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier(String(GymLeaderDetailStatCell), forIndexPath: indexPath) as! GymLeaderDetailStatCell
             switch indexPath.row {
             case 0:
-                cell.statType = .attack
+                cell.configureCell(pokemon, statType: .attack)
             case 1:
-                cell.statType = .defense
+                cell.configureCell(pokemon, statType: .defense)
             case 2:
-                cell.statType = .stamina
+                cell.configureCell(pokemon, statType: .stamina)
             default:
                 break
             }
@@ -154,28 +153,29 @@ extension GymLeaderDetail {
     }
     
     override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
-        let cell = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: "GymLeaderDetailSectionHeader", forIndexPath: indexPath) as! GymLeaderDetailSectionHeader
+        let cell = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: String(GymLeaderDetailSectionHeader), forIndexPath: indexPath) as! GymLeaderDetailSectionHeader
         if let pokemon = pokemon {
             let pokemonName = NSLocalizedString(pokemon.name, comment: "")
+            var text = ""
             switch indexPath.section {
             case 0:
-                cell.sectionHeaderText = "\(NSLocalizedString("Type", comment: "")):"
+                text = "\(NSLocalizedString("Type", comment: "")):"
             case 1:
-
-                cell.sectionHeaderText = "\(NSLocalizedString("RECOMMENDED_AGAINST", comment: "")) \(pokemonName):"
+                text = "\(NSLocalizedString("RECOMMENDED_AGAINST", comment: "")) \(pokemonName):"
             case 2:
-                cell.sectionHeaderText = "\(NSLocalizedString("SUPER_EFFECTIVE_AGAINST", comment: "")) \(pokemonName):"
+                text = "\(NSLocalizedString("SUPER_EFFECTIVE_AGAINST", comment: "")) \(pokemonName):"
             case 3:
-                cell.sectionHeaderText = "\(NSLocalizedString("NOT_VERY_EFFECTIVE_AGAINST", comment: "")) \(pokemonName):"
+                text = "\(NSLocalizedString("NOT_VERY_EFFECTIVE_AGAINST", comment: "")) \(pokemonName):"
             case 4:
-                cell.sectionHeaderText = "\(NSLocalizedString("QUICK_MOVES", comment: "")):"
+                text = "\(NSLocalizedString("QUICK_MOVES", comment: "")):"
             case 5:
-                cell.sectionHeaderText = "\(NSLocalizedString("SPECIAL_MOVES", comment: "")):"
+                text = "\(NSLocalizedString("SPECIAL_MOVES", comment: "")):"
             case 6:
-                cell.sectionHeaderText = "\(NSLocalizedString("STATS", comment: "")):"
+                text = "\(NSLocalizedString("STATS", comment: "")):"
             default:
                 break
             }
+            cell.configureCell(text)
         }
         return cell
     }

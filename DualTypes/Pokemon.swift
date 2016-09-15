@@ -97,6 +97,8 @@ class Pokemon {
             guard let firstElement = type.first,
                 let secondElement = type.last else { return [] }
             switch (firstElement, secondElement) {
+            case (.Flying, .Water), (.Water, .Flying): // gyarados
+                return [.Electric]
             case (.Psychic, .Grass), (.Grass, .Psychic): // exegguctor
                 return [.Bug]
             case (.Dragon, .Flying), (.Flying, .Dragon): // dragonite
