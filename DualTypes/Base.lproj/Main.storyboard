@@ -1014,8 +1014,97 @@
                                     <outlet property="elementName" destination="sv9-LM-5u3" id="FaF-33-oTj"/>
                                 </connections>
                             </collectionViewCell>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GymLeaderPokemonCounter" id="ZSy-Nj-uVS" customClass="GymLeaderPokemonCounter" customModule="DualTypes" customModuleProvider="target">
+                                <rect key="frame" x="176" y="104" width="134" height="167"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="134" height="167"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="FwL-li-Y88">
+                                            <rect key="frame" x="8" y="11" width="118" height="102"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b8c-q8-Qbq">
+                                            <rect key="frame" x="5" y="116" width="124" height="20"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zw9-cJ-Ebz">
+                                                    <rect key="frame" x="8" y="1" width="108" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.23921568630000001" green="0.76470588240000004" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="zw9-cJ-Ebz" firstAttribute="leading" secondItem="b8c-q8-Qbq" secondAttribute="leading" constant="8" id="GhJ-Dm-aVJ"/>
+                                                <constraint firstItem="zw9-cJ-Ebz" firstAttribute="centerY" secondItem="b8c-q8-Qbq" secondAttribute="centerY" id="OKn-MT-ZBA"/>
+                                                <constraint firstAttribute="height" constant="20" id="OQr-ar-HTA"/>
+                                                <constraint firstAttribute="trailing" secondItem="zw9-cJ-Ebz" secondAttribute="trailing" constant="8" id="p6A-NP-ke3"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="10"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nYP-5B-ail">
+                                            <rect key="frame" x="5" y="141" width="124" height="20"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="n9X-by-BWk">
+                                                    <rect key="frame" x="8" y="1" width="108" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.98823529409999999" green="0.83137254900000002" blue="0.0039215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="n9X-by-BWk" secondAttribute="trailing" constant="8" id="F10-3Q-bqc"/>
+                                                <constraint firstItem="n9X-by-BWk" firstAttribute="leading" secondItem="nYP-5B-ail" secondAttribute="leading" constant="8" id="OHR-vl-DIh"/>
+                                                <constraint firstAttribute="height" constant="20" id="Vq2-pz-8cQ"/>
+                                                <constraint firstItem="n9X-by-BWk" firstAttribute="centerY" secondItem="nYP-5B-ail" secondAttribute="centerY" id="qyv-sb-iPA"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="10"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="nYP-5B-ail" firstAttribute="top" secondItem="b8c-q8-Qbq" secondAttribute="bottom" constant="5" id="2cS-nT-aOG"/>
+                                    <constraint firstAttribute="trailing" secondItem="nYP-5B-ail" secondAttribute="trailing" constant="5" id="3F8-ZL-Oru"/>
+                                    <constraint firstItem="nYP-5B-ail" firstAttribute="leading" secondItem="ZSy-Nj-uVS" secondAttribute="leading" constant="5" id="GYJ-FW-zvW"/>
+                                    <constraint firstAttribute="trailing" secondItem="b8c-q8-Qbq" secondAttribute="trailing" constant="5" id="QZ9-GM-uwE"/>
+                                    <constraint firstItem="FwL-li-Y88" firstAttribute="top" secondItem="ZSy-Nj-uVS" secondAttribute="topMargin" constant="3" id="dcK-TO-rNI"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="FwL-li-Y88" secondAttribute="trailing" id="ksw-I1-N6i"/>
+                                    <constraint firstItem="b8c-q8-Qbq" firstAttribute="top" secondItem="FwL-li-Y88" secondAttribute="bottom" constant="3" id="oQd-qG-HW7"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="nYP-5B-ail" secondAttribute="bottom" constant="-2" id="rnp-kg-A6v"/>
+                                    <constraint firstItem="FwL-li-Y88" firstAttribute="leading" secondItem="ZSy-Nj-uVS" secondAttribute="leadingMargin" id="sIA-e0-Jy1"/>
+                                    <constraint firstItem="b8c-q8-Qbq" firstAttribute="leading" secondItem="ZSy-Nj-uVS" secondAttribute="leading" constant="5" id="vdW-BZ-Hyw"/>
+                                </constraints>
+                                <size key="customSize" width="134" height="167"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="chargeMoveBubble" destination="nYP-5B-ail" id="XVr-My-Qgm"/>
+                                    <outlet property="chargeMoveName" destination="n9X-by-BWk" id="zSS-Wc-vTs"/>
+                                    <outlet property="pokemonCounterName" destination="FwL-li-Y88" id="roR-dr-622"/>
+                                    <outlet property="quickMoveBubble" destination="b8c-q8-Qbq" id="UOe-wx-5RH"/>
+                                    <outlet property="quickMoveName" destination="zw9-cJ-Ebz" id="Oj8-V8-wXe"/>
+                                </connections>
+                            </collectionViewCell>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GymLeaderDetailTypeCell" id="0cS-HD-xdR" customClass="GymLeaderDetailTypeCell" customModule="DualTypes" customModuleProvider="target">
-                                <rect key="frame" x="209" y="139" width="101" height="97"/>
+                                <rect key="frame" x="10" y="305.5" width="101" height="97"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="101" height="97"/>
@@ -1053,7 +1142,7 @@
                                 </connections>
                             </collectionViewCell>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GymLeaderDetailQuickMoveCell" id="zqc-Nq-L6w" customClass="GymLeaderDetailQuickMoveCell" customModule="DualTypes" customModuleProvider="target">
-                                <rect key="frame" x="10" y="281" width="101" height="146"/>
+                                <rect key="frame" x="209" y="281" width="101" height="146"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="101" height="146"/>
@@ -1138,7 +1227,7 @@
                                 </connections>
                             </collectionViewCell>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GymLeaderDetailSpecialMoveCell" id="WBp-cD-WhO" customClass="GymLeaderDetailSpecialMoveCell" customModule="DualTypes" customModuleProvider="target">
-                                <rect key="frame" x="209" y="294" width="101" height="120"/>
+                                <rect key="frame" x="10" y="437" width="101" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="101" height="120"/>
@@ -1186,7 +1275,7 @@
                                 </connections>
                             </collectionViewCell>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GymLeaderDetailStatCell" id="hik-fD-s34" customClass="GymLeaderDetailStatCell" customModule="DualTypes" customModuleProvider="target">
-                                <rect key="frame" x="10" y="437" width="101" height="97"/>
+                                <rect key="frame" x="121" y="448.5" width="101" height="97"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="101" height="97"/>

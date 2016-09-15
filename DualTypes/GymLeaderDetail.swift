@@ -47,6 +47,8 @@ class GymLeaderDetail: UICollectionViewController {
     
     var filterJump: FilterJump? = nil
     
+    var directCounters: [Any] = []
+    
     func getKeysOfValue(damage: DamageType, pokemon: Pokemon) -> [ElementType] {
         var elements: [ElementType] = []
         for (key, value) in pokemon.vulnerabilitySet {
@@ -63,6 +65,14 @@ class GymLeaderDetail: UICollectionViewController {
         if let pokemon = pokemon {
             let pokemonName = NSLocalizedString(pokemon.name, comment: "")
             title = "#\(pokemon.pokedex) \(pokemonName)"
+            let counterPokemon: [Any] = PokemonCounter.hardCounters(pokemon.pokedex).map {
+                return $0 as Any
+            }
+            directCounters += counterPokemon
+            let counterTypes: [Any] = pokemon.bestCounter.map {
+                return $0 as Any
+            }
+            directCounters += counterTypes
         }
     }
     
@@ -79,7 +89,7 @@ extension GymLeaderDetail {
         case 0:
             return 1
         case 1:
-            return pokemon!.bestCounter.count
+            return directCounters.count
         case 2:
             return double.count
         case 3:
@@ -103,7 +113,14 @@ extension GymLeaderDetail {
             cell.defense = pokemon!.type
             return cell
         case 1:
-            detailTypeCell.element = pokemon!.bestCounter[indexPath.row]
+            let selectedItem = directCounters[indexPath.row]
+            if let elementCounter = selectedItem as? ElementType {
+                detailTypeCell.element = elementCounter
+            } else if let pokemonCounter = selectedItem as? PokemonCounter {
+                let pokemonCounterCell = collectionView.dequeueReusableCellWithReuseIdentifier("GymLeaderPokemonCounter", forIndexPath: indexPath) as! GymLeaderPokemonCounter
+                pokemonCounterCell.configureCell(pokemonCounter)
+                return pokemonCounterCell
+            }
         case 2:
             detailTypeCell.element = double[indexPath.row]
         case 3:
@@ -170,7 +187,7 @@ extension GymLeaderDetail: UICollectionViewDelegateFlowLayout {
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         switch section {
         case 1:
-            if pokemon!.bestCounter.isEmpty {
+            if directCounters.isEmpty {
                 return CGSizeZero
             }
         default:
@@ -210,7 +227,9 @@ extension GymLeaderDetail {
             let elements = pokemon!.type
             filterJump?.setFilters(elements)
         case 1:
-            moveElement = pokemon!.bestCounter[indexPath.row]
+            if let moveElement = directCounters[indexPath.row] as? ElementType {
+                filterJump?.setMoveFilter(moveElement)
+            }
         case 2:
             moveElement = double[indexPath.row]
         case 3:

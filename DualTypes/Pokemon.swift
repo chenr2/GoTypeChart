@@ -57,7 +57,7 @@ class Pokemon {
             guard let singleElement = type.first else { return [] }
             switch singleElement {
             case .Normal:
-                return []
+                return [.Fight]
             case .Fight:
                 return []
             case .Flying:
