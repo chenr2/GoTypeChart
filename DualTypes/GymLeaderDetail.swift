@@ -90,6 +90,8 @@ class GymLeaderDetail: UICollectionViewController {
             let pokemonInstance = Pokemon.pokemonForSpecies(counterPokemon.species),
             let destination = segue.destinationViewController as? GymLeaderDetail {
             destination.pokemon = pokemonInstance
+            // pop to root
+            destination.filterJump = filterJump
         }
     }
     

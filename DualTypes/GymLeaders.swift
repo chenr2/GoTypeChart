@@ -490,7 +490,7 @@ extension GymLeaders: ChangeSortType {
 
 extension GymLeaders: FilterJump {
     func setFilters(elements: [ElementType]){
-        navigationController?.popViewControllerAnimated(true)
+        navigationController?.popToRootViewControllerAnimated(true)
         resultSearchController?.active = false
         elementFilters = elements
         sortType = .Type
@@ -500,7 +500,7 @@ extension GymLeaders: FilterJump {
     }
     
     func setMoveFilter(element: ElementType){
-        navigationController?.popViewControllerAnimated(true)
+        navigationController?.popToRootViewControllerAnimated(true)
         resultSearchController?.active = false
         moveElementFilters = [element]
         sortType = .MoveType
