@@ -224,12 +224,24 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         refreshSegmentNames()
         ivPercentage?.text = valueForIV(iv)
         statFraction?.text = valueForStat(stat)
+        if #available(iOS 10, *) {
+            ivPercentage?.textColor = UIColor.darkGrayColor()
+            statFraction?.textColor = UIColor.darkGrayColor()
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         UILabel.appearanceWhenContainedInInstancesOfClasses([UISegmentedControl.self]).numberOfLines = 0
         preferredContentSize = CGSizeMake(0, 230)
+        if #available(iOS 10, *) {
+            extensionContext?.widgetLargestAvailableDisplayMode = .Expanded
+        }
+    }
+    
+    @available(iOSApplicationExtension 10.0, *)
+    func widgetActiveDisplayModeDidChange(activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
+        preferredContentSize = (activeDisplayMode == .Compact) ? maxSize : CGSizeMake(0, 250)
     }
     
     func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)) {

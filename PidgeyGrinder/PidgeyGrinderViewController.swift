@@ -46,14 +46,20 @@ class PidgeyGrinderViewController: UIViewController, NCWidgetProviding {
 
     let rattataPurple = UIColor(red: 0.663, green: 0.384, blue: 0.910, alpha: 1)
     let pidgeyYellow = UIColor(red: 0.976, green: 0.796, blue: 0.345, alpha: 1)
-    
+    let darkGray = UIColor.darkGrayColor()
+
     var pidgeyRat: PidgeyRat = .pidgey {
         didSet {
             switch pidgeyRat {
             case .pidgey:
                 pidgeyRatButton.setImage(UIImage(named: "pidgey"), forState: .Normal)
-                monStepper.tintColor = pidgeyYellow
-                candyStepper.tintColor = pidgeyYellow
+                if #available(iOS 10, *) {
+                    monStepper.tintColor = darkGray
+                    candyStepper.tintColor = darkGray
+                } else {
+                    monStepper.tintColor = pidgeyYellow
+                    candyStepper.tintColor = pidgeyYellow
+                }
                 candyButton.setImage(UIImage(named: "pidgey-candy"), forState: .Normal)
             case .rattata:
                 pidgeyRatButton.setImage(UIImage(named: "rattata"), forState: .Normal)
@@ -184,6 +190,25 @@ class PidgeyGrinderViewController: UIViewController, NCWidgetProviding {
     override func viewDidLoad() {
         super.viewDidLoad()
         preferredContentSize = CGSizeMake(0, 205)
+        if #available(iOS 10, *) {
+            extensionContext?.widgetLargestAvailableDisplayMode = .Expanded
+        }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        if #available(iOS 10, *) {
+            leftoverCandy.textColor = darkGray
+            leftoverMons.textColor = darkGray
+            evolutionCount.textColor = darkGray
+            evolutions.textColor = darkGray
+            monCount.textColor = darkGray
+            candyCount.textColor = darkGray
+        }
+    }
+    
+    @available(iOSApplicationExtension 10.0, *)
+    func widgetActiveDisplayModeDidChange(activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
+        preferredContentSize = (activeDisplayMode == .Compact) ? maxSize : CGSizeMake(0, 230)
     }
     
     func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)) {
