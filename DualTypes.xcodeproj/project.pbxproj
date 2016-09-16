@@ -32,6 +32,7 @@
 		FC341D2D1D62BE22007D28FA /* MenuModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC341D2C1D62BE22007D28FA /* MenuModal.swift */; };
 		FC4A83E61D7CED72004A8E7F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FC4A83E81D7CED72004A8E7F /* Localizable.strings */; };
 		FC4A83F41D7DBA48004A8E7F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FC4A83F61D7DBA48004A8E7F /* Localizable.strings */; };
+		FC5326BD1D8B671C003C3903 /* PokemonEnumeration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5326BC1D8B671C003C3903 /* PokemonEnumeration.swift */; };
 		FC563AEE1D8A0D2C00666A43 /* PokemonCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC563AED1D8A0D2C00666A43 /* PokemonCounter.swift */; };
 		FC9091431D7332D4007682BB /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC9B63F81D6FE8C400467EDA /* NotificationCenter.framework */; };
 		FC9091461D7332D4007682BB /* PidgeyGrinderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9091451D7332D4007682BB /* PidgeyGrinderViewController.swift */; };
@@ -172,6 +173,7 @@
 		FC4A83EA1D7CED76004A8E7F /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FC4A83F51D7DBA48004A8E7F /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FC4A83F71D7DBA50004A8E7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FC5326BC1D8B671C003C3903 /* PokemonEnumeration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonEnumeration.swift; sourceTree = "<group>"; };
 		FC563AED1D8A0D2C00666A43 /* PokemonCounter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonCounter.swift; sourceTree = "<group>"; };
 		FC9091421D7332D4007682BB /* PidgeyGrinder.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PidgeyGrinder.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC9091451D7332D4007682BB /* PidgeyGrinderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PidgeyGrinderViewController.swift; sourceTree = "<group>"; };
@@ -405,6 +407,7 @@
 			isa = PBXGroup;
 			children = (
 				FCA7429C1D52E86D003DAC35 /* Pokemon.swift */,
+				FC5326BC1D8B671C003C3903 /* PokemonEnumeration.swift */,
 				FC563AED1D8A0D2C00666A43 /* PokemonCounter.swift */,
 				FC2585831D667766001F3434 /* QuickMove.swift */,
 				FC2585881D669A47001F3434 /* SpecialMove.swift */,
@@ -668,6 +671,7 @@
 				FCDFE7771D63FE5F0002DF04 /* GridCell.swift in Sources */,
 				FCEEB18B1D5D410C0020A2A1 /* StatRing.swift in Sources */,
 				FC341D2D1D62BE22007D28FA /* MenuModal.swift in Sources */,
+				FC5326BD1D8B671C003C3903 /* PokemonEnumeration.swift in Sources */,
 				FCDFE7751D63FD360002DF04 /* AlphabeticalCell.swift in Sources */,
 				FC341D2B1D62BB14007D28FA /* ContainerVC.swift in Sources */,
 				FC341D281D62A743007D28FA /* FlexibleCollectionCell.swift in Sources */,

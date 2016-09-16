@@ -63,7 +63,7 @@ class GymLeaderDetail: UICollectionViewController {
     
     override func viewDidLoad() {
         if let pokemon = pokemon {
-            let pokemonName = NSLocalizedString(pokemon.name, comment: "")
+            let pokemonName = NSLocalizedString(pokemon.species.rawValue, comment: "")
             title = "#\(pokemon.pokedex) \(pokemonName)"
             let counterPokemon: [Any] = PokemonCounter.hardCounters(pokemon.pokedex).map {
                 return $0 as Any
@@ -73,6 +73,23 @@ class GymLeaderDetail: UICollectionViewController {
                 return $0 as Any
             }
             directCounters += counterTypes
+        }
+    }
+    
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+        guard let cell = sender as? GymLeaderPokemonCounter,
+            let counterPokemon = cell.pokemonCounter,
+            let _ = Pokemon.pokemonForSpecies(counterPokemon.species)
+        else { return false }
+        return true
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let cell = sender as? GymLeaderPokemonCounter,
+            let counterPokemon = cell.pokemonCounter,
+            let pokemonInstance = Pokemon.pokemonForSpecies(counterPokemon.species),
+            let destination = segue.destinationViewController as? GymLeaderDetail {
+            destination.pokemon = pokemonInstance
         }
     }
     
@@ -155,7 +172,7 @@ extension GymLeaderDetail {
     override func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
         let cell = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: String(GymLeaderDetailSectionHeader), forIndexPath: indexPath) as! GymLeaderDetailSectionHeader
         if let pokemon = pokemon {
-            let pokemonName = NSLocalizedString(pokemon.name, comment: "")
+            let pokemonName = NSLocalizedString(pokemon.species.rawValue, comment: "")
             var text = ""
             switch indexPath.section {
             case 0:

@@ -101,7 +101,7 @@ extension SearchOverlayTable : UISearchResultsUpdating {
             }
             searchResultsSet = Pokemon.gymLeaders().filter { pokemon in
                 // what to include in the "search index"
-                let pokemonName = NSLocalizedString(pokemon.name, comment: "")
+                let pokemonName = NSLocalizedString(pokemon.species.rawValue, comment: "")
                 let pokemonIndex = "\(pokemon.pokedex)"
                 let whatToSearchOnArray = [pokemonName, pokemonIndex]
                 let descriptionText = whatToSearchOnArray.joinWithSeparator(" ")

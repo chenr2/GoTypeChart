@@ -20,7 +20,7 @@ class PokemonSearchTableResult: UITableViewCell {
     
     func configureCell(pokemon: Pokemon){
         self.pokemon = pokemon
-        let localizedPokemonName = NSLocalizedString(pokemon.name, comment: "")
+        let localizedPokemonName = NSLocalizedString(pokemon.species.rawValue, comment: "")
         pokemonName?.text = "#\(pokemon.pokedex) \(localizedPokemonName)"
         if let firstElement = pokemon.type.first {
             elementName?.text = NSLocalizedString(firstElement.rawValue, comment: "")

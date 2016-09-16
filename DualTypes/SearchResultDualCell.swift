@@ -20,7 +20,7 @@ class SearchResultDualCell: FlexibleCollectionCell {
     
     func configureCell(pokemon: Pokemon){
         self.pokemon = pokemon
-        pokemonName?.text = NSLocalizedString(pokemon.name, comment: "")
+        pokemonName?.text = NSLocalizedString(pokemon.species.rawValue, comment: "")
         if let firstElement = pokemon.type.first {
             elementName?.text = NSLocalizedString(firstElement.rawValue, comment: "")
             firstElementView?.backgroundColor = Colors.colorForElement(firstElement)

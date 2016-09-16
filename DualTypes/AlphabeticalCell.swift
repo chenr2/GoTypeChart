@@ -14,7 +14,7 @@ class AlphabeticalCell: GridCell {
         
     func configureCell(pokemon: Pokemon, sortType: SortType){
         self.pokemon = pokemon
-        pokemonName?.text = NSLocalizedString(pokemon.name, comment: "")
+        pokemonName?.text = NSLocalizedString(pokemon.species.rawValue, comment: "")
         backgroundColor = Colors.purple
     }
 }

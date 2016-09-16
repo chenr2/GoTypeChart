@@ -57,7 +57,7 @@ class GymLeaders: UICollectionViewController {
     var resultSearchController:UISearchController? = nil
     
     func sortAlphabetically(pokemonA: Pokemon, pokemonB: Pokemon) -> Bool {
-        return NSLocalizedString(pokemonA.name, comment: "").lowercaseString < NSLocalizedString(pokemonB.name, comment: "").lowercaseString
+        return NSLocalizedString(pokemonA.species.rawValue, comment: "").lowercaseString < NSLocalizedString(pokemonB.species.rawValue, comment: "").lowercaseString
     }
     
     func sortByIndex(pokemonA: Pokemon, pokemonB: Pokemon) -> Bool {

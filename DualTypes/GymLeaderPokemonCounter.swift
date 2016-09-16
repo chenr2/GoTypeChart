@@ -16,8 +16,11 @@ class GymLeaderPokemonCounter: FlexibleCollectionCell {
     @IBOutlet weak var chargeMoveBubble: UIView!
     @IBOutlet weak var chargeMoveName: UILabel!
     
+    var pokemonCounter: PokemonCounter? = nil
+    
     func configureCell(pokemonCounter: PokemonCounter){
-        pokemonCounterName?.text = NSLocalizedString(pokemonCounter.name, comment: "")
+        self.pokemonCounter = pokemonCounter
+        pokemonCounterName?.text = NSLocalizedString(pokemonCounter.species.rawValue, comment: "")
         if let quickMove = pokemonCounter.quickMove {
             quickMoveBubble.hidden = false
             let quickMoveElement = QuickMove.moveForQuickAttack(quickMove).element
