@@ -20,6 +20,11 @@ struct PokemonCounter {
             quickMove: .mudShot,
             chargeMove: .stoneEdge
         )
+        let machamp = PokemonCounter(
+            species: .machamp,
+            quickMove: .karateChop,
+            chargeMove: .crossChop
+        )
         switch index {
         case 130: // gyarados
             let raichu = PokemonCounter(
@@ -141,22 +146,53 @@ struct PokemonCounter {
             )
             return [magneton]
         case 131: // Lapras
-            return [kabutopsStoneEdge]
+            let magnetonElectric = PokemonCounter(
+                species: .magneton,
+                quickMove: .spark,
+                chargeMove: .discharge
+            )
+            return [machamp, kabutopsStoneEdge, magnetonElectric]
         case 128, 143: // snorlax, tauros
             let fightingPinsir = PokemonCounter(
                 species: .pinsir,
                 quickMove: .rockSmash,
                 chargeMove: .submission
             )
-            return [fightingPinsir]
+            return [fightingPinsir, machamp]
         case 149: // Dragonite
             let lapras = PokemonCounter(
                 species: .lapras,
                 quickMove: .frostBreath,
                 chargeMove: .blizzard
             )
-            return [lapras]
-            
+            let cloyster = PokemonCounter(
+                species: .cloyster,
+                quickMove: .frostBreath,
+                chargeMove: .blizzard
+            )
+            let dewgong = PokemonCounter(
+                species: .dewgong,
+                quickMove: .frostBreath,
+                chargeMove: .blizzard
+            )
+            let clefable = PokemonCounter(
+                species: .clefable,
+                quickMove: .pound,
+                chargeMove: .moonblast
+            )
+            return [lapras, cloyster, dewgong, clefable]
+        case 31, 34:
+            let jynx = PokemonCounter(
+                species: .jynx,
+                quickMove: .frostBreath,
+                chargeMove: .psyshock
+            )
+            let gyarados = PokemonCounter(
+                species: .gyarados,
+                quickMove: .bite,
+                chargeMove: .hydroPump
+            )
+            return [jynx, gyarados]
         default:
             return []
         }
