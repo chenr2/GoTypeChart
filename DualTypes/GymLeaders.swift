@@ -28,6 +28,10 @@ enum SortType: String {
 
 class GymLeaders: UICollectionViewController {
     
+    @IBAction func switchTabs(sender: AnyObject) {
+        tabBarController?.selectedIndex = 1
+    }
+    
     let locationManager = CLLocationManager()
 
     var searchResultsSet: [Pokemon] = []

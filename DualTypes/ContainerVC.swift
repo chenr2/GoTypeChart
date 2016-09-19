@@ -14,6 +14,21 @@ protocol ContainerEventRelay {
 }
 
 class ContainerVC: UIViewController {
+
+    @IBAction func panGesture(sender: UIPanGestureRecognizer) {
+        let translation = sender.translationInView(view)
+        
+        let progress = MenuHelper.calculateProgress(translation, viewBounds: view.bounds, direction: .Left)
+        
+        if let tbc = tabBarController as? TabBarController {
+            MenuHelper.mapGestureStateToInteractor(
+                sender.state,
+                progress: progress,
+                interactor: tbc.interactor){
+                    self.tabBarController?.selectedIndex = 1
+            }
+        }
+    }
     
     @IBOutlet weak var actionButton: UIButton!
     
