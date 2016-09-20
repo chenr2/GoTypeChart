@@ -25,7 +25,64 @@ struct PokemonCounter {
             quickMove: .karateChop,
             chargeMove: .crossChop
         )
+        let solarExeggutor = PokemonCounter(
+            species: .exeggutor,
+            quickMove: .zenHeadbutt,
+            chargeMove: .solarBeam
+        )
+        let venusaur = PokemonCounter(
+            species: .venusaur,
+            quickMove: .vineWhip,
+            chargeMove: .solarBeam
+        )
+        let tangela = PokemonCounter(
+            species: .tangela,
+            quickMove: .vineWhip,
+            chargeMove: .powerWhip
+        )
+        let victreebel = PokemonCounter(
+            species: .victreebel,
+            quickMove: .razorLeaf,
+            chargeMove: .solarBeam
+        )
+        let vileplume = PokemonCounter(
+            species: .vileplume,
+            quickMove: .razorLeaf,
+            chargeMove: .solarBeam
+        )
+        let omanyte = PokemonCounter(
+            species: .omanyte,
+            quickMove: .waterGun,
+            chargeMove: .brine
+        )
+        let primeape = PokemonCounter(
+            species: .primeape,
+            quickMove: .lowKick,
+            chargeMove: .crossChop
+        )
+
         switch index {
+        case 126: // magmar
+            let starmie = PokemonCounter(
+                species: .starmie,
+                quickMove: .waterGun,
+                chargeMove: .hydroPump
+            )
+            return [kabutopsStoneEdge, omanyte, starmie]
+        case 62: // poliwrath
+            let slowbro = PokemonCounter(
+                species: .slowbro,
+                quickMove: .confusion,
+                chargeMove: .psychic
+            )
+            return [solarExeggutor, venusaur, vileplume, victreebel, tangela, slowbro]
+        case 18: // pidgeot
+            let magneton = PokemonCounter(
+                species: .magneton,
+                quickMove: .spark,
+                chargeMove: .discharge
+            )
+            return [magneton]
         case 130: // gyarados
             let raichu = PokemonCounter(
                 species: .raichu,
@@ -67,30 +124,10 @@ struct PokemonCounter {
             return [golem, rhydon, sandslash, marowak]
 
         case 134: // vaporeon
-            let victreebel = PokemonCounter(
-                species: .victreebel,
-                quickMove: .razorLeaf,
-                chargeMove: .solarBeam
-            )
-            let vileplume = PokemonCounter(
-                species: .vileplume,
-                quickMove: .razorLeaf,
-                chargeMove: .solarBeam
-            )
-            let venusaur = PokemonCounter(
-                species: .venusaur,
-                quickMove: .vineWhip,
-                chargeMove: .solarBeam
-            )
-            return [victreebel, vileplume, venusaur]
+            return [venusaur, vileplume, victreebel, tangela]
         case 6, 146: // charizard
             return [kabutopsStoneEdge]
-        case 38, 59, 78, 126, 136: // arcanine, flareon, magmar, ninetales, rapidash
-            let omanyte = PokemonCounter(
-                species: .omanyte,
-                quickMove: .waterGun,
-                chargeMove: .brine
-            )
+        case 38, 59, 78, 136: // arcanine, flareon, ninetales, rapidash
             return [kabutopsStoneEdge, omanyte]
         case 3, 45, 71: // Venusaur, Vileplume, Victreebel
             let charizard = PokemonCounter(
@@ -98,23 +135,23 @@ struct PokemonCounter {
                 quickMove: .wingAttack,
                 chargeMove: .fireBlast
             )
-            let jynx = PokemonCounter(
-                species: .jynx,
-                quickMove: .frostBreath,
-                chargeMove: .psyshock
+            let venomoth = PokemonCounter(
+                species: .venomoth,
+                quickMove: .confusion,
+                chargeMove: .psychic
+            )
+            let golbat = PokemonCounter(
+                species: .golbat,
+                quickMove: .wingAttack,
+                chargeMove: .airCutter
             )
             let pidgeot = PokemonCounter(
                 species: .pidgeot,
                 quickMove: .wingAttack,
                 chargeMove: .hurricane
             )
-            return [charizard, jynx, pidgeot]
+            return [charizard, venomoth, golbat, pidgeot]
         case 80: // slowbro
-            let solarExeggutor = PokemonCounter(
-                species: .exeggutor,
-                quickMove: .zenHeadbutt,
-                chargeMove: .solarBeam
-            )
             let solarParasect = PokemonCounter(
                 species: .parasect,
                 quickMove: .bugBite,
@@ -125,8 +162,18 @@ struct PokemonCounter {
                 quickMove: .poisonJab,
                 chargeMove: .megahorn
             )
-            return [solarExeggutor, solarParasect, idealSeaking]
+            return [solarExeggutor, solarParasect, tangela, idealSeaking]
         case 103: // exeggutor
+            let parasect = PokemonCounter(
+                species: .parasect,
+                quickMove: .bugBite,
+                chargeMove: .xScissor
+            )
+            let butterfree = PokemonCounter(
+                species: .butterfree,
+                quickMove: .bugBite,
+                chargeMove: .bugBuzz
+            )
             let bugPinsir = PokemonCounter(
                 species: .pinsir,
                 quickMove: .furyCutter,
@@ -137,7 +184,7 @@ struct PokemonCounter {
                 quickMove: .furyCutter,
                 chargeMove: .bugBuzz
             )
-            return [bugScyther, bugPinsir]
+            return [parasect, butterfree, bugScyther, bugPinsir]
         case 124: // jynx
             let magneton = PokemonCounter(
                 species: .magneton,
@@ -151,14 +198,24 @@ struct PokemonCounter {
                 quickMove: .spark,
                 chargeMove: .discharge
             )
-            return [machamp, kabutopsStoneEdge, magnetonElectric]
+            let poliwrath = PokemonCounter(
+                species: .poliwrath,
+                quickMove: .mudShot,
+                chargeMove: .submission
+            )
+            return [kabutopsStoneEdge, magnetonElectric, poliwrath, primeape, machamp]
         case 128, 143: // snorlax, tauros
+            let rhydon = PokemonCounter(
+                species: .rhydon,
+                quickMove: .rockSmash,
+                chargeMove: .earthquake
+            )
             let fightingPinsir = PokemonCounter(
                 species: .pinsir,
                 quickMove: .rockSmash,
                 chargeMove: .submission
             )
-            return [fightingPinsir, machamp]
+            return [primeape, machamp, rhydon, fightingPinsir]
         case 149: // Dragonite
             let lapras = PokemonCounter(
                 species: .lapras,

@@ -18,29 +18,25 @@ class Triangulate: UIViewController {
     var locationArray:[CLLocationCoordinate2D] = []
 
     @IBAction func mark(sender: UIBarButtonItem) {
-        guard let currentLocation = currentLocation else { return }
+//        guard let currentLocation = currentLocation else { return }
+        let currentLocation = mapView.centerCoordinate
         locationArray.append(currentLocation)
         redrawCircles()
     }
     
     @IBAction func clear(sender: UIBarButtonItem) {
         locationArray = []
-        redrawCircles()
+        mapView.removeOverlays(mapView.overlays)
+        mapView.removeAnnotations(mapView.annotations)
     }
 
     func redrawCircles(){
-        mapView.removeOverlays(mapView.overlays)
-        let circles = locationArray.map {
-            return MKCircle(centerCoordinate: $0, radius: 200)
-        }
-        mapView.removeAnnotations(mapView.annotations)
-        let pins: [MKAnnotation] = locationArray.map {
-            let annotation = MKPointAnnotation()
-            annotation.coordinate = $0
-            return annotation
-        }
-        mapView.addAnnotations(pins)
-        mapView.addOverlays(circles)
+        guard let currentLocation = currentLocation else { return }
+        let circle = MKCircle(centerCoordinate: currentLocation, radius: 200)
+        mapView.addOverlay(circle)
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = currentLocation
+        mapView.addAnnotation(annotation)
     }
     
     @IBAction func switchTabs(sender: AnyObject) {

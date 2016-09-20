@@ -26,6 +26,31 @@ enum SortType: String {
     case Attack, Defense, Stamina, Index, Alphabetical = "A-Z", Type, MoveType = "Move"
 }
 
+struct TypeResult {
+    let sumDifferential: CGFloat
+    let differential1: CGFloat
+    let differential2: CGFloat
+    let gymLeaderName: String
+    let quickMoveName: String
+    let quickMoveDPS: CGFloat
+    let quickMoveWStab: CGFloat
+    let quickMoveWTypeDMG: CGFloat
+    let chargeMoveName: String
+    let chargeMoveDPS: CGFloat
+    let chargeMoveWStab: CGFloat
+    let chargeMoveWTypeDMG: CGFloat
+    let opponentName: String
+    let oquickMoveName: String
+    let oquickMoveDPS: CGFloat
+    let oquickMoveWStab: CGFloat
+    let oquickMoveWTypeDMG: CGFloat
+    let ochargeMoveName: String
+    let ochargeMoveDPS: CGFloat
+    let ochargeMoveWStab: CGFloat
+    let ochargeMoveWTypeDMG: CGFloat
+    
+}
+
 class GymLeaders: UICollectionViewController {
     
     @IBAction func switchTabs(sender: AnyObject) {
@@ -165,6 +190,155 @@ class GymLeaders: UICollectionViewController {
         collectionView?.reloadData()
     }
     
+    func calculateTypeCounters(){
+        let gymLeaders = Pokemon.realGymLeaders()
+        let opponents = Pokemon.realGymLeaders()
+        var typeResults: [TypeResult] = []
+        for gymLeader in gymLeaders {
+            for quickMove in gymLeader.quickAttacks {
+                for chargeMove in gymLeader.specialAttacks {
+                    for opponent in opponents {
+                        let qm = QuickMove.moveForQuickAttack(quickMove)
+                        let qmStabFlag = gymLeader.type.contains(qm.element)
+                        let qmDPS = qm.dps
+                        let qmStabMultiplier: CGFloat = qmStabFlag ? 1.25 : 1
+                        let qmStab = qmDPS * qmStabMultiplier
+                        let opponentType1 = opponent.type.first!
+                        var qmBonusDamage1: CGFloat = 1
+                        let qmBonusFlag1 = Pokemon.vulnerabilitySet(opponentType1)[qm.element]!
+                        switch qmBonusFlag1 {
+                            case .double:
+                                qmBonusDamage1 = 1.25
+                            case .half:
+                                qmBonusDamage1 = 0.8
+                            default:
+                                qmBonusDamage1 = 1
+                        }
+                        var qmBonusDamage2: CGFloat = 1
+                        if opponent.type.count == 2 {
+                            let opponentType2 = opponent.type.last!
+                            let qmBonusFlag2 = Pokemon.vulnerabilitySet(opponentType2)[qm.element]!
+                            switch qmBonusFlag2 {
+                            case .double:
+                                qmBonusDamage2 = 1.25
+                            case .half:
+                                qmBonusDamage2 = 0.8
+                            default:
+                                qmBonusDamage2 = 1
+                            }
+                        }
+                        let qmTypeDamage = qmStab * qmBonusDamage1 * qmBonusDamage2
+                        let cm = SpecialMove.moveForSpecialAttack(chargeMove)
+                        let cmStabFlag = gymLeader.type.contains(cm.element)
+                        let cmDPS = cm.dps
+                        let cmStabMultiplier: CGFloat = cmStabFlag ? 1.25 : 1
+                        let cmStab = cmDPS * cmStabMultiplier
+                        var cmBonusDamage1: CGFloat = 1
+                        let cmBonusFlag1 = Pokemon.vulnerabilitySet(opponentType1)[cm.element]!
+                        switch cmBonusFlag1 {
+                        case .double:
+                            cmBonusDamage1 = 1.25
+                        case .half:
+                            cmBonusDamage1 = 0.8
+                        default:
+                            cmBonusDamage1 = 1
+                        }
+                        var cmBonusDamage2: CGFloat = 1
+                        if opponent.type.count == 2 {
+                            let opponentType2 = opponent.type.last!
+                            let cmBonusFlag2 = Pokemon.vulnerabilitySet(opponentType2)[cm.element]!
+                            switch cmBonusFlag2 {
+                            case .double:
+                                cmBonusDamage2 = 1.25
+                            case .half:
+                                cmBonusDamage2 = 0.8
+                            default:
+                                cmBonusDamage2 = 1
+                            }
+                        }
+                        let cmTypeDamage = cmStab * cmBonusDamage1 * cmBonusDamage2
+                        let differential = qmTypeDamage - qmStab + cmTypeDamage - cmStab
+                        if differential > 0 {
+                            for opponentQM in opponent.quickAttacks {
+                                for opponentCM in opponent.specialAttacks {
+                                    let oqm = QuickMove.moveForQuickAttack(opponentQM)
+                                    let oqmStabFlag = opponent.type.contains(oqm.element)
+                                    let oqmDPS = oqm.dps
+                                    let oqmStabMultiplier: CGFloat = oqmStabFlag ? 1.25 : 1
+                                    let oqmStab = oqmDPS * oqmStabMultiplier
+                                    let myType1 = gymLeader.type.first!
+                                    var oqmBonusDamage1: CGFloat = 1
+                                    let oqmBonusFlag1 = Pokemon.vulnerabilitySet(myType1)[oqm.element]!
+                                    switch oqmBonusFlag1 {
+                                    case .double:
+                                        oqmBonusDamage1 = 1.25
+                                    case .half:
+                                        oqmBonusDamage1 = 0.8
+                                    default:
+                                        oqmBonusDamage1 = 1
+                                    }
+                                    var oqmBonusDamage2: CGFloat = 1
+                                    if gymLeader.type.count == 2 {
+                                        let myType2 = gymLeader.type.last!
+                                        let oqmBonusFlag2 = Pokemon.vulnerabilitySet(myType2)[oqm.element]!
+                                        switch oqmBonusFlag2 {
+                                        case .double:
+                                            oqmBonusDamage2 = 1.25
+                                        case .half:
+                                            oqmBonusDamage2 = 0.8
+                                        default:
+                                            oqmBonusDamage2 = 1
+                                        }
+                                    }
+                                    let oqmTypeDamage = oqmStab * oqmBonusDamage1 * oqmBonusDamage2
+                                    let ocm = SpecialMove.moveForSpecialAttack(opponentCM)
+                                    let ocmStabFlag = gymLeader.type.contains(ocm.element)
+                                    let ocmDPS = ocm.dps
+                                    let ocmStabMultiplier: CGFloat = ocmStabFlag ? 1.25 : 1
+                                    let ocmStab = ocmDPS * ocmStabMultiplier
+                                    var ocmBonusDamage1: CGFloat = 1
+                                    let ocmBonusFlag1 = Pokemon.vulnerabilitySet(myType1)[ocm.element]!
+                                    switch ocmBonusFlag1 {
+                                    case .double:
+                                        ocmBonusDamage1 = 1.25
+                                    case .half:
+                                        ocmBonusDamage1 = 0.8
+                                    default:
+                                        ocmBonusDamage1 = 1
+                                    }
+                                    var ocmBonusDamage2: CGFloat = 1
+                                    if gymLeader.type.count == 2 {
+                                        let myType2 = gymLeader.type.last!
+                                        let ocmBonusFlag2 = Pokemon.vulnerabilitySet(myType2)[ocm.element]!
+                                        switch ocmBonusFlag2 {
+                                        case .double:
+                                            ocmBonusDamage2 = 1.25
+                                        case .half:
+                                            ocmBonusDamage2 = 0.8
+                                        default:
+                                            ocmBonusDamage2 = 1
+                                        }
+                                    }
+                                    let ocmTypeDamage = ocmStab * ocmBonusDamage1 * ocmBonusDamage2
+                                    let differential2 = oqmTypeDamage - oqmStab + ocmTypeDamage - ocmStab
+                                    let thisResult = TypeResult(sumDifferential: differential - differential2, differential1: differential, differential2: differential2, gymLeaderName: gymLeader.species.rawValue, quickMoveName: quickMove.rawValue, quickMoveDPS: qm.dps, quickMoveWStab: qmStab, quickMoveWTypeDMG: qmTypeDamage, chargeMoveName: chargeMove.rawValue, chargeMoveDPS: cm.dps, chargeMoveWStab: cmStab, chargeMoveWTypeDMG: cmTypeDamage, opponentName: opponent.species.rawValue, oquickMoveName: opponentQM.rawValue, oquickMoveDPS: oqmDPS, oquickMoveWStab: oqmStab, oquickMoveWTypeDMG: oqmTypeDamage, ochargeMoveName: opponentCM.rawValue, ochargeMoveDPS: ocmDPS, ochargeMoveWStab: ocmStab, ochargeMoveWTypeDMG: ocmTypeDamage)
+                                    typeResults.append(thisResult)
+                                }
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+        typeResults = typeResults.sort { a, b in
+            return a.sumDifferential > b.sumDifferential
+        }
+        typeResults.map {
+            print("\($0.sumDifferential), \($0.differential1), \($0.differential2), \($0.gymLeaderName), \($0.quickMoveName), \($0.chargeMoveName), \($0.opponentName), \($0.oquickMoveName), \($0.ochargeMoveName)")
+        }
+    }
+    
     override func viewDidLoad() {
         locationManager.requestWhenInUseAuthorization() 
         resetSearch()
@@ -185,6 +359,7 @@ class GymLeaders: UICollectionViewController {
         resultSearchController?.delegate = self
         resultSearchController?.searchBar.enablesReturnKeyAutomatically = false
         resultSearchController?.searchBar.autocapitalizationType = .None
+//        calculateTypeCounters()
     }
     
     override func viewWillAppear(animated: Bool) {
