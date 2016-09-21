@@ -174,7 +174,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iuX-3I-ZWc" id="6vB-3e-kvt">
-                                    <frame key="frameInset" width="342" height="43.5"/>
+                                    <frame key="frameInset" width="342" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S7f-DS-XIz">
@@ -246,7 +246,7 @@
                                 <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AkF-mb-sPy" id="2LR-J8-bsz">
-                                    <frame key="frameInset" width="375" height="43.5"/>
+                                    <frame key="frameInset" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fy8-wq-1kk">
@@ -293,7 +293,7 @@
                                 <rect key="frame" x="0.0" y="116" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="w8g-uq-cb3" id="8m0-wo-hCj">
-                                    <frame key="frameInset" width="375" height="43.5"/>
+                                    <frame key="frameInset" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dzo-RZ-P3z">
@@ -392,7 +392,7 @@
                         </view>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GymLeaderCell" id="BFd-Js-7u0" customClass="GymLeaderCell" customModule="DualTypes" customModuleProvider="target">
-                                <rect key="frame" x="5" y="68.5" width="107" height="64"/>
+                                <rect key="frame" x="5" y="69" width="107" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="107" height="64"/>
@@ -501,7 +501,7 @@
                                 </connections>
                             </collectionViewCell>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="elementCell" id="kWJ-uB-ADJ" customClass="SearchElementCell" customModule="DualTypes" customModuleProvider="target">
-                                <rect key="frame" x="5" y="177.5" width="111" height="47"/>
+                                <rect key="frame" x="5" y="178" width="111" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="111" height="47"/>
@@ -1012,15 +1012,25 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WBV-S1-Pe0">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="szW-nv-szL"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                            <color key="textColor" red="0.25490196079999999" green="0.45882352939999999" blue="0.019607843140000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </view>
                                 <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="nYP-5B-ail" firstAttribute="top" secondItem="b8c-q8-Qbq" secondAttribute="bottom" constant="5" id="2cS-nT-aOG"/>
                                     <constraint firstAttribute="trailing" secondItem="nYP-5B-ail" secondAttribute="trailing" constant="5" id="3F8-ZL-Oru"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="WBV-S1-Pe0" secondAttribute="trailing" id="9bM-qb-CKD"/>
                                     <constraint firstItem="nYP-5B-ail" firstAttribute="leading" secondItem="ZSy-Nj-uVS" secondAttribute="leading" constant="5" id="GYJ-FW-zvW"/>
+                                    <constraint firstItem="FwL-li-Y88" firstAttribute="top" secondItem="WBV-S1-Pe0" secondAttribute="bottom" id="Kk2-HK-J8q"/>
+                                    <constraint firstItem="WBV-S1-Pe0" firstAttribute="top" secondItem="ZSy-Nj-uVS" secondAttribute="top" id="QYK-k3-FMq"/>
                                     <constraint firstAttribute="trailing" secondItem="b8c-q8-Qbq" secondAttribute="trailing" constant="5" id="QZ9-GM-uwE"/>
-                                    <constraint firstItem="FwL-li-Y88" firstAttribute="top" secondItem="ZSy-Nj-uVS" secondAttribute="topMargin" constant="3" id="dcK-TO-rNI"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="FwL-li-Y88" secondAttribute="trailing" id="ksw-I1-N6i"/>
                                     <constraint firstItem="b8c-q8-Qbq" firstAttribute="top" secondItem="FwL-li-Y88" secondAttribute="bottom" constant="3" id="oQd-qG-HW7"/>
                                     <constraint firstAttribute="bottomMargin" secondItem="nYP-5B-ail" secondAttribute="bottom" constant="-2" id="rnp-kg-A6v"/>
@@ -1039,11 +1049,12 @@
                                     <outlet property="pokemonCounterName" destination="FwL-li-Y88" id="roR-dr-622"/>
                                     <outlet property="quickMoveBubble" destination="b8c-q8-Qbq" id="UOe-wx-5RH"/>
                                     <outlet property="quickMoveName" destination="zw9-cJ-Ebz" id="Oj8-V8-wXe"/>
+                                    <outlet property="typeBonus" destination="WBV-S1-Pe0" id="WsZ-Lt-SEc"/>
                                     <segue destination="eGV-m0-bll" kind="push" id="ayx-os-awi"/>
                                 </connections>
                             </collectionViewCell>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GymLeaderDetailTypeCell" id="0cS-HD-xdR" customClass="GymLeaderDetailTypeCell" customModule="DualTypes" customModuleProvider="target">
-                                <rect key="frame" x="10" y="261.5" width="101" height="97"/>
+                                <rect key="frame" x="10" y="262" width="101" height="97"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="101" height="97"/>

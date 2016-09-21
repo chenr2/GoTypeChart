@@ -10,35 +10,29 @@ import UIKit
 
 class GymLeaderPokemonCounter: FlexibleCollectionCell {
     
+    @IBOutlet weak var typeBonus: UILabel! // defense
     @IBOutlet weak var pokemonCounterName: UILabel! // pokemon name
     @IBOutlet weak var quickMoveBubble: UIView!
     @IBOutlet weak var quickMoveName: UILabel!
     @IBOutlet weak var chargeMoveBubble: UIView!
     @IBOutlet weak var chargeMoveName: UILabel!
     
-    var pokemonCounter: PokemonCounter? = nil
+    var typeResult: TypeResult? = nil
     
-    func configureCell(pokemonCounter: PokemonCounter){
-        self.pokemonCounter = pokemonCounter
-        pokemonCounterName?.text = NSLocalizedString(pokemonCounter.species.rawValue, comment: "")
-        if let quickMove = pokemonCounter.quickMove {
-            quickMoveBubble.hidden = false
-            let quickMoveElement = QuickMove.moveForQuickAttack(quickMove).element
-            quickMoveName?.text = NSLocalizedString(quickMove.rawValue, comment: "")
-            quickMoveName?.textColor = Colors.textColorForElement(quickMoveElement)
-            quickMoveBubble.backgroundColor = Colors.colorForElement(quickMoveElement)
-        } else {
-            quickMoveBubble.hidden = true
-        }
-        if let chargeMove = pokemonCounter.chargeMove {
-            chargeMoveBubble.hidden = false
-            let chargeMoveElement = SpecialMove.moveForSpecialAttack(chargeMove).element
-            chargeMoveName?.text = NSLocalizedString(chargeMove.rawValue, comment: "")
-            chargeMoveName?.textColor = Colors.textColorForElement(chargeMoveElement)
-            chargeMoveBubble?.backgroundColor = Colors.colorForElement(chargeMoveElement)
-        } else {
-            chargeMoveBubble.hidden = true 
-        }
+    func configureCell(typeResult: TypeResult){
+        self.typeResult = typeResult
+        pokemonCounterName?.text = NSLocalizedString(typeResult.opponent.species.rawValue, comment: "")
+        let quickMove = typeResult.opponentQuickMove
+        let quickMoveElement = quickMove.element
+        quickMoveName?.text = NSLocalizedString(quickMove.quickAttack.rawValue, comment: "")
+        quickMoveName?.textColor = Colors.textColorForElement(quickMoveElement)
+        quickMoveBubble.backgroundColor = Colors.colorForElement(quickMoveElement)
+        let chargeMove = typeResult.opponentChargeMove
+        let chargeMoveElement = chargeMove.element
+        chargeMoveName?.text = NSLocalizedString(chargeMove.specialAttack.rawValue, comment: "")
+        chargeMoveName?.textColor = Colors.textColorForElement(chargeMoveElement)
+        chargeMoveBubble?.backgroundColor = Colors.colorForElement(chargeMoveElement)
+        typeBonus?.text = String(format: "+%.1f", typeResult.sumDifferential)
     }
     
 }

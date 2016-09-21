@@ -15,7 +15,7 @@ class SearchOverlayTable: UITableViewController {
     var modifySearchTextDelegate: ModifySearchTextDelegate? = nil
     
     func resetSearchResults(){
-        searchResultsSet = Pokemon.gymLeaders()
+        searchResultsSet = PokemonCollections.allPokemon()
         quickMoveSet = QuickAttack.allValues.map { quickAttack in
             return QuickMove.moveForQuickAttack(quickAttack)
         }
@@ -99,7 +99,7 @@ extension SearchOverlayTable : UISearchResultsUpdating {
                 .filter {
                     return !$0.isEmpty
             }
-            searchResultsSet = Pokemon.gymLeaders().filter { pokemon in
+            searchResultsSet = PokemonCollections.allPokemon().filter { pokemon in
                 // what to include in the "search index"
                 let pokemonName = NSLocalizedString(pokemon.species.rawValue, comment: "")
                 let pokemonIndex = "\(pokemon.pokedex)"

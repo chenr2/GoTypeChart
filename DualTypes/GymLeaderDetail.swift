@@ -47,7 +47,7 @@ class GymLeaderDetail: UICollectionViewController {
     
     var filterJump: FilterJump? = nil
     
-    var directCounters: [Any] = []
+    var directCounters: [TypeResult] = []
     
     func getKeysOfValue(damage: DamageType, pokemon: Pokemon) -> [ElementType] {
         var elements: [ElementType] = []
@@ -65,31 +65,27 @@ class GymLeaderDetail: UICollectionViewController {
         if let pokemon = pokemon {
             let pokemonName = NSLocalizedString(pokemon.species.rawValue, comment: "")
             title = "#\(pokemon.pokedex) \(pokemonName)"
-            let counterPokemon: [Any] = PokemonCounter.hardCounters(pokemon.pokedex).map {
-                return $0 as Any
-            }
-            directCounters += counterPokemon
-            let counterTypes: [Any] = pokemon.bestCounter.map {
-                return $0 as Any
-            }
-            directCounters += counterTypes
+            
+            directCounters = Pokemon.calculateTypeCounters(
+                pokemon,
+                quickAttack: quickAttacks.first!,
+                specialAttack: specialAttacks.first!
+            )
         }
     }
     
-    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
-        guard let cell = sender as? GymLeaderPokemonCounter,
-            let counterPokemon = cell.pokemonCounter,
-            let _ = Pokemon.pokemonForSpecies(counterPokemon.species)
-        else { return false }
-        return true
-    }
+//    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+//        guard let cell = sender as? GymLeaderPokemonCounter,
+//            let _ = cell.typeResult
+//        else { return false }
+//        return true
+//    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let cell = sender as? GymLeaderPokemonCounter,
-            let counterPokemon = cell.pokemonCounter,
-            let pokemonInstance = Pokemon.pokemonForSpecies(counterPokemon.species),
+            let counterPokemon = cell.typeResult?.opponent,
             let destination = segue.destinationViewController as? GymLeaderDetail {
-            destination.pokemon = pokemonInstance
+            destination.pokemon = counterPokemon
             // pop to root
             destination.filterJump = filterJump
         }
@@ -133,13 +129,9 @@ extension GymLeaderDetail {
             return cell
         case 1:
             let selectedItem = directCounters[indexPath.row]
-            if let elementCounter = selectedItem as? ElementType {
-                detailTypeCell.configureCell(elementCounter)
-            } else if let pokemonCounter = selectedItem as? PokemonCounter {
-                let pokemonCounterCell = collectionView.dequeueReusableCellWithReuseIdentifier(String(GymLeaderPokemonCounter), forIndexPath: indexPath) as! GymLeaderPokemonCounter
-                pokemonCounterCell.configureCell(pokemonCounter)
-                return pokemonCounterCell
-            }
+            let pokemonCounterCell = collectionView.dequeueReusableCellWithReuseIdentifier(String(GymLeaderPokemonCounter), forIndexPath: indexPath) as! GymLeaderPokemonCounter
+            pokemonCounterCell.configureCell(selectedItem)
+            return pokemonCounterCell
         case 2:
             detailTypeCell.configureCell(double[indexPath.row])
         case 3:
