@@ -17,8 +17,9 @@ class Triangulate: UIViewController {
 
     var locationArray:[CLLocationCoordinate2D] = []
 
+    @IBOutlet weak var instructionVisualEffects: UIVisualEffectView!
+    @IBOutlet weak var locationInstructions: UILabel!
     @IBAction func mark(sender: UIBarButtonItem) {
-//        guard let currentLocation = currentLocation else { return }
         let currentLocation = mapView.centerCoordinate
         locationArray.append(currentLocation)
         redrawCircles()
@@ -69,6 +70,13 @@ class Triangulate: UIViewController {
         mapView.userTrackingMode = .Follow
     }
     
+    override func viewDidAppear(animated: Bool) {
+        locationManager.startUpdatingLocation()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        locationManager.stopUpdatingLocation()
+    }
 }
 
 extension Triangulate : CLLocationManagerDelegate {
@@ -79,6 +87,8 @@ extension Triangulate : CLLocationManagerDelegate {
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        locationInstructions?.text = ""
+        instructionVisualEffects.hidden = true
         guard let location = locations.first else { return }
         let span = MKCoordinateSpanMake(0.007, 0.007)
         let region = MKCoordinateRegion(center: location.coordinate, span: span)
@@ -87,6 +97,8 @@ extension Triangulate : CLLocationManagerDelegate {
     }
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        locationInstructions?.text = NSLocalizedString("LOCATION_INSTRUCTIONS", comment: "")
+        instructionVisualEffects.hidden = false
         print("error:: (error)")
     }
 }

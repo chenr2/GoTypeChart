@@ -56,8 +56,8 @@
 /* Class = "UILabel"; text = "Label"; ObjectID = "QCX-iG-EFH"; */
 "QCX-iG-EFH.text" = "Label";
 
-/* Class = "UIButton"; normalTitle = "Type"; ObjectID = "RwI-XR-USl"; */
-"RwI-XR-USl.normalTitle" = "タイプ";
+/* Class = "UIButton"; normalTitle = "leader default action"; ObjectID = "RwI-XR-USl"; */
+"RwI-XR-USl.normalTitle" = "リーダー";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "S7f-DS-XIz"; */
 "S7f-DS-XIz.text" = "Label";

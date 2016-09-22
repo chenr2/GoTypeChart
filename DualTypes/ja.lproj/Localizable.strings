@@ -324,3 +324,4 @@
 "Move" = "技タイプ";
 "Leader" = "リーダー";
 "Pokemon" = "ポケモン";
+"LOCATION_INSTRUCTIONS" = "「設定」アプリを起動して、>「プライバシー」>「位置情報サービス」> 「GoTypeChart」>「このappの使用中のみ許可」と進んでください。";

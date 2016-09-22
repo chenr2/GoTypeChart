@@ -319,3 +319,5 @@
 "Dragonite" = "Dragonite";
 "Mewtwo" = "Mewtwo";
 "Mew" = "Mew";
+
+"LOCATION_INSTRUCTIONS" = "Go to Settings > Privacy > Location Services and grant GoTypeChart location access.";
