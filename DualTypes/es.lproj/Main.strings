@@ -56,8 +56,8 @@
 /* Class = "UILabel"; text = "Label"; ObjectID = "QCX-iG-EFH"; */
 "QCX-iG-EFH.text" = "Label";
 
-/* Class = "UIButton"; normalTitle = "Type"; ObjectID = "RwI-XR-USl"; */
-"RwI-XR-USl.normalTitle" = "Tipo";
+/* Class = "UIButton"; normalTitle = "default action button"; ObjectID = "RwI-XR-USl"; */
+"RwI-XR-USl.normalTitle" = "Líderes";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "S7f-DS-XIz"; */
 "S7f-DS-XIz.text" = "Label";
@@ -80,8 +80,8 @@
 /* Class = "UIButton"; normalTitle = "Species Type"; ObjectID = "dLd-ot-cyQ"; */
 "dLd-ot-cyQ.normalTitle" = "Tipo de Especie";
 
-/* Class = "UIButton"; normalTitle = "Index"; ObjectID = "dko-ye-BIk"; */
-"dko-ye-BIk.normalTitle" = "Número";
+/* Class = "UIButton"; normalTitle = "Leaders on menu"; ObjectID = "dko-ye-BIk"; */
+"dko-ye-BIk.normalTitle" = "Líderes";
 
 /* Class = "UILabel"; text = " "; ObjectID = "eI8-Qe-zrT"; */
 "eI8-Qe-zrT.text" = " ";

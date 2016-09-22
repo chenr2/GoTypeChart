@@ -80,8 +80,8 @@
 /* Class = "UIButton"; normalTitle = "Species Type"; ObjectID = "dLd-ot-cyQ"; */
 "dLd-ot-cyQ.normalTitle" = "ポケモンタイプ";
 
-/* Class = "UIButton"; normalTitle = "Index"; ObjectID = "dko-ye-BIk"; */
-"dko-ye-BIk.normalTitle" = "番号";
+/* Class = "UIButton"; normalTitle = "Leader"; ObjectID = "dko-ye-BIk"; */
+"dko-ye-BIk.normalTitle" = "リーダー";
 
 /* Class = "UILabel"; text = " "; ObjectID = "eI8-Qe-zrT"; */
 "eI8-Qe-zrT.text" = " ";

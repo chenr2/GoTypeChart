@@ -241,8 +241,10 @@ extension GymLeaderDetail {
         var moveElement: ElementType? = nil
         switch indexPath.section {
         case 0:
-            let elements = pokemon!.type
-            filterJump?.setFilters(elements)
+            if let pokemon = pokemon {
+                let elements = pokemon.type
+                filterJump?.setFilters(elements)
+            }
         case 2:
             selectedQuickAttack = indexPath.row
             recalculateDirectCounters()

@@ -66,7 +66,7 @@ class Triangulate: UIViewController {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
-        
+        mapView.userTrackingMode = .Follow
     }
     
 }
@@ -116,6 +116,13 @@ extension Triangulate : MKMapViewDelegate {
             pinView!.annotation = annotation
         }
         return pinView
+    }
+    
+    func mapView(mapView: MKMapView, didUpdateUserLocation userLocation: MKUserLocation) {
+        let span = MKCoordinateSpanMake(0.007, 0.007)
+        let region = MKCoordinateRegion(center: userLocation.coordinate, span: span)
+        currentLocation = userLocation.coordinate
+        mapView.setRegion(region, animated: false)
     }
 
 }
