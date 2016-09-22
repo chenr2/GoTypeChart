@@ -18,7 +18,11 @@ class StatRing: UIView {
     
     let units = 2 * π / 100
     
-    let arcColor: UIColor = UIColor.darkGrayColor()
+    var arcColor: UIColor = UIColor.darkGrayColor() {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
     
     // https://www.raywenderlich.com/90690/modern-core-graphics-with-swift-part-1
     override func drawRect(rect: CGRect) {

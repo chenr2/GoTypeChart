@@ -385,7 +385,7 @@ class Pokemon {
     }
     
     class func calculateTypeCounters(pokemon: Pokemon, quickAttack: QuickAttack, specialAttack: SpecialAttack) -> [TypeResult] {
-        let opponents = PokemonCollections.gymLeaders()
+        let opponents = PokemonCollections.contenders()
         var typeResults: [TypeResult] = []
         var topResults: [TypeResult] = []
         let quickMove = QuickMove.moveForQuickAttack(quickAttack)
@@ -461,9 +461,12 @@ class Pokemon {
             }
         }
         
-        for leader in PokemonCollections.gymLeaders() {
+        for leader in PokemonCollections.contenders() {
             let moveCombinations = typeResults.filter {
-                $0.opponent.pokedex == leader.pokedex
+                $0.opponent.species == leader.species
+            }.sort { a, b in
+                // tie-breaker
+                (a.opponentQuickMove.dps + a.opponentChargeMove.dps) > (b.opponentQuickMove.dps + b.opponentChargeMove.dps)
             }.sort { a, b in
                 a.sumDifferential > b.sumDifferential
             }
@@ -476,10 +479,6 @@ class Pokemon {
         }
         return Array(topResults.prefix(6))
     }
-    
-    
-    
-    
     
     init(pokedex: Int, species: PokemonEnumeration, type: [ElementType], quickAttacks: [QuickAttack], specialAttacks: [SpecialAttack], stamina: Int, attack: Int, defense: Int){
         self.pokedex = pokedex

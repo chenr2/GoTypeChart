@@ -171,7 +171,7 @@ struct PokemonCollections {
     static let mewtwo = Pokemon(pokedex: 150, species: .mewtwo, type: [.Psychic], quickAttacks: [.confusion, .psychoCut], specialAttacks: [.psychic, .shadowBall, .hyperBeam], stamina: 212, attack: 284, defense: 202)
     static let mew = Pokemon(pokedex: 151, species: .mew, type: [.Psychic], quickAttacks: [.pound], specialAttacks: [.blizzard, .dragonPulse, .earthquake, .fireBlast, .hyperBeam, .psychic, .solarBeam, .thunder ], stamina: 200, attack: 220, defense: 220)
     
-    static func gymLeaders() -> [Pokemon] {
+    static func contenders() -> [Pokemon] {
         return [
             PokemonCollections.venusaur,
             PokemonCollections.charizard,
@@ -406,6 +406,30 @@ struct PokemonCollections {
             PokemonCollections.dragonite,
             PokemonCollections.mewtwo,
             PokemonCollections.mew
+        ]
+    }
+    
+    static func gymLeaders() -> [Pokemon] {
+        return [
+            PokemonCollections.venusaur,
+            PokemonCollections.charizard,
+            PokemonCollections.blastoise,
+            PokemonCollections.nidoqueen,
+            PokemonCollections.nidoking,
+            PokemonCollections.vileplume,
+            PokemonCollections.arcanine,
+            PokemonCollections.poliwrath,
+            PokemonCollections.victreebel,
+            PokemonCollections.slowbro,
+            PokemonCollections.exeggutor,
+            PokemonCollections.magmar,
+            PokemonCollections.gyarados,
+            PokemonCollections.lapras,
+            PokemonCollections.vaporeon,
+            PokemonCollections.jolteon,
+            PokemonCollections.flareon,
+            PokemonCollections.snorlax,
+            PokemonCollections.dragonite
         ]
     }
     

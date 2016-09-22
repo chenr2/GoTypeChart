@@ -23,7 +23,7 @@ protocol FilterJump {
 }
 
 enum SortType: String {
-    case Attack, Defense, Stamina, Index, Alphabetical = "A-Z", Type, MoveType = "Move"
+    case Attack, Defense, Stamina, Leader, Alphabetical = "A-Z", Type, MoveType = "Move"
 }
 
 
@@ -52,7 +52,7 @@ class GymLeaders: UICollectionViewController {
     
     var containerEventRelay: ContainerEventRelay? = nil
     
-    var sortType:SortType = .Type {
+    var sortType:SortType = .Leader {
         didSet {
             containerEventRelay?.detectActionMenuChange(sortType)
             resetMonsSortedBySelectedType()
@@ -92,15 +92,12 @@ class GymLeaders: UICollectionViewController {
         collectionView?.reloadData()
     }
     
-    func sortExistingArrayByIndex(){
-        gymLeadersArray = gymLeadersArray.sort(sortByIndex)
-    }
-    
     func resetMonsSortedBySelectedType(){
         gymLeadersArray = PokemonCollections.allPokemon()
         switch sortType {
-        case .Index:
-            sortExistingArrayByIndex()
+        case .Leader:
+            let gymDefenders = PokemonCollections.gymLeaders()
+            gymLeadersArray = gymDefenders.sort(sortAlphabetically)
         case .Alphabetical:
             gymLeadersArray = gymLeadersArray.sort(sortAlphabetically)
         case .Attack:
@@ -189,7 +186,6 @@ class GymLeaders: UICollectionViewController {
         resultSearchController?.delegate = self
         resultSearchController?.searchBar.enablesReturnKeyAutomatically = false
         resultSearchController?.searchBar.autocapitalizationType = .None
-//        calculateTypeCounters()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -228,7 +224,7 @@ class GymLeaders: UICollectionViewController {
         let widthMinusPadding = collectionView.bounds.width - (cellPadding + cellPadding * cellsPerRow)
         let eachSide = (widthMinusPadding / cellsPerRow) - 1
         switch sortType {
-        case .Index, .Alphabetical:
+        case .Leader, .Alphabetical:
             return CGSize(width: eachSide, height:70)
         case .Type:
             switch indexPath.section {
@@ -297,8 +293,8 @@ extension GymLeaders {
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier(String(AlphabeticalCell), forIndexPath: indexPath) as! AlphabeticalCell
             cell.configureCell(gymLeadersArray[indexPath.row], sortType: sortType)
             return cell
-        case .Index:
-            let cell = collectionView.dequeueReusableCellWithReuseIdentifier(String(GymLeaderCell), forIndexPath: indexPath) as! GymLeaderCell
+        case .Leader:
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier(String(AlphabeticalCell), forIndexPath: indexPath) as! AlphabeticalCell
             cell.configureCell(gymLeadersArray[indexPath.row], sortType: sortType)
             return cell
         case .Type:
