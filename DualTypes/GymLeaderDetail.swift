@@ -72,7 +72,7 @@ class GymLeaderDetail: UICollectionViewController {
             quickAttack: quickAttacks[selectedQuickAttack],
             specialAttack: specialAttacks[selectedSpecialAttack]
         )
-        let sections = NSIndexSet(index: 1)
+        let sections = NSIndexSet(index: 3)
         collectionView?.reloadSections(sections)
     }
     
@@ -116,11 +116,11 @@ extension GymLeaderDetail {
         case 0:
             return 1
         case 1:
-            return directCounters.count
-        case 2:
             return quickAttacks.count
-        case 3:
+        case 2:
             return specialAttacks.count
+        case 3:
+            return directCounters.count
         case 4: // stats
             return 3
         case 5:
@@ -140,20 +140,20 @@ extension GymLeaderDetail {
             cell.configureCell(pokemon!.type)
             return cell
         case 1:
-            let selectedItem = directCounters[indexPath.row]
-            let pokemonCounterCell = collectionView.dequeueReusableCellWithReuseIdentifier(String(GymLeaderPokemonCounter), forIndexPath: indexPath) as! GymLeaderPokemonCounter
-            pokemonCounterCell.configureCell(selectedItem)
-            return pokemonCounterCell
-        case 2:
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier(String(GymLeaderDetailQuickMoveCell), forIndexPath: indexPath) as! GymLeaderDetailQuickMoveCell
             let cellSelected = indexPath.row == selectedQuickAttack
             cell.configureCell(quickAttacks[indexPath.row], pokemon: pokemon!, cellSelected: cellSelected)
             return cell
-        case 3:
+        case 2:
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier(String(GymLeaderDetailQuickMoveCell), forIndexPath: indexPath) as! GymLeaderDetailQuickMoveCell
             let cellSelected = indexPath.row == selectedSpecialAttack
             cell.configureCellSpecial(specialAttacks[indexPath.row], pokemon: pokemon!, cellSelected: cellSelected)
             return cell
+        case 3:
+            let selectedItem = directCounters[indexPath.row]
+            let pokemonCounterCell = collectionView.dequeueReusableCellWithReuseIdentifier(String(GymLeaderPokemonCounter), forIndexPath: indexPath) as! GymLeaderPokemonCounter
+            pokemonCounterCell.configureCell(selectedItem)
+            return pokemonCounterCell
         case 4:
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier(String(GymLeaderDetailStatCell), forIndexPath: indexPath) as! GymLeaderDetailStatCell
             switch indexPath.row {
@@ -186,11 +186,11 @@ extension GymLeaderDetail {
             case 0:
                 text = "\(NSLocalizedString("Type", comment: "")):"
             case 1:
-                text = "\(NSLocalizedString("RECOMMENDED_AGAINST", comment: "")) \(pokemonName):"
-            case 2:
                 text = "\(NSLocalizedString("QUICK_MOVES", comment: "")):"
-            case 3:
+            case 2:
                 text = "\(NSLocalizedString("SPECIAL_MOVES", comment: "")):"
+            case 3:
+                text = "\(NSLocalizedString("RECOMMENDED_AGAINST", comment: "")):"
             case 4:
                 text = "\(NSLocalizedString("STATS", comment: "")):"
             case 5:
@@ -226,7 +226,7 @@ extension GymLeaderDetail: UICollectionViewDelegateFlowLayout {
         // subtracting 1, because on the 6+ it's off by 1
         let eachSide = (widthMinusPadding / cellsPerRow) - 1
         switch indexPath.section {
-        case 2, 3:
+        case 1, 2:
             // move sets
             return CGSize(width: eachSide, height:eachSide + 58)
         default:
@@ -245,7 +245,7 @@ extension GymLeaderDetail {
                 let elements = pokemon.type
                 filterJump?.setFilters(elements)
             }
-        case 2:
+        case 1:
             selectedQuickAttack = indexPath.row
             recalculateDirectCounters()
             for (index, _) in quickAttacks.enumerate() {
@@ -257,7 +257,7 @@ extension GymLeaderDetail {
             if let cell = collectionView.cellForItemAtIndexPath(indexPath) as? GymLeaderDetailQuickMoveCell {
                 cell.changeSelection(true)
             }
-        case 3:
+        case 2:
             selectedSpecialAttack = indexPath.row
             recalculateDirectCounters()
             for (index, _) in specialAttacks.enumerate() {

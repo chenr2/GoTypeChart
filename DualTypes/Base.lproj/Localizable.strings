@@ -30,7 +30,7 @@
 "Stamina" = "Stamina";
 
 "Type" = "Type";
-"RECOMMENDED_AGAINST" = "Recommended against";
+"RECOMMENDED_AGAINST" = "DPS change for move combo";
 "SUPER_EFFECTIVE_AGAINST" = "Super effective against";
 "NOT_VERY_EFFECTIVE_AGAINST" = "Not very effective against";
 "QUICK_MOVES" = "Quick Moves";

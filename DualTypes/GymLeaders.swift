@@ -23,7 +23,7 @@ protocol FilterJump {
 }
 
 enum SortType: String {
-    case Attack, Defense, Stamina, Leader, Alphabetical = "A-Z", Type, MoveType = "Move"
+    case Attack, Defense, Stamina, Leaders, Alphabetical = "A-Z", Type, MoveType = "Move"
 }
 
 
@@ -52,7 +52,7 @@ class GymLeaders: UICollectionViewController {
     
     var containerEventRelay: ContainerEventRelay? = nil
     
-    var sortType:SortType = .Leader {
+    var sortType:SortType = .Leaders {
         didSet {
             containerEventRelay?.detectActionMenuChange(sortType)
             resetMonsSortedBySelectedType()
@@ -95,7 +95,7 @@ class GymLeaders: UICollectionViewController {
     func resetMonsSortedBySelectedType(){
         gymLeadersArray = PokemonCollections.allPokemon()
         switch sortType {
-        case .Leader:
+        case .Leaders:
             let gymDefenders = PokemonCollections.gymLeaders()
             gymLeadersArray = gymDefenders.sort(sortAlphabetically)
         case .Alphabetical:
@@ -224,7 +224,7 @@ class GymLeaders: UICollectionViewController {
         let widthMinusPadding = collectionView.bounds.width - (cellPadding + cellPadding * cellsPerRow)
         let eachSide = (widthMinusPadding / cellsPerRow) - 1
         switch sortType {
-        case .Leader, .Alphabetical:
+        case .Leaders, .Alphabetical:
             return CGSize(width: eachSide, height:70)
         case .Type:
             switch indexPath.section {
@@ -293,7 +293,7 @@ extension GymLeaders {
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier(String(AlphabeticalCell), forIndexPath: indexPath) as! AlphabeticalCell
             cell.configureCell(gymLeadersArray[indexPath.row], sortType: sortType)
             return cell
-        case .Leader:
+        case .Leaders:
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier(String(AlphabeticalCell), forIndexPath: indexPath) as! AlphabeticalCell
             cell.configureCell(gymLeadersArray[indexPath.row], sortType: sortType)
             return cell

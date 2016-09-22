@@ -30,7 +30,7 @@
 "Stamina" = "Stamina";
 
 "Type" = "Tipo";
-"RECOMMENDED_AGAINST" = "Recomendado contra";
+"RECOMMENDED_AGAINST" = "DPS cambiar de movimiento combinado";
 "SUPER_EFFECTIVE_AGAINST" = "Súper efectivo contra";
 "NOT_VERY_EFFECTIVE_AGAINST" = "No muy efectivo contra";
 "QUICK_MOVES" = "Movimientos rápidos";
@@ -320,5 +320,5 @@
 "Mewtwo" = "Mewtwo";
 "Mew" = "Mew";
 
-"Leader" = "Líderes";
+"Leaders" = "Líderes";
 "LOCATION_INSTRUCTIONS" = "Abre Configuración > Privacidad > Localizacíon > GoTypeChart > Al usar la app.";

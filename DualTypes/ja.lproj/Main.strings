@@ -133,3 +133,9 @@
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "y4d-hH-BUz"; */
 "y4d-hH-BUz.text" = "Label";
+
+/* Class = "UIBarButtonItem"; title = "Mark"; ObjectID = "BJL-fY-VbZ"; */
+"BJL-fY-VbZ.title" = "マーク";
+
+/* Class = "UIBarButtonItem"; title = "Clear"; ObjectID = "LBo-sg-zg5"; */
+"LBo-sg-zg5.title" = "クリア";

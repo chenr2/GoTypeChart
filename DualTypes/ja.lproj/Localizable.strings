@@ -30,7 +30,7 @@
 "Stamina" = "スタミナ";
 
 "Type" = "タイプ";
-"RECOMMENDED_AGAINST" = "推奨されます";
+"RECOMMENDED_AGAINST" = "移動コンボのために変更します";
 "SUPER_EFFECTIVE_AGAINST" = "効果はばつぐんだ";
 "NOT_VERY_EFFECTIVE_AGAINST" = "効果はいまひとつだ";
 "QUICK_MOVES" = "通常攻撃"; // conventional attack
@@ -322,6 +322,6 @@
 "Mew" = "ミュウ";
 
 "Move" = "技タイプ";
-"Leader" = "リーダー";
+"Leaders" = "リーダー";
 "Pokemon" = "ポケモン";
 "LOCATION_INSTRUCTIONS" = "「設定」アプリを起動して、>「プライバシー」>「位置情報サービス」> 「GoTypeChart」>「このappの使用中のみ許可」と進んでください。";

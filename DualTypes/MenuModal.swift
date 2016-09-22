@@ -23,7 +23,7 @@ class MenuModal: UIViewController {
     }
     
     @IBAction func changeToIndex(sender: AnyObject) {
-        changeSortType?.setSortType(.Leader)
+        changeSortType?.setSortType(.Leaders)
         dismissViewControllerAnimated(true){}
     }
     
