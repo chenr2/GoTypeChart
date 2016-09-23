@@ -66,7 +66,6 @@ class Triangulate: UIViewController {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
-        locationManager.requestLocation()
         mapView.userTrackingMode = .Follow
     }
     
@@ -99,7 +98,7 @@ extension Triangulate : CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
         locationInstructions?.text = NSLocalizedString("LOCATION_INSTRUCTIONS", comment: "")
         instructionVisualEffects.hidden = false
-        print("error:: (error)")
+        print("error:: \(error)")
     }
 }
 
