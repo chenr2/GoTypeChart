@@ -21,6 +21,11 @@ struct TypeResult {
     let opponentChargeMove: SpecialMove
 }
 
+struct AverageMon {
+    let average: CGFloat
+    let opponent: Pokemon
+}
+
 class Pokemon {
     var species: PokemonEnumeration
     var type: [ElementType]
@@ -384,13 +389,11 @@ class Pokemon {
         }
     }
     
-    class func calculateTypeCounters(pokemon: Pokemon, quickAttack: QuickAttack, specialAttack: SpecialAttack) -> [TypeResult] {
+    class func calculateTypeResults(pokemon: Pokemon, quickAttack: QuickAttack, specialAttack: SpecialAttack) -> [TypeResult] {
         let opponents = PokemonCollections.contenders()
         var typeResults: [TypeResult] = []
-        var topResults: [TypeResult] = []
         let quickMove = QuickMove.moveForQuickAttack(quickAttack)
         let chargeMove = SpecialMove.moveForSpecialAttack(specialAttack)
-
         for opponent in opponents {
             let qmElement = quickMove.element
             let qmStabMultiplier = Pokemon.stabMultiplier(pokemon, element: qmElement)
@@ -415,7 +418,7 @@ class Pokemon {
             
             let qmTypeDamage = qmStab * qmBonusDamage1 * qmBonusDamage2
             let cmTypeDamage = cmStab * cmBonusDamage1 * cmBonusDamage2
-
+            
             let differential = qmTypeDamage - qmStab + cmTypeDamage - cmStab
             for opponentQM in opponent.quickAttacks {
                 for opponentCM in opponent.specialAttacks {
@@ -425,24 +428,24 @@ class Pokemon {
                     let oqmStab = oqm.dps * oqmStabMultiplier
                     var oqmBonusDamage1: CGFloat = 1
                     var oqmBonusDamage2: CGFloat = 1
-
+                    
                     let ocm = SpecialMove.moveForSpecialAttack(opponentCM)
                     let ocmElement = ocm.element
                     let ocmStabMultiplier = Pokemon.stabMultiplier(opponent, element: ocmElement)
                     let ocmStab = ocm.dps * ocmStabMultiplier
                     var ocmBonusDamage1: CGFloat = 1
                     var ocmBonusDamage2: CGFloat = 1
-
+                    
                     if let myType1 = pokemon.type.first {
                         oqmBonusDamage1 = Pokemon.typeDamage(myType1, moveType: oqmElement)
                         ocmBonusDamage1 = Pokemon.typeDamage(myType1, moveType: ocmElement)
                     }
-
+                    
                     if let myType2 = pokemon.type.last where pokemon.type.count == 2 {
                         oqmBonusDamage2 = Pokemon.typeDamage(myType2, moveType: oqmElement)
                         ocmBonusDamage2 = Pokemon.typeDamage(myType2, moveType: ocmElement)
                     }
-
+                    
                     let oqmTypeDamage = oqmStab * oqmBonusDamage1 * oqmBonusDamage2
                     let ocmTypeDamage = ocmStab * ocmBonusDamage1 * ocmBonusDamage2
                     
@@ -460,6 +463,12 @@ class Pokemon {
                 }
             }
         }
+        return typeResults
+    }
+    
+    class func calculateTypeCounters(pokemon: Pokemon, quickAttack: QuickAttack, specialAttack: SpecialAttack) -> [TypeResult] {
+        let typeResults = Pokemon.calculateTypeResults(pokemon, quickAttack: quickAttack, specialAttack: specialAttack)
+        var topResults: [TypeResult] = []
         
         for leader in PokemonCollections.contenders() {
             let moveCombinations = typeResults.filter {
@@ -476,6 +485,30 @@ class Pokemon {
         }
         topResults = topResults.sort { a, b in
             return a.sumDifferential > b.sumDifferential
+        }
+        return Array(topResults.prefix(6))
+    }
+    
+    class func calculatePotentialTargetsFor(pokemon: Pokemon, quickAttack: QuickAttack, specialAttack: SpecialAttack) -> [AverageMon] {
+
+        let typeResults = Pokemon.calculateTypeResults(pokemon, quickAttack: quickAttack, specialAttack: specialAttack)
+        var topResults: [AverageMon] = []
+        
+        for leader in PokemonCollections.contenders() {
+            let movesForThisMon = typeResults.filter {
+                $0.opponent.species == leader.species
+            }
+            let sum = movesForThisMon.map {
+                return $0.sumDifferential
+            }.reduce(0, combine: {$0 + $1})
+            // average all the sum differentials
+            // and return a average result
+            // maybe show beads on a wire to show distribution of average
+            let average = AverageMon(average: sum / CGFloat(movesForThisMon.count), opponent: leader)
+            topResults.append(average)
+        }
+        topResults = topResults.sort { a, b in
+            return a.average < b.average
         }
         return Array(topResults.prefix(6))
     }

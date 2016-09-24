@@ -30,7 +30,7 @@
 "Stamina" = "Stamina";
 
 "Type" = "Tipo";
-"RECOMMENDED_AGAINST" = "DPS cambiar de movimiento combinado";
+"RECOMMENDED_AGAINST" = "Aprovechamiento tipo en contra de";
 "SUPER_EFFECTIVE_AGAINST" = "Súper efectivo contra";
 "NOT_VERY_EFFECTIVE_AGAINST" = "No muy efectivo contra";
 "QUICK_MOVES" = "Movimientos rápidos";

@@ -74,6 +74,16 @@ class GymLeaderDetail: UICollectionViewController {
         )
         let sections = NSIndexSet(index: 3)
         collectionView?.reloadSections(sections)
+        
+        let targets = Pokemon.calculatePotentialTargetsFor(
+            pokemon,
+            quickAttack: quickAttacks[selectedQuickAttack],
+            specialAttack: specialAttacks[selectedSpecialAttack]
+        )
+        targets.map {
+            print("\($0.opponent.species.rawValue): \($0.average)")
+        }
+        print("")
     }
     
     override func viewDidLoad() {
@@ -190,7 +200,7 @@ extension GymLeaderDetail {
             case 2:
                 text = "\(NSLocalizedString("SPECIAL_MOVES", comment: "")):"
             case 3:
-                text = "\(NSLocalizedString("RECOMMENDED_AGAINST", comment: "")):"
+                text = "\(NSLocalizedString("RECOMMENDED_AGAINST", comment: "")) \(pokemonName):"
             case 4:
                 text = "\(NSLocalizedString("STATS", comment: "")):"
             case 5:
