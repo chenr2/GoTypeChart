@@ -148,7 +148,7 @@ struct PokemonCollections {
     static let pinsir = Pokemon(pokedex: 127, species: .pinsir, type: [.Bug], quickAttacks: [.furyCutter, .rockSmash], specialAttacks: [.submission, .viceGrip, .xScissor], stamina: 130, attack: 184, defense: 186)
     static let tauros = Pokemon(pokedex: 128, species: .tauros, type: [.Normal], quickAttacks: [.tackle, .zenHeadbutt], specialAttacks: [.earthquake, .ironHead, .hornAttack], stamina: 150, attack: 148, defense: 184)
     static let magikarp = Pokemon(pokedex: 129, species: .magikarp, type: [.Water], quickAttacks: [.splash], specialAttacks: [.struggle], stamina: 40, attack: 42, defense: 84)
-    static let gyarados = Pokemon(pokedex: 130, species: .gyarados, type: [.Water, .Flying], quickAttacks: [.bite], specialAttacks: [.twister, .hydroPump, .dragonPulse], stamina: 190, attack: 192, defense: 196)
+    static let gyarados = Pokemon(pokedex: 130, species: .gyarados, type: [.Water, .Flying], quickAttacks: [.bite, .dragonBreath], specialAttacks: [.twister, .hydroPump, .dragonPulse], stamina: 190, attack: 192, defense: 196)
     static let lapras = Pokemon(pokedex: 131, species: .lapras, type: [.Water, .Ice], quickAttacks: [.frostBreath, .iceShard], specialAttacks: [.iceBeam, .dragonPulse, .blizzard], stamina: 260, attack: 186, defense: 190)
     static let eevee = Pokemon(pokedex: 133, species: .eevee, type: [.Normal], quickAttacks: [.tackle, .quickAttack], specialAttacks: [.bodySlam, .dig, .swift], stamina: 110, attack: 114, defense: 128)
     static let vaporeon = Pokemon(pokedex: 134, species: .vaporeon, type: [.Water], quickAttacks: [.waterGun], specialAttacks: [.aquaTail, .waterPulse, .hydroPump], stamina: 260, attack: 186, defense: 168)
