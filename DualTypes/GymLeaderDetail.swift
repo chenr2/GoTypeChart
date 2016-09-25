@@ -52,6 +52,8 @@ class GymLeaderDetail: UICollectionViewController {
     
     var directCounters: [TypeResult] = []
     
+    var bestOptions: [AverageMon] = []
+    
     func getKeysOfValue(damage: DamageType, pokemon: Pokemon) -> [ElementType] {
         var elements: [ElementType] = []
         for (key, value) in pokemon.vulnerabilitySet {
@@ -72,18 +74,13 @@ class GymLeaderDetail: UICollectionViewController {
             quickAttack: quickAttacks[selectedQuickAttack],
             specialAttack: specialAttacks[selectedSpecialAttack]
         )
-        let sections = NSIndexSet(index: 3)
-        collectionView?.reloadSections(sections)
-        
-        let targets = Pokemon.calculatePotentialTargetsFor(
+        bestOptions = Pokemon.calculatePotentialTargetsFor(
             pokemon,
             quickAttack: quickAttacks[selectedQuickAttack],
             specialAttack: specialAttacks[selectedSpecialAttack]
         )
-        targets.map {
-            print("\($0.opponent.species.rawValue): \($0.average)")
-        }
-        print("")
+        let sections = NSIndexSet(indexesInRange: NSRange(3...4))
+        collectionView?.reloadSections(sections)
     }
     
     override func viewDidLoad() {
@@ -92,6 +89,11 @@ class GymLeaderDetail: UICollectionViewController {
             title = "#\(pokemon.pokedex) \(pokemonName)"
             
             directCounters = Pokemon.calculateTypeCounters(
+                pokemon,
+                quickAttack: quickAttacks.first!,
+                specialAttack: specialAttacks.first!
+            )
+            bestOptions = Pokemon.calculatePotentialTargetsFor(
                 pokemon,
                 quickAttack: quickAttacks.first!,
                 specialAttack: specialAttacks.first!
@@ -110,6 +112,12 @@ class GymLeaderDetail: UICollectionViewController {
             destination.pokemon = counterPokemon
             // pop to root
             destination.filterJump = filterJump
+        } else if let cell = sender as? CounterOption,
+            let averageMon = cell.averageMon,
+            let destination = segue.destinationViewController as? GymLeaderDetail {
+            destination.pokemon = averageMon.opponent
+            // pop to root
+            destination.filterJump = filterJump
         }
     }
     
@@ -118,7 +126,7 @@ class GymLeaderDetail: UICollectionViewController {
 extension GymLeaderDetail {
     
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 7
+        return 8
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -131,11 +139,13 @@ extension GymLeaderDetail {
             return specialAttacks.count
         case 3:
             return directCounters.count
-        case 4: // stats
+        case 4:
+            return bestOptions.count
+        case 5: // stats
             return 3
-        case 5:
-            return double.count
         case 6:
+            return double.count
+        case 7:
             return half.count
         default:
             return 0
@@ -165,6 +175,11 @@ extension GymLeaderDetail {
             pokemonCounterCell.configureCell(selectedItem)
             return pokemonCounterCell
         case 4:
+            let selectedItem = bestOptions[indexPath.row]
+            let optionCell = collectionView.dequeueReusableCellWithReuseIdentifier(String(CounterOption), forIndexPath: indexPath) as! CounterOption
+            optionCell.configureCell(selectedItem)
+            return optionCell
+        case 5:
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier(String(GymLeaderDetailStatCell), forIndexPath: indexPath) as! GymLeaderDetailStatCell
             switch indexPath.row {
             case 0:
@@ -177,9 +192,9 @@ extension GymLeaderDetail {
                 break
             }
             return cell
-        case 5:
-            detailTypeCell.configureCell(double[indexPath.row])
         case 6:
+            detailTypeCell.configureCell(double[indexPath.row])
+        case 7:
             detailTypeCell.configureCell(half[indexPath.row])
         default:
             break
@@ -202,10 +217,12 @@ extension GymLeaderDetail {
             case 3:
                 text = "\(NSLocalizedString("RECOMMENDED_AGAINST", comment: "")) \(pokemonName):"
             case 4:
-                text = "\(NSLocalizedString("STATS", comment: "")):"
+                text = "\(NSLocalizedString("USE_MOVESET_AGAINST", comment: "")):"
             case 5:
-                text = "\(NSLocalizedString("SUPER_EFFECTIVE_AGAINST", comment: "")) \(pokemonName):"
+                text = "\(NSLocalizedString("STATS", comment: "")):"
             case 6:
+                text = "\(NSLocalizedString("SUPER_EFFECTIVE_AGAINST", comment: "")) \(pokemonName):"
+            case 7:
                 text = "\(NSLocalizedString("NOT_VERY_EFFECTIVE_AGAINST", comment: "")) \(pokemonName):"
             default:
                 break
@@ -226,7 +243,7 @@ extension GymLeaderDetail: UICollectionViewDelegateFlowLayout {
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         var cellsPerRow:CGFloat = 4
         switch indexPath.section {
-        case 0, 2, 3, 4, 1:
+        case 0, 1, 2, 3, 5:
             cellsPerRow = 3
         default:
             break
@@ -239,6 +256,8 @@ extension GymLeaderDetail: UICollectionViewDelegateFlowLayout {
         case 1, 2:
             // move sets
             return CGSize(width: eachSide, height:eachSide + 58)
+        case 4:
+            return CGSize(width: eachSide, height: 60)
         default:
             return CGSize(width: eachSide, height:eachSide)            
         }
@@ -279,9 +298,9 @@ extension GymLeaderDetail {
             if let cell = collectionView.cellForItemAtIndexPath(indexPath) as? GymLeaderDetailQuickMoveCell {
                 cell.changeSelection(true)
             }
-        case 5:
-            moveElement = double[indexPath.row]
         case 6:
+            moveElement = double[indexPath.row]
+        case 7:
             moveElement = half[indexPath.row]
         default:
             return

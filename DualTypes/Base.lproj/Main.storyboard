@@ -174,7 +174,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iuX-3I-ZWc" id="6vB-3e-kvt">
-                                    <frame key="frameInset" width="342" height="43.5"/>
+                                    <frame key="frameInset" width="342" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S7f-DS-XIz">
@@ -246,7 +246,7 @@
                                 <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AkF-mb-sPy" id="2LR-J8-bsz">
-                                    <frame key="frameInset" width="375" height="43.5"/>
+                                    <frame key="frameInset" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fy8-wq-1kk">
@@ -293,7 +293,7 @@
                                 <rect key="frame" x="0.0" y="116" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="w8g-uq-cb3" id="8m0-wo-hCj">
-                                    <frame key="frameInset" width="375" height="43.5"/>
+                                    <frame key="frameInset" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dzo-RZ-P3z">
@@ -392,7 +392,7 @@
                         </view>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GymLeaderCell" id="BFd-Js-7u0" customClass="GymLeaderCell" customModule="DualTypes" customModuleProvider="target">
-                                <rect key="frame" x="5" y="68.5" width="107" height="64"/>
+                                <rect key="frame" x="5" y="69" width="107" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="107" height="64"/>
@@ -501,7 +501,7 @@
                                 </connections>
                             </collectionViewCell>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="elementCell" id="kWJ-uB-ADJ" customClass="SearchElementCell" customModule="DualTypes" customModuleProvider="target">
-                                <rect key="frame" x="5" y="177.5" width="111" height="47"/>
+                                <rect key="frame" x="5" y="178" width="111" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="111" height="47"/>
@@ -1054,7 +1054,7 @@
                                 </connections>
                             </collectionViewCell>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GymLeaderDetailTypeCell" id="0cS-HD-xdR" customClass="GymLeaderDetailTypeCell" customModule="DualTypes" customModuleProvider="target">
-                                <rect key="frame" x="10" y="261.5" width="101" height="97"/>
+                                <rect key="frame" x="10" y="262" width="101" height="97"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="101" height="97"/>
@@ -1261,6 +1261,43 @@
                                     <outlet property="circularView" destination="ySd-0z-xyP" id="2fe-1j-uWj"/>
                                     <outlet property="elementType" destination="h6z-4n-P4w" id="sjY-On-f7e"/>
                                     <outlet property="statTypeLabel" destination="vU3-NO-e0j" id="1Q2-x0-dML"/>
+                                </connections>
+                            </collectionViewCell>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CounterOption" id="L17-Tk-Gkq" customClass="CounterOption" customModule="DualTypes" customModuleProvider="target">
+                                <rect key="frame" x="121" y="393" width="101" height="97"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="101" height="97"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dqa-aX-By0">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="qnV-yQ-A3h"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="2Wo-uc-A6U">
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </view>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="2Wo-uc-A6U" firstAttribute="leading" secondItem="L17-Tk-Gkq" secondAttribute="leading" id="2d3-RU-kBV"/>
+                                    <constraint firstAttribute="trailing" secondItem="2Wo-uc-A6U" secondAttribute="trailing" id="8zG-Xm-2TM"/>
+                                    <constraint firstItem="2Wo-uc-A6U" firstAttribute="top" secondItem="dqa-aX-By0" secondAttribute="bottom" id="Kam-5V-GiV"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="2Wo-uc-A6U" secondAttribute="bottom" id="c6O-41-lIV"/>
+                                    <constraint firstItem="dqa-aX-By0" firstAttribute="top" secondItem="L17-Tk-Gkq" secondAttribute="topMargin" id="hbF-fU-Ptf"/>
+                                    <constraint firstItem="dqa-aX-By0" firstAttribute="centerX" secondItem="L17-Tk-Gkq" secondAttribute="centerX" id="vQg-g5-rCq"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="averageDamage" destination="dqa-aX-By0" id="kxF-Sd-JU5"/>
+                                    <outlet property="victimName" destination="2Wo-uc-A6U" id="UUl-hq-rlp"/>
+                                    <segue destination="eGV-m0-bll" kind="push" id="IZe-0b-VC8"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>

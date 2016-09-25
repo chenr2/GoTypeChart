@@ -31,6 +31,7 @@
 
 "Type" = "Type";
 "RECOMMENDED_AGAINST" = "Type advantage against";
+"USE_MOVESET_AGAINST" = "Move set works best against";
 "SUPER_EFFECTIVE_AGAINST" = "Super effective against";
 "NOT_VERY_EFFECTIVE_AGAINST" = "Not very effective against";
 "QUICK_MOVES" = "Quick Moves";

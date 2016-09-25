@@ -31,6 +31,7 @@
 
 "Type" = "Tipo";
 "RECOMMENDED_AGAINST" = "Aprovechamiento tipo en contra de";
+"USE_MOVESET_AGAINST" = "Use selected move-set against";
 "SUPER_EFFECTIVE_AGAINST" = "Súper efectivo contra";
 "NOT_VERY_EFFECTIVE_AGAINST" = "No muy efectivo contra";
 "QUICK_MOVES" = "Movimientos rápidos";

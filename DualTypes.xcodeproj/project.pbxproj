@@ -27,6 +27,7 @@
 		FC2E4C451D6E615D008B8EFD /* PokemonSearchTableResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2E4C441D6E615D008B8EFD /* PokemonSearchTableResult.swift */; };
 		FC2E4C471D6E66BD008B8EFD /* QuickMoveSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2E4C461D6E66BD008B8EFD /* QuickMoveSearchResult.swift */; };
 		FC2E4C491D6E68F3008B8EFD /* SpecialMoveSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2E4C481D6E68F3008B8EFD /* SpecialMoveSearchResult.swift */; };
+		FC31FDED1D972B8A00D3DC14 /* CounterOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC31FDEC1D972B8A00D3DC14 /* CounterOption.swift */; };
 		FC341D261D62922A007D28FA /* SearchResultDualCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC341D251D62922A007D28FA /* SearchResultDualCell.swift */; };
 		FC341D281D62A743007D28FA /* FlexibleCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC341D271D62A743007D28FA /* FlexibleCollectionCell.swift */; };
 		FC341D2B1D62BB14007D28FA /* ContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC341D2A1D62BB14007D28FA /* ContainerVC.swift */; };
@@ -162,6 +163,7 @@
 		FC2E4C441D6E615D008B8EFD /* PokemonSearchTableResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonSearchTableResult.swift; sourceTree = "<group>"; };
 		FC2E4C461D6E66BD008B8EFD /* QuickMoveSearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickMoveSearchResult.swift; sourceTree = "<group>"; };
 		FC2E4C481D6E68F3008B8EFD /* SpecialMoveSearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecialMoveSearchResult.swift; sourceTree = "<group>"; };
+		FC31FDEC1D972B8A00D3DC14 /* CounterOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterOption.swift; sourceTree = "<group>"; };
 		FC341D251D62922A007D28FA /* SearchResultDualCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultDualCell.swift; sourceTree = "<group>"; };
 		FC341D271D62A743007D28FA /* FlexibleCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlexibleCollectionCell.swift; sourceTree = "<group>"; };
 		FC341D2A1D62BB14007D28FA /* ContainerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerVC.swift; sourceTree = "<group>"; };
@@ -290,6 +292,7 @@
 				FCA742A51D536115003DAC35 /* GymLeaderDetailTypeCell.swift */,
 				FCB17E0A1D556A3E00F0CCBB /* GymLeaderDetailSectionHeader.swift */,
 				FC00EC601D8A197C00E64057 /* GymLeaderPokemonCounter.swift */,
+				FC31FDEC1D972B8A00D3DC14 /* CounterOption.swift */,
 			);
 			name = GymDetail;
 			sourceTree = "<group>";
@@ -698,6 +701,7 @@
 				FC55BCA01D8EED5100B7B518 /* TabBarController.swift in Sources */,
 				FC341D281D62A743007D28FA /* FlexibleCollectionCell.swift in Sources */,
 				FC2E4C451D6E615D008B8EFD /* PokemonSearchTableResult.swift in Sources */,
+				FC31FDED1D972B8A00D3DC14 /* CounterOption.swift in Sources */,
 				FC04C5A01D5BF99C00BCB6AB /* GymLeaderDetailQuickMoveCell.swift in Sources */,
 				FC2585891D669A47001F3434 /* SpecialMove.swift in Sources */,
 				FCA742A81D536192003DAC35 /* ElementType.swift in Sources */,

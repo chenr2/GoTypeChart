@@ -510,7 +510,7 @@ class Pokemon {
         topResults = topResults.sort { a, b in
             return a.average < b.average
         }
-        return Array(topResults.prefix(6))
+        return Array(topResults.prefix(8))
     }
     
     init(pokedex: Int, species: PokemonEnumeration, type: [ElementType], quickAttacks: [QuickAttack], specialAttacks: [SpecialAttack], stamina: Int, attack: Int, defense: Int){
