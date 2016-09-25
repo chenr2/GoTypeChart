@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="DetailTitleControl" customModule="DualTypes" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="166" height="59"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Egg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QuI-j0-i5v">
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q0F-Rh-I6d">
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QcF-up-oUG">
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="HHb-PM-Ohp"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="QcF-up-oUG" firstAttribute="centerY" secondItem="q0F-Rh-I6d" secondAttribute="centerY" id="4Sb-EX-wIF"/>
+                        <constraint firstItem="QcF-up-oUG" firstAttribute="leading" secondItem="q0F-Rh-I6d" secondAttribute="leading" constant="8" id="NUm-pW-9Xz"/>
+                        <constraint firstAttribute="trailing" secondItem="QcF-up-oUG" secondAttribute="trailing" constant="8" id="fHa-EO-ce7"/>
+                        <constraint firstAttribute="height" constant="20" id="kEU-CR-efr"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EUg-Id-v2T">
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yPS-oG-1yJ">
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.98823529409999999" green="0.83137254900000002" blue="0.0039215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="yPS-oG-1yJ" firstAttribute="centerY" secondItem="EUg-Id-v2T" secondAttribute="centerY" id="0Yi-fO-o94"/>
+                        <constraint firstItem="yPS-oG-1yJ" firstAttribute="leading" secondItem="EUg-Id-v2T" secondAttribute="leading" constant="8" id="hlh-oW-zHw"/>
+                        <constraint firstAttribute="height" constant="20" id="ict-dD-jyq"/>
+                        <constraint firstAttribute="trailing" secondItem="yPS-oG-1yJ" secondAttribute="trailing" constant="8" id="ubt-m7-c3W"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="QuI-j0-i5v" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="4aM-JR-EGZ"/>
+                <constraint firstItem="QcF-up-oUG" firstAttribute="top" secondItem="QuI-j0-i5v" secondAttribute="bottom" constant="-5" id="GG0-0z-eYj"/>
+                <constraint firstItem="EUg-Id-v2T" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="centerX" constant="2" id="LhM-Ao-uYI"/>
+                <constraint firstItem="q0F-Rh-I6d" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="centerX" constant="-2" id="XFq-Km-uUg"/>
+                <constraint firstAttribute="bottom" secondItem="q0F-Rh-I6d" secondAttribute="bottom" constant="10" id="kmo-4O-UT6"/>
+                <constraint firstItem="EUg-Id-v2T" firstAttribute="top" secondItem="q0F-Rh-I6d" secondAttribute="top" id="noE-Mh-XX8"/>
+                <constraint firstItem="QuI-j0-i5v" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="od1-tH-ei0"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="chargeMoveBubble" destination="EUg-Id-v2T" id="52l-Dt-RKq"/>
+                <outlet property="chargeMoveName" destination="yPS-oG-1yJ" id="HPm-K9-405"/>
+                <outlet property="pokemonName" destination="QuI-j0-i5v" id="5g8-bP-a6w"/>
+                <outlet property="quickMoveBubble" destination="q0F-Rh-I6d" id="VNk-Sr-MRb"/>
+                <outlet property="quickMoveName" destination="QcF-up-oUG" id="POE-ty-mUn"/>
+            </connections>
+            <point key="canvasLocation" x="89" y="-152.5"/>
+        </view>
+    </objects>
+</document>

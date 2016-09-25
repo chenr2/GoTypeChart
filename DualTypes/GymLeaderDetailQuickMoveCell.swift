@@ -17,9 +17,15 @@ class GymLeaderDetailQuickMoveCell: FlexibleCollectionCell {
     @IBOutlet weak var elementBubble: UIView!
     @IBOutlet weak var dpsStat: UILabel!
     
-    func changeSelection(cellSelected: Bool){
+    func changeSelection(cellSelected: Bool, element: ElementType?){
         let blue = UIColor(colorLiteralRed: 0.290, green: 0.565, blue: 0.886, alpha: 1)
         selectionBar.backgroundColor = cellSelected ? blue : UIColor.whiteColor()
+        if let element = element where cellSelected {
+            let elementColor = Colors.colorForElement(element)
+            statArc.fillColor = elementColor.colorWithAlphaComponent(0.1)
+        } else {
+            statArc.fillColor = UIColor.whiteColor()
+        }
     }
     
     func attributedStabBonus(dps: CGFloat, elementColor: UIColor, stab: Bool) -> NSMutableAttributedString {
@@ -43,9 +49,9 @@ class GymLeaderDetailQuickMoveCell: FlexibleCollectionCell {
     }
     
     func configureCell(quickAttack: QuickAttack, pokemon: Pokemon, cellSelected: Bool){
-        changeSelection(cellSelected)
         let move = QuickMove.moveForQuickAttack(quickAttack)
         let element = move.element
+        changeSelection(cellSelected, element: element)
         let stabFlag = pokemon.type.contains(element)
         moveName?.text = NSLocalizedString(quickAttack.rawValue, comment: "")
         elementType?.text = NSLocalizedString(element.rawValue, comment: "")
@@ -58,9 +64,9 @@ class GymLeaderDetailQuickMoveCell: FlexibleCollectionCell {
     }
     
     func configureCellSpecial(specialAttack: SpecialAttack, pokemon: Pokemon, cellSelected: Bool){
-        changeSelection(cellSelected)
         let move = SpecialMove.moveForSpecialAttack(specialAttack)
         let element = move.element
+        changeSelection(cellSelected, element: element)
         let stabFlag = pokemon.type.contains(element)
         moveName?.text = NSLocalizedString(specialAttack.rawValue, comment: "")
         elementType?.text = NSLocalizedString(element.rawValue, comment: "")

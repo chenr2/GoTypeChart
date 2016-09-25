@@ -24,6 +24,12 @@ class StatRing: UIView {
         }
     }
     
+    var fillColor: UIColor = UIColor.whiteColor() {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
+    
     // https://www.raywenderlich.com/90690/modern-core-graphics-with-swift-part-1
     override func drawRect(rect: CGRect) {
         let center = CGPoint(x:bounds.width/2, y: bounds.height/2)
@@ -38,6 +44,8 @@ class StatRing: UIView {
                                           endAngle: 2 * π,
                                           clockwise: true)
         pathBackground.lineWidth = arcWidth
+        fillColor.setFill()
+        pathBackground.fill()
         arcColor.colorWithAlphaComponent(0.3).setStroke()
         pathBackground.stroke()
         // stat ring

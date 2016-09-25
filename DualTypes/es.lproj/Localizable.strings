@@ -30,8 +30,8 @@
 "Stamina" = "Stamina";
 
 "Type" = "Tipo";
-"RECOMMENDED_AGAINST" = "Aprovechamiento tipo en contra de";
-"USE_MOVESET_AGAINST" = "Use selected move-set against";
+"RECOMMENDED_AGAINST" = "Un contador tipo contra conjunto de movimientos";
+"USE_MOVESET_AGAINST" = "Conjunto de movimientos funciona mejor contra";
 "SUPER_EFFECTIVE_AGAINST" = "Súper efectivo contra";
 "NOT_VERY_EFFECTIVE_AGAINST" = "No muy efectivo contra";
 "QUICK_MOVES" = "Movimientos rápidos";

@@ -81,28 +81,18 @@ class GymLeaderDetail: UICollectionViewController {
         )
         let sections = NSIndexSet(indexesInRange: NSRange(3...4))
         collectionView?.reloadSections(sections)
+        if let titleControl = NSBundle.mainBundle().loadNibNamed("DetailTitleControl", owner: nil, options: nil)![0] as? DetailTitleControl {
+            titleControl.configureTitleControl(pokemon, quickAttack: quickAttacks[selectedQuickAttack], specialAttack: specialAttacks[selectedSpecialAttack])
+            navigationItem.titleView = titleControl
+        }
     }
     
     override func viewDidLoad() {
-        if let pokemon = pokemon {
-            let pokemonName = NSLocalizedString(pokemon.species.rawValue, comment: "")
-            title = "#\(pokemon.pokedex) \(pokemonName)"
-            
-            directCounters = Pokemon.calculateTypeCounters(
-                pokemon,
-                quickAttack: quickAttacks.first!,
-                specialAttack: specialAttacks.first!
-            )
-            bestOptions = Pokemon.calculatePotentialTargetsFor(
-                pokemon,
-                quickAttack: quickAttacks.first!,
-                specialAttack: specialAttacks.first!
-            )
-            let quickMoveIndexPath = NSIndexPath(forItem: 0, inSection: 2)
-            let chargeMoveIndexPath = NSIndexPath(forItem: 0, inSection: 3)
-            collectionView(collectionView!, didSelectItemAtIndexPath: quickMoveIndexPath)
-            collectionView(collectionView!, didSelectItemAtIndexPath: chargeMoveIndexPath)
-        }
+        let quickMoveIndexPath = NSIndexPath(forItem: 0, inSection: 2)
+        let chargeMoveIndexPath = NSIndexPath(forItem: 0, inSection: 3)
+        collectionView(collectionView!, didSelectItemAtIndexPath: quickMoveIndexPath)
+        collectionView(collectionView!, didSelectItemAtIndexPath: chargeMoveIndexPath)
+        recalculateDirectCounters()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -215,7 +205,7 @@ extension GymLeaderDetail {
             case 2:
                 text = "\(NSLocalizedString("SPECIAL_MOVES", comment: "")):"
             case 3:
-                text = "\(NSLocalizedString("RECOMMENDED_AGAINST", comment: "")) \(pokemonName):"
+                text = "\(NSLocalizedString("RECOMMENDED_AGAINST", comment: "")):"
             case 4:
                 text = "\(NSLocalizedString("USE_MOVESET_AGAINST", comment: "")):"
             case 5:
@@ -280,11 +270,12 @@ extension GymLeaderDetail {
             for (index, _) in quickAttacks.enumerate() {
                 let otherIndexPath = NSIndexPath(forRow: index, inSection: indexPath.section)
                 if let cell = collectionView.cellForItemAtIndexPath(otherIndexPath) as? GymLeaderDetailQuickMoveCell {
-                    cell.changeSelection(false)
+                    cell.changeSelection(false, element: nil)
                 }
             }
             if let cell = collectionView.cellForItemAtIndexPath(indexPath) as? GymLeaderDetailQuickMoveCell {
-                cell.changeSelection(true)
+                let selectedElement = QuickMove.moveForQuickAttack(quickAttacks[selectedQuickAttack]).element
+                cell.changeSelection(true, element: selectedElement)
             }
         case 2:
             selectedSpecialAttack = indexPath.row
@@ -292,11 +283,12 @@ extension GymLeaderDetail {
             for (index, _) in specialAttacks.enumerate() {
                 let otherIndexPath = NSIndexPath(forRow: index, inSection: indexPath.section)
                 if let cell = collectionView.cellForItemAtIndexPath(otherIndexPath) as? GymLeaderDetailQuickMoveCell {
-                    cell.changeSelection(false)
+                    cell.changeSelection(false, element: nil)
                 }
             }
             if let cell = collectionView.cellForItemAtIndexPath(indexPath) as? GymLeaderDetailQuickMoveCell {
-                cell.changeSelection(true)
+                let selectedElement = SpecialMove.moveForSpecialAttack(specialAttacks[selectedSpecialAttack]).element
+                cell.changeSelection(true, element: selectedElement)
             }
         case 6:
             moveElement = double[indexPath.row]

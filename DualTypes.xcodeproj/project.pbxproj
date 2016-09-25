@@ -28,6 +28,8 @@
 		FC2E4C471D6E66BD008B8EFD /* QuickMoveSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2E4C461D6E66BD008B8EFD /* QuickMoveSearchResult.swift */; };
 		FC2E4C491D6E68F3008B8EFD /* SpecialMoveSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2E4C481D6E68F3008B8EFD /* SpecialMoveSearchResult.swift */; };
 		FC31FDED1D972B8A00D3DC14 /* CounterOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC31FDEC1D972B8A00D3DC14 /* CounterOption.swift */; };
+		FC31FDEF1D9773AE00D3DC14 /* DetailTitleControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC31FDEE1D9773AE00D3DC14 /* DetailTitleControl.xib */; };
+		FC31FDF11D9773BB00D3DC14 /* DetailTitleControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC31FDF01D9773BB00D3DC14 /* DetailTitleControl.swift */; };
 		FC341D261D62922A007D28FA /* SearchResultDualCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC341D251D62922A007D28FA /* SearchResultDualCell.swift */; };
 		FC341D281D62A743007D28FA /* FlexibleCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC341D271D62A743007D28FA /* FlexibleCollectionCell.swift */; };
 		FC341D2B1D62BB14007D28FA /* ContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC341D2A1D62BB14007D28FA /* ContainerVC.swift */; };
@@ -164,6 +166,8 @@
 		FC2E4C461D6E66BD008B8EFD /* QuickMoveSearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickMoveSearchResult.swift; sourceTree = "<group>"; };
 		FC2E4C481D6E68F3008B8EFD /* SpecialMoveSearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecialMoveSearchResult.swift; sourceTree = "<group>"; };
 		FC31FDEC1D972B8A00D3DC14 /* CounterOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterOption.swift; sourceTree = "<group>"; };
+		FC31FDEE1D9773AE00D3DC14 /* DetailTitleControl.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailTitleControl.xib; sourceTree = "<group>"; };
+		FC31FDF01D9773BB00D3DC14 /* DetailTitleControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTitleControl.swift; sourceTree = "<group>"; };
 		FC341D251D62922A007D28FA /* SearchResultDualCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultDualCell.swift; sourceTree = "<group>"; };
 		FC341D271D62A743007D28FA /* FlexibleCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlexibleCollectionCell.swift; sourceTree = "<group>"; };
 		FC341D2A1D62BB14007D28FA /* ContainerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerVC.swift; sourceTree = "<group>"; };
@@ -293,6 +297,8 @@
 				FCB17E0A1D556A3E00F0CCBB /* GymLeaderDetailSectionHeader.swift */,
 				FC00EC601D8A197C00E64057 /* GymLeaderPokemonCounter.swift */,
 				FC31FDEC1D972B8A00D3DC14 /* CounterOption.swift */,
+				FC31FDF01D9773BB00D3DC14 /* DetailTitleControl.swift */,
+				FC31FDEE1D9773AE00D3DC14 /* DetailTitleControl.xib */,
 			);
 			name = GymDetail;
 			sourceTree = "<group>";
@@ -641,6 +647,7 @@
 				FC4A83F41D7DBA48004A8E7F /* Localizable.strings in Resources */,
 				FCA742691D52E675003DAC35 /* LaunchScreen.storyboard in Resources */,
 				FCCD27FF1D5CA944000A6428 /* fontawesome-webfont.ttf in Resources */,
+				FC31FDEF1D9773AE00D3DC14 /* DetailTitleControl.xib in Resources */,
 				FCA742661D52E675003DAC35 /* Assets.xcassets in Resources */,
 				FCA742641D52E675003DAC35 /* Main.storyboard in Resources */,
 			);
@@ -687,6 +694,7 @@
 				FC2E4C491D6E68F3008B8EFD /* SpecialMoveSearchResult.swift in Sources */,
 				FC00EC611D8A197C00E64057 /* GymLeaderPokemonCounter.swift in Sources */,
 				FCA742961D52E732003DAC35 /* GymLeaders.swift in Sources */,
+				FC31FDF11D9773BB00D3DC14 /* DetailTitleControl.swift in Sources */,
 				FC2E4C471D6E66BD008B8EFD /* QuickMoveSearchResult.swift in Sources */,
 				FC080B301D91F2E700919930 /* PokemonCollections.swift in Sources */,
 				FC17FA021D5EC635006EAE3D /* SearchElementCell.swift in Sources */,

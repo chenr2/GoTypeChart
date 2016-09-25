@@ -30,8 +30,8 @@
 "Stamina" = "スタミナ";
 
 "Type" = "タイプ";
-"RECOMMENDED_AGAINST" = "推奨されます";
-"USE_MOVESET_AGAINST" = "Use selected move-set against";
+"RECOMMENDED_AGAINST" = "移動セットに対してカウンターを入力";
+"USE_MOVESET_AGAINST" = "移動セットはに対して最適に動作します";
 "SUPER_EFFECTIVE_AGAINST" = "効果はばつぐんだ";
 "NOT_VERY_EFFECTIVE_AGAINST" = "効果はいまひとつだ";
 "QUICK_MOVES" = "通常攻撃"; // conventional attack
