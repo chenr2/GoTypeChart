@@ -449,7 +449,7 @@ class Pokemon {
                     let oqmTypeDamage = oqmStab * oqmBonusDamage1 * oqmBonusDamage2
                     let ocmTypeDamage = ocmStab * ocmBonusDamage1 * ocmBonusDamage2
                     
-                    let differential2 = oqmTypeDamage - oqmStab + ocmTypeDamage - ocmStab
+                    let differential2 = oqmTypeDamage - oqm.dps + ocmTypeDamage - ocm.dps
                     let sumDifferential = differential2 - differential
                     let thisResult = TypeResult(
                         sumDifferential: sumDifferential,
