@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="4aq-el-xiO">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="4aq-el-xiO">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -352,7 +352,7 @@
         <scene sceneID="8bt-zf-Xvq">
             <objects>
                 <collectionViewController hidesBottomBarWhenPushed="YES" id="mp8-fV-bTH" customClass="GymLeaders" customModule="DualTypes" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" keyboardDismissMode="onDrag" dataMode="prototypes" id="H3b-rr-yW6">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" dataMode="prototypes" id="H3b-rr-yW6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -844,7 +844,7 @@
                                 </connections>
                             </collectionViewCell>
                         </cells>
-                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="SearchResultSectionHeader" id="7Ds-bg-yrT" customClass="SearchResultSectionHeader" customModule="DualTypes" customModuleProvider="target">
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SearchResultSectionHeader" id="7Ds-bg-yrT" customClass="SearchResultSectionHeader" customModule="DualTypes" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
@@ -880,7 +880,7 @@
                                 <outlet property="sectionTitle" destination="FJK-Gd-5Ki" id="fdM-U9-keM"/>
                             </connections>
                         </collectionReusableView>
-                        <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="Footer" id="84n-Nr-W9u">
+                        <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Footer" id="84n-Nr-W9u">
                             <rect key="frame" x="0.0" y="434" width="375" height="80"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </collectionReusableView>
@@ -1078,10 +1078,10 @@
                                     </subviews>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="qVY-6j-hYM" firstAttribute="top" secondItem="0cS-HD-xdR" secondAttribute="top" id="B8y-Jf-Mgn"/>
-                                    <constraint firstAttribute="trailing" secondItem="qVY-6j-hYM" secondAttribute="trailing" id="E9Z-oM-Qtn"/>
-                                    <constraint firstAttribute="bottom" secondItem="qVY-6j-hYM" secondAttribute="bottom" id="Oox-2O-83u"/>
-                                    <constraint firstItem="qVY-6j-hYM" firstAttribute="leading" secondItem="0cS-HD-xdR" secondAttribute="leading" id="pwG-rC-0UT"/>
+                                    <constraint firstItem="qVY-6j-hYM" firstAttribute="top" secondItem="0cS-HD-xdR" secondAttribute="top" constant="1" id="B8y-Jf-Mgn"/>
+                                    <constraint firstAttribute="trailing" secondItem="qVY-6j-hYM" secondAttribute="trailing" constant="1" id="E9Z-oM-Qtn"/>
+                                    <constraint firstAttribute="bottom" secondItem="qVY-6j-hYM" secondAttribute="bottom" constant="1" id="Oox-2O-83u"/>
+                                    <constraint firstItem="qVY-6j-hYM" firstAttribute="leading" secondItem="0cS-HD-xdR" secondAttribute="leading" constant="1" id="pwG-rC-0UT"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="circularView" destination="qVY-6j-hYM" id="jvq-6e-zEV"/>
@@ -1534,7 +1534,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="D5E-gq-8is" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="vZx-sC-qq6"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="tNz-Ew-5TV">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tNz-Ew-5TV">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
