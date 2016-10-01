@@ -17,6 +17,7 @@ class GymLeaderDetailHeader: FlexibleCollectionCell {
         circularView.layer.cornerRadius = bounds.size.width / 2
         if let singleElement = elementTypes.first where elementTypes.count == 1 {
             circularView.backgroundColor = Colors.colorForElement(singleElement)
+            elementName.textColor = Colors.textColorForElement(singleElement)
         } else if let firstElement = elementTypes.first,
             let lastElement = elementTypes.last
             where elementTypes.count == 2 {
