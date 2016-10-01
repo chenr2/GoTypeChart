@@ -15,6 +15,14 @@ enum PidgeyRat: Int {
 
 class PidgeyGrinderViewController: UIViewController, NCWidgetProviding {
     
+    @IBOutlet weak var beforeLabel: UILabel!
+    @IBOutlet weak var firstXLabel: UILabel!
+    @IBOutlet weak var secondXLabel: UILabel!
+    @IBOutlet weak var evolvesLabel: UILabel!
+    @IBOutlet weak var attributionLabel: UILabel!
+    @IBOutlet weak var transferLabel: UILabel!
+    @IBOutlet weak var afterLabel: UILabel!
+    
     @IBOutlet weak var leftoverCandy: UILabel!
     @IBOutlet weak var leftoverMons: UILabel!
     @IBOutlet weak var evolutionCount: UILabel!
@@ -197,12 +205,22 @@ class PidgeyGrinderViewController: UIViewController, NCWidgetProviding {
     
     override func viewWillAppear(animated: Bool) {
         if #available(iOS 10, *) {
-            leftoverCandy.textColor = darkGray
-            leftoverMons.textColor = darkGray
             evolutionCount.textColor = darkGray
             evolutions.textColor = darkGray
             monCount.textColor = darkGray
             candyCount.textColor = darkGray
+            
+            beforeLabel.textColor = darkGray
+            firstXLabel.textColor = darkGray
+            secondXLabel.textColor = darkGray
+            evolvesLabel.textColor = darkGray
+            attributionLabel.textColor = darkGray
+            transferLabel.textColor = darkGray
+            transferSwitch.tintColor = darkGray
+            let darkGreen = UIColor(colorLiteralRed: 0.255, green: 0.459, blue: 0.020, alpha: 1)
+            afterLabel.textColor = darkGreen
+            leftoverCandy.textColor = darkGreen
+            leftoverMons.textColor = darkGreen
         }
     }
     

@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -178,16 +178,23 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="300"/>
                     <connections>
+                        <outlet property="afterLabel" destination="q8Z-24-VGg" id="8uc-gv-DEr"/>
+                        <outlet property="attributionLabel" destination="H1x-HU-6rZ" id="Psb-k4-Qeh"/>
+                        <outlet property="beforeLabel" destination="pK4-C6-f8S" id="j9U-cc-vJ2"/>
                         <outlet property="candyButton" destination="mjv-ji-AT3" id="awE-T6-Neu"/>
                         <outlet property="candyCount" destination="EpO-K2-K1S" id="cOs-OD-RTv"/>
                         <outlet property="candyStepper" destination="OLh-x6-u1O" id="7cn-cX-B54"/>
                         <outlet property="evolutionCount" destination="F4K-nP-kcj" id="Azg-JL-LFB"/>
                         <outlet property="evolutions" destination="F4K-nP-kcj" id="PGs-aV-gYC"/>
+                        <outlet property="evolvesLabel" destination="8Ux-X3-tRN" id="giA-2t-AzA"/>
+                        <outlet property="firstXLabel" destination="A9E-dL-jJE" id="o1h-K7-Cdj"/>
                         <outlet property="leftoverCandy" destination="TnX-45-xyP" id="CG4-Rq-UgK"/>
                         <outlet property="leftoverMons" destination="8od-AR-fdI" id="GOl-Vf-CVN"/>
                         <outlet property="monCount" destination="Z5B-zL-Cg4" id="V4M-Xm-Hp3"/>
                         <outlet property="monStepper" destination="H0M-P8-bJt" id="uFJ-ST-16i"/>
                         <outlet property="pidgeyRatButton" destination="HRd-P8-N2i" id="SNy-wJ-vkj"/>
+                        <outlet property="secondXLabel" destination="QiB-zb-Zmk" id="DtX-CM-Q9Z"/>
+                        <outlet property="transferLabel" destination="szO-kL-m69" id="8Cb-At-OCq"/>
                         <outlet property="transferSwitch" destination="MxL-eR-34n" id="WGC-zx-5nl"/>
                     </connections>
                 </viewController>
