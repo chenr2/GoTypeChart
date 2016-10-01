@@ -31,6 +31,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     var iv: IV = .A
     var stat: Stat = .A
 
+    @IBOutlet weak var ivLabel: UILabel!
+    @IBOutlet weak var topStatLabel: UILabel!
     @IBOutlet weak var teamSegment: UISegmentedControl!
     
     @IBOutlet weak var ivSegment: UISegmentedControl!
@@ -227,6 +229,8 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         if #available(iOS 10, *) {
             ivPercentage?.textColor = UIColor.darkGrayColor()
             statFraction?.textColor = UIColor.darkGrayColor()
+            ivLabel?.textColor = UIColor.darkGrayColor()
+            topStatLabel?.textColor = UIColor.darkGrayColor()
         }
     }
     
