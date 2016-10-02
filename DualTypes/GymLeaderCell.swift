@@ -14,7 +14,7 @@ class GymLeaderCell: GridCell {
 
     @IBOutlet weak var indexNumber: UILabel!
         
-    func configureCell(pokemon: Pokemon, sortType: SortType){
+    func configureCell(_ pokemon: Pokemon, sortType: SortType){
         self.pokemon = pokemon
         pokemonName?.text = NSLocalizedString(pokemon.species.rawValue, comment: "") 
         indexNumber?.text = "#\(pokemon.pokedex)"

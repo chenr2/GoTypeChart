@@ -12,6 +12,6 @@ class FlexibleCollectionCell: UICollectionViewCell {
     // prevents a lot of constraint conflicts
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        contentView.autoresizingMask = [.FlexibleHeight, .FlexibleWidth]
+        contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
     }
 }

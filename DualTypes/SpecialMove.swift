@@ -190,14 +190,14 @@ struct SpecialMove {
         return CGFloat(power) / time
     }
     let maxSpecialMove: CGFloat = 198 * 30 * 1.25 // machamp cross chop
-    func specialMovePercentage(baseAttack: CGFloat, stab: Bool) -> CGFloat {
+    func specialMovePercentage(_ baseAttack: CGFloat, stab: Bool) -> CGFloat {
         let bonus: CGFloat = stab ? 1.25 : 1
         let percentage = 100 * baseAttack * dps * bonus / maxSpecialMove
         let curve = 10 * sqrt(percentage)
         return min(curve, 100)
     }
     
-    static func elementForSpecialAttack(specialAttack: SpecialAttack) -> ElementType {
+    static func elementForSpecialAttack(_ specialAttack: SpecialAttack) -> ElementType {
         switch specialAttack {
         case .megahorn, .bugBuzz, .xScissor, .signalBeam:
             return .Bug
@@ -239,7 +239,7 @@ struct SpecialMove {
         }
     }
     
-    static func moveForSpecialAttack(specialAttack: SpecialAttack) -> SpecialMove {
+    static func moveForSpecialAttack(_ specialAttack: SpecialAttack) -> SpecialMove {
         switch specialAttack {
         case .crossChop: return SpecialMove(element: .Fight, specialAttack: specialAttack, power: 60, duration: 2_000)
         case .stoneEdge: return SpecialMove(element: .Rock, specialAttack: specialAttack, power: 80, duration: 3_100)

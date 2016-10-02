@@ -13,22 +13,22 @@ class GymLeaderDetailHeader: FlexibleCollectionCell {
     @IBOutlet weak var circularView: UIView!
     @IBOutlet weak var elementName: UILabel!
     
-    func configureCell(elementTypes: [ElementType]){
+    func configureCell(_ elementTypes: [ElementType]){
         circularView.layer.cornerRadius = bounds.size.width / 2
-        if let singleElement = elementTypes.first where elementTypes.count == 1 {
+        if let singleElement = elementTypes.first, elementTypes.count == 1 {
             circularView.backgroundColor = Colors.colorForElement(singleElement)
             elementName.textColor = Colors.textColorForElement(singleElement)
         } else if let firstElement = elementTypes.first,
             let lastElement = elementTypes.last
-            where elementTypes.count == 2 {
-            UIView.animateWithDuration(2, delay: 0.0, options:[UIViewAnimationOptions.Repeat, UIViewAnimationOptions.Autoreverse], animations: {
+            , elementTypes.count == 2 {
+            UIView.animate(withDuration: 2, delay: 0.0, options:[UIViewAnimationOptions.repeat, UIViewAnimationOptions.autoreverse], animations: {
                 self.circularView.backgroundColor = Colors.colorForElement(firstElement)
                 self.circularView.backgroundColor = Colors.colorForElement(lastElement)
             }, completion: nil)
         }
         let elementString = elementTypes.map {
             return NSLocalizedString($0.rawValue, comment: "")
-        }.joinWithSeparator(" / ")
+        }.joined(separator: " / ")
         elementName?.text = elementString
     }
     

@@ -18,7 +18,7 @@ class StatArc: UIView {
     
     let units = 2 * π * ( 2 / 3 ) / 100
     
-    func drawArc(endPercent: CGFloat, backgroundArc: Bool){
+    func drawArc(_ endPercent: CGFloat, backgroundArc: Bool){
         let center = CGPoint(x:bounds.width/2, y: bounds.height/2)
         let radius: CGFloat = max(bounds.width, bounds.height)
         let arcWidth: CGFloat = 5
@@ -34,13 +34,13 @@ class StatArc: UIView {
             let backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.5)
             backgroundColor.setStroke()
         } else {
-            UIColor.whiteColor().setStroke()
+            UIColor.white.setStroke()
         }
         path.stroke()
     }
     
     // https://www.raywenderlich.com/90690/modern-core-graphics-with-swift-part-1
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         drawArc(100, backgroundArc: true)
         drawArc(percent, backgroundArc: false)
     }

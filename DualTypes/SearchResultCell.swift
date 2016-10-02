@@ -16,7 +16,7 @@ class SearchResultCell: FlexibleCollectionCell {
     
     var pokemon: Pokemon? = nil 
     
-    func configureCell(pokemon: Pokemon){
+    func configureCell(_ pokemon: Pokemon){
         self.pokemon = pokemon
         pokemonName?.text = NSLocalizedString(pokemon.species.rawValue, comment: "")
         if let element = pokemon.type.first {

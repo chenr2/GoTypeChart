@@ -9,16 +9,16 @@
 import UIKit
 
 protocol ContainerEventRelay {
-    func detectActionMenuChange(sortType: SortType)
-    func toggleActionButtonVisibility(visible: Bool)
+    func detectActionMenuChange(_ sortType: SortType)
+    func toggleActionButtonVisibility(_ visible: Bool)
 }
 
 class ContainerVC: UIViewController {
 
-    @IBAction func panGesture(sender: UIPanGestureRecognizer) {
-        let translation = sender.translationInView(view)
+    @IBAction func panGesture(_ sender: UIPanGestureRecognizer) {
+        let translation = sender.translation(in: view)
         
-        let progress = MenuHelper.calculateProgress(translation, viewBounds: view.bounds, direction: .Left)
+        let progress = MenuHelper.calculateProgress(translation, viewBounds: view.bounds, direction: .left)
         
         if let tbc = tabBarController as? TabBarController {
             MenuHelper.mapGestureStateToInteractor(
@@ -32,16 +32,16 @@ class ContainerVC: UIViewController {
     
     @IBOutlet weak var actionButton: UIButton!
     
-    @IBAction func openModalMenu(sender: AnyObject) {
-        gymLeaders?.performSegueWithIdentifier("openMenuModal", sender: nil)
+    @IBAction func openModalMenu(_ sender: AnyObject) {
+        gymLeaders?.performSegue(withIdentifier: "openMenuModal", sender: nil)
     }
     
     @IBOutlet weak var actionButtonContainer: UIView!
     
     var gymLeaders: GymLeaders? = nil
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let nav = segue.destinationViewController as? UINavigationController,
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let nav = segue.destination as? UINavigationController,
             let main = nav.viewControllers.first as? GymLeaders {
             gymLeaders = main
             gymLeaders?.containerEventRelay = self
@@ -49,15 +49,15 @@ class ContainerVC: UIViewController {
     }
     
     override func viewDidLoad() {
-        actionButton.layer.borderColor = UIColor.whiteColor().CGColor
+        actionButton.layer.borderColor = UIColor.white.cgColor
     }
 }
 
 extension ContainerVC: ContainerEventRelay {
-    func detectActionMenuChange(sortType: SortType){
-        actionButton.setTitle(NSLocalizedString(sortType.rawValue, comment: ""), forState: .Normal) 
+    func detectActionMenuChange(_ sortType: SortType){
+        actionButton.setTitle(NSLocalizedString(sortType.rawValue, comment: ""), for: UIControlState()) 
     }
-    func toggleActionButtonVisibility(visible: Bool){
-        actionButtonContainer.hidden = !visible
+    func toggleActionButtonVisibility(_ visible: Bool){
+        actionButtonContainer.isHidden = !visible
     }
 }

@@ -19,7 +19,7 @@ class GymLeaderPokemonCounter: FlexibleCollectionCell {
     
     var typeResult: TypeResult? = nil
     
-    func configureCell(typeResult: TypeResult){
+    func configureCell(_ typeResult: TypeResult){
         self.typeResult = typeResult
         pokemonCounterName?.text = NSLocalizedString(typeResult.opponent.species.rawValue, comment: "")
         let quickMove = typeResult.opponentQuickMove

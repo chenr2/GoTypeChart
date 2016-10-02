@@ -22,7 +22,7 @@ class InterfaceController: WKInterfaceController {
         guard let ringImage = UIImage(named: "ring") else { return }
         mapView.removeAllAnnotations()
         _ = locationArray.map { coordinate in
-            mapView.addAnnotation(coordinate, withImage: ringImage, centerOffset: CGPointZero)
+            mapView.addAnnotation(coordinate, with: ringImage, centerOffset: CGPoint.zero)
         }
         addCurrentPosition()
     }
@@ -40,7 +40,7 @@ class InterfaceController: WKInterfaceController {
         redrawCircles()
     }
     
-    func handlePermissionsWarning(allowed: Bool){
+    func handlePermissionsWarning(_ allowed: Bool){
         if allowed {
             mapView.setHidden(false)
             permissionsWarning.setHidden(true)
@@ -53,7 +53,7 @@ class InterfaceController: WKInterfaceController {
     func addCurrentPosition(){
         guard let currentLocation = currentLocation,
             let pokeMarker = UIImage(named: "currentPosition") else { return }
-        mapView.addAnnotation(currentLocation, withImage: pokeMarker, centerOffset: CGPointZero)
+        mapView.addAnnotation(currentLocation, with: pokeMarker, centerOffset: CGPoint.zero)
     }
     
     @IBOutlet var mapView: WKInterfaceMap!
@@ -62,13 +62,13 @@ class InterfaceController: WKInterfaceController {
         locationManager.requestLocation()
     }
     
-    override func awakeWithContext(context: AnyObject?) {
-        super.awakeWithContext(context)
+    override func awake(withContext context: Any?) {
+        super.awake(withContext: context)
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         
         // infinite polling
-        let _ = NSTimer.scheduledTimerWithTimeInterval(5.0, target: self, selector: #selector(InterfaceController.here), userInfo: nil, repeats: true)
+        let _ = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(InterfaceController.here), userInfo: nil, repeats: true)
 
     }
     
@@ -76,13 +76,13 @@ class InterfaceController: WKInterfaceController {
         locationManager.requestWhenInUseAuthorization()
     }
     
-    func handleLocationServicesAuthorizationStatus(status: CLAuthorizationStatus){
+    func handleLocationServicesAuthorizationStatus(_ status: CLAuthorizationStatus){
         switch status {
-        case .NotDetermined:
+        case .notDetermined:
             handleLocationServicesStateNotDetermined()
-        case .Denied, .Restricted:
+        case .denied, .restricted:
             handlePermissionsWarning(false)
-        case .AuthorizedWhenInUse, .AuthorizedAlways:
+        case .authorizedWhenInUse, .authorizedAlways:
             handlePermissionsWarning(true)
         }
     }
@@ -107,13 +107,13 @@ class InterfaceController: WKInterfaceController {
 }
 
 extension InterfaceController : CLLocationManagerDelegate {
-    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-        if status == .AuthorizedAlways {
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .authorizedAlways {
             locationManager.requestLocation()
         }
     }
     
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.first else {
             return
         }
@@ -125,7 +125,7 @@ extension InterfaceController : CLLocationManagerDelegate {
         redrawCircles()
     }
     
-    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         checkPermissions()
         print("error:: \(error)")
     }

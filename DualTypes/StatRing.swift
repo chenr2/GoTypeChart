@@ -18,20 +18,20 @@ class StatRing: UIView {
     
     let units = 2 * π / 100
     
-    var arcColor: UIColor = UIColor.darkGrayColor() {
+    var arcColor: UIColor = UIColor.darkGray {
         didSet {
             setNeedsDisplay()
         }
     }
     
-    var fillColor: UIColor = UIColor.whiteColor() {
+    var fillColor: UIColor = UIColor.white {
         didSet {
             setNeedsDisplay()
         }
     }
     
     // https://www.raywenderlich.com/90690/modern-core-graphics-with-swift-part-1
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         let center = CGPoint(x:bounds.width/2, y: bounds.height/2)
         let radius: CGFloat = max(bounds.width, bounds.height)
         let arcWidth: CGFloat = 5
@@ -46,7 +46,7 @@ class StatRing: UIView {
         pathBackground.lineWidth = arcWidth
         fillColor.setFill()
         pathBackground.fill()
-        arcColor.colorWithAlphaComponent(0.3).setStroke()
+        arcColor.withAlphaComponent(0.3).setStroke()
         pathBackground.stroke()
         // stat ring
         let path = UIBezierPath(arcCenter: center,

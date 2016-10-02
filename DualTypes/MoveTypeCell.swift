@@ -22,20 +22,20 @@ class MoveTypeCell: GridCell {
     @IBOutlet weak var chargeMove2: UIView!
     @IBOutlet weak var chargeMove3: UIView!
     
-    func configureCell(pokemon: Pokemon){
+    func configureCell(_ pokemon: Pokemon){
         self.pokemon = pokemon
         pokemonName?.text = NSLocalizedString(pokemon.species.rawValue, comment: "")
-        quickMove1.backgroundColor = UIColor.clearColor()
-        quickMove2.backgroundColor = UIColor.clearColor()
-        chargeMove1.backgroundColor = UIColor.clearColor()
-        chargeMove2.backgroundColor = UIColor.clearColor()
-        chargeMove3.backgroundColor = UIColor.clearColor()
+        quickMove1.backgroundColor = UIColor.clear
+        quickMove2.backgroundColor = UIColor.clear
+        chargeMove1.backgroundColor = UIColor.clear
+        chargeMove2.backgroundColor = UIColor.clear
+        chargeMove3.backgroundColor = UIColor.clear
         elementName?.text = ""
-        firstElementView?.backgroundColor = UIColor.clearColor()
-        elementName?.textColor = UIColor.clearColor()
+        firstElementView?.backgroundColor = UIColor.clear
+        elementName?.textColor = UIColor.clear
         secondElementName?.text = ""
-        secondElementView?.backgroundColor = UIColor.clearColor()
-        secondElementName?.textColor = UIColor.clearColor()
+        secondElementView?.backgroundColor = UIColor.clear
+        secondElementName?.textColor = UIColor.clear
 
         if let firstElement = pokemon.type.first {
             elementName?.text = NSLocalizedString(firstElement.rawValue, comment: "")
@@ -49,7 +49,7 @@ class MoveTypeCell: GridCell {
                 secondElementName?.textColor = Colors.textColorForElement(lastElement)
             }
         }
-        let quickAttacks: [QuickAttack] = pokemon.quickAttacks.sort { attackA, attackB in
+        let quickAttacks: [QuickAttack] = pokemon.quickAttacks.sorted { attackA, attackB in
             let baseAttack = CGFloat(pokemon.attack)
             let moveA = QuickMove.moveForQuickAttack(attackA)
             let stabA = pokemon.type.contains(moveA.element)
@@ -59,7 +59,7 @@ class MoveTypeCell: GridCell {
             let statB = moveB.quickMovePercentage(baseAttack, stab: stabB)
             return statA > statB
         }
-        let specialAttacks: [SpecialAttack] = pokemon.specialAttacks.sort { attackA, attackB in
+        let specialAttacks: [SpecialAttack] = pokemon.specialAttacks.sorted { attackA, attackB in
             let baseAttack = CGFloat(pokemon.attack)
             let moveA = SpecialMove.moveForSpecialAttack(attackA)
             let stabA = pokemon.type.contains(moveA.element)
@@ -73,7 +73,7 @@ class MoveTypeCell: GridCell {
             let element = QuickMove.moveForQuickAttack(firstQuickAttack).element
             quickMove1.backgroundColor = Colors.colorForElement(element)
         }
-        if let lastQuickAttack = quickAttacks.last where quickAttacks.count == 2 {
+        if let lastQuickAttack = quickAttacks.last , quickAttacks.count == 2 {
             let element = QuickMove.moveForQuickAttack(lastQuickAttack).element
             quickMove2.backgroundColor = Colors.colorForElement(element)
         }

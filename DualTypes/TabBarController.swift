@@ -16,15 +16,15 @@ class TabBarController: UITabBarController {
 }
 
 extension TabBarController: UITabBarControllerDelegate {
-    func tabBarController(tabBarController: UITabBarController, interactionControllerForAnimationController animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+    func tabBarController(_ tabBarController: UITabBarController, interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
         return interactor.hasStarted ? interactor : nil
     }
     
     
-    func tabBarController(tabBarController: UITabBarController, animationControllerForTransitionFromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    func tabBarController(_ tabBarController: UITabBarController, animationControllerForTransitionFrom fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         var reverse = false
-        if let fromVCIndex = viewControllers?.indexOf(fromVC),
-            let toVCIndex = viewControllers?.indexOf(toVC) {
+        if let fromVCIndex = viewControllers?.index(of: fromVC),
+            let toVCIndex = viewControllers?.index(of: toVC) {
             reverse = fromVCIndex > toVCIndex
         }
         return TabSwitchAnimator(reverse: reverse)

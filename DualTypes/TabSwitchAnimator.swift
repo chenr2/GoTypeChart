@@ -17,39 +17,39 @@ class TabSwitchAnimator : NSObject {
 }
 
 extension TabSwitchAnimator : UIViewControllerAnimatedTransitioning {
-    func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
+    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 0.6
     }
     
-    func animateTransition(transitionContext: UIViewControllerContextTransitioning) {
+    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         guard
-            let fromVC = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey),
-            let toVC = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)
+            let fromVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from),
+            let toVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to)
             else {
                 return
         }
         
-        let containerView = transitionContext.containerView()
+        let containerView = transitionContext.containerView
         
         containerView.insertSubview(toVC.view, aboveSubview: fromVC.view)
         if reverse {
-            toVC.view.center.x -= UIScreen.mainScreen().bounds.width
+            toVC.view.center.x -= UIScreen.main.bounds.width
         } else {
-            toVC.view.center.x += UIScreen.mainScreen().bounds.width
+            toVC.view.center.x += UIScreen.main.bounds.width
         }
 
-        UIView.animateWithDuration(
-            transitionDuration(transitionContext),
+        UIView.animate(
+            withDuration: transitionDuration(using: transitionContext),
             animations: {
                 if self.reverse {
-                    fromVC.view.center.x += UIScreen.mainScreen().bounds.width
+                    fromVC.view.center.x += UIScreen.main.bounds.width
                 } else {
-                    fromVC.view.center.x -= UIScreen.mainScreen().bounds.width
+                    fromVC.view.center.x -= UIScreen.main.bounds.width
                 }
-                toVC.view.center.x = UIScreen.mainScreen().bounds.width / 2
+                toVC.view.center.x = UIScreen.main.bounds.width / 2
             },
             completion: { _ in
-                transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
+                transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
             }
         )
     }

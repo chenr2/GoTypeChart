@@ -12,7 +12,7 @@ class AlphabeticalCell: GridCell {
     
     @IBOutlet var pokemonName: UILabel!
         
-    func configureCell(pokemon: Pokemon, sortType: SortType){
+    func configureCell(_ pokemon: Pokemon, sortType: SortType){
         self.pokemon = pokemon
         pokemonName?.text = NSLocalizedString(pokemon.species.rawValue, comment: "")
         backgroundColor = Colors.purple

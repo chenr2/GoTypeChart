@@ -15,7 +15,7 @@ class DetailTitleControl: UIView {
     @IBOutlet weak var chargeMoveBubble: UIView!
     @IBOutlet weak var chargeMoveName: UILabel!
     
-    func configureTitleControl(pokemon: Pokemon, quickAttack: QuickAttack, specialAttack: SpecialAttack){
+    func configureTitleControl(_ pokemon: Pokemon, quickAttack: QuickAttack, specialAttack: SpecialAttack){
         let pokemonLocalizedName = NSLocalizedString(pokemon.species.rawValue, comment: "")
         pokemonName.text = "#\(pokemon.pokedex) \(pokemonLocalizedName)"
         quickMoveName.text = NSLocalizedString(quickAttack.rawValue, comment: "")

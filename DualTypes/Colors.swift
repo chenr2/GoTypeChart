@@ -34,7 +34,7 @@ struct Colors {
     static let dark = UIColor(colorLiteralRed: 0.059, green: 0.059, blue: 0.059, alpha: 1)
     static let fairy = UIColor(colorLiteralRed: 0.925, green: 0.635, blue: 0.937, alpha: 1)
     
-    static func colorForElement(elementType: ElementType) -> UIColor {
+    static func colorForElement(_ elementType: ElementType) -> UIColor {
         switch elementType {
         case .Normal:
             return Colors.normal
@@ -75,14 +75,14 @@ struct Colors {
         }
     }
     
-    static func textColorForElement(elementType: ElementType) -> UIColor {
+    static func textColorForElement(_ elementType: ElementType) -> UIColor {
         switch elementType {
         case .Electric:
-            return .grayColor()
+            return .gray
         case .Normal:
-            return .darkGrayColor()
+            return .darkGray
         default:
-            return .whiteColor()
+            return .white
         }
     }
 }

@@ -18,7 +18,7 @@ class PokemonSearchTableResult: UITableViewCell {
 
     var pokemon: Pokemon? = nil
     
-    func configureCell(pokemon: Pokemon){
+    func configureCell(_ pokemon: Pokemon){
         self.pokemon = pokemon
         let localizedPokemonName = NSLocalizedString(pokemon.species.rawValue, comment: "")
         pokemonName?.text = "#\(pokemon.pokedex) \(localizedPokemonName)"
@@ -35,8 +35,8 @@ class PokemonSearchTableResult: UITableViewCell {
             }
         } else {
             secondElementName?.text = ""
-            secondElementView?.backgroundColor = UIColor.clearColor()
-            secondElementName?.textColor = UIColor.clearColor()
+            secondElementView?.backgroundColor = UIColor.clear
+            secondElementName?.textColor = UIColor.clear
         }
     }
 }

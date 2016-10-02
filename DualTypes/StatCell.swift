@@ -14,7 +14,7 @@ class StatCell: GridCell {
     @IBOutlet weak var sortLabel: UILabel!
     @IBOutlet weak var statArc: StatArc!
     
-    func configureCell(pokemon: Pokemon, sortType: SortType){
+    func configureCell(_ pokemon: Pokemon, sortType: SortType){
         self.pokemon = pokemon
         pokemonName?.text = NSLocalizedString(pokemon.species.rawValue, comment: "")
         switch sortType {

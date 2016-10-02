@@ -106,13 +106,13 @@ struct QuickMove {
         return CGFloat(power) / time
     }
     let maxQuickMove: CGFloat = 284 * 12.28 * 1.25 // mewtwo psycho cut
-    func quickMovePercentage(baseAttack: CGFloat, stab: Bool) -> CGFloat {
+    func quickMovePercentage(_ baseAttack: CGFloat, stab: Bool) -> CGFloat {
         let bonus: CGFloat = stab ? 1.25 : 1
         let percentage = 100 * baseAttack * dps * bonus / maxQuickMove
         let curve = 10 * sqrt(percentage)
         return min(curve, 100)
     }
-    static func moveForQuickAttack(quickAttack: QuickAttack) -> QuickMove {
+    static func moveForQuickAttack(_ quickAttack: QuickAttack) -> QuickMove {
         switch quickAttack {
         case .pound: return QuickMove(element: .Normal, quickAttack: quickAttack, power: 7, duration: 540)
         case .metalClaw: return QuickMove(element: .Steel, quickAttack: quickAttack, power: 8, duration: 630)

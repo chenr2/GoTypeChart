@@ -15,7 +15,7 @@ class SpecialMoveSearchResult: UITableViewCell {
     
     var specialMove: SpecialMove? = nil
     
-    func configureCell(specialMove: SpecialMove){
+    func configureCell(_ specialMove: SpecialMove){
         self.specialMove = specialMove
         moveName?.text = NSLocalizedString(specialMove.specialAttack.rawValue, comment: "")
         let element = specialMove.element

@@ -12,7 +12,7 @@ class GymLeaderDetailSectionHeader: UICollectionReusableView {
     
     @IBOutlet weak var sectionTitle: UILabel!
     
-    func configureCell(sectionHeaderText: String){
+    func configureCell(_ sectionHeaderText: String){
         sectionTitle?.text = sectionHeaderText
     }
     

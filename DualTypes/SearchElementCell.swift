@@ -14,16 +14,16 @@ class SearchElementCell: FlexibleCollectionCell {
     @IBOutlet weak var closeButton: UILabel!
     @IBOutlet weak var closeButtonWidth: NSLayoutConstraint!
     
-    func configureCell(element: ElementType, isFilter: Bool){
+    func configureCell(_ element: ElementType, isFilter: Bool){
         elementName?.text = NSLocalizedString(element.rawValue, comment: "")
         elementName?.textColor = Colors.textColorForElement(element)
         backgroundColor = Colors.colorForElement(element)
         if isFilter {
             closeButtonWidth.constant = 13.5
-            closeButton.hidden = false
+            closeButton.isHidden = false
         } else {
             closeButtonWidth.constant = 0
-            closeButton.hidden = true
+            closeButton.isHidden = true
         }
     }
     

@@ -17,20 +17,20 @@ class GymLeaderDetailQuickMoveCell: FlexibleCollectionCell {
     @IBOutlet weak var elementBubble: UIView!
     @IBOutlet weak var dpsStat: UILabel!
     
-    func changeSelection(cellSelected: Bool, element: ElementType?){
+    func changeSelection(_ cellSelected: Bool, element: ElementType?){
         let blue = UIColor(colorLiteralRed: 0.290, green: 0.565, blue: 0.886, alpha: 1)
-        selectionBar.backgroundColor = cellSelected ? blue : UIColor.whiteColor()
-        if let element = element where cellSelected {
+        selectionBar.backgroundColor = cellSelected ? blue : UIColor.white
+        if let element = element , cellSelected {
             let elementColor = Colors.colorForElement(element)
-            statArc.fillColor = elementColor.colorWithAlphaComponent(0.1)
+            statArc.fillColor = elementColor.withAlphaComponent(0.1)
         } else {
-            statArc.fillColor = UIColor.whiteColor()
+            statArc.fillColor = UIColor.white
         }
     }
     
-    func attributedStabBonus(dps: CGFloat, elementColor: UIColor, stab: Bool) -> NSMutableAttributedString {
+    func attributedStabBonus(_ dps: CGFloat, elementColor: UIColor, stab: Bool) -> NSMutableAttributedString {
         let mainAttributes = [
-            NSForegroundColorAttributeName : UIColor.darkGrayColor()
+            NSForegroundColorAttributeName : UIColor.darkGray
         ]
         let dpsNumberString = String(format: "%.1f", dps)
         let mainString = dpsNumberString
@@ -43,12 +43,12 @@ class GymLeaderDetailQuickMoveCell: FlexibleCollectionCell {
                 NSForegroundColorAttributeName : Colors.blue
             ]
             let bonusAttributedString = NSMutableAttributedString(string: bonusText, attributes: bonusAttributes)
-            mainAttributedString.appendAttributedString(bonusAttributedString)
+            mainAttributedString.append(bonusAttributedString)
         }
         return mainAttributedString
     }
     
-    func configureCell(quickAttack: QuickAttack, pokemon: Pokemon, cellSelected: Bool){
+    func configureCell(_ quickAttack: QuickAttack, pokemon: Pokemon, cellSelected: Bool){
         let move = QuickMove.moveForQuickAttack(quickAttack)
         let element = move.element
         changeSelection(cellSelected, element: element)
@@ -63,7 +63,7 @@ class GymLeaderDetailQuickMoveCell: FlexibleCollectionCell {
         dpsStat?.attributedText = attributedStabBonus(dps, elementColor: elementColor, stab: stabFlag)
     }
     
-    func configureCellSpecial(specialAttack: SpecialAttack, pokemon: Pokemon, cellSelected: Bool){
+    func configureCellSpecial(_ specialAttack: SpecialAttack, pokemon: Pokemon, cellSelected: Bool){
         let move = SpecialMove.moveForSpecialAttack(specialAttack)
         let element = move.element
         changeSelection(cellSelected, element: element)

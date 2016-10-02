@@ -14,51 +14,51 @@ class MenuModal: UIViewController {
     
     @IBOutlet weak var actionButtonClose: UIButton! {
         didSet {
-            actionButtonClose.layer.borderColor = UIColor.whiteColor().CGColor
+            actionButtonClose.layer.borderColor = UIColor.white.cgColor
         }
     }
     
-    @IBAction func closeModal(sender: AnyObject) {
-        dismissViewControllerAnimated(true){}
+    @IBAction func closeModal(_ sender: AnyObject) {
+        dismiss(animated: true){}
     }
     
-    @IBAction func changeToIndex(sender: AnyObject) {
+    @IBAction func changeToIndex(_ sender: AnyObject) {
         changeSortType?.setSortType(.Leaders)
-        dismissViewControllerAnimated(true){}
+        dismiss(animated: true){}
     }
     
-    @IBAction func changeToAlphabetical(sender: AnyObject) {
+    @IBAction func changeToAlphabetical(_ sender: AnyObject) {
         changeSortType?.setSortType(.Alphabetical)
-        dismissViewControllerAnimated(true){}
+        dismiss(animated: true){}
     }
     
-    @IBAction func changeToAttack(sender: AnyObject) {
+    @IBAction func changeToAttack(_ sender: AnyObject) {
         changeSortType?.setSortType(.Attack)
-        dismissViewControllerAnimated(true){}
+        dismiss(animated: true){}
     }
     
-    @IBAction func changeToDefense(sender: AnyObject) {
+    @IBAction func changeToDefense(_ sender: AnyObject) {
         changeSortType?.setSortType(.Defense)
-        dismissViewControllerAnimated(true){}
+        dismiss(animated: true){}
     }
     
-    @IBAction func changeToStamina(sender: AnyObject) {
+    @IBAction func changeToStamina(_ sender: AnyObject) {
         changeSortType?.setSortType(.Stamina)
-        dismissViewControllerAnimated(true){}
+        dismiss(animated: true){}
     }
     
-    @IBAction func changeToType(sender: AnyObject) {
-        changeSortType?.setSortType(.Type)
-        dismissViewControllerAnimated(true){}
+    @IBAction func changeToType(_ sender: AnyObject) {
+        changeSortType?.setSortType(.ElementType)
+        dismiss(animated: true){}
     }
     
-    @IBAction func changeToMoveType(sender: AnyObject) {
+    @IBAction func changeToMoveType(_ sender: AnyObject) {
         changeSortType?.setSortType(.MoveType)
-        dismissViewControllerAnimated(true){}        
+        dismiss(animated: true){}        
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        dismissViewControllerAnimated(true, completion: nil)
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        dismiss(animated: true, completion: nil)
     }
     
 }

@@ -10,15 +10,15 @@ import UIKit
 import NotificationCenter
 
 enum Team: Int {
-    case Instinct = 0, Valor, Mystic
+    case instinct = 0, valor, mystic
 }
 
 enum IV: Int {
-    case A = 0, B, C, D
+    case a = 0, b, c, d
 }
 
 enum Stat: Int {
-    case A = 0, B, C, D
+    case a = 0, b, c, d
 }
 
 class TodayViewController: UIViewController, NCWidgetProviding {
@@ -27,9 +27,9 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     let ivKey = "ivSegment"
     let statKey = "statSegment"
     
-    var team: Team = .Instinct
-    var iv: IV = .A
-    var stat: Stat = .A
+    var team: Team = .instinct
+    var iv: IV = .a
+    var stat: Stat = .a
 
     @IBOutlet weak var ivLabel: UILabel!
     @IBOutlet weak var topStatLabel: UILabel!
@@ -43,30 +43,30 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 
     @IBOutlet weak var statFraction: UILabel!
     
-    @IBAction func teamSegmentSelected(sender: UISegmentedControl) {
+    @IBAction func teamSegmentSelected(_ sender: UISegmentedControl) {
         let index = sender.selectedSegmentIndex
         switch index {
         case 0:
-            team = .Instinct
+            team = .instinct
         case 1:
-            team = .Valor
+            team = .valor
         case 2:
-            team = .Mystic
+            team = .mystic
         default:
             break
         }
         refreshSegmentNames()
-        let defaults = NSUserDefaults(suiteName: "group.gotypechart.appraisalcheatsheet")
-        defaults?.setInteger(index, forKey: teamKey)
+        let defaults = UserDefaults(suiteName: "group.gotypechart.appraisalcheatsheet")
+        defaults?.set(index, forKey: teamKey)
         defaults?.synchronize()
     }
     
     func refreshSegmentNames(){
         for index in 0...3 {
             let title = messageForIV(team, iv: IV.init(rawValue: index)!)
-            ivSegment.setTitle(title, forSegmentAtIndex: index)
+            ivSegment.setTitle(title, forSegmentAt: index)
             let statTitle = messageForStat(team, stat: Stat.init(rawValue: index)!)
-            statSegment.setTitle(statTitle, forSegmentAtIndex: index)
+            statSegment.setTitle(statTitle, forSegmentAt: index)
         }
         for v in ivSegment.subviews {
             v.layoutSubviews()
@@ -82,143 +82,143 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         statSegment.backgroundColor = backgroundColorForTeam(team)
     }
     
-    @IBAction func ivSegmentSelected(sender: UISegmentedControl) {
+    @IBAction func ivSegmentSelected(_ sender: UISegmentedControl) {
         let selectedIndex = sender.selectedSegmentIndex
         ivPercentage?.text = valueForIV(IV.init(rawValue: selectedIndex)!)
         iv = IV.init(rawValue: selectedIndex)!
-        let defaults = NSUserDefaults(suiteName: "group.gotypechart.appraisalcheatsheet")
-        defaults?.setInteger(selectedIndex, forKey: ivKey)
+        let defaults = UserDefaults(suiteName: "group.gotypechart.appraisalcheatsheet")
+        defaults?.set(selectedIndex, forKey: ivKey)
         defaults?.synchronize()
     }
     
-    @IBAction func statSegmentSelected(sender: UISegmentedControl) {
+    @IBAction func statSegmentSelected(_ sender: UISegmentedControl) {
         let selectedIndex = sender.selectedSegmentIndex
         statFraction?.text = valueForStat(Stat.init(rawValue: selectedIndex)!)
         stat = Stat.init(rawValue: selectedIndex)!
-        let defaults = NSUserDefaults(suiteName: "group.gotypechart.appraisalcheatsheet")
-        defaults?.setInteger(selectedIndex, forKey: statKey)
+        let defaults = UserDefaults(suiteName: "group.gotypechart.appraisalcheatsheet")
+        defaults?.set(selectedIndex, forKey: statKey)
         defaults?.synchronize()
     }
     
-    func colorForTeam(team: Team) -> UIColor {
+    func colorForTeam(_ team: Team) -> UIColor {
         switch team {
-        case .Mystic:
+        case .mystic:
             return UIColor.init(red: 0.000, green: 0.467, blue: 0.945, alpha: 1)
-        case .Valor:
+        case .valor:
             return UIColor.init(red: 0.969, green: 0.063, blue: 0.024, alpha: 1)
-        case .Instinct:
+        case .instinct:
             return UIColor.init(red: 0.984, green: 0.827, blue: 0, alpha: 1)
         }
     }
     
-    func backgroundColorForTeam(team: Team) -> UIColor {
+    func backgroundColorForTeam(_ team: Team) -> UIColor {
         switch team {
-        case .Mystic:
+        case .mystic:
             return UIColor.init(red: 1, green: 1, blue: 1, alpha: 0.9)
-        case .Valor:
+        case .valor:
             return UIColor.init(red: 1, green: 1, blue: 1, alpha: 0.9)
-        case .Instinct:
+        case .instinct:
             return UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.5)
         }
     }
     
-    func messageForIV(team: Team, iv: IV) -> String {
+    func messageForIV(_ team: Team, iv: IV) -> String {
         switch (team, iv) {
-        case (.Instinct, .A):
+        case (.instinct, .a):
             return NSLocalizedString("Instinct-IV-A", comment: "Battle with the best")
-        case (.Instinct, .B):
+        case (.instinct, .b):
             return NSLocalizedString("Instinct-IV-B", comment: "Really strong")
-        case (.Instinct, .C):
+        case (.instinct, .c):
             return NSLocalizedString("Instinct-IV-C", comment: "Pretty decent")
-        case (.Instinct, .D):
+        case (.instinct, .d):
             return NSLocalizedString("Instinct-IV-D", comment: "Room for improvement")
-        case (.Valor, .A):
+        case (.valor, .a):
             return NSLocalizedString("Valor-IV-A", comment: "Accomplish anything")
-        case (.Valor, .B):
+        case (.valor, .b):
             return NSLocalizedString("Valor-IV-B", comment: "Should be proud")
-        case (.Valor, .C):
+        case (.valor, .c):
             return NSLocalizedString("Valor-IV-C", comment: "Decent Pokemon")
-        case (.Valor, .D):
+        case (.valor, .d):
             return NSLocalizedString("Valor-IV-D", comment: "Not great in battle")
-        case (.Mystic, .A):
+        case (.mystic, .a):
             return NSLocalizedString("Mystic-IV-A", comment: "Wonder, breath taking")
-        case (.Mystic, .B):
+        case (.mystic, .b):
             return NSLocalizedString("Mystic-IV-B", comment: "Caught my attention")
-        case (.Mystic, .C):
+        case (.mystic, .c):
             return NSLocalizedString("Mystic-IV-C", comment: "Above average")
-        case (.Mystic, .D):
+        case (.mystic, .d):
             return NSLocalizedString("Mystic-IV-D", comment: "Not much headway")
         }
     }
     
-    func valueForIV(iv: IV) -> String {
+    func valueForIV(_ iv: IV) -> String {
         switch iv {
-        case .A:
+        case .a:
             return "82-100%"
-        case .B:
+        case .b:
             return "67-81%"
-        case .C:
+        case .c:
             return "51-66%"
-        case .D:
+        case .d:
             return "0-50%"
         }
     }
     
-    func messageForStat(team: Team, stat: Stat) -> String {
+    func messageForStat(_ team: Team, stat: Stat) -> String {
         switch (team, stat) {
-        case (.Instinct, .A):
+        case (.instinct, .a):
             return NSLocalizedString("Instinct-Stat-A", comment: "Best ever seen")
-        case (.Instinct, .B):
+        case (.instinct, .b):
             return NSLocalizedString("Instinct-Stat-B", comment: "Strong, impressive")
-        case (.Instinct, .C):
+        case (.instinct, .c):
             return NSLocalizedString("Instinct-Stat-C", comment: "Good stats")
-        case (.Instinct, .D):
+        case (.instinct, .d):
             return NSLocalizedString("Instinct-Stat-D", comment: "Kinda basic")
-        case (.Valor, .A):
+        case (.valor, .a):
             return NSLocalizedString("Valor-Stat-A", comment: "Excellent stats")
-        case (.Valor, .B):
+        case (.valor, .b):
             return NSLocalizedString("Valor-Stat-B", comment: "Blown away, WOW")
-        case (.Valor, .C):
+        case (.valor, .c):
             return NSLocalizedString("Valor-Stat-C", comment: "Get the job done")
-        case (.Valor, .D):
+        case (.valor, .d):
             return NSLocalizedString("Valor-Stat-D", comment: "Don't point to greatness")
-        case (.Mystic, .A):
+        case (.mystic, .a):
             return NSLocalizedString("Mystic-Stat-A", comment: "Exceed, incredible")
-        case (.Mystic, .B):
+        case (.mystic, .b):
             return NSLocalizedString("Mystic-Stat-B", comment: "Impressed by stats")
-        case (.Mystic, .C):
+        case (.mystic, .c):
             return NSLocalizedString("Mystic-Stat-C", comment: "Trending positive")
-        case (.Mystic, .D):
+        case (.mystic, .d):
             return NSLocalizedString("Mystic-Stat-D", comment: "Not out of norm")
         }
     }
     
-    func valueForStat(stat: Stat) -> String {
+    func valueForStat(_ stat: Stat) -> String {
         switch stat {
-        case .A:
+        case .a:
             return "15"
-        case .B:
+        case .b:
             return "13-14"
-        case .C:
+        case .c:
             return "8-12"
-        case .D:
+        case .d:
             return "0-7"
         }
     }
     
-    override func viewWillAppear(animated: Bool) {
-        let defaults = NSUserDefaults(suiteName: "group.gotypechart.appraisalcheatsheet")
-        if let teamIndex = defaults?.integerForKey(teamKey),
+    override func viewWillAppear(_ animated: Bool) {
+        let defaults = UserDefaults(suiteName: "group.gotypechart.appraisalcheatsheet")
+        if let teamIndex = defaults?.integer(forKey: teamKey),
             let teamEnumValue = Team.init(rawValue: teamIndex) {
             team = teamEnumValue
             teamSegment.selectedSegmentIndex = teamIndex
         }
-        if let ivIndex = defaults?.integerForKey(ivKey),
+        if let ivIndex = defaults?.integer(forKey: ivKey),
             let ivEnumValue = IV.init(rawValue: ivIndex) {
             iv = ivEnumValue
             ivSegment.selectedSegmentIndex = ivIndex
         }
-        if let statIndex = defaults?.integerForKey(statKey),
+        if let statIndex = defaults?.integer(forKey: statKey),
             let statEnumValue = Stat.init(rawValue: statIndex) {
             stat = statEnumValue
             statSegment.selectedSegmentIndex = statIndex
@@ -227,35 +227,35 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         ivPercentage?.text = valueForIV(iv)
         statFraction?.text = valueForStat(stat)
         if #available(iOS 10, *) {
-            ivPercentage?.textColor = UIColor.darkGrayColor()
-            statFraction?.textColor = UIColor.darkGrayColor()
-            ivLabel?.textColor = UIColor.darkGrayColor()
-            topStatLabel?.textColor = UIColor.darkGrayColor()
+            ivPercentage?.textColor = UIColor.darkGray
+            statFraction?.textColor = UIColor.darkGray
+            ivLabel?.textColor = UIColor.darkGray
+            topStatLabel?.textColor = UIColor.darkGray
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        UILabel.appearanceWhenContainedInInstancesOfClasses([UISegmentedControl.self]).numberOfLines = 0
-        preferredContentSize = CGSizeMake(0, 230)
+        UILabel.appearance(whenContainedInInstancesOf: [UISegmentedControl.self]).numberOfLines = 0
+        preferredContentSize = CGSize(width: 0, height: 230)
         if #available(iOS 10, *) {
-            extensionContext?.widgetLargestAvailableDisplayMode = .Expanded
+            extensionContext?.widgetLargestAvailableDisplayMode = .expanded
         }
     }
     
     @available(iOSApplicationExtension 10.0, *)
-    func widgetActiveDisplayModeDidChange(activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
-        preferredContentSize = (activeDisplayMode == .Compact) ? maxSize : CGSizeMake(0, 250)
+    func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
+        preferredContentSize = (activeDisplayMode == .compact) ? maxSize : CGSize(width: 0, height: 250)
     }
     
-    func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)) {
+    func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
         // Perform any setup necessary in order to update the view.
 
         // If an error is encountered, use NCUpdateResult.Failed
         // If there's no update required, use NCUpdateResult.NoData
         // If there's an update, use NCUpdateResult.NewData
 
-        completionHandler(NCUpdateResult.NewData)
+        completionHandler(NCUpdateResult.newData)
     }
     
 }

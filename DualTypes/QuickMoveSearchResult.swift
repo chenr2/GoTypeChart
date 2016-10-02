@@ -15,7 +15,7 @@ class QuickMoveSearchResult: UITableViewCell {
     
     var quickMove: QuickMove? = nil
     
-    func configureCell(quickMove: QuickMove){
+    func configureCell(_ quickMove: QuickMove){
         self.quickMove = quickMove
         moveName?.text = NSLocalizedString(quickMove.quickAttack.rawValue, comment: "")
         let element = quickMove.element

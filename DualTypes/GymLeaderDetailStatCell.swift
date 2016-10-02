@@ -20,7 +20,7 @@ class GymLeaderDetailStatCell: FlexibleCollectionCell {
     @IBOutlet weak var elementType: UILabel!
     @IBOutlet weak var statTypeLabel: UILabel!
     
-    func configureCell(pokemon: Pokemon?, statType: StatType){
+    func configureCell(_ pokemon: Pokemon?, statType: StatType){
         guard let pokemon = pokemon else { return }
         circularView.layer.cornerRadius = bounds.size.width / 2
         switch statType {
