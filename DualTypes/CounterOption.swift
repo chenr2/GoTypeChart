@@ -18,7 +18,7 @@ class CounterOption: FlexibleCollectionCell {
     func configureCell(_ averageMon: AverageMon){
         self.averageMon = averageMon
         victimName?.text = NSLocalizedString(averageMon.opponent.species.rawValue, comment: "")
-        averageDamage?.text = String(format: "+%.1f", (-1 * averageMon.average))
+        averageDamage?.text = String(format: "%.1f", (-1 * averageMon.average))
     }
     
 }

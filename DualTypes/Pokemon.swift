@@ -419,7 +419,7 @@ class Pokemon {
             let qmTypeDamage = qmStab * qmBonusDamage1 * qmBonusDamage2
             let cmTypeDamage = cmStab * cmBonusDamage1 * cmBonusDamage2
             
-            let differential = qmTypeDamage - qmStab + cmTypeDamage - cmStab
+            let differential = qmTypeDamage - quickMove.dps + cmTypeDamage - chargeMove.dps
             for opponentQM in opponent.quickAttacks {
                 for opponentCM in opponent.specialAttacks {
                     let oqm = QuickMove.moveForQuickAttack(opponentQM)
