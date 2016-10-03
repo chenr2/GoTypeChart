@@ -29,7 +29,7 @@
 "Defense" = "防御";
 "Stamina" = "スタミナ";
 
-"Type" = "タイプ";
+"ElementType" = "タイプ";
 "RECOMMENDED_AGAINST" = "移動セットに対してカウンターを入力";
 "USE_MOVESET_AGAINST" = "移動セットはに対して最適に動作します";
 "SUPER_EFFECTIVE_AGAINST" = "効果はばつぐんだ";

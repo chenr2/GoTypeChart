@@ -29,7 +29,7 @@
 "Defense" = "Defensa";
 "Stamina" = "Stamina";
 
-"Type" = "Tipo";
+"ElementType" = "Tipo";
 "RECOMMENDED_AGAINST" = "Un contador tipo contra conjunto de movimientos";
 "USE_MOVESET_AGAINST" = "Conjunto de movimientos funciona mejor contra";
 "SUPER_EFFECTIVE_AGAINST" = "Súper efectivo contra";
