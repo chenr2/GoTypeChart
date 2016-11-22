@@ -40,8 +40,8 @@ class Pokemon {
     var quickAttacks: [QuickAttack]
     var specialAttacks: [SpecialAttack]
     
-    let maxAttack: CGFloat = 282
-    let maxDefense: CGFloat = 242
+    let maxAttack: CGFloat = 271
+    let maxDefense: CGFloat = 323
     let maxStamina: CGFloat = 500
     
     
@@ -510,6 +510,7 @@ class Pokemon {
         topResults = topResults.sorted { a, b in
             return a.average < b.average
         }
+        
         return Array(topResults.prefix(8))
     }
     

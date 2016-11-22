@@ -62,6 +62,15 @@ class GymLeaders: UICollectionViewController {
     
     var resultSearchController:UISearchController? = nil
     
+    func calculateCP(_ pokemon: Pokemon) -> Int {
+        let cp = sqrt(CGFloat(pokemon.stamina)) * CGFloat(pokemon.attack) * sqrt(CGFloat(pokemon.defense))
+        return Int(cp)
+    }
+    
+    func sortByCP(_ pokemonA: Pokemon, pokemonB: Pokemon) -> Bool {
+        return calculateCP(pokemonA) > calculateCP(pokemonB)
+    }
+    
     func sortAlphabetically(_ pokemonA: Pokemon, pokemonB: Pokemon) -> Bool {
         return NSLocalizedString(pokemonA.species.rawValue, comment: "").lowercased() < NSLocalizedString(pokemonB.species.rawValue, comment: "").lowercased()
     }
@@ -96,8 +105,8 @@ class GymLeaders: UICollectionViewController {
         gymLeadersArray = PokemonCollections.allPokemon()
         switch sortType {
         case .Leaders:
-            let gymDefenders = PokemonCollections.gymLeaders()
-            gymLeadersArray = gymDefenders.sorted(by: sortAlphabetically)
+            let gymArray = gymLeadersArray.sorted(by: sortByCP)
+            gymLeadersArray = Array(gymArray.prefix(21))
         case .Alphabetical:
             gymLeadersArray = gymLeadersArray.sorted(by: sortAlphabetically)
         case .Attack:
