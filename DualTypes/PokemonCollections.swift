@@ -162,107 +162,107 @@ struct PokemonCollections {
     static let snorlax = Pokemon(pokedex: 143, species: .snorlax, type: [.Normal], quickAttacks: [.lick, .zenHeadbutt], specialAttacks: [.hyperBeam, .earthquake, .bodySlam], stamina: 320, attack: 190, defense: 190)
     static let dratini = Pokemon(pokedex: 147, species: .dratini, type: [.Dragon], quickAttacks: [.dragonBreath], specialAttacks: [.wrap, .aquaTail, .twister], stamina: 82, attack: 119, defense: 94)
     static let dragonair = Pokemon(pokedex: 148, species: .dragonair, type: [.Dragon], quickAttacks: [.dragonBreath], specialAttacks: [.wrap, .aquaTail, .dragonPulse], stamina: 122, attack: 163, defense: 138)
-    static let dragonite = Pokemon(pokedex: 149, species: .dragonite, type: [.Dragon, .Flying], quickAttacks: [.dragonBreath, .steelWing], specialAttacks: [.hyperBeam, .dragonClaw, .dragonPulse], stamina: 182, attack: 263, defense: 201)
-    static let chikorita = Pokemon(pokedex: 152, species: .chikorita, type: [], quickAttacks: [], specialAttacks: [], stamina: 90, attack: 92, defense: 122)
-    static let bayleef = Pokemon(pokedex: 153, species: .bayleef, type: [], quickAttacks: [], specialAttacks: [], stamina: 120, attack: 122, defense: 155)
-    static let meganium = Pokemon(pokedex: 154, species: .meganium, type: [], quickAttacks: [], specialAttacks: [], stamina: 160, attack: 168, defense: 202)
-    static let cyndaquil = Pokemon(pokedex: 155, species: .cyndaquil, type: [], quickAttacks: [], specialAttacks: [], stamina: 78, attack: 116, defense: 96)
-    static let quilava = Pokemon(pokedex: 156, species: .quilava, type: [], quickAttacks: [], specialAttacks: [], stamina: 116, attack: 158, defense: 129)
-    static let typhlosion = Pokemon(pokedex: 157, species: .typhlosion, type: [], quickAttacks: [], specialAttacks: [], stamina: 156, attack: 223, defense: 176)
-    static let totodile = Pokemon(pokedex: 158, species: .totodile, type: [], quickAttacks: [], specialAttacks: [], stamina: 100, attack: 117, defense: 116)
-    static let croconaw = Pokemon(pokedex: 159, species: .croconaw, type: [], quickAttacks: [], specialAttacks: [], stamina: 130, attack: 150, defense: 151)
-    static let feraligatr = Pokemon(pokedex: 160, species: .feraligatr, type: [], quickAttacks: [], specialAttacks: [], stamina: 170, attack: 205, defense: 197)
-    static let sentret = Pokemon(pokedex: 161, species: .sentret, type: [], quickAttacks: [], specialAttacks: [], stamina: 70, attack: 79, defense: 77)
-    static let furret = Pokemon(pokedex: 162, species: .furret, type: [], quickAttacks: [], specialAttacks: [], stamina: 170, attack: 148, defense: 130)
-    static let hoothoot = Pokemon(pokedex: 163, species: .hoothoot, type: [], quickAttacks: [], specialAttacks: [], stamina: 120, attack: 67, defense: 101)
-    static let noctowl = Pokemon(pokedex: 164, species: .noctowl, type: [], quickAttacks: [], specialAttacks: [], stamina: 200, attack: 145, defense: 179)
-    static let ledyba = Pokemon(pokedex: 165, species: .ledyba, type: [], quickAttacks: [], specialAttacks: [], stamina: 80, attack: 72, defense: 142)
-    static let ledian = Pokemon(pokedex: 166, species: .ledian, type: [], quickAttacks: [], specialAttacks: [], stamina: 110, attack: 107, defense: 209)
-    static let spinarak = Pokemon(pokedex: 167, species: .spinarak, type: [], quickAttacks: [], specialAttacks: [], stamina: 80, attack: 105, defense: 73)
-    static let ariados = Pokemon(pokedex: 168, species: .ariados, type: [], quickAttacks: [], specialAttacks: [], stamina: 140, attack: 161, defense: 128)
-    static let crobat = Pokemon(pokedex: 169, species: .crobat, type: [], quickAttacks: [], specialAttacks: [], stamina: 170, attack: 194, defense: 178)
-    static let chinchou = Pokemon(pokedex: 170, species: .chinchou, type: [], quickAttacks: [], specialAttacks: [], stamina: 150, attack: 106, defense: 106)
-    static let lanturn = Pokemon(pokedex: 171, species: .lanturn, type: [], quickAttacks: [], specialAttacks: [], stamina: 250, attack: 146, defense: 146)
-    static let pichu = Pokemon(pokedex: 172, species: .pichu, type: [], quickAttacks: [], specialAttacks: [], stamina: 40, attack: 77, defense: 63)
-    static let cleffa = Pokemon(pokedex: 173, species: .cleffa, type: [], quickAttacks: [], specialAttacks: [], stamina: 100, attack: 75, defense: 91)
-    static let igglybuff = Pokemon(pokedex: 174, species: .igglybuff, type: [], quickAttacks: [], specialAttacks: [], stamina: 180, attack: 69, defense: 34)
-    static let togepi = Pokemon(pokedex: 175, species: .togepi, type: [], quickAttacks: [], specialAttacks: [], stamina: 70, attack: 67, defense: 116)
-    static let togetic = Pokemon(pokedex: 176, species: .togetic, type: [], quickAttacks: [], specialAttacks: [], stamina: 110, attack: 139, defense: 191)
-    static let natu = Pokemon(pokedex: 177, species: .natu, type: [], quickAttacks: [], specialAttacks: [], stamina: 80, attack: 134, defense: 89)
-    static let xatu = Pokemon(pokedex: 178, species: .xatu, type: [], quickAttacks: [], specialAttacks: [], stamina: 130, attack: 192, defense: 146)
-    static let mareep = Pokemon(pokedex: 179, species: .mareep, type: [], quickAttacks: [], specialAttacks: [], stamina: 110, attack: 114, defense: 82)
-    static let flaaffy = Pokemon(pokedex: 180, species: .flaaffy, type: [], quickAttacks: [], specialAttacks: [], stamina: 140, attack: 145, defense: 112)
-    static let ampharos = Pokemon(pokedex: 181, species: .ampharos, type: [], quickAttacks: [], specialAttacks: [], stamina: 180, attack: 211, defense: 172)
-    static let bellossom = Pokemon(pokedex: 182, species: .bellossom, type: [], quickAttacks: [], specialAttacks: [], stamina: 150, attack: 169, defense: 189)
-    static let marill = Pokemon(pokedex: 183, species: .marill, type: [], quickAttacks: [], specialAttacks: [], stamina: 140, attack: 37, defense: 93)
-    static let azumarill = Pokemon(pokedex: 184, species: .azumarill, type: [], quickAttacks: [], specialAttacks: [], stamina: 200, attack: 112, defense: 152)
-    static let sudowoodo = Pokemon(pokedex: 185, species: .sudowoodo, type: [], quickAttacks: [], specialAttacks: [], stamina: 140, attack: 167, defense: 198)
-    static let politoed = Pokemon(pokedex: 186, species: .politoed, type: [], quickAttacks: [], specialAttacks: [], stamina: 180, attack: 174, defense: 192)
-    static let hoppip = Pokemon(pokedex: 187, species: .hoppip, type: [], quickAttacks: [], specialAttacks: [], stamina: 70, attack: 67, defense: 101)
-    static let skiploom = Pokemon(pokedex: 188, species: .skiploom, type: [], quickAttacks: [], specialAttacks: [], stamina: 110, attack: 91, defense: 127)
-    static let jumpluff = Pokemon(pokedex: 189, species: .jumpluff, type: [], quickAttacks: [], specialAttacks: [], stamina: 150, attack: 118, defense: 197)
-    static let aipom = Pokemon(pokedex: 190, species: .aipom, type: [], quickAttacks: [], specialAttacks: [], stamina: 110, attack: 136, defense: 112)
-    static let sunkern = Pokemon(pokedex: 191, species: .sunkern, type: [], quickAttacks: [], specialAttacks: [], stamina: 60, attack: 55, defense: 55)
-    static let sunflora = Pokemon(pokedex: 192, species: .sunflora, type: [], quickAttacks: [], specialAttacks: [], stamina: 150, attack: 185, defense: 148)
-    static let yanma = Pokemon(pokedex: 193, species: .yanma, type: [], quickAttacks: [], specialAttacks: [], stamina: 130, attack: 154, defense: 94)
-    static let wooper = Pokemon(pokedex: 194, species: .wooper, type: [], quickAttacks: [], specialAttacks: [], stamina: 110, attack: 75, defense: 75)
-    static let quagsire = Pokemon(pokedex: 195, species: .quagsire, type: [], quickAttacks: [], specialAttacks: [], stamina: 190, attack: 152, defense: 152)
-    static let espeon = Pokemon(pokedex: 196, species: .espeon, type: [], quickAttacks: [], specialAttacks: [], stamina: 130, attack: 261, defense: 194)
-    static let umbreon = Pokemon(pokedex: 197, species: .umbreon, type: [], quickAttacks: [], specialAttacks: [], stamina: 190, attack: 126, defense: 250)
-    static let murkrow = Pokemon(pokedex: 198, species: .murkrow, type: [], quickAttacks: [], specialAttacks: [], stamina: 120, attack: 175, defense: 87)
-    static let slowking = Pokemon(pokedex: 199, species: .slowking, type: [], quickAttacks: [], specialAttacks: [], stamina: 190, attack: 177, defense: 194)
-    static let misdreavus = Pokemon(pokedex: 200, species: .misdreavus, type: [], quickAttacks: [], specialAttacks: [], stamina: 120, attack: 167, defense: 167)
-    static let unown = Pokemon(pokedex: 201, species: .unown, type: [], quickAttacks: [], specialAttacks: [], stamina: 96, attack: 136, defense: 91)
-    static let wobbuffet = Pokemon(pokedex: 202, species: .wobbuffet, type: [], quickAttacks: [], specialAttacks: [], stamina: 380, attack: 60, defense: 106)
-    static let girafarig = Pokemon(pokedex: 203, species: .girafarig, type: [], quickAttacks: [], specialAttacks: [], stamina: 140, attack: 182, defense: 133)
-    static let pineco = Pokemon(pokedex: 204, species: .pineco, type: [], quickAttacks: [], specialAttacks: [], stamina: 100, attack: 108, defense: 146)
-    static let forretress = Pokemon(pokedex: 205, species: .forretress, type: [], quickAttacks: [], specialAttacks: [], stamina: 150, attack: 161, defense: 242)
-    static let dunsparce = Pokemon(pokedex: 206, species: .dunsparce, type: [], quickAttacks: [], specialAttacks: [], stamina: 200, attack: 131, defense: 131)
-    static let gligar = Pokemon(pokedex: 207, species: .gligar, type: [], quickAttacks: [], specialAttacks: [], stamina: 130, attack: 143, defense: 204)
-    static let steelix = Pokemon(pokedex: 208, species: .steelix, type: [], quickAttacks: [], specialAttacks: [], stamina: 150, attack: 148, defense: 333)
-    static let snubbull = Pokemon(pokedex: 209, species: .snubbull, type: [], quickAttacks: [], specialAttacks: [], stamina: 120, attack: 137, defense: 89)
-    static let granbull = Pokemon(pokedex: 210, species: .granbull, type: [], quickAttacks: [], specialAttacks: [], stamina: 180, attack: 212, defense: 137)
-    static let qwilfish = Pokemon(pokedex: 211, species: .qwilfish, type: [], quickAttacks: [], specialAttacks: [], stamina: 130, attack: 184, defense: 148)
-    static let scizor = Pokemon(pokedex: 212, species: .scizor, type: [], quickAttacks: [], specialAttacks: [], stamina: 140, attack: 236, defense: 191)
-    static let shuckle = Pokemon(pokedex: 213, species: .shuckle, type: [], quickAttacks: [], specialAttacks: [], stamina: 40, attack: 17, defense: 396)
-    static let heracross = Pokemon(pokedex: 214, species: .heracross, type: [], quickAttacks: [], specialAttacks: [], stamina: 160, attack: 234, defense: 189)
-    static let sneasel = Pokemon(pokedex: 215, species: .sneasel, type: [], quickAttacks: [], specialAttacks: [], stamina: 110, attack: 189, defense: 157)
-    static let teddiursa = Pokemon(pokedex: 216, species: .teddiursa, type: [], quickAttacks: [], specialAttacks: [], stamina: 120, attack: 142, defense: 93)
-    static let ursaring = Pokemon(pokedex: 217, species: .ursaring, type: [], quickAttacks: [], specialAttacks: [], stamina: 180, attack: 236, defense: 144)
-    static let slugma = Pokemon(pokedex: 218, species: .slugma, type: [], quickAttacks: [], specialAttacks: [], stamina: 80, attack: 118, defense: 71)
-    static let magcargo = Pokemon(pokedex: 219, species: .magcargo, type: [], quickAttacks: [], specialAttacks: [], stamina: 100, attack: 139, defense: 209)
-    static let swinub = Pokemon(pokedex: 220, species: .swinub, type: [], quickAttacks: [], specialAttacks: [], stamina: 100, attack: 90, defense: 74)
-    static let piloswine = Pokemon(pokedex: 221, species: .piloswine, type: [], quickAttacks: [], specialAttacks: [], stamina: 200, attack: 181, defense: 147)
-    static let corsola = Pokemon(pokedex: 222, species: .corsola, type: [], quickAttacks: [], specialAttacks: [], stamina: 110, attack: 118, defense: 156)
-    static let remoraid = Pokemon(pokedex: 223, species: .remoraid, type: [], quickAttacks: [], specialAttacks: [], stamina: 70, attack: 127, defense: 69)
-    static let octillery = Pokemon(pokedex: 224, species: .octillery, type: [], quickAttacks: [], specialAttacks: [], stamina: 150, attack: 197, defense: 141)
-    static let delibird = Pokemon(pokedex: 225, species: .delibird, type: [], quickAttacks: [], specialAttacks: [], stamina: 90, attack: 128, defense: 90)
-    static let mantine = Pokemon(pokedex: 226, species: .mantine, type: [], quickAttacks: [], specialAttacks: [], stamina: 130, attack: 148, defense: 260)
-    static let skarmory = Pokemon(pokedex: 227, species: .skarmory, type: [], quickAttacks: [], specialAttacks: [], stamina: 130, attack: 148, defense: 260)
-    static let houndour = Pokemon(pokedex: 228, species: .houndour, type: [], quickAttacks: [], specialAttacks: [], stamina: 90, attack: 152, defense: 93)
-    static let houndoom = Pokemon(pokedex: 229, species: .houndoom, type: [], quickAttacks: [], specialAttacks: [], stamina: 150, attack: 224, defense: 159)
-    static let kingdra = Pokemon(pokedex: 230, species: .kingdra, type: [], quickAttacks: [], specialAttacks: [], stamina: 150, attack: 194, defense: 194)
-    static let phanpy = Pokemon(pokedex: 231, species: .phanpy, type: [], quickAttacks: [], specialAttacks: [], stamina: 180, attack: 107, defense: 107)
-    static let donphan = Pokemon(pokedex: 232, species: .donphan, type: [], quickAttacks: [], specialAttacks: [], stamina: 180, attack: 214, defense: 214)
-    static let porygon2 = Pokemon(pokedex: 233, species: .porygon2, type: [], quickAttacks: [], specialAttacks: [], stamina: 170, attack: 198, defense: 183)
-    static let stantler = Pokemon(pokedex: 234, species: .stantler, type: [], quickAttacks: [], specialAttacks: [], stamina: 146, attack: 192, defense: 132)
-    static let smeargle = Pokemon(pokedex: 235, species: .smeargle, type: [], quickAttacks: [], specialAttacks: [], stamina: 110, attack: 40, defense: 88)
-    static let tyrogue = Pokemon(pokedex: 236, species: .tyrogue, type: [], quickAttacks: [], specialAttacks: [], stamina: 70, attack: 64, defense: 64)
-    static let hitmontop = Pokemon(pokedex: 237, species: .hitmontop, type: [], quickAttacks: [], specialAttacks: [], stamina: 100, attack: 173, defense: 214)
-    static let smoochum = Pokemon(pokedex: 238, species: .smoochum, type: [], quickAttacks: [], specialAttacks: [], stamina: 90, attack: 153, defense: 116)
-    static let elekid = Pokemon(pokedex: 239, species: .elekid, type: [], quickAttacks: [], specialAttacks: [], stamina: 90, attack: 135, defense: 110)
-    static let magby = Pokemon(pokedex: 240, species: .magby, type: [], quickAttacks: [], specialAttacks: [], stamina: 90, attack: 151, defense: 108)
-    static let miltank = Pokemon(pokedex: 241, species: .miltank, type: [], quickAttacks: [], specialAttacks: [], stamina: 190, attack: 157, defense: 211)
-    static let blissey = Pokemon(pokedex: 242, species: .blissey, type: [], quickAttacks: [], specialAttacks: [], stamina: 510, attack: 129, defense: 229)
-    static let raikou = Pokemon(pokedex: 243, species: .raikou, type: [], quickAttacks: [], specialAttacks: [], stamina: 180, attack: 241, defense: 210)
-    static let entei = Pokemon(pokedex: 244, species: .entei, type: [], quickAttacks: [], specialAttacks: [], stamina: 230, attack: 235, defense: 180)
-    static let suicune = Pokemon(pokedex: 245, species: .suicune, type: [], quickAttacks: [], specialAttacks: [], stamina: 200, attack: 180, defense: 235)
-    static let larvitar = Pokemon(pokedex: 246, species: .larvitar, type: [], quickAttacks: [], specialAttacks: [], stamina: 100, attack: 115, defense: 93)
-    static let pupitar = Pokemon(pokedex: 247, species: .pupitar, type: [], quickAttacks: [], specialAttacks: [], stamina: 140, attack: 155, defense: 133)
-    static let tyranitar = Pokemon(pokedex: 248, species: .tyranitar, type: [], quickAttacks: [], specialAttacks: [], stamina: 200, attack: 251, defense: 212)
-    static let lugia = Pokemon(pokedex: 249, species: .lugia, type: [], quickAttacks: [], specialAttacks: [], stamina: 212, attack: 193, defense: 323)
-    static let hooh = Pokemon(pokedex: 250, species: .hooh, type: [], quickAttacks: [], specialAttacks: [], stamina: 212, attack: 263, defense: 301)
-    static let celebi = Pokemon(pokedex: 251, species: .celebi, type: [], quickAttacks: [], specialAttacks: [], stamina: 200, attack: 210, defense: 210)    
+    static let dragonite = Pokemon(pokedex: 149, species: .dragonite, type: [.Dragon, .Flying], quickAttacks: [.steelWing, .dragonTail], specialAttacks: [.hyperBeam, .hurricane, .outrage], stamina: 182, attack: 263, defense: 201)
+    static let chikorita = Pokemon(pokedex: 152, species: .chikorita, type: [.Grass], quickAttacks: [.vineWhip, .tackle], specialAttacks: [.energyBall, .grassKnot, .bodySlam], stamina: 90, attack: 92, defense: 122)
+    static let bayleef = Pokemon(pokedex: 153, species: .bayleef, type: [.Grass], quickAttacks: [.razorLeaf, .tackle], specialAttacks: [.energyBall, .grassKnot, .ancientPower], stamina: 120, attack: 122, defense: 155)
+    static let meganium = Pokemon(pokedex: 154, species: .meganium, type: [.Grass], quickAttacks: [.razorLeaf, .vineWhip], specialAttacks: [.petalBlizzard, .solarBeam, .earthquake], stamina: 160, attack: 168, defense: 202)
+    static let cyndaquil = Pokemon(pokedex: 155, species: .cyndaquil, type: [.Fire], quickAttacks: [.ember, .tackle], specialAttacks: [.flameCharge, .swift, .flamethrower], stamina: 78, attack: 116, defense: 96)
+    static let quilava = Pokemon(pokedex: 156, species: .quilava, type: [.Fire], quickAttacks: [.ember, .tackle], specialAttacks: [.flameCharge, .dig, .flamethrower], stamina: 116, attack: 158, defense: 129)
+    static let typhlosion = Pokemon(pokedex: 157, species: .typhlosion, type: [.Fire], quickAttacks: [.ember, .shadowClaw], specialAttacks: [.fireBlast, .overheat, .solarBeam], stamina: 156, attack: 223, defense: 176)
+    static let totodile = Pokemon(pokedex: 158, species: .totodile, type: [.Water], quickAttacks: [.waterGun, .scratch], specialAttacks: [.crunch, .aquaJet, .waterPulse], stamina: 100, attack: 117, defense: 116)
+    static let croconaw = Pokemon(pokedex: 159, species: .croconaw, type: [.Water], quickAttacks: [.waterGun, .scratch], specialAttacks: [.crunch, .icePunch, .waterPulse], stamina: 130, attack: 150, defense: 151)
+    static let feraligatr = Pokemon(pokedex: 160, species: .feraligatr, type: [.Water], quickAttacks: [.waterGun, .bite], specialAttacks: [.crunch, .hydroPump, .iceBeam], stamina: 170, attack: 205, defense: 197)
+    static let sentret = Pokemon(pokedex: 161, species: .sentret, type: [.Normal], quickAttacks: [.scratch, .quickAttack], specialAttacks: [.dig, .brickBreak, .grassKnot], stamina: 70, attack: 79, defense: 77)
+    static let furret = Pokemon(pokedex: 162, species: .furret, type: [.Normal], quickAttacks: [.quickAttack, .suckerPunch], specialAttacks: [.dig, .brickBreak, .hyperBeam], stamina: 170, attack: 148, defense: 130)
+    static let hoothoot = Pokemon(pokedex: 163, species: .hoothoot, type: [.Flying, .Normal], quickAttacks: [.feintAttack, .peck], specialAttacks: [.blizzard, .skyAttack], stamina: 120, attack: 67, defense: 101)
+    static let noctowl = Pokemon(pokedex: 164, species: .noctowl, type: [.Flying, .Normal], quickAttacks: [.wingAttack, .extrasensory], specialAttacks: [.psychic, .skyAttack, .nightShade], stamina: 200, attack: 145, defense: 179)
+    static let ledyba = Pokemon(pokedex: 165, species: .ledyba, type: [.Bug, .Flying], quickAttacks: [.tackle, .bugBite], specialAttacks: [.swift, .silverWind, .aerialAce], stamina: 80, attack: 72, defense: 142)
+    static let ledian = Pokemon(pokedex: 166, species: .ledian, type: [.Bug, .Flying], quickAttacks: [.struggleBug, .bugBite], specialAttacks: [.bugBuzz, .silverWind, .aerialAce], stamina: 110, attack: 107, defense: 209)
+    static let spinarak = Pokemon(pokedex: 167, species: .spinarak, type: [.Bug, .Poison], quickAttacks: [.poisonSting, .bugBite], specialAttacks: [.nightSlash, .signalBeam, .crossPoison], stamina: 80, attack: 105, defense: 73)
+    static let ariados = Pokemon(pokedex: 168, species: .ariados, type: [.Bug, .Poison], quickAttacks: [.poisonSting, .infestation], specialAttacks: [.shadowSneak, .megahorn, .crossPoison], stamina: 140, attack: 161, defense: 128)
+    static let crobat = Pokemon(pokedex: 169, species: .crobat, type: [.Flying, .Poison], quickAttacks: [.airSlash, .bite], specialAttacks: [.shadowBall, .airCutter, .sludgeBomb], stamina: 170, attack: 194, defense: 178)
+    static let chinchou = Pokemon(pokedex: 170, species: .chinchou, type: [.Electric, .Water], quickAttacks: [.bubble, .spark], specialAttacks: [.waterPulse, .thunderbolt, .bubbleBeam], stamina: 150, attack: 106, defense: 106)
+    static let lanturn = Pokemon(pokedex: 171, species: .lanturn, type: [.Electric, .Water], quickAttacks: [.waterGun, .chargeBeam], specialAttacks: [.hydroPump, .thunderbolt, .thunder], stamina: 250, attack: 146, defense: 146)
+    static let pichu = Pokemon(pokedex: 172, species: .pichu, type: [.Electric], quickAttacks: [.thunderShock], specialAttacks: [.thunderbolt, .disarmingVoice, .thunderPunch], stamina: 40, attack: 77, defense: 63)
+    static let cleffa = Pokemon(pokedex: 173, species: .cleffa, type: [.Fairy], quickAttacks: [.zenHeadbutt, .pound], specialAttacks: [.signalBeam, .psyshock, .grassKnot], stamina: 100, attack: 75, defense: 91)
+    static let igglybuff = Pokemon(pokedex: 174, species: .igglybuff, type: [.Fairy, .Normal], quickAttacks: [.pound, .feintAttack], specialAttacks: [.shadowBall, .wildCharge, .psychic], stamina: 180, attack: 69, defense: 34)
+    static let togepi = Pokemon(pokedex: 175, species: .togepi, type: [.Fairy], quickAttacks: [.hiddenPower, .peck], specialAttacks: [.ancientPower, .psyshock, .dazzlingGleam], stamina: 70, attack: 67, defense: 116)
+    static let togetic = Pokemon(pokedex: 176, species: .togetic, type: [.Fairy, .Flying], quickAttacks: [.extrasensory, .hiddenPower], specialAttacks: [.ancientPower, .dazzlingGleam, .aerialAce], stamina: 110, attack: 139, defense: 191)
+    static let natu = Pokemon(pokedex: 177, species: .natu, type: [.Flying, .Psychic], quickAttacks: [.peck, .quickAttack], specialAttacks: [.nightShade, .psyshock, .drillPeck], stamina: 80, attack: 134, defense: 89)
+    static let xatu = Pokemon(pokedex: 178, species: .xatu, type: [.Flying, .Psychic], quickAttacks: [.airSlash, .feintAttack], specialAttacks: [.ominousWind, .futuresight, .aerialAce], stamina: 130, attack: 192, defense: 146)
+    static let mareep = Pokemon(pokedex: 179, species: .mareep, type: [.Electric], quickAttacks: [.tackle, .thunderShock], specialAttacks: [.bodySlam, .thunderbolt, .discharge], stamina: 110, attack: 114, defense: 82)
+    static let flaaffy = Pokemon(pokedex: 180, species: .flaaffy, type: [.Electric], quickAttacks: [.tackle, .chargeBeam], specialAttacks: [.powerGem, .thunderbolt, .discharge], stamina: 140, attack: 145, defense: 112)
+    static let ampharos = Pokemon(pokedex: 181, species: .ampharos, type: [.Electric], quickAttacks: [.chargeBeam, .voltSwitch], specialAttacks: [.zapCannon, .focusBlast, .thunder], stamina: 180, attack: 211, defense: 172)
+    static let bellossom = Pokemon(pokedex: 182, species: .bellossom, type: [.Grass], quickAttacks: [.razorLeaf, .acid], specialAttacks: [.leafBlade, .petalBlizzard, .dazzlingGleam], stamina: 150, attack: 169, defense: 189)
+    static let marill = Pokemon(pokedex: 183, species: .marill, type: [.Fairy, .Water], quickAttacks: [.tackle, .bubble], specialAttacks: [.bubbleBeam, .aquaTail, .bodySlam], stamina: 140, attack: 37, defense: 93)
+    static let azumarill = Pokemon(pokedex: 184, species: .azumarill, type: [.Fairy, .Water], quickAttacks: [.rockSmash, .bubble], specialAttacks: [.playRough, .hydroPump, .iceBeam], stamina: 200, attack: 112, defense: 152)
+    static let sudowoodo = Pokemon(pokedex: 185, species: .sudowoodo, type: [.Rock], quickAttacks: [.rockThrow, .counter], specialAttacks: [.stoneEdge, .earthquake, .rockSlide], stamina: 140, attack: 167, defense: 198)
+    static let politoed = Pokemon(pokedex: 186, species: .politoed, type: [.Water], quickAttacks: [.mudShot, .bubble], specialAttacks: [.hydroPump, .blizzard, .earthquake], stamina: 180, attack: 174, defense: 192)
+    static let hoppip = Pokemon(pokedex: 187, species: .hoppip, type: [.Flying, .Grass], quickAttacks: [.tackle, .bulletSeed], specialAttacks: [.grassKnot, .dazzlingGleam, .seedBomb], stamina: 70, attack: 67, defense: 101)
+    static let skiploom = Pokemon(pokedex: 188, species: .skiploom, type: [.Flying, .Grass], quickAttacks: [.tackle, .bulletSeed], specialAttacks: [.grassKnot, .dazzlingGleam, .energyBall], stamina: 110, attack: 91, defense: 127)
+    static let jumpluff = Pokemon(pokedex: 189, species: .jumpluff, type: [.Flying, .Grass], quickAttacks: [.infestation, .bulletSeed], specialAttacks: [.energyBall, .dazzlingGleam, .solarBeam], stamina: 150, attack: 118, defense: 197)
+    static let aipom = Pokemon(pokedex: 190, species: .aipom, type: [.Normal], quickAttacks: [.scratch, .astonish], specialAttacks: [.lowSweep, .swift, .aerialAce], stamina: 110, attack: 136, defense: 112)
+    static let sunkern = Pokemon(pokedex: 191, species: .sunkern, type: [.Grass], quickAttacks: [.razorLeaf, .cut], specialAttacks: [.energyBall, .grassKnot, .seedBomb], stamina: 60, attack: 55, defense: 55)
+    static let sunflora = Pokemon(pokedex: 192, species: .sunflora, type: [.Grass], quickAttacks: [.razorLeaf, .bulletSeed], specialAttacks: [.solarBeam, .petalBlizzard, .sludgeBomb], stamina: 150, attack: 185, defense: 148)
+    static let yanma = Pokemon(pokedex: 193, species: .yanma, type: [.Bug, .Flying], quickAttacks: [.quickAttack, .wingAttack], specialAttacks: [.ancientPower, .aerialAce, .silverWind], stamina: 130, attack: 154, defense: 94)
+    static let wooper = Pokemon(pokedex: 194, species: .wooper, type: [.Ground, .Water], quickAttacks: [.waterGun, .mudShot], specialAttacks: [.mudBomb, .dig, .bodySlam], stamina: 110, attack: 75, defense: 75)
+    static let quagsire = Pokemon(pokedex: 195, species: .quagsire, type: [.Ground, .Water], quickAttacks: [.waterGun, .mudShot], specialAttacks: [.sludgeBomb, .earthquake, .stoneEdge], stamina: 190, attack: 152, defense: 152)
+    static let espeon = Pokemon(pokedex: 196, species: .espeon, type: [.Psychic], quickAttacks: [.confusion, .zenHeadbutt], specialAttacks: [.psybeam, .psychic, .futuresight], stamina: 130, attack: 261, defense: 194)
+    static let umbreon = Pokemon(pokedex: 197, species: .umbreon, type: [.Dark], quickAttacks: [.feintAttack, .snarl], specialAttacks: [.darkPulse, .foulPlay], stamina: 190, attack: 126, defense: 250)
+    static let murkrow = Pokemon(pokedex: 198, species: .murkrow, type: [.Dark, .Flying], quickAttacks: [.peck, .feintAttack], specialAttacks: [.drillPeck, .foulPlay, .darkPulse], stamina: 120, attack: 175, defense: 87)
+    static let slowking = Pokemon(pokedex: 199, species: .slowking, type: [.Psychic, .Water], quickAttacks: [.waterGun, .confusion], specialAttacks: [.blizzard, .psychic, .fireBlast], stamina: 190, attack: 177, defense: 194)
+    static let misdreavus = Pokemon(pokedex: 200, species: .misdreavus, type: [.Ghost], quickAttacks: [.astonish, .hex], specialAttacks: [.darkPulse, .ominousWind], stamina: 120, attack: 167, defense: 167)
+    static let unown = Pokemon(pokedex: 201, species: .unown, type: [.Psychic], quickAttacks: [.hiddenPower], specialAttacks: [.struggle], stamina: 96, attack: 136, defense: 91)
+    static let wobbuffet = Pokemon(pokedex: 202, species: .wobbuffet, type: [.Psychic], quickAttacks: [.counter, .splash], specialAttacks: [.mirrorCoat], stamina: 380, attack: 60, defense: 106)
+    static let girafarig = Pokemon(pokedex: 203, species: .girafarig, type: [.Psychic, .Normal], quickAttacks: [.tackle, .confusion], specialAttacks: [.psychic, .thunderbolt, .mirrorCoat], stamina: 140, attack: 182, defense: 133)
+    static let pineco = Pokemon(pokedex: 204, species: .pineco, type: [.Bug], quickAttacks: [.tackle, .bugBite], specialAttacks: [.gyroBall, .rockTomb, .sandTomb], stamina: 100, attack: 108, defense: 146)
+    static let forretress = Pokemon(pokedex: 205, species: .forretress, type: [.Bug, .Steel], quickAttacks: [.bugBite, .struggleBug], specialAttacks: [.heavySlam, .earthquake, .rockTomb], stamina: 150, attack: 161, defense: 242)
+    static let dunsparce = Pokemon(pokedex: 206, species: .dunsparce, type: [.Normal], quickAttacks: [.bite, .astonish], specialAttacks: [.dig, .rockSlide, .drillRun], stamina: 200, attack: 131, defense: 131)
+    static let gligar = Pokemon(pokedex: 207, species: .gligar, type: [.Flying, .Ground], quickAttacks: [.furyCutter, .wingAttack], specialAttacks: [.dig, .aerialAce, .nightSlash], stamina: 130, attack: 143, defense: 204)
+    static let steelix = Pokemon(pokedex: 208, species: .steelix, type: [.Ground, .Steel], quickAttacks: [.ironTail, .dragonTail], specialAttacks: [.earthquake, .heavySlam, .crunch], stamina: 150, attack: 148, defense: 333)
+    static let snubbull = Pokemon(pokedex: 209, species: .snubbull, type: [.Fairy], quickAttacks: [.bite, .tackle], specialAttacks: [.brickBreak, .crunch, .dazzlingGleam], stamina: 120, attack: 137, defense: 89)
+    static let granbull = Pokemon(pokedex: 210, species: .granbull, type: [.Fairy], quickAttacks: [.bite, .snarl], specialAttacks: [.crunch, .playRough, .closeCombat], stamina: 180, attack: 212, defense: 137)
+    static let qwilfish = Pokemon(pokedex: 211, species: .qwilfish, type: [.Poison, .Water], quickAttacks: [.poisonSting, .waterGun], specialAttacks: [.aquaTail, .iceBeam, .sludgeWave], stamina: 130, attack: 184, defense: 148)
+    static let scizor = Pokemon(pokedex: 212, species: .scizor, type: [.Bug, .Steel], quickAttacks: [.bulletPunch, .furyCutter], specialAttacks: [.xScissor, .ironHead, .nightSlash], stamina: 140, attack: 236, defense: 191)
+    static let shuckle = Pokemon(pokedex: 213, species: .shuckle, type: [.Bug, .Rock], quickAttacks: [.struggleBug, .rockThrow], specialAttacks: [.rockBlast, .stoneEdge, .gyroBall], stamina: 40, attack: 17, defense: 396)
+    static let heracross = Pokemon(pokedex: 214, species: .heracross, type: [.Bug, .Fight], quickAttacks: [.counter, .struggleBug], specialAttacks: [.megahorn, .closeCombat, .earthquake], stamina: 160, attack: 234, defense: 189)
+    static let sneasel = Pokemon(pokedex: 215, species: .sneasel, type: [.Dark, .Ice], quickAttacks: [.iceShard, .feintAttack], specialAttacks: [.avalanche, .icePunch, .foulPlay], stamina: 110, attack: 189, defense: 157)
+    static let teddiursa = Pokemon(pokedex: 216, species: .teddiursa, type: [.Normal], quickAttacks: [.scratch, .lick], specialAttacks: [.crossChop, .crunch, .playRough], stamina: 120, attack: 142, defense: 93)
+    static let ursaring = Pokemon(pokedex: 217, species: .ursaring, type: [.Normal], quickAttacks: [.metalClaw, .counter], specialAttacks: [.closeCombat, .hyperBeam, .playRough], stamina: 180, attack: 236, defense: 144)
+    static let slugma = Pokemon(pokedex: 218, species: .slugma, type: [.Fire], quickAttacks: [.ember, .rockThrow], specialAttacks: [.flameBurst, .flameCharge, .rockSlide], stamina: 80, attack: 118, defense: 71)
+    static let magcargo = Pokemon(pokedex: 219, species: .magcargo, type: [.Fire, .Rock], quickAttacks: [.ember, .rockThrow], specialAttacks: [.heatWave, .overheat, .stoneEdge], stamina: 100, attack: 139, defense: 209)
+    static let swinub = Pokemon(pokedex: 220, species: .swinub, type: [.Ground, .Ice], quickAttacks: [.tackle, .powderSnow], specialAttacks: [.icyWind, .bodySlam, .rockSlide], stamina: 100, attack: 90, defense: 74)
+    static let piloswine = Pokemon(pokedex: 221, species: .piloswine, type: [.Ground, .Ice], quickAttacks: [.iceShard, .powderSnow], specialAttacks: [.avalanche, .bulldoze, .stoneEdge], stamina: 200, attack: 181, defense: 147)
+    static let corsola = Pokemon(pokedex: 222, species: .corsola, type: [.Rock, .Water], quickAttacks: [.tackle, .bubble], specialAttacks: [.rockBlast, .powerGem, .bubbleBeam], stamina: 110, attack: 118, defense: 156)
+    static let remoraid = Pokemon(pokedex: 223, species: .remoraid, type: [.Water], quickAttacks: [.waterGun, .mudShot], specialAttacks: [.auroraBeam, .waterPulse, .rockBlast], stamina: 70, attack: 127, defense: 69)
+    static let octillery = Pokemon(pokedex: 224, species: .octillery, type: [.Water], quickAttacks: [.waterGun, .mudShot], specialAttacks: [.gunkShot, .waterPulse, .auroraBeam], stamina: 150, attack: 197, defense: 141)
+    static let delibird = Pokemon(pokedex: 225, species: .delibird, type: [.Flying, .Ice], quickAttacks: [.iceShard, .quickAttack], specialAttacks: [.icePunch, .icyWind, .aerialAce], stamina: 90, attack: 128, defense: 90)
+    static let mantine = Pokemon(pokedex: 226, species: .mantine, type: [.Flying, .Water], quickAttacks: [.bubble, .wingAttack], specialAttacks: [.waterPulse, .iceBeam, .aerialAce], stamina: 130, attack: 148, defense: 260)
+    static let skarmory = Pokemon(pokedex: 227, species: .skarmory, type: [.Flying, .Steel], quickAttacks: [.steelWing, .airSlash], specialAttacks: [.braveBird, .skyAttack, .flashCannon], stamina: 130, attack: 148, defense: 260)
+    static let houndour = Pokemon(pokedex: 228, species: .houndour, type: [.Dark, .Fire], quickAttacks: [.feintAttack, .ember], specialAttacks: [.crunch, .flamethrower, .darkPulse], stamina: 90, attack: 152, defense: 93)
+    static let houndoom = Pokemon(pokedex: 229, species: .houndoom, type: [.Dark, .Fire], quickAttacks: [.snarl, .fireFang], specialAttacks: [.crunch, .fireBlast, .foulPlay], stamina: 150, attack: 224, defense: 159)
+    static let kingdra = Pokemon(pokedex: 230, species: .kingdra, type: [.Dragon, .Water], quickAttacks: [.waterGun, .dragonBreath], specialAttacks: [.hydroPump, .blizzard, .outrage], stamina: 150, attack: 194, defense: 194)
+    static let phanpy = Pokemon(pokedex: 231, species: .phanpy, type: [.Ground], quickAttacks: [.tackle, .rockSmash], specialAttacks: [.bulldoze, .rockSlide, .bodySlam], stamina: 180, attack: 107, defense: 107)
+    static let donphan = Pokemon(pokedex: 232, species: .donphan, type: [.Ground], quickAttacks: [.tackle, .counter], specialAttacks: [.earthquake, .heavySlam, .playRough], stamina: 180, attack: 214, defense: 214)
+    static let porygon2 = Pokemon(pokedex: 233, species: .porygon2, type: [.Normal], quickAttacks: [.hiddenPower, .chargeBeam], specialAttacks: [.solarBeam, .hyperBeam, .zapCannon], stamina: 170, attack: 198, defense: 183)
+    static let stantler = Pokemon(pokedex: 234, species: .stantler, type: [.Normal], quickAttacks: [.tackle, .zenHeadbutt], specialAttacks: [.stomp, .wildCharge, .megahorn], stamina: 146, attack: 192, defense: 132)
+    static let smeargle = Pokemon(pokedex: 235, species: .smeargle, type: [.Normal], quickAttacks: [.tackle], specialAttacks: [.struggle], stamina: 110, attack: 40, defense: 88)
+    static let tyrogue = Pokemon(pokedex: 236, species: .tyrogue, type: [.Fight], quickAttacks: [.rockSmash, .tackle], specialAttacks: [.brickBreak, .rockSlide, .lowSweep], stamina: 70, attack: 64, defense: 64)
+    static let hitmontop = Pokemon(pokedex: 237, species: .hitmontop, type: [.Fight], quickAttacks: [.rockSmash, .counter], specialAttacks: [.closeCombat, .gyroBall, .stoneEdge], stamina: 100, attack: 173, defense: 214)
+    static let smoochum = Pokemon(pokedex: 238, species: .smoochum, type: [.Ice, .Psychic], quickAttacks: [.powderSnow, .pound], specialAttacks: [.iceBeam, .icePunch, .psyshock], stamina: 90, attack: 153, defense: 116)
+    static let elekid = Pokemon(pokedex: 239, species: .elekid, type: [.Electric], quickAttacks: [.thunderShock, .lowKick], specialAttacks: [.thunderPunch, .brickBreak, .discharge], stamina: 90, attack: 135, defense: 110)
+    static let magby = Pokemon(pokedex: 240, species: .magby, type: [.Fire], quickAttacks: [.ember, .karateChop], specialAttacks: [.brickBreak, .firePunch, .flameBurst], stamina: 90, attack: 151, defense: 108)
+    static let miltank = Pokemon(pokedex: 241, species: .miltank, type: [.Normal], quickAttacks: [.tackle, .zenHeadbutt], specialAttacks: [.stomp, .bodySlam, .gyroBall], stamina: 190, attack: 157, defense: 211)
+    static let blissey = Pokemon(pokedex: 242, species: .blissey, type: [.Normal], quickAttacks: [.pound, .zenHeadbutt], specialAttacks: [.dazzlingGleam, .hyperBeam, .psychic], stamina: 510, attack: 129, defense: 229)
+//    static let raikou = Pokemon(pokedex: 243, species: .raikou, type: [.Electric], quickAttacks: [.thunderShock, .voltSwitch], specialAttacks: [.thunder, .thunderbolt, .wildCharge], stamina: 180, attack: 241, defense: 210)
+//    static let entei = Pokemon(pokedex: 244, species: .entei, type: [.Fire], quickAttacks: [.fireSpin, .fireFang], specialAttacks: [.flamethrower, .fireBlast, .overheat], stamina: 230, attack: 235, defense: 180)
+//    static let suicune = Pokemon(pokedex: 245, species: .suicune, type: [.Water], quickAttacks: [.extrasensory, .snarl], specialAttacks: [.hydroPump, .bubbleBeam, .waterPulse], stamina: 200, attack: 180, defense: 235)
+    static let larvitar = Pokemon(pokedex: 246, species: .larvitar, type: [.Ground, .Rock], quickAttacks: [.bite, .rockSmash], specialAttacks: [.stomp, .crunch, .ancientPower], stamina: 100, attack: 115, defense: 93)
+    static let pupitar = Pokemon(pokedex: 247, species: .pupitar, type: [.Ground, .Rock], quickAttacks: [.bite, .rockSmash], specialAttacks: [.dig, .crunch, .ancientPower], stamina: 140, attack: 155, defense: 133)
+    static let tyranitar = Pokemon(pokedex: 248, species: .tyranitar, type: [.Dark, .Rock], quickAttacks: [.bite, .ironTail], specialAttacks: [.fireBlast, .crunch, .stoneEdge], stamina: 200, attack: 251, defense: 212)
+//    static let lugia = Pokemon(pokedex: 249, species: .lugia, type: [.Flying, .Psychic], quickAttacks: [.extrasensory, .dragonTail], specialAttacks: [.skyAttack, .hydroPump, .futuresight], stamina: 212, attack: 193, defense: 323)
+//    static let hooh = Pokemon(pokedex: 250, species: .hooh, type: [.Fire, .Flying], quickAttacks: [.extrasensory, .steelWing], specialAttacks: [.braveBird, .fireBlast, .solarBeam], stamina: 212, attack: 263, defense: 301)
+//    static let celebi = Pokemon(pokedex: 251, species: .celebi, type: [.Grass, .Psychic], quickAttacks: [.confusion, .chargeBeam], specialAttacks: [.hyperBeam, .psychic, .dazzlingGleam], stamina: 200, attack: 210, defense: 210)
     static func contenders() -> [Pokemon] {
         return [ // maybe just use attackers above a certain stat
             PokemonCollections.venusaur,
@@ -340,7 +340,75 @@ struct PokemonCollections {
             PokemonCollections.kabutops,
             PokemonCollections.aerodactyl,
             PokemonCollections.snorlax,
-            PokemonCollections.dragonite
+            PokemonCollections.dragonite,
+            
+            PokemonCollections.bayleef,
+            PokemonCollections.meganium,
+            PokemonCollections.typhlosion,
+            PokemonCollections.feraligatr,
+            PokemonCollections.furret,
+            PokemonCollections.noctowl,
+            PokemonCollections.ledian,
+            PokemonCollections.ariados,
+            PokemonCollections.crobat,
+            PokemonCollections.lanturn,
+            PokemonCollections.togetic,
+            PokemonCollections.xatu,
+            PokemonCollections.flaaffy,
+            PokemonCollections.ampharos,
+            PokemonCollections.bellossom,
+            PokemonCollections.azumarill,
+            PokemonCollections.sudowoodo,
+            PokemonCollections.politoed,
+            PokemonCollections.jumpluff,
+            PokemonCollections.aipom,
+            PokemonCollections.sunflora,
+            PokemonCollections.yanma,
+            PokemonCollections.quagsire,
+            PokemonCollections.espeon,
+            PokemonCollections.umbreon,
+            PokemonCollections.murkrow,
+            PokemonCollections.slowking,
+            PokemonCollections.misdreavus,
+            PokemonCollections.unown,
+            PokemonCollections.wobbuffet,
+            PokemonCollections.girafarig,
+            PokemonCollections.forretress,
+            PokemonCollections.dunsparce,
+            PokemonCollections.gligar,
+            PokemonCollections.steelix,
+            PokemonCollections.granbull,
+            PokemonCollections.qwilfish,
+            PokemonCollections.scizor,
+            PokemonCollections.shuckle,
+            PokemonCollections.heracross,
+            PokemonCollections.sneasel,
+            PokemonCollections.ursaring,
+            PokemonCollections.magcargo,
+            PokemonCollections.piloswine,
+            PokemonCollections.corsola,
+            PokemonCollections.remoraid,
+            PokemonCollections.octillery,
+            PokemonCollections.delibird,
+            PokemonCollections.mantine,
+            PokemonCollections.skarmory,
+            PokemonCollections.houndoom,
+            PokemonCollections.kingdra,
+            PokemonCollections.donphan,
+            PokemonCollections.porygon2,
+            PokemonCollections.stantler,
+            PokemonCollections.smeargle,
+            PokemonCollections.tyrogue,
+            PokemonCollections.hitmontop,
+            PokemonCollections.miltank,
+            PokemonCollections.blissey,
+//            PokemonCollections.raikou,
+//            PokemonCollections.entei,
+//            PokemonCollections.suicune,
+            PokemonCollections.tyranitar
+//            PokemonCollections.lugia,
+//            PokemonCollections.hooh,
+//            PokemonCollections.celebi
 
         ]
     }
@@ -583,15 +651,15 @@ struct PokemonCollections {
             PokemonCollections.magby,
             PokemonCollections.miltank,
             PokemonCollections.blissey,
-            PokemonCollections.raikou,
-            PokemonCollections.entei,
-            PokemonCollections.suicune,
+//            PokemonCollections.raikou,
+//            PokemonCollections.entei,
+//            PokemonCollections.suicune,
             PokemonCollections.larvitar,
             PokemonCollections.pupitar,
-            PokemonCollections.tyranitar,
-            PokemonCollections.lugia,
-            PokemonCollections.hooh,
-            PokemonCollections.celebi
+            PokemonCollections.tyranitar
+//            PokemonCollections.lugia,
+//            PokemonCollections.hooh,
+//            PokemonCollections.celebi
         ]
     }
     

@@ -159,8 +159,8 @@ enum PokemonEnumeration: String {
     dratini = "Dratini",
     dragonair = "Dragonair",
     dragonite = "Dragonite",
-    mewtwo = "Mewtwo",
-    mew = "Mew",
+//    mewtwo = "Mewtwo",
+//    mew = "Mew",
     
     chikorita = "Chikorita",
     bayleef = "Bayleef",
@@ -253,13 +253,13 @@ enum PokemonEnumeration: String {
     magby = "Magby",
     miltank = "Miltank",
     blissey = "Blissey",
-    raikou = "Raikou",
-    entei = "Entei",
-    suicune = "Suicune",
+//    raikou = "Raikou",
+//    entei = "Entei",
+//    suicune = "Suicune",
     larvitar = "Larvitar",
     pupitar = "Pupitar",
-    tyranitar = "Tyranitar",
-    lugia = "Lugia",
-    hooh = "Ho-Oh",
-    celebi = "Celebi"
+    tyranitar = "Tyranitar"
+//    lugia = "Lugia",
+//    hooh = "Ho-Oh",
+//    celebi = "Celebi"
 }
