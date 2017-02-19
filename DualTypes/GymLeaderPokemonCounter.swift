@@ -32,7 +32,7 @@ class GymLeaderPokemonCounter: FlexibleCollectionCell {
         chargeMoveName?.text = NSLocalizedString(chargeMove.specialAttack.rawValue, comment: "")
         chargeMoveName?.textColor = Colors.textColorForElement(chargeMoveElement)
         chargeMoveBubble?.backgroundColor = Colors.colorForElement(chargeMoveElement)
-        typeBonus?.text = String(format: "+%.1f", typeResult.sumDifferential)
+        typeBonus?.text = String(format: "%.1f", typeResult.sumDifferential)
     }
     
 }
