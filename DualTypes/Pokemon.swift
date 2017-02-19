@@ -392,9 +392,10 @@ class Pokemon {
     class func calculateTypeResults(_ pokemon: Pokemon, quickAttack: QuickAttack, specialAttack: SpecialAttack) -> [TypeResult] {
         let opponents = PokemonCollections.contenders()
         var typeResults: [TypeResult] = []
-        let quickMove = QuickMove.moveForQuickAttack(quickAttack)
-        let chargeMove = SpecialMove.moveForSpecialAttack(specialAttack)
+        let quickMove = QuickMove.moveForQuickAttack(quickAttack) // defender's
+        let chargeMove = SpecialMove.moveForSpecialAttack(specialAttack) // defender's
         for opponent in opponents {
+            // all this is still the defender's moves
             let qmElement = quickMove.element
             let qmStabMultiplier = Pokemon.stabMultiplier(pokemon, element: qmElement)
             let qmStab = quickMove.dps * qmStabMultiplier
@@ -415,13 +416,15 @@ class Pokemon {
                 qmBonusDamage2 = Pokemon.typeDamage(opponentType2, moveType: qmElement)
                 cmBonusDamage2 = Pokemon.typeDamage(opponentType2, moveType: cmElement)
             }
+            // defender's moves.
+            // quick move damage * stab * type effectiveness * (attack / defense)
+            let qmDamage = qmStab * qmBonusDamage1 * qmBonusDamage2 * CGFloat(pokemon.attack) / CGFloat(opponent.defense)
+            let cmDamage = cmStab * cmBonusDamage1 * cmBonusDamage2 * CGFloat(pokemon.attack) / CGFloat(opponent.defense)
             
-            let qmTypeDamage = qmStab * qmBonusDamage1 * qmBonusDamage2
-            let cmTypeDamage = cmStab * cmBonusDamage1 * cmBonusDamage2
-            
-            let differential = qmTypeDamage - quickMove.dps + cmTypeDamage - chargeMove.dps
+//            0let differential = qmTypeDamage - quickMove.dps + cmTypeDamage - chargeMove.dps
             for opponentQM in opponent.quickAttacks {
                 for opponentCM in opponent.specialAttacks {
+                    // the attacker's moves
                     let oqm = QuickMove.moveForQuickAttack(opponentQM)
                     let oqmElement = oqm.element
                     let oqmStabMultiplier = Pokemon.stabMultiplier(opponent, element: oqmElement)
@@ -446,15 +449,15 @@ class Pokemon {
                         ocmBonusDamage2 = Pokemon.typeDamage(myType2, moveType: ocmElement)
                     }
                     
-                    let oqmTypeDamage = oqmStab * oqmBonusDamage1 * oqmBonusDamage2
-                    let ocmTypeDamage = ocmStab * ocmBonusDamage1 * ocmBonusDamage2
+                    let oqmDamage = oqmStab * oqmBonusDamage1 * oqmBonusDamage2 * CGFloat(opponent.attack) / CGFloat(pokemon.defense)
+                    let ocmDamage = ocmStab * ocmBonusDamage1 * ocmBonusDamage2 * CGFloat(opponent.attack) / CGFloat(pokemon.defense)
                     
-                    let differential2 = oqmTypeDamage - oqm.dps + ocmTypeDamage - ocm.dps
-                    let sumDifferential = differential2 - differential
+//                    let differential2 = oqmTypeDamage - oqm.dps + ocmTypeDamage - ocm.dps
+                    let sumDifferential = (oqmDamage + ocmDamage) - (qmDamage + cmDamage)//differential2 - differential
                     let thisResult = TypeResult(
                         sumDifferential: sumDifferential,
-                        differential1: differential,
-                        differential2: differential2,
+                        differential1: 0,//differential,
+                        differential2: 0,//differential2,
                         opponent: opponent,
                         opponentQuickMove: oqm,
                         opponentChargeMove: ocm
