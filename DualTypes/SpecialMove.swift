@@ -252,7 +252,7 @@ struct SpecialMove {
     var dps: CGFloat {
         return CGFloat(power) * CGFloat(bar) * 0.07
     }
-    let maxSpecialMove: CGFloat = 198 * 30 * 1.25 // machamp cross chop
+    let maxSpecialMove: CGFloat = 263 * 15.4 * 1.25 // dragonite outrage
     func specialMovePercentage(_ baseAttack: CGFloat, stab: Bool) -> CGFloat {
         let bonus: CGFloat = stab ? 1.25 : 1
         let percentage = 100 * baseAttack * dps * bonus / maxSpecialMove

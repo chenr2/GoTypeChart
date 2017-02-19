@@ -142,7 +142,7 @@ struct QuickMove {
         let time = CGFloat(duration)/1000
         return CGFloat(power) / time
     }
-    let maxQuickMove: CGFloat = 284 * 12.28 * 1.25 // mewtwo psycho cut
+    let maxQuickMove: CGFloat = 263 * 12 * 1.25 // dragonite legacy dragon breath
     func quickMovePercentage(_ baseAttack: CGFloat, stab: Bool) -> CGFloat {
         let bonus: CGFloat = stab ? 1.25 : 1
         let percentage = 100 * baseAttack * dps * bonus / maxQuickMove
