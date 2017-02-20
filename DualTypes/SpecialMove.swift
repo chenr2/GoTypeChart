@@ -448,7 +448,7 @@ struct SpecialMove {
         case .submission: return SpecialMove(element: .Fight , specialAttack: specialAttack, power:60, bar: 2)
         case .swift: return SpecialMove(element: .Normal , specialAttack: specialAttack, power:60, bar: 2)
         case .thunder: return SpecialMove(element: .Electric , specialAttack: specialAttack, power:100, bar: 1)
-        case .thunderbolt: return SpecialMove(element: .Electric , specialAttack: specialAttack, power:80, bar: 3)
+        case .thunderbolt: return SpecialMove(element: .Electric , specialAttack: specialAttack, power:80, bar: 2)
         case .thunderPunch: return SpecialMove(element: .Electric , specialAttack: specialAttack, power:45, bar: 2)
         case .twister: return SpecialMove(element: .Dragon , specialAttack: specialAttack, power:45, bar: 3)
         case .viceGrip: return SpecialMove(element: .Normal , specialAttack: specialAttack, power:35, bar: 3)

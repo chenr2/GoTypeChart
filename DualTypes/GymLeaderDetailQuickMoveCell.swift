@@ -10,6 +10,7 @@ import UIKit
 
 class GymLeaderDetailQuickMoveCell: FlexibleCollectionCell {
     
+    @IBOutlet weak var dpsLabel: UILabel!
     @IBOutlet weak var selectionBar: UIView!
     @IBOutlet weak var moveName: UILabel!
     @IBOutlet weak var elementType: UILabel!
@@ -61,6 +62,7 @@ class GymLeaderDetailQuickMoveCell: FlexibleCollectionCell {
         elementType.textColor = Colors.textColorForElement(element)
         let dps = move.dps
         dpsStat?.attributedText = attributedStabBonus(dps, elementColor: elementColor, stab: stabFlag)
+        dpsLabel.text = "DPS"
     }
     
     func configureCellSpecial(_ specialAttack: SpecialAttack, pokemon: Pokemon, cellSelected: Bool){
@@ -76,6 +78,7 @@ class GymLeaderDetailQuickMoveCell: FlexibleCollectionCell {
         elementType.textColor = Colors.textColorForElement(element)
         let dps = move.dps
         dpsStat?.attributedText = attributedStabBonus(dps, elementColor: elementColor, stab: stabFlag)
+        dpsLabel.text = "DPE"
     }
 
 }
