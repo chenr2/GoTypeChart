@@ -116,7 +116,7 @@ class GymLeaderDetail: UICollectionViewController {
 extension GymLeaderDetail {
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 8
+        return 7
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -129,13 +129,11 @@ extension GymLeaderDetail {
             return specialAttacks.count
         case 3:
             return directCounters.count
-        case 4:
-            return bestOptions.count
-        case 5: // stats
+        case 4: // stats
             return 3
-        case 6:
+        case 5:
             return double.count
-        case 7:
+        case 6:
             return half.count
         default:
             return 0
@@ -165,11 +163,6 @@ extension GymLeaderDetail {
             pokemonCounterCell.configureCell(selectedItem)
             return pokemonCounterCell
         case 4:
-            let selectedItem = bestOptions[(indexPath as NSIndexPath).row]
-            let optionCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CounterOption", for: indexPath) as! CounterOption
-            optionCell.configureCell(selectedItem)
-            return optionCell
-        case 5:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GymLeaderDetailStatCell", for: indexPath) as! GymLeaderDetailStatCell
             switch (indexPath as NSIndexPath).row {
             case 0:
@@ -182,9 +175,9 @@ extension GymLeaderDetail {
                 break
             }
             return cell
-        case 6:
+        case 5:
             detailTypeCell.configureCell(double[(indexPath as NSIndexPath).row])
-        case 7:
+        case 6:
             detailTypeCell.configureCell(half[(indexPath as NSIndexPath).row])
         default:
             break
@@ -207,12 +200,10 @@ extension GymLeaderDetail {
             case 3:
                 text = "\(NSLocalizedString("RECOMMENDED_AGAINST", comment: "")):"
             case 4:
-                text = "\(NSLocalizedString("USE_MOVESET_AGAINST", comment: "")):"
-            case 5:
                 text = "\(NSLocalizedString("STATS", comment: "")):"
-            case 6:
+            case 5:
                 text = "\(NSLocalizedString("SUPER_EFFECTIVE_AGAINST", comment: "")) \(pokemonName):"
-            case 7:
+            case 6:
                 text = "\(NSLocalizedString("NOT_VERY_EFFECTIVE_AGAINST", comment: "")) \(pokemonName):"
             default:
                 break
@@ -233,7 +224,7 @@ extension GymLeaderDetail: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         var cellsPerRow:CGFloat = 4
         switch (indexPath as NSIndexPath).section {
-        case 0, 1, 2, 3, 5:
+        case 0, 1, 2, 3, 4:
             cellsPerRow = 3
         default:
             break
@@ -246,8 +237,6 @@ extension GymLeaderDetail: UICollectionViewDelegateFlowLayout {
         case 1, 2:
             // move sets
             return CGSize(width: eachSide, height:eachSide + 58)
-        case 4:
-            return CGSize(width: eachSide, height: 60)
         default:
             return CGSize(width: eachSide, height:eachSide)            
         }
@@ -290,9 +279,9 @@ extension GymLeaderDetail {
                 let selectedElement = SpecialMove.moveForSpecialAttack(specialAttacks[selectedSpecialAttack]).element
                 cell.changeSelection(true, element: selectedElement)
             }
-        case 6:
+        case 5:
             moveElement = double[(indexPath as NSIndexPath).row]
-        case 7:
+        case 6:
             moveElement = half[(indexPath as NSIndexPath).row]
         default:
             return

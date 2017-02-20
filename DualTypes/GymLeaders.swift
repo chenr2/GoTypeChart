@@ -106,7 +106,7 @@ class GymLeaders: UICollectionViewController {
         switch sortType {
         case .Leaders:
             let gymArray = gymLeadersArray.sorted(by: sortByCP)
-            gymLeadersArray = Array(gymArray.prefix(21))
+            gymLeadersArray = Array(gymArray.prefix(42))
         case .Alphabetical:
             gymLeadersArray = gymLeadersArray.sorted(by: sortAlphabetically)
         case .Attack:

@@ -517,6 +517,14 @@ class Pokemon {
         return Array(topResults.prefix(8))
     }
     
+    class func calculateCP(pokemon: Pokemon) -> Int {
+        let attackPlusIV: CGFloat = CGFloat(pokemon.attack) + 15.0
+        let defensePlusIV: CGFloat = CGFloat(pokemon.defense) + 15.0
+        let staminaPlusIV: CGFloat = CGFloat(pokemon.stamina) + 15.0
+        let cpFloat:CGFloat = ((attackPlusIV) * sqrt(defensePlusIV) * sqrt(staminaPlusIV) * sqrt(0.7903001)) / 10
+        return Int(cpFloat)
+    }
+    
     init(pokedex: Int, species: PokemonEnumeration, type: [ElementType], quickAttacks: [QuickAttack], specialAttacks: [SpecialAttack], stamina: Int, attack: Int, defense: Int){
         self.pokedex = pokedex
         self.species = species
