@@ -18,6 +18,12 @@ class GymLeaderDetailQuickMoveCell: FlexibleCollectionCell {
     @IBOutlet weak var elementBubble: UIView!
     @IBOutlet weak var dpsStat: UILabel!
     
+    var dpsLabelText = ""
+    
+    override func layoutSubviews() {
+        dpsLabel.text = dpsLabelText
+    }
+    
     func changeSelection(_ cellSelected: Bool, element: ElementType?){
         let blue = UIColor(colorLiteralRed: 0.290, green: 0.565, blue: 0.886, alpha: 1)
         selectionBar.backgroundColor = cellSelected ? blue : UIColor.white
@@ -62,7 +68,7 @@ class GymLeaderDetailQuickMoveCell: FlexibleCollectionCell {
         elementType.textColor = Colors.textColorForElement(element)
         let dps = move.dps
         dpsStat?.attributedText = attributedStabBonus(dps, elementColor: elementColor, stab: stabFlag)
-        dpsLabel.text = "DPS"
+        dpsLabelText = "DPS"
     }
     
     func configureCellSpecial(_ specialAttack: SpecialAttack, pokemon: Pokemon, cellSelected: Bool){
@@ -78,7 +84,7 @@ class GymLeaderDetailQuickMoveCell: FlexibleCollectionCell {
         elementType.textColor = Colors.textColorForElement(element)
         let dps = move.dps
         dpsStat?.attributedText = attributedStabBonus(dps, elementColor: elementColor, stab: stabFlag)
-        dpsLabel.text = "DPE"
+        dpsLabelText = "DPE"
     }
 
 }
