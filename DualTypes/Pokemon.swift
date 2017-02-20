@@ -41,8 +41,8 @@ class Pokemon {
     var specialAttacks: [SpecialAttack]
     
     let maxAttack: CGFloat = 271
-    let maxDefense: CGFloat = 323
-    let maxStamina: CGFloat = 500
+    let maxDefense: CGFloat = 396
+    let maxStamina: CGFloat = 510
     
     
     
