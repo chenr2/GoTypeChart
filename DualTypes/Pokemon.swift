@@ -458,7 +458,7 @@ class Pokemon {
                     let rawDifferential = (oqmDamage + ocmDamage) - (qmDamage + cmDamage)//differential2 - differential
                     let sumDifferential = rawDifferential * CGFloat(opponent.stamina) / CGFloat(pokemon.stamina)
                     let thisResult = TypeResult(
-                        sumDifferential: sumDifferential,
+                        sumDifferential: rawDifferential,
                         differential1: 0,//differential,
                         differential2: 0,//differential2,
                         opponent: opponent,

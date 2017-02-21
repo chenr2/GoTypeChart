@@ -271,7 +271,7 @@ struct SpecialMove {
         let cmDPS = damageForFullBar / (timeForChargingFullBar + castDurationForFullBar)
         return cmDPS
     }
-    let maxSpecialMove: CGFloat = 263 * 6.5 * 1.25 // dragonite outrage
+    let maxSpecialMove: CGFloat = 3190 // machamp
     func specialMovePercentage(_ baseAttack: CGFloat, stab: Bool, dps: CGFloat) -> CGFloat {
         let bonus: CGFloat = stab ? 1.25 : 1
         let percentage = 100 * baseAttack * dps * bonus / maxSpecialMove
@@ -467,7 +467,7 @@ struct SpecialMove {
         case .submission: return SpecialMove(element: .Fight , specialAttack: specialAttack, power:60, bar: 2, duration: 2200)
         case .swift: return SpecialMove(element: .Normal , specialAttack: specialAttack, power:60, bar: 2, duration: 2800)
         case .thunder: return SpecialMove(element: .Electric , specialAttack: specialAttack, power:100, bar: 1, duration: 2400)
-        case .thunderbolt: return SpecialMove(element: .Electric , specialAttack: specialAttack, power:80, bar: 3, duration: 1800)
+        case .thunderbolt: return SpecialMove(element: .Electric , specialAttack: specialAttack, power:80, bar: 2, duration: 1800)
         case .thunderPunch: return SpecialMove(element: .Electric , specialAttack: specialAttack, power:45, bar: 2, duration: 2500)
         case .twister: return SpecialMove(element: .Dragon , specialAttack: specialAttack, power:45, bar: 3, duration: 2800)
         case .viceGrip: return SpecialMove(element: .Normal , specialAttack: specialAttack, power:35, bar: 3, duration: 1900)

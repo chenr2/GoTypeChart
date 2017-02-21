@@ -85,7 +85,7 @@ class GymLeaderDetailQuickMoveCell: FlexibleCollectionCell {
         elementBubble.backgroundColor = elementColor
         elementType.textColor = Colors.textColorForElement(element)
         dpsStat?.attributedText = attributedStabBonus(dps, elementColor: elementColor, stab: stabFlag)
-        dpsLabelText = "DPE"
+        dpsLabelText = "DoT"
     }
 
 }

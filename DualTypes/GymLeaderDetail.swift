@@ -82,7 +82,7 @@ class GymLeaderDetail: UICollectionViewController {
             quickAttack: quickAttacks[selectedQuickAttack],
             specialAttack: specialAttacks[selectedSpecialAttack]
         )
-        let sections = IndexSet(integersIn: 3...4)
+        let sections = IndexSet(integersIn: 2...4)
         collectionView?.reloadSections(sections)
         if let titleControl = Bundle.main.loadNibNamed("DetailTitleControl", owner: nil, options: nil)![0] as? DetailTitleControl {
             titleControl.configureTitleControl(pokemon, quickAttack: quickAttacks[selectedQuickAttack], specialAttack: specialAttacks[selectedSpecialAttack])
