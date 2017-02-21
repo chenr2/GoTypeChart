@@ -404,7 +404,8 @@ class Pokemon {
             
             let cmElement = chargeMove.element
             let cmStabMultiplier = Pokemon.stabMultiplier(pokemon, element: cmElement)
-            let cmStab = chargeMove.dps * cmStabMultiplier
+            let chargeMoveDPS = SpecialMove.cmDPSBasedOnQm(cmPower: chargeMove.power, bar: chargeMove.bar, duration: chargeMove.duration, quickmoveEPS: quickMove.eps)
+            let cmStab = chargeMoveDPS * cmStabMultiplier
             var cmBonusDamage1: CGFloat = 1
             var cmBonusDamage2: CGFloat = 1
             
@@ -435,7 +436,8 @@ class Pokemon {
                     let ocm = SpecialMove.moveForSpecialAttack(opponentCM)
                     let ocmElement = ocm.element
                     let ocmStabMultiplier = Pokemon.stabMultiplier(opponent, element: ocmElement)
-                    let ocmStab = ocm.dps * ocmStabMultiplier
+                    let oChargeMoveDPS = SpecialMove.cmDPSBasedOnQm(cmPower: ocm.power, bar: ocm.bar, duration: ocm.duration, quickmoveEPS: oqm.eps)
+                    let ocmStab = oChargeMoveDPS * ocmStabMultiplier
                     var ocmBonusDamage1: CGFloat = 1
                     var ocmBonusDamage2: CGFloat = 1
                     
@@ -453,7 +455,8 @@ class Pokemon {
                     let ocmDamage = ocmStab * ocmBonusDamage1 * ocmBonusDamage2 * CGFloat(opponent.attack) / CGFloat(pokemon.defense)
                     
 //                    let differential2 = oqmTypeDamage - oqm.dps + ocmTypeDamage - ocm.dps
-                    let sumDifferential = (oqmDamage + ocmDamage) - (qmDamage + cmDamage)//differential2 - differential
+                    let rawDifferential = (oqmDamage + ocmDamage) - (qmDamage + cmDamage)//differential2 - differential
+                    let sumDifferential = rawDifferential * CGFloat(opponent.stamina) / CGFloat(pokemon.stamina)
                     let thisResult = TypeResult(
                         sumDifferential: sumDifferential,
                         differential1: 0,//differential,
@@ -478,7 +481,7 @@ class Pokemon {
                 $0.opponent.species == leader.species
             }.sorted { a, b in
                 // tie-breaker
-                (a.opponentQuickMove.dps + a.opponentChargeMove.dps) > (b.opponentQuickMove.dps + b.opponentChargeMove.dps)
+                (a.opponentQuickMove.dps + a.opponentChargeMove.simpleDPS) > (b.opponentQuickMove.dps + b.opponentChargeMove.simpleDPS)
             }.sorted { a, b in
                 a.sumDifferential > b.sumDifferential
             }

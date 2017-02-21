@@ -29,10 +29,13 @@ class GymLeaderDetail: UICollectionViewController {
                     let baseAttack = CGFloat(pokemon.attack)
                     let moveA = SpecialMove.moveForSpecialAttack(attackA)
                     let stabA = pokemon.type.contains(moveA.element)
-                    let statA = moveA.specialMovePercentage(baseAttack, stab: stabA)
+                    let dpsA = SpecialMove.cmDPSBasedOnQm(cmPower: moveA.power, bar: moveA.bar, duration: moveA.duration, quickmoveEPS: 7)
+                    let statA = moveA.specialMovePercentage(baseAttack, stab: stabA, dps: dpsA)
                     let moveB = SpecialMove.moveForSpecialAttack(attackB)
                     let stabB = pokemon.type.contains(moveB.element)
-                    let statB = moveB.specialMovePercentage(baseAttack, stab: stabB)
+                    let dpsB = SpecialMove.cmDPSBasedOnQm(cmPower: moveB.power, bar: moveB.bar, duration: moveB.duration, quickmoveEPS: 7)
+
+                    let statB = moveB.specialMovePercentage(baseAttack, stab: stabB, dps: dpsB)
                     return statA > statB
                 }
             }
@@ -155,7 +158,7 @@ extension GymLeaderDetail {
         case 2:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GymLeaderDetailQuickMoveCell", for: indexPath) as! GymLeaderDetailQuickMoveCell
             let cellSelected = (indexPath as NSIndexPath).row == selectedSpecialAttack
-            cell.configureCellSpecial(specialAttacks[(indexPath as NSIndexPath).row], pokemon: pokemon!, cellSelected: cellSelected)
+            cell.configureCellSpecial(specialAttacks[(indexPath as NSIndexPath).row], quickAttack: quickAttacks[selectedQuickAttack], pokemon: pokemon!, cellSelected: cellSelected)
             return cell
         case 3:
             let selectedItem = directCounters[(indexPath as NSIndexPath).row]

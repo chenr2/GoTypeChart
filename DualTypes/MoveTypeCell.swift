@@ -63,10 +63,12 @@ class MoveTypeCell: GridCell {
             let baseAttack = CGFloat(pokemon.attack)
             let moveA = SpecialMove.moveForSpecialAttack(attackA)
             let stabA = pokemon.type.contains(moveA.element)
-            let statA = moveA.specialMovePercentage(baseAttack, stab: stabA)
+            let dpsA = SpecialMove.cmDPSBasedOnQm(cmPower: moveA.power, bar: moveA.bar, duration: moveA.duration, quickmoveEPS: 7)
+            let statA = moveA.specialMovePercentage(baseAttack, stab: stabA, dps: dpsA)
             let moveB = SpecialMove.moveForSpecialAttack(attackB)
             let stabB = pokemon.type.contains(moveB.element)
-            let statB = moveB.specialMovePercentage(baseAttack, stab: stabB)
+            let dpsB = SpecialMove.cmDPSBasedOnQm(cmPower: moveB.power, bar: moveB.bar, duration: moveB.duration, quickmoveEPS: 7)
+            let statB = moveB.specialMovePercentage(baseAttack, stab: stabB, dps: dpsB)
             return statA > statB
         }
         if let firstQuickAttack = quickAttacks.first {
