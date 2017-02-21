@@ -271,7 +271,7 @@ struct SpecialMove {
         let cmDPS = damageForFullBar / (timeForChargingFullBar + castDurationForFullBar)
         return cmDPS
     }
-    let maxSpecialMove: CGFloat = 3190 // machamp
+    let maxSpecialMove: CGFloat = 4680 // gengar shadow ball, with hex EPS
     func specialMovePercentage(_ baseAttack: CGFloat, stab: Bool, dps: CGFloat) -> CGFloat {
         let bonus: CGFloat = stab ? 1.25 : 1
         let percentage = 100 * baseAttack * dps * bonus / maxSpecialMove
