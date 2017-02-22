@@ -79,7 +79,7 @@ class GymLeaderDetailQuickMoveCell: FlexibleCollectionCell {
         moveName?.text = NSLocalizedString(specialAttack.rawValue, comment: "")
         elementType?.text = NSLocalizedString(element.rawValue, comment: "")
         let quickMove = QuickMove.moveForQuickAttack(quickAttack)
-        let dps = SpecialMove.cmDPSBasedOnQm(cmPower: specialMove.power, bar: specialMove.bar, duration: specialMove.duration, quickmoveEPS: quickMove.eps)
+        let dps: CGFloat = specialMove.cmDPSBasedOnQm(quickmoveEPS: quickMove.eps)
         statArc.percent = specialMove.specialMovePercentage(CGFloat(pokemon.attack), stab: stabFlag, dps: dps)
         let elementColor = Colors.colorForElement(element)
         elementBubble.backgroundColor = elementColor
