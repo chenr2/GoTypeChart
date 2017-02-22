@@ -14,8 +14,6 @@ enum DamageType {
 
 struct TypeResult {
     let sumDifferential: CGFloat
-    let differential1: CGFloat
-    let differential2: CGFloat
     let opponent: Pokemon
     let opponentQuickMove: QuickMove
     let opponentChargeMove: SpecialMove
@@ -422,7 +420,6 @@ class Pokemon {
             let qmDamage = qmStab * qmBonusDamage1 * qmBonusDamage2 * CGFloat(pokemon.attack) / CGFloat(opponent.defense)
             let cmDamage = cmStab * cmBonusDamage1 * cmBonusDamage2 * CGFloat(pokemon.attack) / CGFloat(opponent.defense)
             
-//            0let differential = qmTypeDamage - quickMove.dps + cmTypeDamage - chargeMove.dps
             for opponentQM in opponent.quickAttacks {
                 for opponentCM in opponent.specialAttacks {
                     // the attacker's moves
@@ -454,13 +451,9 @@ class Pokemon {
                     let oqmDamage = oqmStab * oqmBonusDamage1 * oqmBonusDamage2 * CGFloat(opponent.attack) / CGFloat(pokemon.defense)
                     let ocmDamage = ocmStab * ocmBonusDamage1 * ocmBonusDamage2 * CGFloat(opponent.attack) / CGFloat(pokemon.defense)
                     
-//                    let differential2 = oqmTypeDamage - oqm.dps + ocmTypeDamage - ocm.dps
-                    let rawDifferential = (oqmDamage + ocmDamage) - (qmDamage + cmDamage)//differential2 - differential
-                    let sumDifferential = rawDifferential * CGFloat(opponent.stamina) / CGFloat(pokemon.stamina)
+                    let rawDifferential = (oqmDamage + ocmDamage) - (qmDamage + cmDamage)
                     let thisResult = TypeResult(
                         sumDifferential: rawDifferential,
-                        differential1: 0,//differential,
-                        differential2: 0,//differential2,
                         opponent: opponent,
                         opponentQuickMove: oqm,
                         opponentChargeMove: ocm
