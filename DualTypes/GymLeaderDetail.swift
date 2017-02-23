@@ -29,11 +29,11 @@ class GymLeaderDetail: UICollectionViewController {
                     let baseAttack = CGFloat(pokemon.attack)
                     let moveA = SpecialMove.moveForSpecialAttack(attackA)
                     let stabA = pokemon.type.contains(moveA.element)
-                    let dpsA: CGFloat = moveA.cmDPSBasedOnQm(quickmoveEPS: 7)
+                    let dpsA: CGFloat = SpecialMove.cmDPSBasedOnQm(bar: moveA.bar, duration: moveA.duration, power: moveA.power, quickmoveEPS: 7)
                     let statA = moveA.specialMovePercentage(baseAttack, stab: stabA, dps: dpsA)
                     let moveB = SpecialMove.moveForSpecialAttack(attackB)
                     let stabB = pokemon.type.contains(moveB.element)
-                    let dpsB = moveB.cmDPSBasedOnQm(quickmoveEPS: 7)
+                    let dpsB = SpecialMove.cmDPSBasedOnQm(bar: moveB.bar, duration: moveB.duration, power: moveB.power, quickmoveEPS: 7)
 
                     let statB = moveB.specialMovePercentage(baseAttack, stab: stabB, dps: dpsB)
                     return statA > statB

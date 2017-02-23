@@ -253,13 +253,14 @@ struct SpecialMove {
     var simpleDPS: CGFloat {
         return CGFloat(power) * CGFloat(bar) * 0.07
     }
-    func cmDPSBasedOnQm(quickmoveEPS eps: CGFloat) -> CGFloat {
+    static func cmDPSBasedOnQm(bar: Int, duration: Int, power: Int, quickmoveEPS eps: CGFloat) -> CGFloat {
         /*
          *                 damage for a full bar
          *    ----------------------------------------------------------------
          *    time for charging full bar   +   cast duration over the full bar
          */
         let damageForFullBar: CGFloat = CGFloat(power) * CGFloat(bar)
+
         /*
          *         100 energy
          *   -----------------------  =  14.3 seconds
