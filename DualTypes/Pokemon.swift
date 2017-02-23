@@ -302,8 +302,13 @@ class Pokemon {
             returnSet[.Steel] = .double
             returnSet[.Dragon] = .half
             returnSet[.Dark] = .half
-        default:
-            break
+        case .Dark:
+            returnSet[.Fight] = .double
+            returnSet[.Bug] = .double
+            returnSet[.Ghost] = .half
+            returnSet[.Psychic] = .half
+            returnSet[.Dark] = .half
+            returnSet[.Fairy] = .double
         }
         return returnSet
     }
