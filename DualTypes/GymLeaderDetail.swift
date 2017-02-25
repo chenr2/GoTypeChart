@@ -82,7 +82,7 @@ class GymLeaderDetail: UICollectionViewController {
             quickAttack: quickAttacks[selectedQuickAttack],
             specialAttack: specialAttacks[selectedSpecialAttack]
         )
-        let sections = IndexSet(integersIn: 2...4)
+        let sections = IndexSet(integersIn: 1...4)
         collectionView?.reloadSections(sections)
         if let titleControl = Bundle.main.loadNibNamed("DetailTitleControl", owner: nil, options: nil)![0] as? DetailTitleControl {
             titleControl.configureTitleControl(pokemon, quickAttack: quickAttacks[selectedQuickAttack], specialAttack: specialAttacks[selectedSpecialAttack])
@@ -153,7 +153,7 @@ extension GymLeaderDetail {
         case 1:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GymLeaderDetailQuickMoveCell", for: indexPath) as! GymLeaderDetailQuickMoveCell
             let cellSelected = (indexPath as NSIndexPath).row == selectedQuickAttack
-            cell.configureCell(quickAttacks[(indexPath as NSIndexPath).row], pokemon: pokemon!, cellSelected: cellSelected)
+            cell.configureCell(quickAttacks[(indexPath as NSIndexPath).row], specialAttack: specialAttacks[selectedSpecialAttack], pokemon: pokemon!, cellSelected: cellSelected)
             return cell
         case 2:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GymLeaderDetailQuickMoveCell", for: indexPath) as! GymLeaderDetailQuickMoveCell

@@ -143,6 +143,28 @@ struct QuickMove {
         let time = CGFloat(duration)/1000
         return CGFloat(power) / time
     }
+    
+    static func qmDoTBasedOnCm(qmDPS: CGFloat, bar: Int, cmDuration: Int, quickmoveEPS eps: CGFloat) -> CGFloat {
+        /*
+         *         100 energy
+         *   -----------------------  =  14.3 seconds
+         *     7 energy / second
+         */
+        let timeForChargingFullBar: CGFloat = 100 / eps
+
+        /*
+         *                 qm damage for a full bar
+         *    ----------------------------------------------------------------
+         *    time for charging full bar   +   cast duration over the full bar
+         */
+        let damageForFullBar: CGFloat = qmDPS * timeForChargingFullBar
+        
+        // 3 bars * 2_000 ms = 6_000ms
+        let castDurationForFullBar: CGFloat = CGFloat(bar) * CGFloat(cmDuration) / 1000
+        let qmDoT = damageForFullBar / (timeForChargingFullBar + castDurationForFullBar)
+        return qmDoT
+    }
+    
     let maxQuickMove: CGFloat = 263 * 13.6 * 1.25 // dragonite dragon tail
     func quickMovePercentage(_ baseAttack: CGFloat, stab: Bool) -> CGFloat {
         let bonus: CGFloat = stab ? 1.25 : 1

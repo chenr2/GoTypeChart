@@ -401,7 +401,8 @@ class Pokemon {
             // all this is still the defender's moves
             let qmElement = quickMove.element
             let qmStabMultiplier = Pokemon.stabMultiplier(pokemon, element: qmElement)
-            let qmStab = quickMove.dps * qmStabMultiplier
+            let qmDoT = QuickMove.qmDoTBasedOnCm(qmDPS: quickMove.dps, bar: chargeMove.bar, cmDuration: chargeMove.duration, quickmoveEPS: quickMove.eps) //quickMove.dps
+            let qmStab = qmDoT * qmStabMultiplier
             var qmBonusDamage1: CGFloat = 1
             var qmBonusDamage2: CGFloat = 1
             
@@ -429,13 +430,15 @@ class Pokemon {
                 for opponentCM in opponent.specialAttacks {
                     // the attacker's moves
                     let oqm = QuickMove.moveForQuickAttack(opponentQM)
+                    let ocm = SpecialMove.moveForSpecialAttack(opponentCM)
+
                     let oqmElement = oqm.element
                     let oqmStabMultiplier = Pokemon.stabMultiplier(opponent, element: oqmElement)
-                    let oqmStab = oqm.dps * oqmStabMultiplier
+                    let oqmDoT = QuickMove.qmDoTBasedOnCm(qmDPS: oqm.dps, bar: ocm.bar, cmDuration: ocm.duration, quickmoveEPS: oqm.eps)  //oqm.dps
+                    let oqmStab = oqmDoT * oqmStabMultiplier
                     var oqmBonusDamage1: CGFloat = 1
                     var oqmBonusDamage2: CGFloat = 1
                     
-                    let ocm = SpecialMove.moveForSpecialAttack(opponentCM)
                     let ocmElement = ocm.element
                     let ocmStabMultiplier = Pokemon.stabMultiplier(opponent, element: ocmElement)
                     let oChargeMoveDPS: CGFloat = SpecialMove.cmDPSBasedOnQm(bar: ocm.bar, duration: ocm.duration, power: ocm.power, quickmoveEPS: oqm.eps)

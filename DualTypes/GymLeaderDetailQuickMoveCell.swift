@@ -55,20 +55,21 @@ class GymLeaderDetailQuickMoveCell: FlexibleCollectionCell {
         return mainAttributedString
     }
     
-    func configureCell(_ quickAttack: QuickAttack, pokemon: Pokemon, cellSelected: Bool){
+    func configureCell(_ quickAttack: QuickAttack, specialAttack: SpecialAttack, pokemon: Pokemon, cellSelected: Bool){
         let move = QuickMove.moveForQuickAttack(quickAttack)
         let element = move.element
         changeSelection(cellSelected, element: element)
         let stabFlag = pokemon.type.contains(element)
         moveName?.text = NSLocalizedString(quickAttack.rawValue, comment: "")
         elementType?.text = NSLocalizedString(element.rawValue, comment: "")
+        let specialMove = SpecialMove.moveForSpecialAttack(specialAttack)
+        let qmDoT: CGFloat = QuickMove.qmDoTBasedOnCm(qmDPS: move.dps, bar: specialMove.bar, cmDuration: specialMove.duration, quickmoveEPS: move.eps)
         statArc.percent = move.quickMovePercentage(CGFloat(pokemon.attack), stab: stabFlag)
         let elementColor = Colors.colorForElement(element)
         elementBubble.backgroundColor = elementColor
         elementType.textColor = Colors.textColorForElement(element)
-        let dps = move.dps
-        dpsStat?.attributedText = attributedStabBonus(dps, elementColor: elementColor, stab: stabFlag)
-        dpsLabelText = "DPS"
+        dpsStat?.attributedText = attributedStabBonus(qmDoT, elementColor: elementColor, stab: stabFlag)
+        dpsLabelText = "DoT"
     }
     
     func configureCellSpecial(_ specialAttack: SpecialAttack, quickAttack: QuickAttack, pokemon: Pokemon, cellSelected: Bool){
