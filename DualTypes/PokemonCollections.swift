@@ -86,6 +86,7 @@ struct PokemonCollections {
     static let machop = Pokemon(pokedex: 66, species: .machop, type: [.Fight], quickAttacks: [.rockSmash, .karateChop], specialAttacks: [.brickBreak, .crossChop, .lowSweep], stamina: 140, attack: 137, defense: 88)
     static let machoke = Pokemon(pokedex: 67, species: .machoke, type: [.Fight], quickAttacks: [.lowKick, .karateChop], specialAttacks: [.brickBreak, .dynamicPunch, .submission], stamina: 160, attack: 177, defense: 130)
     static let machamp = Pokemon(pokedex: 68, species: .machamp, type: [.Fight], quickAttacks: [.bulletPunch, .counter], specialAttacks: [.heavySlam, .dynamicPunch, .closeCombat], stamina: 180, attack: 234, defense: 162)
+    static let legacyMachamp = Pokemon(pokedex: 68, species: .legacyMachamp, type: [.Fight], quickAttacks: [.bulletPunch, .karateChop], specialAttacks: [.crossChop, .stoneEdge, .submission], stamina: 180, attack: 234, defense: 162)
     static let bellsprout = Pokemon(pokedex: 69, species: .bellsprout, type: [.Grass, .Poison], quickAttacks: [.acid, .vineWhip], specialAttacks: [.sludgeBomb, .powerWhip, .wrap], stamina: 100, attack: 139, defense: 64)
     static let weepinbell = Pokemon(pokedex: 70, species: .weepinbell, type: [.Grass, .Poison], quickAttacks: [.acid, .bulletSeed], specialAttacks: [.sludgeBomb, .powerWhip, .seedBomb], stamina: 130, attack: 172, defense: 95)
     static let victreebel = Pokemon(pokedex: 71, species: .victreebel, type: [.Grass, .Poison], quickAttacks: [.acid, .razorLeaf], specialAttacks: [.sludgeBomb, .leafBlade, .solarBeam], stamina: 160, attack: 207, defense: 138)
@@ -149,6 +150,7 @@ struct PokemonCollections {
     static let magikarp = Pokemon(pokedex: 129, species: .magikarp, type: [.Water], quickAttacks: [.splash], specialAttacks: [.struggle], stamina: 40, attack: 29, defense: 102)
     static let gyarados = Pokemon(pokedex: 130, species: .gyarados, type: [.Water, .Flying], quickAttacks: [.bite, .dragonTail], specialAttacks: [.crunch, .hydroPump, .outrage], stamina: 190, attack: 237, defense: 197)
     static let lapras = Pokemon(pokedex: 131, species: .lapras, type: [.Water, .Ice], quickAttacks: [.frostBreath, .waterGun], specialAttacks: [.hydroPump, .iceBeam, .blizzard], stamina: 260, attack: 165, defense: 180)
+    static let legacyLapras = Pokemon(pokedex: 131, species: .legacyLapras, type: [.Water, .Ice], quickAttacks: [.frostBreath, .iceShard], specialAttacks: [.dragonPulse, .iceBeam, .blizzard], stamina: 260, attack: 165, defense: 180)
     static let eevee = Pokemon(pokedex: 133, species: .eevee, type: [.Normal], quickAttacks: [.tackle, .quickAttack], specialAttacks: [.dig, .swift], stamina: 110, attack: 104, defense: 121)
     static let vaporeon = Pokemon(pokedex: 134, species: .vaporeon, type: [.Water], quickAttacks: [.waterGun], specialAttacks: [.aquaTail, .waterPulse, .hydroPump], stamina: 260, attack: 205, defense: 177)
     static let jolteon = Pokemon(pokedex: 135, species: .jolteon, type: [.Electric], quickAttacks: [.thunderShock, .voltSwitch], specialAttacks: [.thunderbolt, .discharge, .thunder], stamina: 130, attack: 232, defense: 201)
@@ -163,6 +165,7 @@ struct PokemonCollections {
     static let dratini = Pokemon(pokedex: 147, species: .dratini, type: [.Dragon], quickAttacks: [.dragonBreath, .ironTail], specialAttacks: [.wrap, .aquaTail, .twister], stamina: 82, attack: 119, defense: 94)
     static let dragonair = Pokemon(pokedex: 148, species: .dragonair, type: [.Dragon], quickAttacks: [.dragonBreath, .ironTail], specialAttacks: [.wrap, .aquaTail, .dragonPulse], stamina: 122, attack: 163, defense: 138)
     static let dragonite = Pokemon(pokedex: 149, species: .dragonite, type: [.Dragon, .Flying], quickAttacks: [.steelWing, .dragonTail], specialAttacks: [.hyperBeam, .hurricane, .outrage], stamina: 182, attack: 263, defense: 201)
+    static let legacyDragonite = Pokemon(pokedex: 149, species: .legacyDragonite, type: [.Dragon, .Flying], quickAttacks: [.steelWing, .dragonBreath], specialAttacks: [.hyperBeam, .dragonClaw, .dragonPulse], stamina: 182, attack: 263, defense: 201)
     static let chikorita = Pokemon(pokedex: 152, species: .chikorita, type: [.Grass], quickAttacks: [.vineWhip, .tackle], specialAttacks: [.energyBall, .grassKnot, .bodySlam], stamina: 90, attack: 92, defense: 122)
     static let bayleef = Pokemon(pokedex: 153, species: .bayleef, type: [.Grass], quickAttacks: [.razorLeaf, .tackle], specialAttacks: [.energyBall, .grassKnot, .ancientPower], stamina: 120, attack: 122, defense: 155)
     static let meganium = Pokemon(pokedex: 154, species: .meganium, type: [.Grass], quickAttacks: [.razorLeaf, .vineWhip], specialAttacks: [.petalBlizzard, .solarBeam, .earthquake], stamina: 160, attack: 168, defense: 202)
@@ -293,6 +296,7 @@ struct PokemonCollections {
             PokemonCollections.poliwrath,
             PokemonCollections.alakazam,
             PokemonCollections.machamp,
+            PokemonCollections.legacyMachamp,
             PokemonCollections.victreebel,
             PokemonCollections.tentacruel,
             PokemonCollections.golem,
@@ -331,6 +335,7 @@ struct PokemonCollections {
             PokemonCollections.tauros,
             PokemonCollections.gyarados,
             PokemonCollections.lapras,
+            PokemonCollections.legacyLapras,
             PokemonCollections.vaporeon,
             PokemonCollections.jolteon,
             PokemonCollections.flareon,
@@ -340,6 +345,7 @@ struct PokemonCollections {
             PokemonCollections.aerodactyl,
             PokemonCollections.snorlax,
             PokemonCollections.dragonite,
+            PokemonCollections.legacyDragonite,
             
             PokemonCollections.bayleef,
             PokemonCollections.meganium,
@@ -482,6 +488,7 @@ struct PokemonCollections {
             PokemonCollections.machop,
             PokemonCollections.machoke,
             PokemonCollections.machamp,
+            PokemonCollections.legacyMachamp,
             PokemonCollections.bellsprout,
             PokemonCollections.weepinbell,
             PokemonCollections.victreebel,
@@ -545,6 +552,7 @@ struct PokemonCollections {
             PokemonCollections.magikarp,
             PokemonCollections.gyarados,
             PokemonCollections.lapras,
+            PokemonCollections.legacyLapras,
             PokemonCollections.eevee,
             PokemonCollections.vaporeon,
             PokemonCollections.jolteon,
@@ -559,6 +567,7 @@ struct PokemonCollections {
             PokemonCollections.dratini,
             PokemonCollections.dragonair,
             PokemonCollections.dragonite,
+            PokemonCollections.legacyDragonite,
             PokemonCollections.chikorita,
             PokemonCollections.bayleef,
             PokemonCollections.meganium,
@@ -668,10 +677,12 @@ struct PokemonCollections {
             PokemonCollections.rhydon,
             PokemonCollections.gyarados,
             PokemonCollections.lapras,
+            PokemonCollections.legacyLapras,
             PokemonCollections.vaporeon,
             PokemonCollections.golem,
             PokemonCollections.exeggutor,
             PokemonCollections.machamp,
+            PokemonCollections.legacyMachamp,
             PokemonCollections.alakazam,
             PokemonCollections.arcanine,
             PokemonCollections.pinsir,
@@ -681,6 +692,7 @@ struct PokemonCollections {
             PokemonCollections.flareon,
             PokemonCollections.snorlax,
             PokemonCollections.dragonite,
+            PokemonCollections.legacyDragonite,
             PokemonCollections.blissey,
             PokemonCollections.tyranitar,
             PokemonCollections.donphan,

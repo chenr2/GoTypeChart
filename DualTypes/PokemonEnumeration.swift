@@ -78,6 +78,7 @@ enum PokemonEnumeration: String {
     machop = "Machop",
     machoke = "Machoke",
     machamp = "Machamp",
+    legacyMachamp = "Machamp (L)",
     bellsprout = "Bellsprout",
     weepinbell = "Weepinbell",
     victreebel = "Victreebel",
@@ -141,6 +142,7 @@ enum PokemonEnumeration: String {
     magikarp = "Magikarp",
     gyarados = "Gyarados",
     lapras = "Lapras",
+    legacyLapras = "Lapras (L)",
     ditto = "Ditto",
     eevee = "Eevee",
     vaporeon = "Vaporeon",
@@ -159,6 +161,7 @@ enum PokemonEnumeration: String {
     dratini = "Dratini",
     dragonair = "Dragonair",
     dragonite = "Dragonite",
+    legacyDragonite = "Dragonite (L)",
 //    mewtwo = "Mewtwo",
 //    mew = "Mew",
     
