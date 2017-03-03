@@ -10,6 +10,7 @@ import UIKit
 
 class GymLeaderDetail: UICollectionViewController {
     
+    @IBOutlet weak var weaveDamage: UIBarButtonItem!
     var pokemon: Pokemon? = nil {
         didSet {
             if let pokemon = pokemon {
@@ -57,6 +58,9 @@ class GymLeaderDetail: UICollectionViewController {
     
     var bestOptions: [AverageMon] = []
     
+    var qmDoT: CGFloat = 0
+    var cmDoT: CGFloat = 0
+    
     func getKeysOfValue(_ damage: DamageType, pokemon: Pokemon) -> [ElementType] {
         var elements: [ElementType] = []
         for (key, value) in pokemon.vulnerabilitySet {
@@ -88,6 +92,9 @@ class GymLeaderDetail: UICollectionViewController {
             titleControl.configureTitleControl(pokemon, quickAttack: quickAttacks[selectedQuickAttack], specialAttack: specialAttacks[selectedSpecialAttack])
             navigationItem.titleView = titleControl
         }
+        let weaveDoT = qmDoT + cmDoT
+        let weaveDoTString = String(format: "%.1f", weaveDoT)
+        weaveDamage.title = "DoT: \(weaveDoTString)"
     }
     
     override func viewDidLoad() {
@@ -153,12 +160,18 @@ extension GymLeaderDetail {
         case 1:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GymLeaderDetailQuickMoveCell", for: indexPath) as! GymLeaderDetailQuickMoveCell
             let cellSelected = (indexPath as NSIndexPath).row == selectedQuickAttack
-            cell.configureCell(quickAttacks[(indexPath as NSIndexPath).row], specialAttack: specialAttacks[selectedSpecialAttack], pokemon: pokemon!, cellSelected: cellSelected)
+            let thisQmDoT = cell.configureCell(quickAttacks[(indexPath as NSIndexPath).row], specialAttack: specialAttacks[selectedSpecialAttack], pokemon: pokemon!, cellSelected: cellSelected)
+            if cellSelected {
+                qmDoT = thisQmDoT
+            }
             return cell
         case 2:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GymLeaderDetailQuickMoveCell", for: indexPath) as! GymLeaderDetailQuickMoveCell
             let cellSelected = (indexPath as NSIndexPath).row == selectedSpecialAttack
-            cell.configureCellSpecial(specialAttacks[(indexPath as NSIndexPath).row], quickAttack: quickAttacks[selectedQuickAttack], pokemon: pokemon!, cellSelected: cellSelected)
+            let thisCmDoT = cell.configureCellSpecial(specialAttacks[(indexPath as NSIndexPath).row], quickAttack: quickAttacks[selectedQuickAttack], pokemon: pokemon!, cellSelected: cellSelected)
+            if cellSelected {
+                cmDoT = thisCmDoT
+            }
             return cell
         case 3:
             let selectedItem = directCounters[(indexPath as NSIndexPath).row]

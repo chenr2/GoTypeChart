@@ -55,7 +55,12 @@ class GymLeaderDetailQuickMoveCell: FlexibleCollectionCell {
         return mainAttributedString
     }
     
-    func configureCell(_ quickAttack: QuickAttack, specialAttack: SpecialAttack, pokemon: Pokemon, cellSelected: Bool){
+    func dpsWithStab(_ dps: CGFloat, stab: Bool) -> CGFloat {
+        let multiplier: CGFloat = stab ? 1.25 : 1
+        return dps * multiplier
+    }
+    
+    func configureCell(_ quickAttack: QuickAttack, specialAttack: SpecialAttack, pokemon: Pokemon, cellSelected: Bool) -> CGFloat {
         let move = QuickMove.moveForQuickAttack(quickAttack)
         let element = move.element
         changeSelection(cellSelected, element: element)
@@ -70,9 +75,10 @@ class GymLeaderDetailQuickMoveCell: FlexibleCollectionCell {
         elementType.textColor = Colors.textColorForElement(element)
         dpsStat?.attributedText = attributedStabBonus(qmDoT, elementColor: elementColor, stab: stabFlag)
         dpsLabelText = "DoT"
+        return dpsWithStab(qmDoT, stab: stabFlag)
     }
     
-    func configureCellSpecial(_ specialAttack: SpecialAttack, quickAttack: QuickAttack, pokemon: Pokemon, cellSelected: Bool){
+    func configureCellSpecial(_ specialAttack: SpecialAttack, quickAttack: QuickAttack, pokemon: Pokemon, cellSelected: Bool) -> CGFloat {
         let specialMove = SpecialMove.moveForSpecialAttack(specialAttack)
         let element = specialMove.element
         changeSelection(cellSelected, element: element)
@@ -87,6 +93,7 @@ class GymLeaderDetailQuickMoveCell: FlexibleCollectionCell {
         elementType.textColor = Colors.textColorForElement(element)
         dpsStat?.attributedText = attributedStabBonus(dps, elementColor: elementColor, stab: stabFlag)
         dpsLabelText = "DoT"
+        return dpsWithStab(dps, stab: stabFlag)
     }
 
 }
