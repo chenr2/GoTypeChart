@@ -37,7 +37,7 @@ class Pokemon {
     var defense: Int
     var quickAttacks: [QuickAttack]
     var specialAttacks: [SpecialAttack]
-    
+    var legacy: Bool     
     let maxAttack: CGFloat = 271
     let maxDefense: CGFloat = 396
     let maxStamina: CGFloat = 510
@@ -529,7 +529,7 @@ class Pokemon {
         return Int(cpFloat)
     }
     
-    init(pokedex: Int, species: PokemonEnumeration, type: [ElementType], quickAttacks: [QuickAttack], specialAttacks: [SpecialAttack], stamina: Int, attack: Int, defense: Int){
+    init(pokedex: Int, species: PokemonEnumeration, type: [ElementType], quickAttacks: [QuickAttack], specialAttacks: [SpecialAttack], stamina: Int, attack: Int, defense: Int, legacy: Bool = false){
         self.pokedex = pokedex
         self.species = species
         self.type = type
@@ -541,6 +541,7 @@ class Pokemon {
         }
         self.quickAttacks = quickAttacks
         self.specialAttacks = specialAttacks
+        self.legacy = legacy
         if type.count == 1 {
             self.vulnerabilitySet = vulnerabilitySets.first!
         } else {
