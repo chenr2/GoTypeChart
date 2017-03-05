@@ -56,8 +56,6 @@ class GymLeaderDetail: UICollectionViewController {
     
     var directCounters: [TypeResult] = []
     
-    var bestOptions: [AverageMon] = []
-    
     var qmDoT: CGFloat = 0
     var cmDoT: CGFloat = 0
     
@@ -77,11 +75,6 @@ class GymLeaderDetail: UICollectionViewController {
         guard let pokemon = pokemon else { return }
 
         directCounters = Pokemon.calculateTypeCounters(
-            pokemon,
-            quickAttack: quickAttacks[selectedQuickAttack],
-            specialAttack: specialAttacks[selectedSpecialAttack]
-        )
-        bestOptions = Pokemon.calculatePotentialTargetsFor(
             pokemon,
             quickAttack: quickAttacks[selectedQuickAttack],
             specialAttack: specialAttacks[selectedSpecialAttack]
@@ -118,6 +111,11 @@ class GymLeaderDetail: UICollectionViewController {
             destination.pokemon = averageMon.opponent
             // pop to root
             destination.filterJump = filterJump
+        } else if let nav = segue.destination as? UINavigationController,
+            let destination = nav.topViewController as? UseMovesetAgainst {
+            destination.pokemon = pokemon
+            destination.quickAttack = quickAttacks[selectedQuickAttack]
+            destination.specialAttack = specialAttacks[selectedSpecialAttack]
         }
     }
     

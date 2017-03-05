@@ -501,7 +501,7 @@ class Pokemon {
         let typeResults = Pokemon.calculateTypeResults(pokemon, quickAttack: quickAttack, specialAttack: specialAttack)
         var topResults: [AverageMon] = []
         
-        for leader in PokemonCollections.contenders() {
+        for leader in PokemonCollections.gymLeaders() {
             let movesForThisMon = typeResults.filter {
                 $0.opponent.species == leader.species
             }
@@ -518,7 +518,7 @@ class Pokemon {
             return a.average < b.average
         }
         
-        return Array(topResults.prefix(8))
+        return Array(topResults)
     }
     
     class func calculateCP(pokemon: Pokemon) -> Int {
