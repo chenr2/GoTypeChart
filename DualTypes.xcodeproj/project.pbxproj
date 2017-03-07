@@ -17,13 +17,6 @@
 		FC2002F91D73C27C0036FF9C /* ImageAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC2002F81D73C27C0036FF9C /* ImageAssets.xcassets */; };
 		FC2585841D667766001F3434 /* QuickMove.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2585831D667766001F3434 /* QuickMove.swift */; };
 		FC2585891D669A47001F3434 /* SpecialMove.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2585881D669A47001F3434 /* SpecialMove.swift */; };
-		FC2E2A3C1D77DA0B00E70DA1 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC2E2A3A1D77DA0B00E70DA1 /* Interface.storyboard */; };
-		FC2E2A3E1D77DA0B00E70DA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC2E2A3D1D77DA0B00E70DA1 /* Assets.xcassets */; };
-		FC2E2A451D77DA0B00E70DA1 /* Triangulate Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FC2E2A441D77DA0B00E70DA1 /* Triangulate Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		FC2E2A4A1D77DA0B00E70DA1 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2E2A491D77DA0B00E70DA1 /* InterfaceController.swift */; };
-		FC2E2A4C1D77DA0B00E70DA1 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2E2A4B1D77DA0B00E70DA1 /* ExtensionDelegate.swift */; };
-		FC2E2A4E1D77DA0B00E70DA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC2E2A4D1D77DA0B00E70DA1 /* Assets.xcassets */; };
-		FC2E2A521D77DA0B00E70DA1 /* Triangulate.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = FC2E2A381D77DA0B00E70DA1 /* Triangulate.app */; };
 		FC2E4C451D6E615D008B8EFD /* PokemonSearchTableResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2E4C441D6E615D008B8EFD /* PokemonSearchTableResult.swift */; };
 		FC2E4C471D6E66BD008B8EFD /* QuickMoveSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2E4C461D6E66BD008B8EFD /* QuickMoveSearchResult.swift */; };
 		FC2E4C491D6E68F3008B8EFD /* SpecialMoveSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC2E4C481D6E68F3008B8EFD /* SpecialMoveSearchResult.swift */; };
@@ -76,20 +69,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		FC2E2A461D77DA0B00E70DA1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FCA742531D52E675003DAC35 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FC2E2A431D77DA0B00E70DA1;
-			remoteInfo = "Triangulate Extension";
-		};
-		FC2E2A501D77DA0B00E70DA1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FCA742531D52E675003DAC35 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FC2E2A371D77DA0B00E70DA1;
-			remoteInfo = Triangulate;
-		};
 		FC90914B1D7332D4007682BB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FCA742531D52E675003DAC35 /* Project object */;
@@ -107,17 +86,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		FC2E2A581D77DA0B00E70DA1 /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				FC2E2A451D77DA0B00E70DA1 /* Triangulate Extension.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		FC9B64071D6FE8C400467EDA /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -136,7 +104,6 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				FC2E2A521D77DA0B00E70DA1 /* Triangulate.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -154,11 +121,9 @@
 		FC2002F81D73C27C0036FF9C /* ImageAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ImageAssets.xcassets; sourceTree = "<group>"; };
 		FC2585831D667766001F3434 /* QuickMove.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickMove.swift; sourceTree = "<group>"; };
 		FC2585881D669A47001F3434 /* SpecialMove.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecialMove.swift; sourceTree = "<group>"; };
-		FC2E2A381D77DA0B00E70DA1 /* Triangulate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Triangulate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC2E2A3B1D77DA0B00E70DA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		FC2E2A3D1D77DA0B00E70DA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC2E2A3F1D77DA0B00E70DA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FC2E2A441D77DA0B00E70DA1 /* Triangulate Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Triangulate Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC2E2A491D77DA0B00E70DA1 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
 		FC2E2A4B1D77DA0B00E70DA1 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		FC2E2A4D1D77DA0B00E70DA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -231,13 +196,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		FC2E2A411D77DA0B00E70DA1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		FC90913F1D7332D4007682BB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -402,8 +360,6 @@
 				FCA7425B1D52E675003DAC35 /* DualTypes.app */,
 				FC9B63F61D6FE8C400467EDA /* Appraisal Cheat Sheet.appex */,
 				FC9091421D7332D4007682BB /* PidgeyGrinder.appex */,
-				FC2E2A381D77DA0B00E70DA1 /* Triangulate.app */,
-				FC2E2A441D77DA0B00E70DA1 /* Triangulate Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -451,40 +407,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FC2E2A371D77DA0B00E70DA1 /* Triangulate */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FC2E2A591D77DA0B00E70DA1 /* Build configuration list for PBXNativeTarget "Triangulate" */;
-			buildPhases = (
-				FC2E2A361D77DA0B00E70DA1 /* Resources */,
-				FC2E2A581D77DA0B00E70DA1 /* Embed App Extensions */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				FC2E2A471D77DA0B00E70DA1 /* PBXTargetDependency */,
-			);
-			name = Triangulate;
-			productName = Triangulate;
-			productReference = FC2E2A381D77DA0B00E70DA1 /* Triangulate.app */;
-			productType = "com.apple.product-type.application.watchapp2";
-		};
-		FC2E2A431D77DA0B00E70DA1 /* Triangulate Extension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FC2E2A571D77DA0B00E70DA1 /* Build configuration list for PBXNativeTarget "Triangulate Extension" */;
-			buildPhases = (
-				FC2E2A401D77DA0B00E70DA1 /* Sources */,
-				FC2E2A411D77DA0B00E70DA1 /* Frameworks */,
-				FC2E2A421D77DA0B00E70DA1 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Triangulate Extension";
-			productName = "Triangulate Extension";
-			productReference = FC2E2A441D77DA0B00E70DA1 /* Triangulate Extension.appex */;
-			productType = "com.apple.product-type.watchkit2-extension";
-		};
 		FC9091411D7332D4007682BB /* PidgeyGrinder */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FC9091501D7332D4007682BB /* Build configuration list for PBXNativeTarget "PidgeyGrinder" */;
@@ -534,7 +456,6 @@
 			dependencies = (
 				FC9B64021D6FE8C400467EDA /* PBXTargetDependency */,
 				FC90914C1D7332D4007682BB /* PBXTargetDependency */,
-				FC2E2A511D77DA0B00E70DA1 /* PBXTargetDependency */,
 			);
 			name = DualTypes;
 			productName = DualTypes;
@@ -551,16 +472,6 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Robert Chen";
 				TargetAttributes = {
-					FC2E2A371D77DA0B00E70DA1 = {
-						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = XMBBQU2VF8;
-						LastSwiftMigration = 0800;
-					};
-					FC2E2A431D77DA0B00E70DA1 = {
-						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = XMBBQU2VF8;
-						LastSwiftMigration = 0800;
-					};
 					FC9091411D7332D4007682BB = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = XMBBQU2VF8;
@@ -601,30 +512,11 @@
 				FCA7425A1D52E675003DAC35 /* DualTypes */,
 				FC9B63F51D6FE8C400467EDA /* Appraisal Cheat Sheet */,
 				FC9091411D7332D4007682BB /* PidgeyGrinder */,
-				FC2E2A371D77DA0B00E70DA1 /* Triangulate */,
-				FC2E2A431D77DA0B00E70DA1 /* Triangulate Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		FC2E2A361D77DA0B00E70DA1 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FC2E2A3E1D77DA0B00E70DA1 /* Assets.xcassets in Resources */,
-				FC2E2A3C1D77DA0B00E70DA1 /* Interface.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FC2E2A421D77DA0B00E70DA1 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FC2E2A4E1D77DA0B00E70DA1 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		FC9091401D7332D4007682BB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -659,15 +551,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		FC2E2A401D77DA0B00E70DA1 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FC2E2A4C1D77DA0B00E70DA1 /* ExtensionDelegate.swift in Sources */,
-				FC2E2A4A1D77DA0B00E70DA1 /* InterfaceController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		FC90913E1D7332D4007682BB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -736,16 +619,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		FC2E2A471D77DA0B00E70DA1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FC2E2A431D77DA0B00E70DA1 /* Triangulate Extension */;
-			targetProxy = FC2E2A461D77DA0B00E70DA1 /* PBXContainerItemProxy */;
-		};
-		FC2E2A511D77DA0B00E70DA1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FC2E2A371D77DA0B00E70DA1 /* Triangulate */;
-			targetProxy = FC2E2A501D77DA0B00E70DA1 /* PBXContainerItemProxy */;
-		};
 		FC90914C1D7332D4007682BB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = FC9091411D7332D4007682BB /* PidgeyGrinder */;
@@ -830,74 +703,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		FC2E2A531D77DA0B00E70DA1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				IBSC_MODULE = Triangulate_Extension;
-				INFOPLIST_FILE = Triangulate/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = com.robcornerstone.gotypechart.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.2;
-			};
-			name = Debug;
-		};
-		FC2E2A541D77DA0B00E70DA1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				IBSC_MODULE = Triangulate_Extension;
-				INFOPLIST_FILE = Triangulate/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = com.robcornerstone.gotypechart.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.2;
-			};
-			name = Release;
-		};
-		FC2E2A551D77DA0B00E70DA1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DEVELOPMENT_TEAM = XMBBQU2VF8;
-				INFOPLIST_FILE = "Triangulate Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.robcornerstone.gotypechart.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.2;
-			};
-			name = Debug;
-		};
-		FC2E2A561D77DA0B00E70DA1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DEVELOPMENT_TEAM = XMBBQU2VF8;
-				INFOPLIST_FILE = "Triangulate Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.robcornerstone.gotypechart.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.2;
-			};
-			name = Release;
-		};
 		FC90914E1D7332D4007682BB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1076,24 +881,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FC2E2A571D77DA0B00E70DA1 /* Build configuration list for PBXNativeTarget "Triangulate Extension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FC2E2A551D77DA0B00E70DA1 /* Debug */,
-				FC2E2A561D77DA0B00E70DA1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FC2E2A591D77DA0B00E70DA1 /* Build configuration list for PBXNativeTarget "Triangulate" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FC2E2A531D77DA0B00E70DA1 /* Debug */,
-				FC2E2A541D77DA0B00E70DA1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		FC9091501D7332D4007682BB /* Build configuration list for PBXNativeTarget "PidgeyGrinder" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
