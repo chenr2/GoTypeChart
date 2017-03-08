@@ -10,6 +10,22 @@ import UIKit
 
 class GymLeaderDetail: UICollectionViewController {
     
+    var dodging: Dodge = .none
+    
+    @IBAction func toggleDodging(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            dodging = .none
+        case 1:
+            dodging = .charge
+        case 2:
+            dodging = .both
+        default:
+            break
+        }
+        recalculateDirectCounters()
+    }
+    
     @IBOutlet weak var weaveDamage: UIBarButtonItem!
     var pokemon: Pokemon? = nil {
         didSet {
@@ -77,9 +93,10 @@ class GymLeaderDetail: UICollectionViewController {
         directCounters = Pokemon.calculateTypeCounters(
             pokemon,
             quickAttack: quickAttacks[selectedQuickAttack],
-            specialAttack: specialAttacks[selectedSpecialAttack]
+            specialAttack: specialAttacks[selectedSpecialAttack],
+            dodging: dodging
         )
-        let sections = IndexSet(integersIn: 1...4)
+        let sections = IndexSet([1, 2, 4, 5])
         collectionView?.reloadSections(sections)
         if let titleControl = Bundle.main.loadNibNamed("DetailTitleControl", owner: nil, options: nil)![0] as? DetailTitleControl {
             titleControl.configureTitleControl(pokemon, quickAttack: quickAttacks[selectedQuickAttack], specialAttack: specialAttacks[selectedSpecialAttack])
@@ -124,7 +141,7 @@ class GymLeaderDetail: UICollectionViewController {
 extension GymLeaderDetail {
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 7
+        return 8
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -135,13 +152,15 @@ extension GymLeaderDetail {
             return quickAttacks.count
         case 2:
             return specialAttacks.count
-        case 3:
+        case 3: // dodge cell
+            return 1
+        case 4:
             return directCounters.count
-        case 4: // stats
+        case 5: // stats
             return 3
-        case 5:
-            return double.count
         case 6:
+            return double.count
+        case 7:
             return half.count
         default:
             return 0
@@ -172,11 +191,14 @@ extension GymLeaderDetail {
             }
             return cell
         case 3:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GymLeaderDodgeCell", for: indexPath) as! GymLeaderDodgeCell
+            return cell
+        case 4:
             let selectedItem = directCounters[(indexPath as NSIndexPath).row]
             let pokemonCounterCell = collectionView.dequeueReusableCell(withReuseIdentifier: "GymLeaderPokemonCounter", for: indexPath) as! GymLeaderPokemonCounter
             pokemonCounterCell.configureCell(selectedItem)
             return pokemonCounterCell
-        case 4:
+        case 5:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GymLeaderDetailStatCell", for: indexPath) as! GymLeaderDetailStatCell
             switch (indexPath as NSIndexPath).row {
             case 0:
@@ -189,9 +211,9 @@ extension GymLeaderDetail {
                 break
             }
             return cell
-        case 5:
-            detailTypeCell.configureCell(double[(indexPath as NSIndexPath).row])
         case 6:
+            detailTypeCell.configureCell(double[(indexPath as NSIndexPath).row])
+        case 7:
             detailTypeCell.configureCell(half[(indexPath as NSIndexPath).row])
         default:
             break
@@ -212,12 +234,14 @@ extension GymLeaderDetail {
             case 2:
                 text = "\(NSLocalizedString("SPECIAL_MOVES", comment: "")):"
             case 3:
-                text = "\(NSLocalizedString("RECOMMENDED_AGAINST", comment: "")):"
+                text = "Dodging:"
             case 4:
-                text = "\(NSLocalizedString("STATS", comment: "")):"
+                text = "\(NSLocalizedString("RECOMMENDED_AGAINST", comment: "")):"
             case 5:
-                text = "\(NSLocalizedString("SUPER_EFFECTIVE_AGAINST", comment: "")) \(pokemonName):"
+                text = "\(NSLocalizedString("STATS", comment: "")):"
             case 6:
+                text = "\(NSLocalizedString("SUPER_EFFECTIVE_AGAINST", comment: "")) \(pokemonName):"
+            case 7:
                 text = "\(NSLocalizedString("NOT_VERY_EFFECTIVE_AGAINST", comment: "")) \(pokemonName):"
             default:
                 break
@@ -238,7 +262,7 @@ extension GymLeaderDetail: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         var cellsPerRow:CGFloat = 4
         switch (indexPath as NSIndexPath).section {
-        case 0, 1, 2, 3, 4:
+        case 0, 1, 2, 4, 5:
             cellsPerRow = 3
         default:
             break
@@ -251,6 +275,8 @@ extension GymLeaderDetail: UICollectionViewDelegateFlowLayout {
         case 1, 2:
             // move sets
             return CGSize(width: eachSide, height:eachSide + 58)
+        case 3:
+            return CGSize(width: collectionView.bounds.width, height:30)
         default:
             return CGSize(width: eachSide, height:eachSide)            
         }
@@ -293,9 +319,9 @@ extension GymLeaderDetail {
                 let selectedElement = SpecialMove.moveForSpecialAttack(specialAttacks[selectedSpecialAttack]).element
                 cell.changeSelection(true, element: selectedElement)
             }
-        case 5:
-            moveElement = double[(indexPath as NSIndexPath).row]
         case 6:
+            moveElement = double[(indexPath as NSIndexPath).row]
+        case 7:
             moveElement = half[(indexPath as NSIndexPath).row]
         default:
             return

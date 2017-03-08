@@ -409,10 +409,10 @@ class Pokemon {
         case .none:
             break
         case .charge:
-            cmDodgeMultiplier = 0.3
+            cmDodgeMultiplier = 0.25
         case .both:
-            qmDodgeMultiplier = 0.3
-            cmDodgeMultiplier = 0.3
+            qmDodgeMultiplier = 0.25
+            cmDodgeMultiplier = 0.25
         }
         
         var defenderQmDodgeMultiplier: CGFloat = 1
@@ -509,8 +509,8 @@ class Pokemon {
         return typeResults
     }
     
-    class func calculateTypeCounters(_ pokemon: Pokemon, quickAttack: QuickAttack, specialAttack: SpecialAttack) -> [TypeResult] {
-        let typeResults = Pokemon.calculateTypeResults(pokemon, quickAttack: quickAttack, specialAttack: specialAttack, dodging: .none, engagement: .defender)
+    class func calculateTypeCounters(_ pokemon: Pokemon, quickAttack: QuickAttack, specialAttack: SpecialAttack, dodging: Dodge) -> [TypeResult] {
+        let typeResults = Pokemon.calculateTypeResults(pokemon, quickAttack: quickAttack, specialAttack: specialAttack, dodging: dodging, engagement: .defender)
         var topResults: [TypeResult] = []
         
         for leader in PokemonCollections.contenders() {
@@ -532,9 +532,9 @@ class Pokemon {
         return Array(topResults.prefix(6))
     }
     
-    class func calculatePotentialTargetsFor(_ pokemon: Pokemon, quickAttack: QuickAttack, specialAttack: SpecialAttack) -> [AverageMon] {
+    class func calculatePotentialTargetsFor(_ pokemon: Pokemon, quickAttack: QuickAttack, specialAttack: SpecialAttack, dodging: Dodge) -> [AverageMon] {
 
-        let typeResults = Pokemon.calculateTypeResults(pokemon, quickAttack: quickAttack, specialAttack: specialAttack, dodging: .none, engagement: .attacker)
+        let typeResults = Pokemon.calculateTypeResults(pokemon, quickAttack: quickAttack, specialAttack: specialAttack, dodging: dodging, engagement: .attacker)
         var topResults: [AverageMon] = []
         
         for leader in PokemonCollections.gymLeaders() {

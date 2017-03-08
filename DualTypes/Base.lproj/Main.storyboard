@@ -1383,6 +1383,31 @@
                                     <segue destination="eGV-m0-bll" kind="push" id="IZe-0b-VC8"/>
                                 </connections>
                             </collectionViewCell>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GymLeaderDodgeCell" id="N3g-LC-6ab" customClass="GymLeaderDodgeCell" customModule="DualTypes" customModuleProvider="target">
+                                <rect key="frame" x="232" y="393" width="101" height="97"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="101" height="97"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="3q5-vx-BtJ">
+                                            <rect key="frame" x="-85.5" y="34" width="272" height="29"/>
+                                            <segments>
+                                                <segment title="None"/>
+                                                <segment title="Charge Only"/>
+                                                <segment title="All"/>
+                                            </segments>
+                                            <connections>
+                                                <action selector="toggleDodging:" destination="eGV-m0-bll" eventType="valueChanged" id="9bZ-rV-P0c"/>
+                                            </connections>
+                                        </segmentedControl>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="3q5-vx-BtJ" firstAttribute="centerX" secondItem="N3g-LC-6ab" secondAttribute="centerX" id="1el-vH-jhn"/>
+                                    <constraint firstItem="3q5-vx-BtJ" firstAttribute="centerY" secondItem="N3g-LC-6ab" secondAttribute="centerY" id="5Vi-ZB-aP4"/>
+                                </constraints>
+                            </collectionViewCell>
                         </cells>
                         <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GymLeaderDetailSectionHeader" id="OAs-1i-b2W" customClass="GymLeaderDetailSectionHeader" customModule="DualTypes" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>

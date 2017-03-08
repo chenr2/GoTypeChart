@@ -27,7 +27,8 @@ class UseMovesetAgainst: UITableViewController {
             bestOptions = Pokemon.calculatePotentialTargetsFor(
                 pokemon,
                 quickAttack: quickAttack,
-                specialAttack: specialAttack
+                specialAttack: specialAttack,
+                dodging: .both
             )
             tableView.reloadData()
             if let titleControl = Bundle.main.loadNibNamed("DetailTitleControl", owner: nil, options: nil)![0] as? DetailTitleControl {

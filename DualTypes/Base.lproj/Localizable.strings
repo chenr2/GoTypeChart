@@ -30,7 +30,7 @@
 "Stamina" = "Stamina";
 
 "ElementType" = "Type";
-"RECOMMENDED_AGAINST" = "Type counters against move set";
+"RECOMMENDED_AGAINST" = "Counters against move set";
 "USE_MOVESET_AGAINST" = "Move set works best against";
 "SUPER_EFFECTIVE_AGAINST" = "Super effective against";
 "NOT_VERY_EFFECTIVE_AGAINST" = "Not very effective against";
