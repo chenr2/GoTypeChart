@@ -12,6 +12,14 @@ enum DamageType {
     case single, double, half
 }
 
+enum Dodge {
+    case none, charge, both
+}
+
+enum Engagement {
+    case attacker, defender
+}
+
 struct TypeResult {
     let sumDifferential: CGFloat
     let opponent: Pokemon
@@ -392,7 +400,35 @@ class Pokemon {
         }
     }
     
-    class func calculateTypeResults(_ pokemon: Pokemon, quickAttack: QuickAttack, specialAttack: SpecialAttack) -> [TypeResult] {
+    class func calculateTypeResults(_ pokemon: Pokemon, quickAttack: QuickAttack, specialAttack: SpecialAttack, dodging: Dodge, engagement: Engagement) -> [TypeResult] {
+        
+        var qmDodgeMultiplier: CGFloat = 1
+        var cmDodgeMultiplier: CGFloat = 1
+        
+        switch dodging {
+        case .none:
+            break
+        case .charge:
+            cmDodgeMultiplier = 0.3
+        case .both:
+            qmDodgeMultiplier = 0.3
+            cmDodgeMultiplier = 0.3
+        }
+        
+        var defenderQmDodgeMultiplier: CGFloat = 1
+        var defenderCmDodgeMultiplier: CGFloat = 1
+        var attackerQmDodgeMultiplier: CGFloat = 1
+        var attackerCmDodgeMultiplier: CGFloat = 1
+        
+        switch engagement {
+        case .attacker:
+            attackerQmDodgeMultiplier = qmDodgeMultiplier
+            attackerCmDodgeMultiplier = cmDodgeMultiplier
+        case .defender:
+            defenderQmDodgeMultiplier = qmDodgeMultiplier
+            defenderCmDodgeMultiplier = cmDodgeMultiplier
+        }
+        
         let opponents = PokemonCollections.contenders()
         var typeResults: [TypeResult] = []
         let quickMove = QuickMove.moveForQuickAttack(quickAttack) // defender's
@@ -423,8 +459,8 @@ class Pokemon {
             }
             // defender's moves.
             // quick move damage * stab * type effectiveness * (attack / defense)
-            let qmDamage = qmStab * qmBonusDamage1 * qmBonusDamage2 * CGFloat(pokemon.attack) / CGFloat(opponent.defense)
-            let cmDamage = cmStab * cmBonusDamage1 * cmBonusDamage2 * CGFloat(pokemon.attack) / CGFloat(opponent.defense)
+            let qmDamage = defenderQmDodgeMultiplier * qmStab * qmBonusDamage1 * qmBonusDamage2 * CGFloat(pokemon.attack) / CGFloat(opponent.defense)
+            let cmDamage = defenderCmDodgeMultiplier * cmStab * cmBonusDamage1 * cmBonusDamage2 * CGFloat(pokemon.attack) / CGFloat(opponent.defense)
             
             for opponentQM in opponent.quickAttacks {
                 for opponentCM in opponent.specialAttacks {
@@ -456,8 +492,8 @@ class Pokemon {
                         ocmBonusDamage2 = Pokemon.typeDamage(myType2, moveType: ocmElement)
                     }
                     
-                    let oqmDamage = oqmStab * oqmBonusDamage1 * oqmBonusDamage2 * CGFloat(opponent.attack) / CGFloat(pokemon.defense)
-                    let ocmDamage = ocmStab * ocmBonusDamage1 * ocmBonusDamage2 * CGFloat(opponent.attack) / CGFloat(pokemon.defense)
+                    let oqmDamage = attackerQmDodgeMultiplier * oqmStab * oqmBonusDamage1 * oqmBonusDamage2 * CGFloat(opponent.attack) / CGFloat(pokemon.defense)
+                    let ocmDamage = attackerCmDodgeMultiplier * ocmStab * ocmBonusDamage1 * ocmBonusDamage2 * CGFloat(opponent.attack) / CGFloat(pokemon.defense)
                     
                     let rawDifferential = (oqmDamage + ocmDamage) - (qmDamage + cmDamage)
                     let thisResult = TypeResult(
@@ -474,7 +510,7 @@ class Pokemon {
     }
     
     class func calculateTypeCounters(_ pokemon: Pokemon, quickAttack: QuickAttack, specialAttack: SpecialAttack) -> [TypeResult] {
-        let typeResults = Pokemon.calculateTypeResults(pokemon, quickAttack: quickAttack, specialAttack: specialAttack)
+        let typeResults = Pokemon.calculateTypeResults(pokemon, quickAttack: quickAttack, specialAttack: specialAttack, dodging: .none, engagement: .defender)
         var topResults: [TypeResult] = []
         
         for leader in PokemonCollections.contenders() {
@@ -498,7 +534,7 @@ class Pokemon {
     
     class func calculatePotentialTargetsFor(_ pokemon: Pokemon, quickAttack: QuickAttack, specialAttack: SpecialAttack) -> [AverageMon] {
 
-        let typeResults = Pokemon.calculateTypeResults(pokemon, quickAttack: quickAttack, specialAttack: specialAttack)
+        let typeResults = Pokemon.calculateTypeResults(pokemon, quickAttack: quickAttack, specialAttack: specialAttack, dodging: .none, engagement: .attacker)
         var topResults: [AverageMon] = []
         
         for leader in PokemonCollections.gymLeaders() {
