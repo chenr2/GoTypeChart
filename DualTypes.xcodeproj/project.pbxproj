@@ -30,6 +30,7 @@
 		FC490B3B1E6F8931009D9C79 /* GymLeaderDodgeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC490B3A1E6F8931009D9C79 /* GymLeaderDodgeCell.swift */; };
 		FC4A83E61D7CED72004A8E7F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FC4A83E81D7CED72004A8E7F /* Localizable.strings */; };
 		FC4A83F41D7DBA48004A8E7F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FC4A83F61D7DBA48004A8E7F /* Localizable.strings */; };
+		FC51E5401E70D4AA00F86393 /* UseMovesetAgainstDodgeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC51E53F1E70D4AA00F86393 /* UseMovesetAgainstDodgeCell.swift */; };
 		FC5326BD1D8B671C003C3903 /* PokemonEnumeration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5326BC1D8B671C003C3903 /* PokemonEnumeration.swift */; };
 		FC55BCA01D8EED5100B7B518 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC55BC9F1D8EED5100B7B518 /* TabBarController.swift */; };
 		FC55BCA21D8EED8500B7B518 /* TabSwitchAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC55BCA11D8EED8500B7B518 /* TabSwitchAnimator.swift */; };
@@ -154,6 +155,7 @@
 		FC4A83EA1D7CED76004A8E7F /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FC4A83F51D7DBA48004A8E7F /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FC4A83F71D7DBA50004A8E7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FC51E53F1E70D4AA00F86393 /* UseMovesetAgainstDodgeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UseMovesetAgainstDodgeCell.swift; sourceTree = "<group>"; };
 		FC5326BC1D8B671C003C3903 /* PokemonEnumeration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonEnumeration.swift; sourceTree = "<group>"; };
 		FC55BC9F1D8EED5100B7B518 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		FC55BCA11D8EED8500B7B518 /* TabSwitchAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabSwitchAnimator.swift; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 				FC31FDF01D9773BB00D3DC14 /* DetailTitleControl.swift */,
 				FC31FDEE1D9773AE00D3DC14 /* DetailTitleControl.xib */,
 				FCD6383E1E6A6225009AE047 /* UseMovesetAgainst.swift */,
+				FC51E53F1E70D4AA00F86393 /* UseMovesetAgainstDodgeCell.swift */,
 				FC490B3A1E6F8931009D9C79 /* GymLeaderDodgeCell.swift */,
 			);
 			name = GymDetail;
@@ -576,6 +579,7 @@
 			files = (
 				FC55BCA81D8F040000B7B518 /* Triangulate.swift in Sources */,
 				FC341D261D62922A007D28FA /* SearchResultDualCell.swift in Sources */,
+				FC51E5401E70D4AA00F86393 /* UseMovesetAgainstDodgeCell.swift in Sources */,
 				FCA7429D1D52E86D003DAC35 /* Pokemon.swift in Sources */,
 				FCB17E131D557D4000F0CCBB /* Colors.swift in Sources */,
 				FC03254E1D67CAC7007A3F3B /* SearchOverlayTable.swift in Sources */,

@@ -1484,6 +1484,31 @@
                                     </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UseMovesetAgainstDodgeCell" id="vXb-ug-9FO" customClass="UseMovesetAgainstDodgeCell" customModule="DualTypes" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vXb-ug-9FO" id="bRJ-43-1vW">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="6V0-tb-NhN">
+                                            <rect key="frame" x="51.5" y="8" width="272" height="29"/>
+                                            <segments>
+                                                <segment title="None"/>
+                                                <segment title="Charge Only"/>
+                                                <segment title="All"/>
+                                            </segments>
+                                            <connections>
+                                                <action selector="toggleDodging:" destination="1nF-il-RAf" eventType="valueChanged" id="WQN-9h-wyu"/>
+                                            </connections>
+                                        </segmentedControl>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="6V0-tb-NhN" firstAttribute="centerY" secondItem="bRJ-43-1vW" secondAttribute="centerY" id="0n2-rd-Uch"/>
+                                        <constraint firstItem="6V0-tb-NhN" firstAttribute="centerX" secondItem="bRJ-43-1vW" secondAttribute="centerX" id="5jM-dp-Z9p"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="1nF-il-RAf" id="LnO-qS-RS7"/>
