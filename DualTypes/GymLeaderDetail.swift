@@ -192,6 +192,7 @@ extension GymLeaderDetail {
             return cell
         case 3:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GymLeaderDodgeCell", for: indexPath) as! GymLeaderDodgeCell
+            cell.setSegmentedControlState(state: dodging)
             return cell
         case 4:
             let selectedItem = directCounters[(indexPath as NSIndexPath).row]

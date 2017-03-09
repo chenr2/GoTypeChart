@@ -1397,6 +1397,7 @@
                                                 <segment title="Charge Only"/>
                                                 <segment title="All"/>
                                             </segments>
+                                            <color key="tintColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <action selector="toggleDodging:" destination="eGV-m0-bll" eventType="valueChanged" id="9bZ-rV-P0c"/>
                                             </connections>
@@ -1407,6 +1408,9 @@
                                     <constraint firstItem="3q5-vx-BtJ" firstAttribute="centerX" secondItem="N3g-LC-6ab" secondAttribute="centerX" id="1el-vH-jhn"/>
                                     <constraint firstItem="3q5-vx-BtJ" firstAttribute="centerY" secondItem="N3g-LC-6ab" secondAttribute="centerY" id="5Vi-ZB-aP4"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="segmentedControl" destination="3q5-vx-BtJ" id="kit-JG-jdk"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GymLeaderDetailSectionHeader" id="OAs-1i-b2W" customClass="GymLeaderDetailSectionHeader" customModule="DualTypes" customModuleProvider="target">
@@ -1498,6 +1502,7 @@
                                                 <segment title="Charge Only"/>
                                                 <segment title="All"/>
                                             </segments>
+                                            <color key="tintColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <action selector="toggleDodging:" destination="1nF-il-RAf" eventType="valueChanged" id="WQN-9h-wyu"/>
                                             </connections>
@@ -1508,6 +1513,9 @@
                                         <constraint firstItem="6V0-tb-NhN" firstAttribute="centerX" secondItem="bRJ-43-1vW" secondAttribute="centerX" id="5jM-dp-Z9p"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="segmentedControl" destination="6V0-tb-NhN" id="KC5-CG-pT1"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
