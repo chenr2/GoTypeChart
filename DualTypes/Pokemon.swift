@@ -392,9 +392,9 @@ class Pokemon {
         guard let bonusFlag = Pokemon.vulnerabilitySet(victimType)[moveType] else { return 1 }
         switch bonusFlag {
         case .double:
-            return 1.2
+            return 1.4
         case .half:
-            return 0.8
+            return 0.714
         default:
             return 1
         }
