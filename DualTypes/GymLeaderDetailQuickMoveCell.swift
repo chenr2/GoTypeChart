@@ -56,7 +56,7 @@ class GymLeaderDetailQuickMoveCell: FlexibleCollectionCell {
     }
     
     func dpsWithStab(_ dps: CGFloat, stab: Bool) -> CGFloat {
-        let multiplier: CGFloat = stab ? 1.25 : 1
+        let multiplier: CGFloat = stab ? 1.2 : 1
         return dps * multiplier
     }
     

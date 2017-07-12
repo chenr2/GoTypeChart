@@ -165,9 +165,9 @@ struct QuickMove {
         return qmDoT
     }
     
-    let maxQuickMove: CGFloat = 263 * 13.6 * 1.25 // dragonite dragon tail
+    let maxQuickMove: CGFloat = 263 * 13.6 * 1.2 // dragonite dragon tail
     func quickMovePercentage(_ baseAttack: CGFloat, stab: Bool) -> CGFloat {
-        let bonus: CGFloat = stab ? 1.25 : 1
+        let bonus: CGFloat = stab ? 1.2 : 1
         let percentage = 100 * baseAttack * dps * bonus / maxQuickMove
         let curve = 10 * sqrt(percentage)
         return min(curve, 100)

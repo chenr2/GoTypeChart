@@ -384,7 +384,7 @@ class Pokemon {
     
     class func stabMultiplier(_ pokemon: Pokemon, element: ElementType) -> CGFloat {
         let stabFlag = pokemon.type.contains(element)
-        return stabFlag ? 1.25 : 1
+        return stabFlag ? 1.2 : 1
     }
     
     class func typeDamage(_ victimType: ElementType, moveType: ElementType)
@@ -392,7 +392,7 @@ class Pokemon {
         guard let bonusFlag = Pokemon.vulnerabilitySet(victimType)[moveType] else { return 1 }
         switch bonusFlag {
         case .double:
-            return 1.25
+            return 1.2
         case .half:
             return 0.8
         default:

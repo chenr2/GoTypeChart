@@ -274,7 +274,7 @@ struct SpecialMove {
     }
     let maxSpecialMove: CGFloat = 4680 // gengar shadow ball, with hex EPS
     func specialMovePercentage(_ baseAttack: CGFloat, stab: Bool, dps: CGFloat) -> CGFloat {
-        let bonus: CGFloat = stab ? 1.25 : 1
+        let bonus: CGFloat = stab ? 1.2 : 1
         let percentage = 100 * baseAttack * dps * bonus / maxSpecialMove
         let curve = 10 * sqrt(percentage)
         return min(curve, 100)
