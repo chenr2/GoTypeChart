@@ -271,8 +271,8 @@ enum PokemonEnumeration: String {
 //    suicune = "Suicune",
     larvitar = "Larvitar",
     pupitar = "Pupitar",
-    tyranitar = "Tyranitar"
-//    lugia = "Lugia",
+    tyranitar = "Tyranitar",
+    lugia = "Lugia"
 //    hooh = "Ho-Oh",
 //    celebi = "Celebi"
 }
