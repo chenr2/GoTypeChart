@@ -275,6 +275,8 @@ struct PokemonCollections {
     static let tyranitar = Pokemon(pokedex: 248, species: .tyranitar, type: [.Dark, .Rock], quickAttacks: [.bite, .ironTail], specialAttacks: [.fireBlast, .crunch, .stoneEdge], stamina: 200, attack: 251, defense: 212)
     static let lugia = Pokemon(pokedex: 249, species: .lugia, type: [.Flying, .Psychic], quickAttacks: [.extrasensory, .dragonTail], specialAttacks: [.skyAttack, .hydroPump, .futuresight], stamina: 212, attack: 193, defense: 323)
     static let articuno = Pokemon(pokedex: 144, species: .articuno, type: [.Flying, .Ice], quickAttacks: [.frostBreath], specialAttacks: [.blizzard, .iceBeam, .icyWind], stamina: 180, attack: 192, defense: 249)
+    static let moltres = Pokemon(pokedex: 146, species: .moltres, type: [.Flying, .Fire], quickAttacks: [.fireSpin, .ember], specialAttacks: [.overheat, .fireBlast, .flamethrower, .heatWave], stamina: 180, attack: 251, defense: 184)
+
 //    static let hooh = Pokemon(pokedex: 250, species: .hooh, type: [.Fire, .Flying], quickAttacks: [.extrasensory, .steelWing], specialAttacks: [.braveBird, .fireBlast, .solarBeam], stamina: 212, attack: 263, defense: 301)
 //    static let celebi = Pokemon(pokedex: 251, species: .celebi, type: [.Grass, .Psychic], quickAttacks: [.confusion, .chargeBeam], specialAttacks: [.hyperBeam, .psychic, .dazzlingGleam], stamina: 200, attack: 210, defense: 210)
     static func contenders() -> [Pokemon] {
@@ -433,7 +435,8 @@ struct PokemonCollections {
 //            PokemonCollections.suicune,
             PokemonCollections.tyranitar,
             PokemonCollections.lugia,
-            PokemonCollections.articuno
+            PokemonCollections.articuno,
+            PokemonCollections.moltres
 //            PokemonCollections.hooh,
 //            PokemonCollections.celebi
 
@@ -698,7 +701,8 @@ struct PokemonCollections {
             PokemonCollections.pupitar,
             PokemonCollections.tyranitar,
             PokemonCollections.lugia,
-            PokemonCollections.articuno
+            PokemonCollections.articuno,
+            PokemonCollections.moltres
 //            PokemonCollections.hooh,
 //            PokemonCollections.celebi
         ]
