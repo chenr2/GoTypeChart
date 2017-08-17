@@ -20,11 +20,19 @@ enum Engagement {
     case attacker, defender
 }
 
-struct TypeResult {
+struct TypeResult: Hashable, Equatable {
     let sumDifferential: CGFloat
     let opponent: Pokemon
     let opponentQuickMove: QuickMove
     let opponentChargeMove: SpecialMove
+    var hashValue: Int {
+        return sumDifferential.hashValue ^ opponent.pokedex.hashValue
+    }
+    
+}
+
+func ==(lhs: TypeResult, rhs: TypeResult) -> Bool {
+    return lhs.opponent.pokedex == rhs.opponent.pokedex && lhs.opponentQuickMove.quickAttack.rawValue == rhs.opponentQuickMove.quickAttack.rawValue && lhs.opponentChargeMove.specialAttack.rawValue == rhs.opponentChargeMove.specialAttack.rawValue
 }
 
 struct AverageMon {
@@ -529,6 +537,7 @@ class Pokemon {
         topResults = topResults.sorted { a, b in
             return a.sumDifferential > b.sumDifferential
         }
+        topResults = topResults.unique()
         return Array(topResults.prefix(6))
     }
     
@@ -583,5 +592,12 @@ class Pokemon {
         } else {
             self.vulnerabilitySet = Pokemon.multiplyVulnerabilitySets(vulnerabilitySets.first!, setB: vulnerabilitySets.last!)
         }
+    }
+}
+
+extension Sequence where Iterator.Element: Hashable {
+    func unique() -> [Iterator.Element] {
+        var alreadyAdded = Set<Iterator.Element>()
+        return self.filter { alreadyAdded.insert($0).inserted }
     }
 }
