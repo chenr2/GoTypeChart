@@ -267,9 +267,11 @@ struct PokemonCollections {
     static let magby = Pokemon(pokedex: 240, species: .magby, type: [.Fire], quickAttacks: [.ember, .karateChop], specialAttacks: [.brickBreak, .firePunch, .flameBurst], stamina: 90, attack: 151, defense: 108)
     static let miltank = Pokemon(pokedex: 241, species: .miltank, type: [.Normal], quickAttacks: [.tackle, .zenHeadbutt], specialAttacks: [.stomp, .bodySlam, .gyroBall], stamina: 190, attack: 157, defense: 211)
     static let blissey = Pokemon(pokedex: 242, species: .blissey, type: [.Normal], quickAttacks: [.pound, .zenHeadbutt], specialAttacks: [.dazzlingGleam, .hyperBeam, .psychic], stamina: 510, attack: 129, defense: 229)
-//    static let raikou = Pokemon(pokedex: 243, species: .raikou, type: [.Electric], quickAttacks: [.thunderShock, .voltSwitch], specialAttacks: [.thunder, .thunderbolt, .wildCharge], stamina: 180, attack: 241, defense: 210)
-//    static let entei = Pokemon(pokedex: 244, species: .entei, type: [.Fire], quickAttacks: [.fireSpin, .fireFang], specialAttacks: [.flamethrower, .fireBlast, .overheat], stamina: 230, attack: 235, defense: 180)
-//    static let suicune = Pokemon(pokedex: 245, species: .suicune, type: [.Water], quickAttacks: [.extrasensory, .snarl], specialAttacks: [.hydroPump, .bubbleBeam, .waterPulse], stamina: 200, attack: 180, defense: 235)
+    static let raikou = Pokemon(pokedex: 243, species: .raikou, type: [.Electric], quickAttacks: [.thunderShock, .voltSwitch], specialAttacks: [.thunder, .thunderbolt, .wildCharge], stamina: 180, attack: 241, defense: 210)
+    static let entei = Pokemon(pokedex: 244, species: .entei, type: [.Fire], quickAttacks: [.fireSpin, .fireFang], specialAttacks: [.flamethrower, .fireBlast, .overheat], stamina: 230, attack: 235, defense: 176)
+    static let suicune = Pokemon(pokedex: 245, species: .suicune, type: [.Water], quickAttacks: [.extrasensory, .hiddenPower], specialAttacks: [.hydroPump, .bubbleBeam, .waterPulse], stamina: 200, attack: 180, defense: 235)
+    static let mewtwo = Pokemon(pokedex: 150, species: .mewtwo, type: [.Psychic], quickAttacks: [.confusion, .psychoCut], specialAttacks: [.psychic, .hyperBeam, .focusBlast, .shadowBall], stamina: 193, attack: 300, defense: 182)
+
     static let larvitar = Pokemon(pokedex: 246, species: .larvitar, type: [.Ground, .Rock], quickAttacks: [.bite, .rockSmash], specialAttacks: [.stomp, .crunch, .ancientPower], stamina: 100, attack: 115, defense: 93)
     static let pupitar = Pokemon(pokedex: 247, species: .pupitar, type: [.Ground, .Rock], quickAttacks: [.bite, .rockSmash], specialAttacks: [.dig, .crunch, .ancientPower], stamina: 140, attack: 155, defense: 133)
     static let tyranitar = Pokemon(pokedex: 248, species: .tyranitar, type: [.Dark, .Rock], quickAttacks: [.bite, .ironTail], specialAttacks: [.fireBlast, .crunch, .stoneEdge], stamina: 200, attack: 251, defense: 212)
@@ -431,9 +433,10 @@ struct PokemonCollections {
             PokemonCollections.hitmontop,
             PokemonCollections.miltank,
             PokemonCollections.blissey,
-//            PokemonCollections.raikou,
-//            PokemonCollections.entei,
-//            PokemonCollections.suicune,
+            PokemonCollections.raikou,
+            PokemonCollections.entei,
+            PokemonCollections.suicune,
+            PokemonCollections.mewtwo,
             PokemonCollections.tyranitar,
             PokemonCollections.lugia,
             PokemonCollections.articuno,
@@ -696,9 +699,10 @@ struct PokemonCollections {
             PokemonCollections.magby,
             PokemonCollections.miltank,
             PokemonCollections.blissey,
-//            PokemonCollections.raikou,
-//            PokemonCollections.entei,
-//            PokemonCollections.suicune,
+            PokemonCollections.raikou,
+            PokemonCollections.entei,
+            PokemonCollections.suicune,
+            PokemonCollections.mewtwo,
             PokemonCollections.larvitar,
             PokemonCollections.pupitar,
             PokemonCollections.tyranitar,
@@ -745,7 +749,15 @@ struct PokemonCollections {
             PokemonCollections.scizor,
             PokemonCollections.ursaring,
             PokemonCollections.feraligatr,
-            PokemonCollections.ampharos
+            PokemonCollections.ampharos,
+            PokemonCollections.raikou,
+            PokemonCollections.entei,
+            PokemonCollections.suicune,
+            PokemonCollections.mewtwo,
+            PokemonCollections.lugia,
+            PokemonCollections.articuno,
+            PokemonCollections.moltres,
+            PokemonCollections.zapdos
         ]
     }
     
